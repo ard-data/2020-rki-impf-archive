@@ -3,5 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "author": "Michael Kreil (BR Data)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "adm-zip": "^0.5.1",
+    "xmldom": "^0.4.0",
+    "xpath": "0.0.32"
+  }
 }
