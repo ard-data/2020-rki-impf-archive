@@ -57,51 +57,37 @@ fs.readdirSync(dirSrc).forEach(filename => {
 	// unzip excel file
 	let zip = new AdmZip(fullnameSrc);
 
-	let workbook, sheet, strings;
+	let sheetFront, sheetData, strings;
 
 	zip.getEntries().forEach(e => {
-		if (e.entryName.endsWith('xl/worksheets/sheet2.xml')) return sheet = p(e); // get worksheet
+		if (e.entryName.endsWith('xl/worksheets/sheet1.xml')) return sheetFront = p(e); // get front sheet
+		if (e.entryName.endsWith('xl/worksheets/sheet2.xml')) return sheetData = p(e); // get data sheet
 		if (e.entryName.endsWith('xl/sharedStrings.xml')) return strings = p(e); // get shared strings
-		if (e.entryName.endsWith('xl/workbook.xml')) return workbook = p(e); // get workbook definition
 
 		function p(e) {
 			return new DOMParser().parseFromString(e.getData().toString('utf8'));
 		}
 	})
-
-	// get workbook name, cause it's the date
-	workbook = select('//a:sheet', workbook)[1].getAttribute('name');
-	let date = workbook.split('.');
-	date = (new Date(2000+parseFloat(date[2]), parseFloat(date[1])-1, parseFloat(date[0]), 12));
-	date = date.toISOString().slice(0,10);
-	// really strong test for the correct date
-	if (date.substr(8,2)+'.'+date.substr(5,2)+'.'+date.substr(2,2) !== workbook) throw Error();
 	
 	// extract shared strings
-	strings = select('//a:si', strings).map(string => select('.//a:t[not(ancestor::a:rPh)]', string).map(t => t.textContent).join(''));
+	strings = select('//a:si', strings).map(string => select('.//a:t[not(ancestor::a:rPh)]', string).map(node => node.textContent).join(''));
+
+	// extract front sheet "Datenstand"
+	let date = [];
+	select('/a:worksheet/a:sheetData/a:row/a:c', sheetFront).forEach(node => {
+		let cell = parseCell(node);
+		if (cell.row !== 5) return;
+		date[cell.col] = cell.value;
+	})
+	date = parseDate(date.join('\t'));
 
 	// extract cell content
 	let cells = [];
-	select('/a:worksheet/a:sheetData/a:row/a:c', sheet).forEach(node => {
-		let range = node.getAttribute('r').split(/([0-9]+)/);
-		let col = colToInt(range[0])-1;
-		let row = parseInt(range[1])-1;
-		let value = (select('a:v', node, 1) || {textContent: ''}).textContent;
-		let type = node.getAttribute('t') || '';
+	select('/a:worksheet/a:sheetData/a:row/a:c', sheetData).forEach(node => {
+		let cell = parseCell(node);
 
-		switch (type) {
-			case 's': value = strings[parseInt(value, 10)]; break;
-			case '': value = parseInt(value, 10); break;
-			default: throw Error('unknown cell type '+type);
-		}
-
-		if (!cells[row]) cells[row] = [];
-		cells[row][col] = value;
-		
-
-		function colToInt(col) {
-			return col.trim().split('').reduce((n, c) => n*26 +letters[c], 0);
-		}
+		if (!cells[cell.row]) cells[cell.row] = [];
+		cells[cell.row][cell.col] = cell.value;
 	});
 	
 	excelColHeaders.forEach(h => { if (cells[0][h.index].replace(/\*+$/,'') !== h.text) throw Error(JSON.stringify(h)) })
@@ -121,6 +107,56 @@ fs.readdirSync(dirSrc).forEach(filename => {
 	})
 
 	fs.writeFileSync(fullnameDst, JSON.stringify(data, null, '\t'));
+
+
+
+	function parseCell(node) {
+		let range = node.getAttribute('r').split(/([0-9]+)/);
+		let col = colToInt(range[0])-1;
+		let row = parseInt(range[1])-1;
+		let value = (select('a:v', node, 1) || {textContent: ''}).textContent;
+		let type = node.getAttribute('t') || '';
+
+		switch (type) {
+			case 's': value = strings[parseInt(value, 10)]; break;
+			case '': value = parseFloat(value); break;
+			default: throw Error('unknown cell type '+type);
+		}
+
+		return {col, row, value};
+	}
+
+	function colToInt(col) {
+		return col.trim().split('').reduce((n, c) => n*26 +letters[c], 0);
+	}
 })
 
 
+function parseDate(text) {
+	let match;
+	if (match = text.match(/^Datenstand: (\d\d)\.(\d\d)\.(\d\d\d\d), (\d\d):(\d\d) Uhr$/)) return generateDate([match[3],match[2],match[1],match[4],match[5]]);
+	if (text === 'Datenstand: 28.12.2020, 08:00 Uhr	44195	11:00 Uhr') return '2020-12-30 11:00';
+	
+
+	console.log(text);
+	throw Error();
+
+	function generateDate(list) {
+		list = list.map(v => parseFloat(v));
+		if (list.length != 5) throw Error();
+		return l4(list[0])+'-'+l2(list[1])+'-'+l2(list[2])+' '+l2(list[3])+':'+l2(list[4]);
+
+		function l4(text) {
+			text = ''+text;
+			if (text.length !== 4) throw Error('"'+text+'"'+text.length);
+			return text;
+		}
+
+		function l2(text) {
+			text = ''+text;
+			if (text.length === 2) return text;
+			if (text.length === 1) return '0'+text;
+			throw Error();
+		}
+	}
+}
