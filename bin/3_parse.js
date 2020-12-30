@@ -11,7 +11,7 @@ const select = xpath.useNamespaces({a:'http://schemas.openxmlformats.org/spreads
 
 
 
-const dirSrc = resolve(__dirname, '../data/0_archived/');
+const dirSrc = resolve(__dirname, '../data/0_original/');
 const dirDst = resolve(__dirname, '../data/1_parsed/');
 const letters = Object.fromEntries(',A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z'.split(',').map((c,i) => [c,i]));
 const excelColHeaders = [

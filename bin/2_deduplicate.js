@@ -8,7 +8,7 @@ const crypto = require('crypto');
 
 
 
-const dirSrc = resolve(__dirname, '../data/0_archived/');
+const dirSrc = resolve(__dirname, '../data/0_original/');
 
 
 

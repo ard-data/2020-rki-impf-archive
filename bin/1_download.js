@@ -15,7 +15,7 @@ const url = 'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/
 (async () => {
 	let date = (new Date()).toISOString().slice(0,19).replace(/[T:]/g,'-');
 	let data = await fetch(url);
-	fs.writeFileSync(resolve(__dirname, '../data/0_archived/impfquotenmonitoring-'+date+'.xlsx'), data);
+	fs.writeFileSync(resolve(__dirname, '../data/0_original/impfquotenmonitoring-'+date+'.xlsx'), data);
 })()
 
 
