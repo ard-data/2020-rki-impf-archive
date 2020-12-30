@@ -52,6 +52,8 @@ fs.readdirSync(dirSrc).forEach(filename => {
 
 	if (fs.existsSync(fullnameDst)) return;
 
+	console.log('parse '+filename);
+
 	// unzip excel file
 	let zip = new AdmZip(fullnameSrc);
 
