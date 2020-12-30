@@ -17,10 +17,10 @@ const letters = Object.fromEntries(',A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V
 const excelColHeaders = [
 	{index:1, name:'impfungen_kumulativ', text:'Impfungen kumulativ'},
 	{index:2, name:'differenz_zum_vortag', text:'Differenz zum Vortag'},
-	{index:3, name:'indikation_nach_alter', text:'Indikation nach Alter*'},
-	{index:4, name:'berufliche_indikation', text:'Berufliche Indikation*'},
-	{index:5, name:'medizinische_indikation', text:'Medizinische Indikation*'},
-	{index:6, name:'pflegeheimbewohnerin', text:'Pflegeheim-bewohnerIn*'},
+	{index:3, name:'indikation_nach_alter', text:'Indikation nach Alter'},
+	{index:4, name:'berufliche_indikation', text:'Berufliche Indikation'},
+	{index:5, name:'medizinische_indikation', text:'Medizinische Indikation'},
+	{index:6, name:'pflegeheimbewohnerin', text:'Pflegeheim-bewohnerIn'},
 ];
 const excelRowHeaders = [
 	{index: 1, name:'BW', text:'Baden-Württemberg'},
@@ -103,15 +103,9 @@ fs.readdirSync(dirSrc).forEach(filename => {
 			return col.trim().split('').reduce((n, c) => n*26 +letters[c], 0);
 		}
 	});
-
-	let check1 = cells[0].join(';');
-	let check2 = cells.slice(0,18).map(r => r[0]).join(';');
-
-	if (check1 !== 'Bundesland;Impfungen kumulativ;Differenz zum Vortag;Indikation nach Alter*;Berufliche Indikation*;Medizinische Indikation*;Pflegeheim-bewohnerIn*') throw Error('failed check 1');
-	if (check2 !== 'Bundesland;Baden-Württemberg;Bayern;Berlin;Brandenburg;Bremen;Hamburg;Hessen;Mecklenburg-Vorpommern;Niedersachsen;Nordrhein-Westfalen;Rheinland-Pfalz;Saarland;Sachsen;Sachsen-Anhalt;Schleswig-Holstein;Thüringen;Gesamt') throw Error('failed check 2');
 	
-	excelColHeaders.forEach(h => { if (cells[0][h.index] !== h.text) throw Error() })
-	excelRowHeaders.forEach(h => { if (cells[h.index][0] !== h.text) throw Error() })
+	excelColHeaders.forEach(h => { if (cells[0][h.index].replace(/\*+$/,'') !== h.text) throw Error(JSON.stringify(h)) })
+	excelRowHeaders.forEach(h => { if (cells[h.index][0].replace(/\*+$/,'') !== h.text) throw Error(JSON.stringify(h)) })
 
 	let data = {date, states:{}};
 	excelRowHeaders.forEach(r => {
@@ -128,3 +122,5 @@ fs.readdirSync(dirSrc).forEach(filename => {
 
 	fs.writeFileSync(fullnameDst, JSON.stringify(data, null, '\t'));
 })
+
+
