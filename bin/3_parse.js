@@ -86,7 +86,7 @@ fs.readdirSync(dirSrc).forEach(filename => {
 		let range = node.getAttribute('r').split(/([0-9]+)/);
 		let col = colToInt(range[0])-1;
 		let row = parseInt(range[1])-1;
-		let value = (select('a:v', node, 1) || na).textContent;
+		let value = (select('a:v', node, 1) || {textContent: ''}).textContent;
 		let type = node.getAttribute('t') || '';
 
 		switch (type) {
