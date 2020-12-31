@@ -44,7 +44,7 @@ Array.from(tables.values()).forEach(table => {
 		data.push(entry.row);
 	})
 
-	data = data.map(r => r.join(',')).join('\n');
+	data = data.map(r => r.join(',')+'\n').join('');
 
 	fs.writeFileSync(fullname, data, 'utf8');
 })
