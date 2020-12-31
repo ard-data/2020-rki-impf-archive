@@ -34,3 +34,10 @@ Die Beschreibung der Datenfelder, sowie weitere Hinweise können den Exceldateie
 - `bin/3_parse.js` parsed die Exceldateien und macht daraus saubere und einheitliche JSONs.
 - `bin/4_generate_csv.js` fügt alle JSONs zusammen und generiert CSV-Dateien.
 - `bin/cronjob.sh` ist das stündliche cronjob-Script.
+
+## Weitere Links
+
+Andere Projekte, die die RKI-Corona-Impf-Daten sammeln:
+
+- https://github.com/friep/vaccc19de_rki_data
+- https://github.com/n0rdlicht/rki-vaccination-scraper
