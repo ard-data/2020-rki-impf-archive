@@ -134,8 +134,14 @@ fs.readdirSync(dirSrc).forEach(filename => {
 
 function parseDate(text) {
 	let match;
-	if (match = text.match(/^Datenstand: (\d\d)\.(\d\d)\.(\d\d\d\d), (\d\d):(\d\d) Uhr$/)) return generateDate([match[3],match[2],match[1],match[4],match[5]]);
-	if (text === 'Datenstand: 28.12.2020, 08:00 Uhr	44195	11:00 Uhr') return '2020-12-30 11:00';
+	if (match = text.match(/^Datenstand: (\d\d)\.(\d\d)\.(\d\d\d\d), (\d\d):(\d\d) Uhr$/)) {
+		return generateDate([match[3],match[2],match[1],match[4],match[5]]);
+	}
+	if (match = text.match(/^Datenstand: 28\.12\.2020, 08:00 Uhr\t(44\d\d\d)\t(\d\d):(\d\d) Uhr$/)) {
+		let d = (parseFloat(match[1])-25568.5)*86400000;
+		d = (new Date(d)).toISOString();
+		return generateDate([d.substr(0,4),d.substr(5,2),d.substr(8,2),match[2],match[3]]);
+	}
 	
 
 	console.log(text);
