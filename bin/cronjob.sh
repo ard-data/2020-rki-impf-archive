@@ -14,10 +14,6 @@ do_work() {
 
 	sleep 3
 
-	git add ../data/ || return 1
-	git commit -m "automatic data update" || return 1
-	git push || return 1
-
 	return 0
 }
 
@@ -30,3 +26,7 @@ exec 2>cronjob.log
 do_work || report
 
 rm -f cronjob.log
+
+git add ../data/
+git commit -m "automatic data update"
+git push
