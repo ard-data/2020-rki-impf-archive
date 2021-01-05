@@ -14,38 +14,55 @@ const select = xpath.useNamespaces({a:'http://schemas.openxmlformats.org/spreads
 const dirSrc = resolve(__dirname, '../data/0_original/');
 const dirDst = resolve(__dirname, '../data/1_parsed/');
 const letters = Object.fromEntries(',A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z'.split(',').map((c,i) => [c,i]));
-const excelColHeaders = [
-	{index:1, name:'impfungen_kumulativ', text:'Impfungen kumulativ'},
-	{index:2, name:'differenz_zum_vortag', text:'Differenz zum Vortag'},
-	{index:3, name:'indikation_nach_alter', text:'Indikation nach Alter'},
-	{index:4, name:'berufliche_indikation', text:'Berufliche Indikation'},
-	{index:5, name:'medizinische_indikation', text:'Medizinische Indikation'},
-	{index:6, name:'pflegeheimbewohnerin', text:'Pflegeheim-bewohnerIn'},
+const _excelColHeaders = [
+	{name:'impfungen_kumulativ',          text:'Impfungen kumulativ'},
+	{name:'differenz_zum_vortag',         text:'Differenz zum Vortag'},
+	{name:'impfungen_pro_1000_einwohner', text:'Impfungen pro 1.000 Einwohner', optional:true},
+	{name:'indikation_nach_alter',        text:'Indikation nach Alter'},
+	{name:'berufliche_indikation',        text:'Berufliche Indikation'},
+	{name:'medizinische_indikation',      text:'Medizinische Indikation'},
+	{name:'pflegeheimbewohnerin',         text:'Pflegeheim-bewohnerIn'},
 ];
-const excelRowHeaders = [
-	{index: 1, name:'BW', text:'Baden-Württemberg'},
-	{index: 2, name:'BY', text:'Bayern'},
-	{index: 3, name:'BE', text:'Berlin'},
-	{index: 4, name:'BB', text:'Brandenburg'},
-	{index: 5, name:'HB', text:'Bremen'},
-	{index: 6, name:'HH', text:'Hamburg'},
-	{index: 7, name:'HE', text:'Hessen'},
-	{index: 8, name:'MV', text:'Mecklenburg-Vorpommern'},
-	{index: 9, name:'NI', text:'Niedersachsen'},
-	{index:10, name:'NW', text:'Nordrhein-Westfalen'},
-	{index:11, name:'RP', text:'Rheinland-Pfalz'},
-	{index:12, name:'SL', text:'Saarland'},
-	{index:13, name:'SN', text:'Sachsen'},
-	{index:14, name:'ST', text:'Sachsen-Anhalt'},
-	{index:15, name:'SH', text:'Schleswig-Holstein'},
-	{index:16, name:'TH', text:'Thüringen'},
-	{index:17, name:'DE', text:'Gesamt'},
+const _excelRowHeaders = [
+	{name:'BW', text:'Baden-Württemberg'},
+	{name:'BY', text:'Bayern'},
+	{name:'BE', text:'Berlin'},
+	{name:'BB', text:'Brandenburg'},
+	{name:'HB', text:'Bremen'},
+	{name:'HH', text:'Hamburg'},
+	{name:'HE', text:'Hessen'},
+	{name:'MV', text:'Mecklenburg-Vorpommern'},
+	{name:'NI', text:'Niedersachsen'},
+	{name:'NW', text:'Nordrhein-Westfalen'},
+	{name:'RP', text:'Rheinland-Pfalz'},
+	{name:'SL', text:'Saarland'},
+	{name:'SN', text:'Sachsen'},
+	{name:'ST', text:'Sachsen-Anhalt'},
+	{name:'SH', text:'Schleswig-Holstein'},
+	{name:'TH', text:'Thüringen'},
+	{name:'DE', text:'Gesamt'},
+
+	//{text:'undefined', ignore:true},
+	//{text:'undefined', ignore:true},
+	//{text:'undefined', ignore:true},
+	//{text:'undefined', ignore:true},
+	//{text:'undefined', ignore:true},
+	//{text:'undefined', ignore:true},
+	//{text:'undefined', ignore:true},
+	//{text:'undefined', ignore:true},
+	{text:'Anmerkung zu den Indikationen: Es können mehrere Indikationen je geimpfter Person vorliegen.', ignore:true},
+	{text:'einschl. Korrekturmeldung vom 27.12.20', ignore:true},
+	{text:'undefined', ignore:true},
+	{text:'In Sachsen-Anhalt wurde bereits am 26.12.2020 mit den Impfungen begonnen.', ignore:true},
+	{text:'In einigen Bundesländern werden nicht alle der in der Tabelle aufgeführten Indikationen einzeln ausgewiesen.', ignore:true},
+	{text:'in einigen Bundesländern werden nicht alle der in der Tabelle aufgeführten Indikationen einzeln ausgewiesen', ignore:true},
+	{text:'Anmerkung zu den Indikationen: es können mehrere Indikationen je geimpfter Person vorliegen', ignore:true},
 ];
 
 
 let todos = [];
 fs.readdirSync(dirSrc).forEach(filename => {
-	if (!/impfquotenmonitoring-202.*\.xlsx/.test(filename)) return;
+	if (!/^impfquotenmonitoring-202.*\.xlsx$/.test(filename)) return;
 
 	let fullnameSrc = resolve(dirSrc, filename);
 	let fullnameDst = resolve(dirDst, filename.replace(/\.xlsx$/i, '.json'));
@@ -86,16 +103,22 @@ fs.readdirSync(dirSrc).forEach(filename => {
 	// extract data sheet cell content
 	let sheetDataCells = extractCells(sheetData);
 	
-	excelColHeaders.forEach(h => { if (cells[0][h.index].replace(/\*+$/,'') !== h.text) throw Error(JSON.stringify(h)) })
-	excelRowHeaders.forEach(h => { if (cells[h.index][0].replace(/\*+$/,'') !== h.text) throw Error(JSON.stringify(h)) })
+	// check headers
+	let excelColHeaders = prepareHeaderDefinition(_excelColHeaders, sheetDataCells[0]);
+	let excelRowHeaders = prepareHeaderDefinition(_excelRowHeaders, sheetDataCells.map(r => r[0]));
 
 	let data = {date, states:{}};
+		console.log(excelRowHeaders);
+		console.log(excelColHeaders);
+		console.log(sheetDataCells);
 	excelRowHeaders.forEach(r => {
+		if (!r.use) return;
 		let obj = {
 			code:r.name,
 			title:r.text,
 		};
 		excelColHeaders.forEach(c => {
+			if (!c.use) return;
 			obj[c.name] = sheetDataCells[r.index][c.index];
 		})
 		if (r.name === 'DE') return data.germany = obj;
@@ -137,6 +160,32 @@ fs.readdirSync(dirSrc).forEach(filename => {
 		}
 	}
 
+	function prepareHeaderDefinition(_def, data) {
+		let def = _def.map(e => {
+			let entry = Object.assign({}, e);
+			entry.use = false;
+			return entry;
+		});
+
+		for (let i = 1; i < data.length; i++) {
+			let value = (''+data[i]).replace(/\*+/g,'').trim();
+			let entry = def.find(e => e.text === value);
+			
+			if (!entry) throw Error('"'+value+'" ('+JSON.stringify(data)+') not found in '+JSON.stringify(def));
+			entry.index = i;
+
+			if (!entry.ignore && entry.use) throw Error('"'+value+'" ('+JSON.stringify(data)+') already in use '+JSON.stringify(def));
+			entry.use = true;
+		}
+
+		def = def.filter(entry => {
+			if (entry.ignore) return false;
+			if (entry.use) return true;
+			if (entry.optional) return false;
+			throw Error(JSON.stringify(entry));
+		})
+
+		return def;
 	}
 })
 
