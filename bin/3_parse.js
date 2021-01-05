@@ -57,9 +57,10 @@ fs.readdirSync(dirSrc).forEach(filename => {
 	// unzip excel file
 	let zip = new AdmZip(fullnameSrc);
 
-	let sheetFront, sheetData, strings;
+	let workbook, sheetFront, sheetData, strings;
 
 	zip.getEntries().forEach(e => {
+		if (e.entryName.endsWith('xl/workbook.xml')) return workbook = p(e); // get workbook
 		if (e.entryName.endsWith('xl/worksheets/sheet1.xml')) return sheetFront = p(e); // get front sheet
 		if (e.entryName.endsWith('xl/worksheets/sheet2.xml')) return sheetData = p(e); // get data sheet
 		if (e.entryName.endsWith('xl/sharedStrings.xml')) return strings = p(e); // get shared strings
@@ -72,23 +73,18 @@ fs.readdirSync(dirSrc).forEach(filename => {
 	// extract shared strings
 	strings = select('//a:si', strings).map(string => select('.//a:t[not(ancestor::a:rPh)]', string).map(node => node.textContent).join(''));
 
-	// extract front sheet "Datenstand"
-	let date = [];
-	select('/a:worksheet/a:sheetData/a:row/a:c', sheetFront).forEach(node => {
-		let cell = parseCell(node);
-		if (cell.row !== 5) return;
-		date[cell.col] = cell.value;
+	// extract front sheet name
+	let sheetDataName = false;
+	select('/a:workbook/a:sheets/a:sheet', workbook).forEach(node => {
+		if (node.getAttribute('r:id') === 'rId2') sheetDataName = node.getAttribute('name');
 	})
-	date = parseDate(date.join('\t'));
 
-	// extract cell content
-	let cells = [];
-	select('/a:worksheet/a:sheetData/a:row/a:c', sheetData).forEach(node => {
-		let cell = parseCell(node);
+	// extract front sheet cell content
+	let sheetFrontCells = extractCells(sheetFront);
+	let date = parseDate(filename, sheetDataName, sheetFrontCells);
 
-		if (!cells[cell.row]) cells[cell.row] = [];
-		cells[cell.row][cell.col] = cell.value;
-	});
+	// extract data sheet cell content
+	let sheetDataCells = extractCells(sheetData);
 	
 	excelColHeaders.forEach(h => { if (cells[0][h.index].replace(/\*+$/,'') !== h.text) throw Error(JSON.stringify(h)) })
 	excelRowHeaders.forEach(h => { if (cells[h.index][0].replace(/\*+$/,'') !== h.text) throw Error(JSON.stringify(h)) })
@@ -100,7 +96,7 @@ fs.readdirSync(dirSrc).forEach(filename => {
 			title:r.text,
 		};
 		excelColHeaders.forEach(c => {
-			obj[c.name] = cells[r.index][c.index];
+			obj[c.name] = sheetDataCells[r.index][c.index];
 		})
 		if (r.name === 'DE') return data.germany = obj;
 		data.states[r.name] = obj;
@@ -110,42 +106,72 @@ fs.readdirSync(dirSrc).forEach(filename => {
 
 
 
-	function parseCell(node) {
-		let range = node.getAttribute('r').split(/([0-9]+)/);
-		let col = colToInt(range[0])-1;
-		let row = parseInt(range[1])-1;
-		let value = (select('a:v', node, 1) || {textContent: ''}).textContent;
-		let type = node.getAttribute('t') || '';
+	function extractCells(sheet) {
+		let cells = [];
+		select('/a:worksheet/a:sheetData/a:row/a:c', sheet).forEach(node => {
+			let cell = parseCell(node);
 
-		switch (type) {
-			case 's': value = strings[parseInt(value, 10)]; break;
-			case '': value = parseFloat(value); break;
-			default: throw Error('unknown cell type '+type);
+			if (!cells[cell.row]) cells[cell.row] = [];
+			cells[cell.row][cell.col] = cell.value;
+		});
+		return cells;
+
+		function parseCell(node) {
+			let range = node.getAttribute('r').split(/([0-9]+)/);
+			let col = colToInt(range[0])-1;
+			let row = parseInt(range[1])-1;
+			let value = (select('a:v', node, 1) || {textContent: ''}).textContent;
+			let type = node.getAttribute('t') || '';
+
+			switch (type) {
+				case 's': value = strings[parseInt(value, 10)]; break;
+				case '': value = parseFloat(value); break;
+				default: throw Error('unknown cell type '+type);
+			}
+
+			return {col, row, value};
+
+			function colToInt(col) {
+				return col.trim().split('').reduce((n, c) => n*26 +letters[c], 0);
+			}
 		}
-
-		return {col, row, value};
 	}
 
-	function colToInt(col) {
-		return col.trim().split('').reduce((n, c) => n*26 +letters[c], 0);
 	}
 })
 
 
-function parseDate(text) {
+function parseDate(filename, sheetName, cells) {
+	if (filename === 'impfquotenmonitoring-2020-12-29.xlsx') return generateDate('2020-12-28-24-00'.split('-'));
+
 	let match;
-	if (match = text.match(/^Datenstand: (\d\d)\.(\d\d)\.(\d\d\d\d), (\d\d):(\d\d) Uhr$/)) {
+	if (match = sheetName.match(/^(\d\d)\.(\d\d)\.(\d\d)$/)) {
+		return generateDate(['20'+match[3],match[2],match[1],24,0]);
+	}
+
+
+	let rows = cells.map(r => r.join('\t'));
+
+	console.log('sheetName', sheetName);
+	console.log('rows', rows);
+
+	throw Error();
+
+	/*
+	let match;
+	if (match = rows[5].match(/^Datenstand: (\d\d)\.(\d\d)\.(\d\d\d\d), (\d\d):(\d\d) Uhr$/)) {
 		return generateDate([match[3],match[2],match[1],match[4],match[5]]);
 	}
-	if (match = text.match(/^Datenstand: 28\.12\.2020, 08:00 Uhr\t(44\d\d\d)\t(\d\d):(\d\d) Uhr$/)) {
+	if (match = rows[5].match(/^Datenstand: 28\.12\.2020, 08:00 Uhr\t(44\d\d\d)\t(\d\d):(\d\d) Uhr$/)) {
 		let d = (parseFloat(match[1])-25568.5)*86400000;
 		d = (new Date(d)).toISOString();
 		return generateDate([d.substr(0,4),d.substr(5,2),d.substr(8,2),match[2],match[3]]);
 	}
 	
 
-	console.log(text);
+	console.log(rows);
 	throw Error();
+	*/
 
 	function generateDate(list) {
 		list = list.map(v => parseFloat(v));
