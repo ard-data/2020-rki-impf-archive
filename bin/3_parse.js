@@ -106,11 +106,6 @@ fs.readdirSync(dirSrc).forEach(filename => {
 	let excelColHeaders = prepareHeaderDefinition(_excelColHeaders, sheetDataCells[0]);
 	let excelRowHeaders = prepareHeaderDefinition(_excelRowHeaders, sheetDataCells.map(r => r[0]));
 
-	// lgging
-	console.log(excelRowHeaders);
-	console.log(excelColHeaders);
-	console.log(sheetDataCells);
-
 	// read data from Excel file to data structure
 	let data = {date, states:{}};
 	excelRowHeaders.forEach(r => {
@@ -212,45 +207,7 @@ function parseDate(filename, sheetName, cells) {
 		return match[3]+'-'+match[2]+'-'+match[1]+' '+match[4];
 	}
 
+	console.log(filename, dateStrings);
 
-
-	console.log('sheetName', sheetName);
-	console.log('rows', rows);
-
-	throw Error();
-
-	/*
-	let match;
-	if (match = rows[5].match(/^Datenstand: (\d\d)\.(\d\d)\.(\d\d\d\d), (\d\d):(\d\d) Uhr$/)) {
-		return generateDate([match[3],match[2],match[1],match[4],match[5]]);
-	}
-	if (match = rows[5].match(/^Datenstand: 28\.12\.2020, 08:00 Uhr\t(44\d\d\d)\t(\d\d):(\d\d) Uhr$/)) {
-		let d = (parseFloat(match[1])-25568.5)*86400000;
-		d = (new Date(d)).toISOString();
-		return generateDate([d.substr(0,4),d.substr(5,2),d.substr(8,2),match[2],match[3]]);
-	}
-	
-
-	console.log(rows);
-	throw Error();
-	*/
-
-	function generateDate(list) {
-		list = list.map(v => parseFloat(v));
-		if (list.length != 5) throw Error();
-		return l4(list[0])+'-'+l2(list[1])+'-'+l2(list[2])+' '+l2(list[3])+':'+l2(list[4]);
-
-		function l4(text) {
-			text = ''+text;
-			if (text.length !== 4) throw Error('"'+text+'"'+text.length);
-			return text;
-		}
-
-		function l2(text) {
-			text = ''+text;
-			if (text.length === 2) return text;
-			if (text.length === 1) return '0'+text;
-			throw Error();
-		}
-	}
+	throw Error('Can not parse date');
 }
