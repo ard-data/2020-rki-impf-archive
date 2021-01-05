@@ -98,7 +98,31 @@ fs.readdirSync(dirSrc).forEach(filename => {
 
 	// extract front sheet cell content
 	let sheetFrontCells = extractCells(sheetFront);
-	let date = parseDate(filename, sheetDataName, sheetFrontCells);
+	let date = null;
+    
+    // attempt to extract date from sheet names
+	select('/a:workbook/a:sheets/a:sheet', workbook).forEach(node => {
+        const sheetName = node.getAttribute('name');
+        const sheetNameDate = /(\d{2})\.(\d{2})\.(\d{2})$/g
+        if (!sheetName.match(sheetNameDate)) { 
+            return;
+        }
+
+        // as Date instance:
+        // const matchedDate = sheetNameDate.exec(sheetName).slice(1, 4).map(s => parseInt(s, 10));
+        // date = new Date(Date.UTC(2000 + matchedDate[2], matchedDate[1] - 1, matchedDate[0]));
+        
+        // parse and verify date components
+        const matchedDate = sheetNameDate.exec(sheetName).slice(1, 4).map(s => parseInt(s, 10)).map(i => i.toString().padStart(2, '0'));
+        date = `20${matchedDate[2]}-${matchedDate[1]}-${matchedDate[0]} 24:00`
+    })
+    
+    if (date === null) {
+        // fallback to previous method
+        date = parseDate(filename, sheetDataName, sheetFrontCells);
+    }
+
+    console.log("date", date)
 
 	// extract data sheet cell content
 	let sheetDataCells = extractCells(sheetData);
