@@ -190,15 +190,19 @@ fs.readdirSync(dirSrc).forEach(filename => {
 
 
 function parseDate(filename, sheetName, cells) {
-	if (filename === 'impfquotenmonitoring-2020-12-29.xlsx') return generateDate('2020-12-28-24-00'.split('-'));
-
+	// parses date and returns it as string like "2021-01-01 12:30"
 	let match;
-	if (match = sheetName.match(/^(\d\d)\.(\d\d)\.(\d\d)$/)) {
-		return generateDate(['20'+match[3],match[2],match[1],24,0]);
+	let rows = cells.map(r => r.join('\t'));
+	let dateStrings = [rows[2], rows[5], sheetName].join('\t');
+
+	if (match = dateStrings.match(/^\tDatenstand: 28\.12\.2020, 08:00 Uhr\t(44\d\d\d)\t(\d\d:\d\d) Uhr/)) {
+		let d = (parseFloat(match[1])-25568.5)*86400000;
+		d = (new Date(d)).toISOString();
+		d = d.substr(0,10)+' '+match[2];
+		return d;
 	}
 
 
-	let rows = cells.map(r => r.join('\t'));
 
 	console.log('sheetName', sheetName);
 	console.log('rows', rows);
