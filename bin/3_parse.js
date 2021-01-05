@@ -11,9 +11,10 @@ const select = xpath.useNamespaces({a:'http://schemas.openxmlformats.org/spreads
 
 
 
-const dirSrc = resolve(__dirname, '../data/0_original/');
-const dirDst = resolve(__dirname, '../data/1_parsed/');
+const dirSrc = resolve(__dirname, '../data/0_original/'); // folder with all XLSX files 
+const dirDst = resolve(__dirname, '../data/1_parsed/');  // folder with all resulting JSON files
 const letters = Object.fromEntries(',A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z'.split(',').map((c,i) => [c,i]));
+// Excel column headers
 const _excelColHeaders = [
 	{name:'impfungen_kumulativ',          text:'Impfungen kumulativ'},
 	{name:'differenz_zum_vortag',         text:'Differenz zum Vortag'},
@@ -23,6 +24,7 @@ const _excelColHeaders = [
 	{name:'medizinische_indikation',      text:'Medizinische Indikation'},
 	{name:'pflegeheimbewohnerin',         text:'Pflegeheim-bewohnerIn'},
 ];
+// Excel row headers
 const _excelRowHeaders = [
 	{name:'BW', text:'Baden-Württemberg'},
 	{name:'BY', text:'Bayern'},
@@ -42,14 +44,6 @@ const _excelRowHeaders = [
 	{name:'TH', text:'Thüringen'},
 	{name:'DE', text:'Gesamt'},
 
-	//{text:'undefined', ignore:true},
-	//{text:'undefined', ignore:true},
-	//{text:'undefined', ignore:true},
-	//{text:'undefined', ignore:true},
-	//{text:'undefined', ignore:true},
-	//{text:'undefined', ignore:true},
-	//{text:'undefined', ignore:true},
-	//{text:'undefined', ignore:true},
 	{text:'Anmerkung zu den Indikationen: Es können mehrere Indikationen je geimpfter Person vorliegen.', ignore:true},
 	{text:'einschl. Korrekturmeldung vom 27.12.20', ignore:true},
 	{text:'undefined', ignore:true},
@@ -60,13 +54,18 @@ const _excelRowHeaders = [
 ];
 
 
+
+// scan XLSX folder
 let todos = [];
 fs.readdirSync(dirSrc).forEach(filename => {
+	// ignore anything else than impfquotenmonitoring
 	if (!/^impfquotenmonitoring-202.*\.xlsx$/.test(filename)) return;
 
+	// full name of source XLSX file and resulting JSON file
 	let fullnameSrc = resolve(dirSrc, filename);
 	let fullnameDst = resolve(dirDst, filename.replace(/\.xlsx$/i, '.json'));
 
+	// ignore, when JSON file already exists
 	if (fs.existsSync(fullnameDst)) return;
 
 	console.log('parse '+filename);
@@ -74,8 +73,8 @@ fs.readdirSync(dirSrc).forEach(filename => {
 	// unzip excel file
 	let zip = new AdmZip(fullnameSrc);
 
+	// find the 4 XML files we need
 	let workbook, sheetFront, sheetData, strings;
-
 	zip.getEntries().forEach(e => {
 		if (e.entryName.endsWith('xl/workbook.xml')) return workbook = p(e); // get workbook
 		if (e.entryName.endsWith('xl/worksheets/sheet1.xml')) return sheetFront = p(e); // get front sheet
@@ -107,24 +106,24 @@ fs.readdirSync(dirSrc).forEach(filename => {
 	let excelColHeaders = prepareHeaderDefinition(_excelColHeaders, sheetDataCells[0]);
 	let excelRowHeaders = prepareHeaderDefinition(_excelRowHeaders, sheetDataCells.map(r => r[0]));
 
+	// lgging
+	console.log(excelRowHeaders);
+	console.log(excelColHeaders);
+	console.log(sheetDataCells);
+
+	// read data from Excel file to data structure
 	let data = {date, states:{}};
-		console.log(excelRowHeaders);
-		console.log(excelColHeaders);
-		console.log(sheetDataCells);
 	excelRowHeaders.forEach(r => {
-		if (!r.use) return;
 		let obj = {
 			code:r.name,
 			title:r.text,
-		};
-		excelColHeaders.forEach(c => {
-			if (!c.use) return;
-			obj[c.name] = sheetDataCells[r.index][c.index];
-		})
+		}
+		excelColHeaders.forEach(c => obj[c.name] = sheetDataCells[r.index][c.index])
 		if (r.name === 'DE') return data.germany = obj;
 		data.states[r.name] = obj;
 	})
 
+	// save data structure as JSON
 	fs.writeFileSync(fullnameDst, JSON.stringify(data, null, '\t'));
 
 
