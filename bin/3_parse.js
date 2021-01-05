@@ -208,6 +208,10 @@ function parseDate(filename, sheetName, cells) {
 
 	if (dateStrings.startsWith('Datenstand: 28.12.2020, 08:00 Uhr\t44200\t12:00 Uhr')) return '2021-01-04 12:00';
 
+	if (match = dateStrings.match(/^Datenstand: (\d\d)\.(\d\d)\.(\d\d\d\d), (\d\d:\d\d) Uhr\tNaN\tNaN\tNaN\t/)) {
+		return match[3]+'-'+match[2]+'-'+match[1]+' '+match[4];
+	}
+
 
 
 	console.log('sheetName', sheetName);
