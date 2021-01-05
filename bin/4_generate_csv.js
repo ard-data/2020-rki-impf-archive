@@ -17,6 +17,7 @@ const metrics = [
 	'berufliche_indikation',
 	'medizinische_indikation',
 	'pflegeheimbewohnerin',
+	'impfungen_pro_1000_einwohner',
 ];
 const states = 'BW,BY,BE,BB,HB,HH,HE,MV,NI,NW,RP,SL,SN,ST,SH,TH'.split(',');
 
