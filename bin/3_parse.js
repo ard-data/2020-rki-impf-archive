@@ -195,6 +195,10 @@ function parseDate(filename, sheetName, cells) {
 	let rows = cells.map(r => r.join('\t'));
 	let dateStrings = [rows[2], rows[5], sheetName].join('\t');
 
+	if (match = dateStrings.match(/^\tDatenstand: (\d\d)\.(\d\d)\.(\d\d\d\d), (\d\d:\d\d) Uhr\t/)) {
+		return match[3]+'-'+match[2]+'-'+match[1]+' '+match[4];
+	}
+
 	if (match = dateStrings.match(/^\tDatenstand: 28\.12\.2020, 08:00 Uhr\t(44\d\d\d)\t(\d\d:\d\d) Uhr/)) {
 		let d = (parseFloat(match[1])-25568.5)*86400000;
 		d = (new Date(d)).toISOString();
