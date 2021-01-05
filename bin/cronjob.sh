@@ -14,5 +14,5 @@ node 3_parse.js || true
 node 4_generate_csv.js
 
 git add ../data/
-git commit -m "automatic data update"
+git commit -m "automatic data update" || return 0
 git push
