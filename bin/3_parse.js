@@ -101,10 +101,14 @@ fs.readdirSync(dirSrc).forEach(filename => {
 
 	// extract data sheet cell content
 	let sheetDataCells = extractCells(sheetData);
+
+	let colOffset = 0;
+	let rowOffset = 0;
+	if (date >= '2021-01-07') colOffset = 1;
 	
 	// check headers
-	let excelColHeaders = prepareHeaderDefinition(_excelColHeaders, sheetDataCells[0]);
-	let excelRowHeaders = prepareHeaderDefinition(_excelRowHeaders, sheetDataCells.map(r => r[0]));
+	let excelColHeaders = prepareHeaderDefinition(_excelColHeaders, colOffset, sheetDataCells[rowOffset]);
+	let excelRowHeaders = prepareHeaderDefinition(_excelRowHeaders, rowOffset, sheetDataCells.map(r => r[colOffset]));
 
 	// read data from Excel file to data structure
 	let data = {date, states:{}};
@@ -154,14 +158,14 @@ fs.readdirSync(dirSrc).forEach(filename => {
 		}
 	}
 
-	function prepareHeaderDefinition(_def, data) {
+	function prepareHeaderDefinition(_def, offset, data) {
 		let def = _def.map(e => {
 			let entry = Object.assign({}, e);
 			entry.use = false;
 			return entry;
 		});
 
-		for (let i = 1; i < data.length; i++) {
+		for (let i = 1+offset; i < data.length; i++) {
 			let value = (''+data[i]).replace(/\*+/g,'').trim();
 			let entry = def.find(e => e.text === value);
 			
