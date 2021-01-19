@@ -1,5 +1,3 @@
-<h1 style="color:#ff0000">RKI hat das Format geändert. Parser funktioniert nicht. Wird überarbeitet und sollte in Kürze wieder funktionieren.</h1>
-
 # RKI-Corona-Impf-Daten-Archiv
 
 ## Worum geht es?
@@ -17,7 +15,7 @@ Deshalb sammeln wir die alte Datei-Versionen und stellen sie in diesem GitHub-Re
 - Die rohen Excel-Dateien befinden sich unter `data/0_original`.
 - Die gesäuberte Daten landen als JSON unter `data/1_parsed`.
 - Daraus werden CSV-Dateien generiert unter `data/2_csv`. Dabei gibt es drei CSV-Typen:
-	- `all.csv` enthält alle Daten. Gut zu pivotieren.
+	- `all.csv` enthält alle Daten. Gut zu Pivotieren.
 	- `region_*` sind Slices nach Region, also Bundesländer/Deutschland.
 	- `metric_*` sind Slices nach den Metriken.
 
@@ -36,6 +34,26 @@ Die Beschreibung der Datenfelder, sowie weitere Hinweise können den Exceldateie
 - `bin/3_parse.js` parsed die Exceldateien und macht daraus saubere und einheitliche JSONs.
 - `bin/4_generate_csv.js` fügt alle JSONs zusammen und generiert CSV-Dateien.
 - `bin/cronjob.sh` ist das stündliche cronjob-Script.
+
+## FAQ
+
+### Wie oft werden die Daten aktualisiert?
+
+Auf unserer Seite überprüfen wir die Dateien stündlich auf Veränderungen. Laut Aussage des RKIs werden die Daten werktäglich aktualisiert. Somit kann es sein, dass an Sonnabenden oder Sonntagen keine Aktualisierung stattfindet.
+
+### Was mache ich, wenn ich Probleme bei den hier veröffentlichten Daten gefunden habe?
+
+Momentan kümmert sich [Michael Kreil](mailto:rki-scraper@michael-kreil.de) als Entwickler um die Aktualität des Projektes.
+Probleme und Feature-Wünsche können als [neues GitHub Issue](https://github.com/ard-data/2020-rki-impf-archive/issues/new) eingetragen werden.
+Falls der Scraper mit Veränderungen an den Excel-Tabellen nicht zurecht kommt, erhält Michael automatisch eine Notification auf Handy und versucht, innerhalb von 24 Stunden das Problem zu lösen.
+Ansonsten versuchen wir so neutral wie möglich die RKI-Zahlen in JSON und CSV zu "übersetzen". Ggf. können auch die Daten des RKI bereits fehlerhaft sein.
+
+### Was bedeuten die Datumsangaben?
+
+Momentan unterscheiden wir zwei Datumsangaben:
+- `date` ist das Datum des Tages, auf den sich die Impfzahlen beziehen.
+- `pubDate` bzw. `publication date` sind Datum und Uhrzeit der Veröffentlichung des RKI.
+Zwischen diesen beiden Angaben können bis zu 17 Stunden liegen.
 
 ## Weitere Links
 
