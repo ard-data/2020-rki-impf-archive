@@ -55,10 +55,12 @@ function addObj(data, obj) {
 	let pubDate = data.pubDate;
 	let region = obj.code;
 	addCell('region_'+region, date, 'date', date);
+	addCell('region_'+region, date, 'publication_date', pubDate);
 
 	metrics.forEach(metric => {
 		let key = metric.key;
 		addCell('metric_'+key, date, 'date', date);
+		addCell('metric_'+key, date, 'publication_date', pubDate);
 
 		let value = obj[key];
 		if (!value) value = handleMissingValue(date, obj, key);
@@ -68,7 +70,7 @@ function addObj(data, obj) {
 		addCell('metric_'+key, date, region, value);
 
 		addCell('all', date+'_'+region+'_'+key, 'date', date);
-		addCell('all', date+'_'+region+'_'+key, 'publication date', pubDate);
+		addCell('all', date+'_'+region+'_'+key, 'publication_date', pubDate);
 		addCell('all', date+'_'+region+'_'+key, 'region', region);
 		addCell('all', date+'_'+region+'_'+key, 'metric', key);
 		addCell('all', date+'_'+region+'_'+key, 'value', value);
@@ -76,6 +78,8 @@ function addObj(data, obj) {
 }
 
 function addCell(table, key, col, value) {
+	if ((value === undefined) || (value === null)) return;
+
 	if (!tables.has(table)) tables.set(table, {filename:table, entries:new Map(), cols:new Map()});
 	table = tables.get(table);
 
