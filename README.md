@@ -1,3 +1,5 @@
+<h1 style="color:#ff0000">RKI hat das Format geändert. Parser funktioniert nicht. Wird überarbeitet und sollte in Kürze wieder funktionieren.</h1>
+
 # RKI-Corona-Impf-Daten-Archiv
 
 ## Worum geht es?
