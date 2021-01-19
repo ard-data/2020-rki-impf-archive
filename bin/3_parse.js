@@ -13,6 +13,136 @@ const select = xpath.useNamespaces({a:'http://schemas.openxmlformats.org/spreads
 
 const dirSrc = resolve(__dirname, '../data/0_original/'); // folder with all XLSX files 
 const dirDst = resolve(__dirname, '../data/1_parsed/');  // folder with all resulting JSON files
+
+
+
+let files = fs.readdirSync(dirSrc);
+files.forEach(filename => {
+	if (!/^impfquotenmonitoring-202.*\.xlsx$/.test(filename)) return;
+
+	// full name of source XLSX file and resulting JSON file
+	let fullnameSrc = resolve(dirSrc, filename);
+	let fullnameDst = resolve(dirDst, filename.replace(/\.xlsx$/i, '.json'));
+
+	// ignore, when JSON file already exists
+	if (fs.existsSync(fullnameDst)) return;
+
+	console.log('parse '+filename);
+
+	// parse excel file
+	let excel = parseExcel(fullnameSrc);
+
+	// extract data
+	let data  = extractData(excel);
+
+	// save data structure as JSON
+	fs.writeFileSync(fullnameDst, JSON.stringify(data, null, '\t'));
+})
+
+
+function parseExcel(filename) {
+	const letters = Object.fromEntries(',A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z'.split(',').map((c,i) => [c,i]));
+
+	let excel = {sheets: []}
+
+	// unzip excel file
+	let zip = new AdmZip(filename);
+
+	// find the 4 XML files we need
+	let workbook, sheets = new Map(), strings, match;
+	zip.getEntries().forEach(e => {
+		if (e.entryName.endsWith('xl/workbook.xml')) return workbook = p(e); // get workbook
+		if (match = e.entryName.match(/xl\/worksheets\/sheet(\d+)\.xml$/)) {
+			sheets.set(match[1], {node:p(e)});
+			return
+		}
+		if (e.entryName.endsWith('xl/sharedStrings.xml')) { // get shared strings
+			strings = p(e);
+			strings = select('//a:si', strings).map(string => 
+				select('.//a:t[not(ancestor::a:rPh)]', string).map(node => node.textContent).join('')
+			)
+			return
+		}
+
+		function p(e) {
+			return new DOMParser().parseFromString(e.getData().toString('utf8'));
+		}
+	})
+
+	select('/a:workbook/a:sheets/a:sheet', workbook).forEach(node => {
+		let id = node.getAttribute('r:id').match(/^rId(\d+)$/)[1];
+		let name = node.getAttribute('name');
+		sheets.get(id).name = name;
+	})
+
+	sheets = Array.from(sheets.values());
+	sheets.forEach(sheet => {
+		sheet.cells = extractCells(sheet.node);
+		delete sheet.node;
+	})
+
+
+	console.dir(sheets, {depth:6});
+	process.exit();
+
+	function extractCells(sheet) {
+		let cells = [];
+		select('/a:worksheet/a:sheetData/a:row/a:c', sheet).forEach(node => {
+			let cell = parseCell(node);
+
+			if (!cells[cell.row]) cells[cell.row] = [];
+			cells[cell.row][cell.col] = cell.value;
+		});
+
+		// fix merged cells
+		select('/a:worksheet/a:mergeCells/a:mergeCell', sheet).forEach(node => {
+			let range = node.getAttribute('ref').split(':').map(parseAddress);
+			let colMin = Math.min(range[0].col, range[1].col);
+			let colMax = Math.max(range[0].col, range[1].col);
+			let rowMin = Math.min(range[0].row, range[1].row);
+			let rowMax = Math.max(range[0].row, range[1].row);
+
+			let v = cells[rowMin][colMin];
+			for (let row = rowMin; row <= rowMax; row++) {
+				for (let col = colMin; col <= colMax; col++) {
+					cells[row][col] = v;
+				}
+			}
+		});
+		return cells;
+
+		function parseCell(node) {
+			let {col, row} = parseAddress(node.getAttribute('r'));
+			let value = (select('a:v', node, 1) || {textContent: ''}).textContent;
+			let type = node.getAttribute('t') || '';
+
+			switch (type) {
+				case 's': value = strings[parseInt(value, 10)]; break;
+				case '': value = (value === '') ? null : parseFloat(value); break;
+				default: throw Error('unknown cell type '+type);
+			}
+
+			return {col, row, value};
+		}
+
+		function parseAddress(range) {
+			range = range.split(/([0-9]+)/);
+			return {
+				col: colToInt(range[0])-1,
+				row: parseInt(range[1], 10)-1,
+			}
+
+			function colToInt(col) {
+				return col.trim().split('').reduce((n, c) => n*26 +letters[c], 0);
+			}
+		}
+	}
+}
+
+
+
+
+/*
 const letters = Object.fromEntries(',A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z'.split(',').map((c,i) => [c,i]));
 // Excel column headers
 const _excelColHeaders = [
@@ -215,3 +345,4 @@ function parseDate(filename, sheetName, cells) {
 
 	throw Error('Can not parse date');
 }
+*/
