@@ -195,14 +195,21 @@ function extractData(excel) {
 		sheets[sheet.type] = sheet;
 	})
 
+	// check required sheets
 	if (!sheets.front) throw Error('Frontblatt fehlt');
 	if (!sheets.indikation) throw Error('Indikationsblatt fehlt');
 
+	// extract publication date
 	let pubDate = extractPubDate(sheets.front);
+
+	// extract date up to which the vaccinations are counted
 	let date = extractDate(sheets.front, sheets.indikation.name, pubDate);
+
+	// plausibility check: pubdate shouldn't be more than 17 hours after date
 	let hourDiff = (Date.parse(pubDate+' 24:00') - Date.parse(date))/(3600000);
 	if ((hourDiff <= 0) || (hourDiff > 17)) throw Error(pubDate+', '+date);
 
+	// prepare data object
 	let data = {date, pubDate, states: {
 		BW:{code:'BW',title:'Baden-Württemberg'},
 		BY:{code:'BY',title:'Bayern'},
@@ -223,10 +230,14 @@ function extractData(excel) {
 		DE:{code:'DE',title:'Deutschland'},
 	}};
 
+	// extract indication data
 	extractIndikation(data.states, sheets.indikation, pubDate);
 
+	// If available extract data broken down by manufacturer
 	if (sheets.hersteller) extractHersteller(data.states, sheets.hersteller, pubDate);
+	else if (date > '2021-01-16') throw Error();
 
+	// remove germany as a state
 	data.germany = data.states.DE;
 	delete data.states.DE;
 
@@ -234,6 +245,7 @@ function extractData(excel) {
 
 	function extractPubDate(sheet) {
 		// figure out, what the publication date is
+		// enter the realm where we try to guesstimate with regular expressions where the author has hidden the publication date
 
 		let rows = sheet.cells.map(r => r.join('\t'));
 		let dateString = [rows[2], rows[5]].join('\t');
@@ -261,7 +273,8 @@ function extractData(excel) {
 	}
 
 	function extractDate(sheet, sheetName, pubDate) {
-		// figure out, what the date is
+		// figure out, what the date is up to which the vaccinations are counted
+		// enter the realm where we try to guesstimate with regular expressions where the author has hidden the date
 
 		let rows = sheet.cells.map(r => r.join('\t'));
 		let dateString = rows[4];
@@ -286,28 +299,45 @@ function extractData(excel) {
 	}
 
 	function extractIndikation(data, sheet, pubDate) {
+		// extract data from sheet "indikation"
 		let range = 'C3:J19';
 		if (pubDate < '2021-01-17') range = 'C2:I18';
 		if (pubDate < '2021-01-07') range = 'B2:H18';
 		if (pubDate < '2021-01-04') range = 'B2:G18';
-		range = excel.parseRange(range);
-		try {
-			checkHeaderLeftAndBottom(sheet.cells, range);
-			return extractDataSheet(data, sheet.cells, range);
-		} catch (e) {
-			console.log('for date "'+pubDate+'":');
-			console.log('in sheet "'+sheet.name+'" ('+sheet.type+'):');
-			throw e;
-		}
+		extractDataSheet(data, sheet, range, pubDate);
 	}
 
 	function extractHersteller(data, sheet, pubDate) {
+		// extract data from sheet "hersteller"
 		let range = 'C4:J20';
 		if (pubDate < '2021-01-19') range = 'C4:I20';
-		range = excel.parseRange(range);
+		extractDataSheet(data, sheet, range, pubDate);
+	}
+
+	function extractDataSheet(data, sheet, range) {
 		try {
-			checkHeaderLeftAndBottom(sheet.cells, range);
-			return extractDataSheet(data, sheet.cells, range);
+			range = excel.parseRange(range);
+
+			// make sure if we guessed the size of the data range correctly
+			// we can do that by checking, if the area at the top right/bottom left next to the header area is empty or not
+			let value;
+			if (value = mergeColCells(sheet.cells, range.colMax+1, 0, range.rowMin-1).trim()) throw Error(JSON.stringify(value));
+			if (value = mergeRowCells(sheet.cells, range.rowMax+1, 0, range.colMin-1).trim()) throw Error(JSON.stringify(value));
+
+			// scan data area
+			for (let row = range.rowMin; row <= range.rowMax; row++) {
+				for (let col = range.colMin; col <= range.colMax; col++) {
+					// find state
+					let rowId = parseRowHeader(mergeRowCells(sheet.cells, row, 0, range.colMin-1));
+					// find metric
+					let colId = parseColHeader(mergeColCells(sheet.cells, col, 0, range.rowMin-1));
+
+					// save value
+					if (data[rowId][colId]) throw Error();
+					data[rowId][colId] = sheet.cells[row][col];
+				}
+			}
+			return data;
 		} catch (e) {
 			console.log('for date "'+pubDate+'":');
 			console.log('in sheet "'+sheet.name+'" ('+sheet.type+'):');
@@ -315,29 +345,13 @@ function extractData(excel) {
 		}
 	}
 
-	function checkHeaderLeftAndBottom(cells, range) {
-		let value;
-		if (value = mergeColCells(cells, range.colMax+1, 0, range.rowMin-1).trim()) throw Error(JSON.stringify(value));
-		if (value = mergeRowCells(cells, range.rowMax+1, 0, range.colMin-1).trim()) throw Error(JSON.stringify(value));
-	}
-
-	function extractDataSheet(data, cells, range) {
-		for (let row = range.rowMin; row <= range.rowMax; row++) {
-			for (let col = range.colMin; col <= range.colMax; col++) {
-				let rowId = parseRowHeader(mergeRowCells(cells, row, 0, range.colMin-1));
-				let colId = parseColHeader(mergeColCells(cells, col, 0, range.rowMin-1));
-
-				data[rowId][colId] = cells[row][col];
-			}
-		}
-		return data;
-	}
-
 	function mergeRowCells(cells, row, colMin, colMax) {
+		// join the values of multiple cells in a row
 		return (cells[row] || []).slice(colMin, colMax+1).join('\t');
 	}
 
 	function mergeColCells(cells, col, rowMin, rowMax) {
+		// join the values of multiple cells in a col
 		return (cells || []).slice(rowMin, rowMax+1).map(r => r[col]).join('\t');
 	}
 
