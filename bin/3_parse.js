@@ -167,7 +167,23 @@ function extractData(excel) {
 	let date = extractDate(sheets.front);
 
 	let data = {date, pubDate, states: {
-		BW:{},BY:{},BE:{},BB:{},HB:{},HH:{},HE:{},MV:{},NI:{},NW:{},RP:{},SL:{},SN:{},ST:{},SH:{},TH:{},DE:{}
+		BW:{code:'BW',title:'Baden-Württemberg'},
+		BY:{code:'BY',title:'Bayern'},
+		BE:{code:'BE',title:'Berlin'},
+		BB:{code:'BB',title:'Brandenburg'},
+		HB:{code:'HB',title:'Bremen'},
+		HH:{code:'HH',title:'Hamburg'},
+		HE:{code:'HE',title:'Hessen'},
+		MV:{code:'MV',title:'Mecklenburg-Vorpommern'},
+		NI:{code:'NI',title:'Niedersachsen'},
+		NW:{code:'NW',title:'Nordrhein-Westfalen'},
+		RP:{code:'RP',title:'Rheinland-Pfalz'},
+		SL:{code:'SL',title:'Saarland'},
+		SN:{code:'SN',title:'Sachsen'},
+		ST:{code:'ST',title:'Sachsen-Anhalt'},
+		SH:{code:'SH',title:'Schleswig-Holstein'},
+		TH:{code:'TH',title:'Thüringen'},
+		DE:{code:'DE',title:'Deutschland'},
 	}};
 
 	extractIndikation(data.states, sheets.indikation, pubDate);
