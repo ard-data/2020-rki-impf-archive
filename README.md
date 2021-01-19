@@ -51,8 +51,10 @@ Ansonsten versuchen wir so neutral wie möglich die RKI-Zahlen in JSON und CSV z
 ### Was bedeuten die Datumsangaben?
 
 Momentan unterscheiden wir zwei Datumsangaben:
+
 - `date` ist das Datum des Tages, auf den sich die Impfzahlen beziehen.
 - `pubDate` bzw. `publication date` sind Datum und Uhrzeit der Veröffentlichung des RKI.
+
 Zwischen diesen beiden Angaben können bis zu 17 Stunden liegen.
 
 ## Weitere Links
