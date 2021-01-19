@@ -29,8 +29,8 @@ fs.readdirSync(dirSrc).sort().forEach(filename => {
 
 	let data = JSON.parse(fs.readFileSync(resolve(dirSrc, filename)));
 
-	Object.values(data.states).forEach(o => addObj(data.date, o));
-	addObj(data.date, data.germany);
+	Object.values(data.states).forEach(o => addObj(data, o));
+	addObj(data, data.germany);
 })
 
 Array.from(tables.values()).forEach(table => {
@@ -50,7 +50,9 @@ Array.from(tables.values()).forEach(table => {
 	fs.writeFileSync(fullname, data, 'utf8');
 })
 
-function addObj(date, obj) {
+function addObj(data, obj) {
+	let date = data.date;
+	let pubDate = data.pubDate;
 	let region = obj.code;
 	addCell('region_'+region, date, 'date', date);
 
@@ -66,6 +68,7 @@ function addObj(date, obj) {
 		addCell('metric_'+key, date, region, value);
 
 		addCell('all', date+'_'+region+'_'+key, 'date', date);
+		addCell('all', date+'_'+region+'_'+key, 'publication date', pubDate);
 		addCell('all', date+'_'+region+'_'+key, 'region', region);
 		addCell('all', date+'_'+region+'_'+key, 'metric', key);
 		addCell('all', date+'_'+region+'_'+key, 'value', value);
@@ -143,12 +146,8 @@ function handleMissingValue(date, obj, key) {
 		return value * 10;
 	}
 	
-		console.log(obj);
-		process.exit();
+	throw Error('i don\'t think that i can handle this right now');
 
-	
-	//throw Error();
-	console.log(date, obj.code, key);
 	function sum(keys) {
 		let value = 0;
 		keys.split(',').forEach(key => value += obj[key]);
