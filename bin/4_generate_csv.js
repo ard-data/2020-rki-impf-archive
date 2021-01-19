@@ -11,13 +11,13 @@ const dirSrc = resolve(__dirname, '../data/1_parsed/');
 const dirDst = resolve(__dirname, '../data/2_csv/');
 
 const metrics = [
-	'impfungen_kumulativ',
-	'differenz_zum_vortag',
-	'indikation_nach_alter',
-	'berufliche_indikation',
-	'medizinische_indikation',
-	'pflegeheimbewohnerin',
-	'impfungen_pro_1000_einwohner',
+	{key:'impfungen_kumulativ'},
+	{key:'differenz_zum_vortag'},
+	{key:'indikation_nach_alter'},
+	{key:'berufliche_indikation'},
+	{key:'medizinische_indikation'},
+	{key:'pflegeheimbewohnerin'},
+	{key:'impfungen_pro_1000_einwohner'},
 ];
 const states = 'BW,BY,BE,BB,HB,HH,HE,MV,NI,NW,RP,SL,SN,ST,SH,TH'.split(',');
 
@@ -55,17 +55,20 @@ function addObj(date, obj) {
 	addCell('region_'+region, date, 'date', date);
 
 	metrics.forEach(metric => {
-		addCell('metric_'+metric, date, 'date', date);
+		let key = metric.key;
+		addCell('metric_'+key, date, 'date', date);
 
-		let value = obj[metric];
-		addCell('region_'+region, date, metric, value);
+		let value = obj[key];
+		if (!value) value = handleMissingValue(date, obj, key);
 
-		addCell('metric_'+metric, date, region, value);
+		addCell('region_'+region, date, key, value);
 
-		addCell('all', date+'_'+region+'_'+metric, 'date', date);
-		addCell('all', date+'_'+region+'_'+metric, 'region', region);
-		addCell('all', date+'_'+region+'_'+metric, 'metric', metric);
-		addCell('all', date+'_'+region+'_'+metric, 'value', value);
+		addCell('metric_'+key, date, region, value);
+
+		addCell('all', date+'_'+region+'_'+key, 'date', date);
+		addCell('all', date+'_'+region+'_'+key, 'region', region);
+		addCell('all', date+'_'+region+'_'+key, 'metric', key);
+		addCell('all', date+'_'+region+'_'+key, 'value', value);
 	})
 }
 
@@ -79,6 +82,86 @@ function addCell(table, key, col, value) {
 	if (!table.entries.has(key)) table.entries.set(key, {index:table.entries.size, row:[]});
 	let entry = table.entries.get(key);
 	entry.row[col.index] = value;
+}
+
+function handleMissingValue(date, obj, key) {
+	if (key === 'differenz_zum_vortag') {
+		if (date < '2021-01-12') return null;
+	}
+	if (key === 'medizinische_indikation') {
+		if (date < '2021-01-08') return null;
+		if (obj.code === 'NW') return null;
+		if (obj.code === 'SL') return null;
+	}
+	if (key === 'pflegeheimbewohnerin') {
+		if (date < '2021-01-01') return null;
+	}
+	if (key === 'indikation_nach_alter') {
+		if (obj.code === 'NW') return null;
+		if (obj.code === 'RP' && date < '2021-01-08') return null;
+		if (obj.code === 'MV' && date < '2020-12-29') return null;
+	}
+	throw Error();
+}
+
+function handleMissingValue(date, obj, key) {
+	if (obj[key] === 0) return 0;
+
+	if (key === 'differenz_zum_vortag') {
+		if (date < '2021-01-12') return null;
+	}
+	if (key === 'medizinische_indikation') {
+		if (date < '2021-01-08') return null;
+		if (obj.code === 'NW') return null;
+		if (obj.code === 'SL') return null;
+	}
+	if (key === 'pflegeheimbewohnerin') {
+		if (date < '2021-01-01') return null;
+	}
+	if (key === 'indikation_nach_alter') {
+		if (obj.code === 'NW') return null;
+		if (obj.code === 'RP' && date < '2021-01-08') return null;
+		if (obj.code === 'MV' && date < '2020-12-29') return null;
+	}
+	if (key === 'impfungen_pro_1000_einwohner') {
+		if (date < '2021-01-04') return null;
+	}
+
+	if (key === 'impfungen_kumulativ') return check(sum('impfungen_kumulativ_erstimpfung,impfungen_kumulativ_zweitimpfung'));
+	if (key === 'differenz_zum_vortag') {
+		let value = sum('differenz_zum_vortag_erstimpfung,differenz_zum_vortag_zweitimpfung');
+		if (!value && date === '2021-01-18') return null;
+		return check(value);
+	}
+	if (key === 'indikation_nach_alter') return check(sum('indikation_nach_alter_erstimpfung,indikation_nach_alter_zweitimpfung'));
+	if (key === 'berufliche_indikation') return check(sum('berufliche_indikation_erstimpfung,berufliche_indikation_zweitimpfung'));
+	if (key === 'medizinische_indikation') return check(sum('medizinische_indikation_erstimpfung,medizinische_indikation_zweitimpfung'));
+	if (key === 'pflegeheimbewohnerin') return check(sum('pflegeheimbewohnerin_erstimpfung,pflegeheimbewohnerin_zweitimpfung'));
+	if (key === 'impfungen_pro_1000_einwohner') {
+		let value = sum('impfungen_prozent_erstimpfung,impfungen_prozent_zweitimpfung');
+		if (!value) return null;
+		return value * 10;
+	}
+	
+		console.log(obj);
+		process.exit();
+
+	
+	//throw Error();
+	console.log(date, obj.code, key);
+	function sum(keys) {
+		let value = 0;
+		keys.split(',').forEach(key => value += obj[key]);
+		return value;
+	}
+	function check(value) {
+		if (!value && value !== 0) {
+			console.log(date, obj.code, key);
+			console.log(obj);
+			throw Error('failed check');
+		}
+		return value;
+	}
 }
 
 
