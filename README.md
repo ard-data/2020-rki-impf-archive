@@ -41,13 +41,6 @@ Die Beschreibung der Datenfelder, sowie weitere Hinweise können den Exceldateie
 
 Auf unserer Seite überprüfen wir die Dateien stündlich auf Veränderungen. Laut Aussage des RKIs werden die Daten werktäglich aktualisiert. Somit kann es sein, dass an Sonnabenden oder Sonntagen keine Aktualisierung stattfindet.
 
-### Was mache ich, wenn ich Probleme bei den hier veröffentlichten Daten gefunden habe?
-
-Momentan kümmert sich [Michael Kreil](mailto:rki-scraper@michael-kreil.de) als Entwickler um die Aktualität des Projektes.
-Probleme und Feature-Wünsche können als [neues GitHub Issue](https://github.com/ard-data/2020-rki-impf-archive/issues/new) eingetragen werden.
-Falls der Scraper mit Veränderungen an den Excel-Tabellen nicht zurecht kommt, erhält Michael automatisch eine Notification auf Handy und versucht, innerhalb von 24 Stunden das Problem zu lösen.
-Ansonsten versuchen wir so neutral wie möglich die RKI-Zahlen in JSON und CSV zu "übersetzen". Ggf. können auch die Daten des RKI bereits fehlerhaft sein.
-
 ### Was bedeuten die Datumsangaben?
 
 Momentan unterscheiden wir zwei Datumsangaben:
@@ -56,6 +49,20 @@ Momentan unterscheiden wir zwei Datumsangaben:
 - `pubDate` bzw. `publication date` sind Datum und Uhrzeit der Veröffentlichung des RKI.
 
 Zwischen diesen beiden Angaben können bis zu 17 Stunden liegen.
+
+### Wo finde ich weiter Zahlen?
+
+Das offizielle [Impfdashboard](https://impfdashboard.de/) des RKIs und des BMG bietet einen [Datendownload](https://impfdashboard.de/static/data/germany_vaccinations_timeseries_v2.tsv) an, der jedoch nur Zahlen für ganz Deutschland enthält.
+
+### Was mache ich, wenn ich Probleme bei den hier veröffentlichten Daten gefunden habe?
+
+Wir versuchen so neutral wie möglich die RKI-Zahlen aus den Excel-Tabellen in JSON und CSV zu übersetzen.
+
+Falls der Scraper mit Veränderungen an den Excel-Tabellen nicht zurecht kommen sollte, bekommen wir automatisch eine Notification und versuchen, das Problem so schnell wie möglich zu lösen.
+
+Probleme und Feature-Wünsche können als [neues GitHub Issue](https://github.com/ard-data/2020-rki-impf-archive/issues/new) eingetragen werden.
+
+In Ausnahmefällen kann der Autor dieses Projektes auch per [Mail](mailto:rki-scraper@michael-kreil.de) erreicht werden.
 
 ## Weitere Links
 
