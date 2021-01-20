@@ -210,7 +210,7 @@ function extractData(excel) {
 	if ((hourDiff <= 0) || (hourDiff > 17)) throw Error(pubDate+', '+date);
 
 	// prepare data object
-	let data = {date, pubDate, states: {
+	let data = {date, pubDate, history:[], states: {
 		BW:{code:'BW',title:'Baden-Württemberg'},
 		BY:{code:'BY',title:'Bayern'},
 		BE:{code:'BE',title:'Berlin'},
@@ -236,6 +236,10 @@ function extractData(excel) {
 	// If available extract data broken down by manufacturer
 	if (sheets.hersteller) extractHersteller(data.states, sheets.hersteller, pubDate);
 	else if (date > '2021-01-16') throw Error();
+
+	// If available extract data from the vaccination development table
+	if (sheets.timeline) extractVerlauf(data.history, sheets.timeline, pubDate);
+	else if (date > '2021-01-03') throw Error();
 
 	// remove germany as a state
 	data.germany = data.states.DE;
@@ -337,12 +341,49 @@ function extractData(excel) {
 					data[rowId][colId] = sheet.cells[row][col];
 				}
 			}
-			return data;
+
 		} catch (e) {
 			console.log('for date "'+pubDate+'":');
 			console.log('in sheet "'+sheet.name+'" ('+sheet.type+'):');
 			throw e;
 		}
+	}
+
+	function extractVerlauf(data, sheet, pubDate) {
+		let fields = [];
+		sheet.cells[0].forEach((v,col) => {
+			switch (v.trim()) {
+				case '': return;
+				case 'Datum':
+				case 'Datum der Impfung':
+					fields.push({col, key:'date', val:v => (new Date((v-25568.5)*86400000)).toISOString().slice(0,10) });
+				return;
+				case 'Gesamtzahl Impfungen':
+				case 'Erstimpfung':
+					fields.push({col, key:'erstimpfungen', val:v => v});
+				return;
+				case 'Zweitimpfung':
+					fields.push({col, key:'zweitimpfungen', val:v => v});
+				return;
+				default: throw Error(JSON.stringify(v));
+			}
+		})
+		sheet.cells.slice(1).forEach(row => {
+			switch (row[0]) {
+				case undefined:
+				case null:
+				case 'Impfungen gesamt':
+				return;
+			}
+			if (Number.isFinite(row[0])) {
+				let obj = {};
+				fields.forEach(field => obj[field.key] = field.val(row[field.col]));
+				data.push(obj);
+				return;
+			}
+			console.log(row);
+			throw Error();
+		})
 	}
 
 	function mergeRowCells(cells, row, colMin, colMax) {
