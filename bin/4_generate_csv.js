@@ -42,6 +42,9 @@ Array.from(tables.values()).forEach(table => {
 	data.push(table.cols.map(col => col.text));
 
 	table.entries.forEach(entry => {
+		// ensure correct number of fiels in every row
+		while (entry.row.length < table.cols.length) entry.row.push('');
+		
 		data.push(entry.row);
 	})
 
