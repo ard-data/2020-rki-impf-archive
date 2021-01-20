@@ -37,6 +37,10 @@ Die Beschreibung der Datenfelder, sowie weitere Hinweise können den Exceldateie
 
 ## FAQ
 
+### Wo finde ich weiter Zahlen?
+
+Das offizielle [Impfdashboard](https://impfdashboard.de/) des RKIs und des BMG bietet einen [Datendownload](https://impfdashboard.de/static/data/germany_vaccinations_timeseries_v2.tsv) an. Diese Zahlen sind im Zweifelsfall genauer, da sie auch Nachmeldungen enthalten, also Impfungen, die dem RKI erst mehrere Tage später gemeldet werden. Leider liegen die Zahlen nur für ganz Deutschland vor und sind nicht nach Bundesländern aufgeschlüsselt.
+
 ### Wie oft werden die Daten aktualisiert?
 
 Auf unserer Seite überprüfen wir die Dateien stündlich auf Veränderungen. Laut Aussage des RKIs werden die Daten werktäglich aktualisiert. Somit kann es sein, dass an Sonnabenden oder Sonntagen keine Aktualisierung stattfindet.
@@ -49,10 +53,6 @@ Momentan unterscheiden wir zwei Datumsangaben:
 - `pubDate` bzw. `publication date` sind Datum und Uhrzeit der Veröffentlichung des RKI.
 
 Zwischen diesen beiden Angaben können bis zu 17 Stunden liegen.
-
-### Wo finde ich weiter Zahlen?
-
-Das offizielle [Impfdashboard](https://impfdashboard.de/) des RKIs und des BMG bietet einen [Datendownload](https://impfdashboard.de/static/data/germany_vaccinations_timeseries_v2.tsv) an, der jedoch nur Zahlen für ganz Deutschland enthält.
 
 ### Was mache ich, wenn ich Probleme bei den hier veröffentlichten Daten gefunden habe?
 
