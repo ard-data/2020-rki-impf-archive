@@ -255,10 +255,6 @@ function extractData(excel) {
 		let dateString = [rows[2], rows[5]].join('\t');
 		let match;
 
-		if (match = dateString.match(/^\t*Datenstand: (\d\d)\.(\d\d)\.(\d\d\d\d), (\d\d:\d\d) Uhr\t*$/)) {
-			return match[3]+'-'+match[2]+'-'+match[1]+' '+match[4];
-		}
-
 		if (match = dateString.match(/^\tDatenstand: 28\.12\.2020, 08:00 Uhr\t(44\d\d\d)\t(\d\d:\d\d) Uhr$/)) {
 			let d = (parseFloat(match[1])-25568.5)*86400000;
 			d = (new Date(d)).toISOString();
@@ -268,7 +264,7 @@ function extractData(excel) {
 
 		if (dateString.startsWith('Datenstand: 28.12.2020, 08:00 Uhr\t44200\t12:00 Uhr')) return '2021-01-04 12:00';
 
-		if (match = dateString.match(/^Datenstand: (\d\d)\.(\d\d)\.(\d\d\d\d), (\d\d:\d\d) Uhr\tNaN\tNaN\tNaN\t/)) {
+		if (match = dateString.match(/^\t*Datenstand: (\d\d)\.(\d\d)\.(\d\d\d\d), (\d\d:\d\d) Uhr/)) {
 			return match[3]+'-'+match[2]+'-'+match[1]+' '+match[4];
 		}
 
@@ -292,13 +288,14 @@ function extractData(excel) {
 			return '20'+match[3]+'-'+match[2]+'-'+match[1];
 		}
 
-		if (match = dateString.match(/^Durchgeführte Impfungen bundesweit und nach Bundesland sowie nach STIKO-Indikation bis einschließlich (\d\d)\.(\d\d)\.(\d\d) \(Impfungen_bis_einschl_/)) {
-			return '20'+match[3]+'-'+match[2]+'-'+match[1];
+		if (match = dateString.match(/^Durchgeführte Impfungen bundesweit und nach Bundesland (sowie nach STIKO-Indikation )?bis einschließlich (\d\d)\.(\d\d)\.(\d\d) \(/)) {
+			return '20'+match[4]+'-'+match[3]+'-'+match[2];
 		}
 
 		if (sheetName === 'Presse' && pubDate === '2020-12-29 08:00') return '2020-12-28';
 
-		console.log(JSON.stringify(dateString));
+		console.log('dateString', JSON.stringify(dateString));
+		console.log('sheetName', JSON.stringify(sheetName));
 		throw Error('Can not parse date');
 	}
 
@@ -365,6 +362,9 @@ function extractData(excel) {
 				case 'Zweitimpfung':
 					fields.push({col, key:'zweitimpfungen', val:v => v});
 				return;
+				case 'Gesamtzahl verabreichter Impfstoffdosen':
+					fields.push({col, key:'impfdosen', val:v => v});
+				return;
 				default: throw Error(JSON.stringify(v));
 			}
 		})
@@ -373,6 +373,7 @@ function extractData(excel) {
 				case undefined:
 				case null:
 				case 'Impfungen gesamt':
+				case 'Gesamt':
 				return;
 			}
 			if (Number.isFinite(row[0])) {
