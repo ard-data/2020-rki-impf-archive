@@ -95,26 +95,6 @@ function addCell(table, key, col, value) {
 }
 
 function handleMissingValue(date, obj, key) {
-	if (key === 'differenz_zum_vortag') {
-		if (date < '2021-01-12') return null;
-	}
-	if (key === 'medizinische_indikation') {
-		if (date < '2021-01-08') return null;
-		if (obj.code === 'NW') return null;
-		if (obj.code === 'SL') return null;
-	}
-	if (key === 'pflegeheimbewohnerin') {
-		if (date < '2021-01-01') return null;
-	}
-	if (key === 'indikation_nach_alter') {
-		if (obj.code === 'NW') return null;
-		if (obj.code === 'RP' && date < '2021-01-08') return null;
-		if (obj.code === 'MV' && date < '2020-12-29') return null;
-	}
-	throw Error();
-}
-
-function handleMissingValue(date, obj, key) {
 	if (obj[key] === 0) return 0;
 
 	if (key === 'differenz_zum_vortag') {
@@ -152,7 +132,7 @@ function handleMissingValue(date, obj, key) {
 		if (!value) return null;
 		return value * 10;
 	}
-	
+
 	throw Error('i don\'t think that i can handle this right now');
 
 	function sum(keys) {
@@ -169,7 +149,4 @@ function handleMissingValue(date, obj, key) {
 		return value;
 	}
 }
-
-
-
 
