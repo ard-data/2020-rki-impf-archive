@@ -14,8 +14,6 @@ const select = xpath.useNamespaces({a:'http://schemas.openxmlformats.org/spreads
 const dirSrc = resolve(__dirname, '../data/0_original/'); // folder with all XLSX files 
 const dirDst = resolve(__dirname, '../data/1_parsed/');  // folder with all resulting JSON files
 
-
-
 // scan for files
 
 let files = fs.readdirSync(dirSrc);
@@ -35,7 +33,10 @@ files.forEach(filename => {
 	let excel = parseExcel(fullnameSrc);
 
 	// extract data
-	let data  = extractData(excel);
+	let data = extractData(excel);
+
+	// add filename
+	data.filename = filename;
 
 	// save data structure as JSON
 	fs.writeFileSync(fullnameDst, JSON.stringify(data, null, '\t'));
@@ -238,7 +239,7 @@ function extractData(excel) {
 	else if (date > '2021-01-16') throw Error();
 
 	// If available extract data from the vaccination development table
-	if (sheets.timeline) extractVerlauf(data.history, sheets.timeline, pubDate);
+	if (sheets.timeline) extractVerlauf(data.history, sheets.timeline, date);
 	else if (date > '2021-01-03') throw Error();
 
 	// remove germany as a state
@@ -331,7 +332,8 @@ function extractData(excel) {
 					// find state
 					let rowId = parseRowHeader(mergeRowCells(sheet.cells, row, 0, range.colMin-1));
 					// find metric
-					let colId = parseColHeader(mergeColCells(sheet.cells, col, 0, range.rowMin-1));
+					let colId = parseColHeader(mergeColCells(sheet.cells, col, 0, range.rowMin-1), sheet.type, date);
+					if (!colId) throw Error();
 
 					// save value
 					if (data[rowId][colId]) throw Error();
@@ -340,13 +342,13 @@ function extractData(excel) {
 			}
 
 		} catch (e) {
-			console.log('for date "'+pubDate+'":');
+			console.log('for date "'+date+'":');
 			console.log('in sheet "'+sheet.name+'" ('+sheet.type+'):');
 			throw e;
 		}
 	}
 
-	function extractVerlauf(data, sheet, pubDate) {
+	function extractVerlauf(data, sheet, date) {
 		let fields = [];
 		sheet.cells[0].forEach((v,col) => {
 			switch (v.trim()) {
@@ -356,14 +358,17 @@ function extractData(excel) {
 					fields.push({col, key:'date', val:v => (new Date((v-25568.5)*86400000)).toISOString().slice(0,10) });
 				return;
 				case 'Gesamtzahl Impfungen':
-				case 'Erstimpfung':
-					fields.push({col, key:'erstimpfungen', val:v => v});
-				return;
-				case 'Zweitimpfung':
-					fields.push({col, key:'zweitimpfungen', val:v => v});
+					if (date > '2021-01-16') throw Error();
+					fields.push({col, key:'dosen_kumulativ', val:v => v});
 				return;
 				case 'Gesamtzahl verabreichter Impfstoffdosen':
-					fields.push({col, key:'impfdosen', val:v => v});
+					fields.push({col, key:'dosen_kumulativ', val:v => v});
+				return;
+				case 'Erstimpfung':
+					fields.push({col, key:'personen_erst_kumulativ', val:v => v});
+				return;
+				case 'Zweitimpfung':
+					fields.push({col, key:'personen_voll_kumulativ', val:v => v || 0});
 				return;
 				default: throw Error(JSON.stringify(v));
 			}
@@ -421,47 +426,47 @@ function extractData(excel) {
 
 		throw Error('unknown Row Header '+JSON.stringify(text))
 	}
-	function parseColHeader(text) {
-		text = text.replace(/\*/g,'');
-		switch (text) {
-			case 'Gesamtzahl bisher verabreichter Impfstoffdosen\tGesamtzahl bisher verabreichter Impfstoffdosen\tGesamtzahl bisher verabreichter Impfstoffdosen': return 'impfungen_kumulativ';
-
-			case 'Impfungen kumulativ': return 'impfungen_kumulativ';
-
-			case 'Erstimpfung\tImpfungen kumulativ\tGesamt': return 'impfungen_kumulativ_erstimpfung';
-			case 'Zweitimpfung\tImpfungen kumulativ\tImpfungen kumulativ': return 'impfungen_kumulativ_zweitimpfung';
-
-			case 'Erstimpfung\tImpfungen kumulativ\tBioNTech': return 'impfungen_kumulativ_by_biontech_erstimpfung';
-			case 'Zweitimpfung\tImpfungen kumulativ\tBioNTech': return 'impfungen_kumulativ_by_biontech_zweitimpfung';
-
-			case 'Erstimpfung\tImpfungen kumulativ\tModerna': return 'impfungen_kumulativ_by_moderna_erstimpfung';
-			case 'Zweitimpfung\tImpfungen kumulativ\tModerna': return 'impfungen_kumulativ_by_moderna_zweitimpfung';
-
-			case 'Differenz zum Vortag': return 'differenz_zum_vortag';
-			case 'Erstimpfung\tDifferenz zum Vortag\tDifferenz zum Vortag': return 'differenz_zum_vortag_erstimpfung';
-			case 'Zweitimpfung\tDifferenz zum Vortag\tDifferenz zum Vortag': return 'differenz_zum_vortag_zweitimpfung';
-
-			case 'Impfungen pro 1.000 Einwohner': return 'impfungen_pro_1000_einwohner';
-			case 'Erstimpfung\tImpf-quote, %\tImpf-quote, %': return 'impfungen_prozent_erstimpfung';
-			case 'Zweitimpfung\tImpf-quote, %\tImpf-quote, %': return 'impfungen_prozent_zweitimpfung';
-
-			case 'Indikation nach Alter': return 'indikation_nach_alter';
-			case 'Erstimpfung\tIndikation nach Alter': return 'indikation_nach_alter_erstimpfung';
-			case 'Zweitimpfung\tIndikation nach Alter': return 'indikation_nach_alter_zweitimpfung';
+	function parseColHeader(text, sheetType, date) {
+		let key = (sheetType+'_'+text).toLowerCase().replace(/\*/g,'').replace(/\s+/g,'_');
+		if (date <= '2021-01-16') {
+			switch (key) {
+				case 'indikation_impfungen_kumulativ': return 'dosen_kumulativ';
+				case 'indikation_differenz_zum_vortag': return 'dosen_differenz_zum_vortag';
+				case 'indikation_indikation_nach_alter': return 'indikation_alter_dosen';
+				case 'indikation_berufliche_indikation': return 'indikation_beruf_dosen';
+				case 'indikation_medizinische_indikation': return 'indikation_medizinisch_dosen';
+				case 'indikation_pflegeheim-bewohnerin': return 'indikation_pflegeheim_dosen';
+				case 'indikation_impfungen_pro_1.000_einwohner': return 'impf_inzidenz_erst';
+			}
+		}
+		if (date > '2021-01-16') {
+			switch (key) {
+				case 'indikation_erstimpfung_indikation_nach_alter': return 'indikation_alter_erst';
+				case 'indikation_erstimpfung_berufliche_indikation': return 'indikation_beruf_erst';
+				case 'indikation_erstimpfung_medizinische_indikation': return 'indikation_medizinisch_erst';
+				case 'indikation_erstimpfung_pflegeheim-bewohnerin': return 'indikation_pflegeheim_erst';
 			
-			case 'Berufliche Indikation': return 'berufliche_indikation';
-			case 'Erstimpfung\tBerufliche Indikation': return 'berufliche_indikation_erstimpfung';
-			case 'Zweitimpfung\tBerufliche Indikation': return 'berufliche_indikation_zweitimpfung';
-			
-			case 'Medizinische Indikation': return 'medizinische_indikation';
-			case 'Erstimpfung\tMedizinische Indikation': return 'medizinische_indikation_erstimpfung';
-			case 'Zweitimpfung\tMedizinische Indikation': return 'medizinische_indikation_zweitimpfung';
-			
-			case 'Pflegeheim-bewohnerIn': return 'pflegeheimbewohnerin';
-			case 'Erstimpfung\tPflegeheim-bewohnerIn': return 'pflegeheimbewohnerin_erstimpfung';
-			case 'Zweitimpfung\tPflegeheim-bewohnerIn': return 'pflegeheimbewohnerin_zweitimpfung';
+				case 'indikation_zweitimpfung_indikation_nach_alter': return 'indikation_alter_voll';
+				case 'indikation_zweitimpfung_berufliche_indikation': return 'indikation_beruf_voll';
+				case 'indikation_zweitimpfung_medizinische_indikation': return 'indikation_medizinisch_voll';
+				case 'indikation_zweitimpfung_pflegeheim-bewohnerin': return 'indikation_pflegeheim_voll';
+
+				case 'hersteller_erstimpfung_impfungen_kumulativ_gesamt': return 'personen_erst_kumulativ';
+				case 'hersteller_erstimpfung_impfungen_kumulativ_biontech': return 'dosen_erst_biontech_kumulativ';
+				case 'hersteller_erstimpfung_impfungen_kumulativ_moderna': return 'dosen_erst_moderna_kumulativ';
+				case 'hersteller_erstimpfung_differenz_zum_vortag_differenz_zum_vortag': return 'dosen_erst_differenz_zum_vortag';
+				case 'hersteller_erstimpfung_impf-quote,_%_impf-quote,_%': return 'impf_quote_erst';
+
+				case 'hersteller_zweitimpfung_impfungen_kumulativ_impfungen_kumulativ': return 'personen_voll_kumulativ';
+				case 'hersteller_zweitimpfung_impfungen_kumulativ_biontech': return 'dosen_voll_biontech_kumulativ';
+				case 'hersteller_zweitimpfung_impfungen_kumulativ_moderna': return 'dosen_voll_moderna_kumulativ';
+				case 'hersteller_zweitimpfung_differenz_zum_vortag_differenz_zum_vortag': return 'dosen_voll_differenz_zum_vortag';
+				case 'hersteller_zweitimpfung_impf-quote,_%_impf-quote,_%': return 'impf_quote_voll';
+
+				case 'hersteller_gesamtzahl_bisher_verabreichter_impfstoffdosen_gesamtzahl_bisher_verabreichter_impfstoffdosen_gesamtzahl_bisher_verabreichter_impfstoffdosen': return 'dosen_kumulativ';
+			}
 		}
 
-		throw Error('unknown Col Header '+JSON.stringify(text))
+		throw Error('unknown Col Header '+JSON.stringify(key))
 	}
 }
