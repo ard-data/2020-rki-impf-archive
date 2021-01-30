@@ -53,6 +53,7 @@ fs.readdirSync(dirSrc).sort().forEach(filename => {
 	let data = JSON.parse(fs.readFileSync(fullnameSrc));
 
 	completeData(data, filename);
+	keySorter(data);
 
 	fs.writeFileSync(fullnameDst, JSON.stringify(data, null, '\t'));
 })
@@ -182,5 +183,18 @@ function getAllChecks() {
 			checks.push({key:slug0, calc:obj => slugs.reduce((sum, slug) => sum + obj[slug], 0), debug:slug0+' = '+slugs.join(' + ')});
 		})
 	}
+}
+
+function keySorter(obj) {
+	if (Array.isArray(obj)) return obj.forEach(keySorter);
+	if (typeof obj !== 'object') return;
+	if (!obj) return;
+	let entries = Array.from(Object.entries(obj));
+	entries.sort((a,b) => a[0] < b[0] ? -1 : 1);
+	entries.forEach(entry => {
+		delete obj[entry[0]];
+		obj[entry[0]] = entry[1];
+		keySorter(entry[1]);
+	})
 }
 
