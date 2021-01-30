@@ -42,7 +42,7 @@ const knownProblemHashes = new Set(fs.readFileSync('../config/known_problems.csv
 
 
 
-fs.readdirSync(dirSrc).sort((a,b) => a < b ? 1 : -1).forEach(filename => {
+fs.readdirSync(dirSrc).sort().forEach(filename => {
 	let fullnameSrc = resolve(dirSrc, filename);
 	let fullnameDst = resolve(dirDst, filename);
 
@@ -142,6 +142,8 @@ function completeData(data, filename) {
 			console.log('missingHash: ', missingHash);
 			throw Error('missing value');
 		})
+
+
 
 		function setValue(key, value) {
 			if (entry[key] === value) return;
