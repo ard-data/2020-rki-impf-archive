@@ -14,8 +14,9 @@ const select = xpath.useNamespaces({a:'http://schemas.openxmlformats.org/spreads
 const dirSrc = resolve(__dirname, '../data/0_original/'); // folder with all XLSX files 
 const dirDst = resolve(__dirname, '../data/1_parsed/');  // folder with all resulting JSON files
 
-// scan for files
 
+
+// scan for files
 let files = fs.readdirSync(dirSrc);
 files.forEach(filename => {
 	if (!/^impfquotenmonitoring-202.*\.xlsx$/.test(filename)) return;
@@ -41,6 +42,7 @@ files.forEach(filename => {
 	// save data structure as JSON
 	fs.writeFileSync(fullnameDst, JSON.stringify(data, null, '\t'));
 })
+
 
 
 function parseExcel(filename) {
