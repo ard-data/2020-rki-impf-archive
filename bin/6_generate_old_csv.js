@@ -9,6 +9,7 @@ const {resolve} = require('path');
 
 const dirSrc = resolve(__dirname, '../data/2_completed/');
 const dirDst = resolve(__dirname, '../data/2_csv/');
+fs.mkdirSync(dirDst, {recursive:true});
 
 const metrics = [
 	{old:'impfungen_kumulativ', new:'dosen_kumulativ'},

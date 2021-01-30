@@ -13,6 +13,7 @@ const select = xpath.useNamespaces({a:'http://schemas.openxmlformats.org/spreads
 
 const dirSrc = resolve(__dirname, '../data/0_original/'); // folder with all XLSX files 
 const dirDst = resolve(__dirname, '../data/1_parsed/');  // folder with all resulting JSON files
+fs.mkdirSync(dirDst, {recursive:true});
 
 
 

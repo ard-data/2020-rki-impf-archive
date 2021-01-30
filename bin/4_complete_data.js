@@ -10,6 +10,7 @@ const validator = require('../lib/validator.js');
 
 const dirSrc = resolve(__dirname, '../data/1_parsed/');
 const dirDst = resolve(__dirname, '../data/2_completed/');
+fs.mkdirSync(dirDst, {recursive:true});
 
 const regions = [
 	{code:'BW',pop:11100394},
