@@ -96,9 +96,6 @@ function completeData(data, filename) {
 		checks.forEach(check => {
 			let value = check.calc(entry, r.pop);
 
-			// Wert gibt es schon und ist identisch: Alles in Ordnung
-			if (value === entry[check.key]) return;
-
 			// Wert konnte nicht berechnet werden.
 			if (!Number.isFinite(value)) {
 				console.log('entry', entry);
@@ -111,6 +108,9 @@ function completeData(data, filename) {
 				entry[check.key] = value;
 				return;	
 			}
+
+			// Wert gibt es schon und ist identisch: Alles in Ordnung
+			if (value.toFixed(6) === entry[check.key].toFixed(6)) return;
 
 			// Es gibt eine Differenz zwischen berechnetem und vorhandenem Wert.
 
