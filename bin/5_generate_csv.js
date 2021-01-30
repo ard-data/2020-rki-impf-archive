@@ -4,35 +4,14 @@
 
 const fs = require('fs');
 const {resolve} = require('path');
+const validator = require('../lib/validator.js');
 
 
 
-const dirSrc = resolve(__dirname, '../data/1_parsed/');
-const dirDst = resolve(__dirname, '../data/2_csv/');
-const missingEntries = new Set(fs.readFileSync(resolve(__dirname, 'missing_entries.csv'), 'utf8').split('\n').filter(l => /^impfquotenmonitoring-202/.test(l)));
+const dirSrc = resolve(__dirname, '../data/2_completed/');
+const dirDst = resolve(__dirname, '../data/9_csv_v2/');
 
-const metrics = [
-	'dosen_differenz_zum_vortag',
-	'dosen_kumulativ',
-	'dosen_biontech_kumulativ',
-	'dosen_moderna_kumulativ',
-	'impf_quote_erst',
-	'impf_quote_voll',
-	'indikation_alter_dosen',
-	'indikation_alter_erst',
-	'indikation_alter_voll',
-	'indikation_beruf_dosen',
-	'indikation_beruf_erst',
-	'indikation_beruf_voll',
-	'indikation_medizinisch_dosen',
-	'indikation_medizinisch_erst',
-	'indikation_medizinisch_voll',
-	'indikation_pflegeheim_dosen',
-	'indikation_pflegeheim_erst',
-	'indikation_pflegeheim_voll',
-	'personen_erst_kumulativ',
-	'personen_voll_kumulativ',
-];
+const metrics = validator.parameters.map(p => p.slug);
 const states = 'BW,BY,BE,BB,HB,HH,HE,MV,NI,NW,RP,SL,SN,ST,SH,TH'.split(',');
 
 
@@ -43,7 +22,7 @@ fs.readdirSync(dirSrc).sort().forEach(filename => {
 
 	let data = JSON.parse(fs.readFileSync(resolve(dirSrc, filename)));
 
-	Object.values(data.states).forEach(o => addObj(data, o));
+	states.forEach(state => addObj(data, data.states[state]))
 	addObj(data, data.germany);
 })
 
@@ -75,10 +54,9 @@ function addObj(data, obj) {
 	addCell('region_'+region, date, 'publication_date', pubDate);
 
 	metrics.forEach(metric => {
+
 		addCell('metric_'+metric, date, 'date', date);
 		addCell('metric_'+metric, date, 'publication_date', pubDate);
-
-		checkMissingEntry(obj, metric, region, data.filename);
 
 		let value = obj[metric];
 
@@ -95,7 +73,6 @@ function addObj(data, obj) {
 }
 
 function addCell(table, key, col, value) {
-	if ((value === undefined) || (value === null)) return;
 
 	if (!tables.has(table)) tables.set(table, {filename:table, entries:new Map(), cols:new Map()});
 	table = tables.get(table);
@@ -104,28 +81,9 @@ function addCell(table, key, col, value) {
 	col = table.cols.get(col);
 
 	if (!table.entries.has(key)) table.entries.set(key, {index:table.entries.size, row:[]});
+
+	if ((value === undefined) || (value === null)) return;
+
 	let entry = table.entries.get(key);
 	entry.row[col.index] = value;
 }
-
-function checkMissingEntry(obj, metric, region, filename) {
-	let value = obj[metric];
-	if (Number.isFinite(value)) return false;
-
-	let entry = [filename, region, metric];
-	let key = entry.join(',');
-
-	if (missingEntries.has(key)) return false;
-
-
-	console.log(value+'\t'+key);
-	/*
-		console.log('obj', obj);
-		console.log('date', date);
-		console.log('region', region);
-		console.log('metric', metric);
-		throw Error('missing value');
-	*/
-}
-
-
