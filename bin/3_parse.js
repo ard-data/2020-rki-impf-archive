@@ -289,7 +289,7 @@ function extractData(excel) {
 			return '20'+match[3]+'-'+match[2]+'-'+match[1];
 		}
 
-		if (match = dateString.match(/^Durchgeführte Impfungen bundesweit und nach Bundesland (sowie nach STIKO-Indikation )?bis einschließlich (\d\d)\.(\d\d)\.(\d\d) \(/)) {
+		if (match = dateString.match(/^Durchgeführte Impfungen bundesweit und nach Bundesland (sowie nach STIKO-Indikation )?bis einschließlich ?(\d\d)\.(\d\d)\.(\d\d) \(/)) {
 			return '20'+match[4]+'-'+match[3]+'-'+match[2];
 		}
 
