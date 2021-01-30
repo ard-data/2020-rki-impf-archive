@@ -4,228 +4,229 @@
 	"history": [
 		{
 			"date": "2020-12-27",
-			"erstimpfungen": 23281
+			"dosen_kumulativ": 23281
 		},
 		{
 			"date": "2020-12-28",
-			"erstimpfungen": 18273
+			"dosen_kumulativ": 18273
 		},
 		{
 			"date": "2020-12-29",
-			"erstimpfungen": 40991
+			"dosen_kumulativ": 40991
 		},
 		{
 			"date": "2020-12-30",
-			"erstimpfungen": 55362
+			"dosen_kumulativ": 55362
 		},
 		{
 			"date": "2020-12-31",
-			"erstimpfungen": 36493
+			"dosen_kumulativ": 36493
 		},
 		{
 			"date": "2021-01-01",
-			"erstimpfungen": 30042
+			"dosen_kumulativ": 30042
 		},
 		{
 			"date": "2021-01-02",
-			"erstimpfungen": 43736
+			"dosen_kumulativ": 43736
 		},
 		{
 			"date": "2021-01-03",
-			"erstimpfungen": 24221
+			"dosen_kumulativ": 24221
 		},
 		{
 			"date": "2021-01-04",
-			"erstimpfungen": 44563
+			"dosen_kumulativ": 44563
 		}
 	],
 	"states": {
 		"BW": {
 			"code": "BW",
 			"title": "Baden-Württemberg",
-			"impfungen_kumulativ": 32182,
-			"differenz_zum_vortag": 4758,
-			"impfungen_pro_1000_einwohner": 2.8991763715774415,
-			"indikation_nach_alter": 15546,
-			"berufliche_indikation": 9828,
-			"medizinische_indikation": 1716,
-			"pflegeheimbewohnerin": 5642
+			"dosen_kumulativ": 32182,
+			"dosen_differenz_zum_vortag": 4758,
+			"impf_inzidenz_erst": 2.8991763715774415,
+			"indikation_alter_dosen": 15546,
+			"indikation_beruf_dosen": 9828,
+			"indikation_medizinisch_dosen": 1716,
+			"indikation_pflegeheim_dosen": 5642
 		},
 		"BY": {
 			"code": "BY",
 			"title": "Bayern",
-			"impfungen_kumulativ": 77876,
-			"differenz_zum_vortag": 11618,
-			"impfungen_pro_1000_einwohner": 5.933528420417111,
-			"indikation_nach_alter": 18188,
-			"berufliche_indikation": 38306,
-			"medizinische_indikation": 1554,
-			"pflegeheimbewohnerin": 26500
+			"dosen_kumulativ": 77876,
+			"dosen_differenz_zum_vortag": 11618,
+			"impf_inzidenz_erst": 5.933528420417111,
+			"indikation_alter_dosen": 18188,
+			"indikation_beruf_dosen": 38306,
+			"indikation_medizinisch_dosen": 1554,
+			"indikation_pflegeheim_dosen": 26500
 		},
 		"BE": {
 			"code": "BE",
 			"title": "Berlin",
-			"impfungen_kumulativ": 19389,
-			"differenz_zum_vortag": 1631,
-			"impfungen_pro_1000_einwohner": 5.28383909375987,
-			"indikation_nach_alter": 11608,
-			"berufliche_indikation": 6783,
-			"medizinische_indikation": 105,
-			"pflegeheimbewohnerin": 12575
+			"dosen_kumulativ": 19389,
+			"dosen_differenz_zum_vortag": 1631,
+			"impf_inzidenz_erst": 5.28383909375987,
+			"indikation_alter_dosen": 11608,
+			"indikation_beruf_dosen": 6783,
+			"indikation_medizinisch_dosen": 105,
+			"indikation_pflegeheim_dosen": 12575
 		},
 		"BB": {
 			"code": "BB",
 			"title": "Brandenburg",
-			"impfungen_kumulativ": 3334,
-			"differenz_zum_vortag": 25,
-			"impfungen_pro_1000_einwohner": 1.3220227820926582,
-			"indikation_nach_alter": 227,
-			"berufliche_indikation": 3087,
-			"medizinische_indikation": 20,
-			"pflegeheimbewohnerin": 224
+			"dosen_kumulativ": 3334,
+			"dosen_differenz_zum_vortag": 25,
+			"impf_inzidenz_erst": 1.3220227820926582,
+			"indikation_alter_dosen": 227,
+			"indikation_beruf_dosen": 3087,
+			"indikation_medizinisch_dosen": 20,
+			"indikation_pflegeheim_dosen": 224
 		},
 		"HB": {
 			"code": "HB",
 			"title": "Bremen",
-			"impfungen_kumulativ": 2653,
-			"differenz_zum_vortag": 700,
-			"impfungen_pro_1000_einwohner": 3.894586334156388,
-			"indikation_nach_alter": 942,
-			"berufliche_indikation": 811,
-			"medizinische_indikation": 18,
-			"pflegeheimbewohnerin": 651
+			"dosen_kumulativ": 2653,
+			"dosen_differenz_zum_vortag": 700,
+			"impf_inzidenz_erst": 3.894586334156388,
+			"indikation_alter_dosen": 942,
+			"indikation_beruf_dosen": 811,
+			"indikation_medizinisch_dosen": 18,
+			"indikation_pflegeheim_dosen": 651
 		},
 		"HH": {
 			"code": "HH",
 			"title": "Hamburg",
-			"impfungen_kumulativ": 4756,
-			"differenz_zum_vortag": 616,
-			"impfungen_pro_1000_einwohner": 2.5746337940715214,
-			"indikation_nach_alter": 1704,
-			"berufliche_indikation": 2698,
-			"medizinische_indikation": 0,
-			"pflegeheimbewohnerin": 2060
+			"dosen_kumulativ": 4756,
+			"dosen_differenz_zum_vortag": 616,
+			"impf_inzidenz_erst": 2.5746337940715214,
+			"indikation_alter_dosen": 1704,
+			"indikation_beruf_dosen": 2698,
+			"indikation_medizinisch_dosen": 0,
+			"indikation_pflegeheim_dosen": 2060
 		},
 		"HE": {
 			"code": "HE",
 			"title": "Hessen",
-			"impfungen_kumulativ": 37795,
-			"differenz_zum_vortag": 4390,
-			"impfungen_pro_1000_einwohner": 6.010578745817483,
-			"indikation_nach_alter": 10329,
-			"berufliche_indikation": 22051,
-			"medizinische_indikation": 1492,
-			"pflegeheimbewohnerin": 14561
+			"dosen_kumulativ": 37795,
+			"dosen_differenz_zum_vortag": 4390,
+			"impf_inzidenz_erst": 6.010578745817483,
+			"indikation_alter_dosen": 10329,
+			"indikation_beruf_dosen": 22051,
+			"indikation_medizinisch_dosen": 1492,
+			"indikation_pflegeheim_dosen": 14561
 		},
 		"MV": {
 			"code": "MV",
 			"title": "Mecklenburg-Vorpommern",
-			"impfungen_kumulativ": 13832,
-			"differenz_zum_vortag": 1773,
-			"impfungen_pro_1000_einwohner": 8.601251882612065,
-			"indikation_nach_alter": 242,
-			"berufliche_indikation": 7738,
-			"medizinische_indikation": 29,
-			"pflegeheimbewohnerin": 5968
+			"dosen_kumulativ": 13832,
+			"dosen_differenz_zum_vortag": 1773,
+			"impf_inzidenz_erst": 8.601251882612065,
+			"indikation_alter_dosen": 242,
+			"indikation_beruf_dosen": 7738,
+			"indikation_medizinisch_dosen": 29,
+			"indikation_pflegeheim_dosen": 5968
 		},
 		"NI": {
 			"code": "NI",
 			"title": "Niedersachsen",
-			"impfungen_kumulativ": 8665,
-			"differenz_zum_vortag": 3271,
-			"impfungen_pro_1000_einwohner": 1.083991108896008,
-			"indikation_nach_alter": 1791,
-			"berufliche_indikation": 4198,
-			"medizinische_indikation": 1915,
-			"pflegeheimbewohnerin": 5251
+			"dosen_kumulativ": 8665,
+			"dosen_differenz_zum_vortag": 3271,
+			"impf_inzidenz_erst": 1.083991108896008,
+			"indikation_alter_dosen": 1791,
+			"indikation_beruf_dosen": 4198,
+			"indikation_medizinisch_dosen": 1915,
+			"indikation_pflegeheim_dosen": 5251
 		},
 		"NW": {
 			"code": "NW",
 			"title": "Nordrhein-Westfalen",
-			"impfungen_kumulativ": 62692,
-			"differenz_zum_vortag": 4435,
-			"impfungen_pro_1000_einwohner": 3.4931313321432884,
-			"indikation_nach_alter": 0,
-			"berufliche_indikation": 25744,
-			"medizinische_indikation": 0,
-			"pflegeheimbewohnerin": 36956
+			"dosen_kumulativ": 62692,
+			"dosen_differenz_zum_vortag": 4435,
+			"impf_inzidenz_erst": 3.4931313321432884,
+			"indikation_alter_dosen": 0,
+			"indikation_beruf_dosen": 25744,
+			"indikation_medizinisch_dosen": 0,
+			"indikation_pflegeheim_dosen": 36956
 		},
 		"RP": {
 			"code": "RP",
 			"title": "Rheinland-Pfalz",
-			"impfungen_kumulativ": 9891,
-			"differenz_zum_vortag": 1609,
-			"impfungen_pro_1000_einwohner": 2.4160318405199144,
-			"indikation_nach_alter": 0,
-			"berufliche_indikation": 5435,
-			"medizinische_indikation": 0,
-			"pflegeheimbewohnerin": 4456
+			"dosen_kumulativ": 9891,
+			"dosen_differenz_zum_vortag": 1609,
+			"impf_inzidenz_erst": 2.4160318405199144,
+			"indikation_alter_dosen": 0,
+			"indikation_beruf_dosen": 5435,
+			"indikation_medizinisch_dosen": 0,
+			"indikation_pflegeheim_dosen": 4456
 		},
 		"SL": {
 			"code": "SL",
 			"title": "Saarland",
-			"impfungen_kumulativ": 4836,
-			"differenz_zum_vortag": 687,
-			"impfungen_pro_1000_einwohner": 4.9002570709716515,
-			"indikation_nach_alter": 3655,
-			"berufliche_indikation": 584,
-			"medizinische_indikation": 0,
-			"pflegeheimbewohnerin": 1823
+			"dosen_kumulativ": 4836,
+			"dosen_differenz_zum_vortag": 687,
+			"impf_inzidenz_erst": 4.9002570709716515,
+			"indikation_alter_dosen": 3655,
+			"indikation_beruf_dosen": 584,
+			"indikation_medizinisch_dosen": 0,
+			"indikation_pflegeheim_dosen": 1823
 		},
 		"SN": {
 			"code": "SN",
 			"title": "Sachsen",
-			"impfungen_kumulativ": 7740,
-			"differenz_zum_vortag": 2874,
-			"impfungen_pro_1000_einwohner": 1.9007993917441948,
-			"indikation_nach_alter": 662,
-			"berufliche_indikation": 6354,
-			"medizinische_indikation": 1,
-			"pflegeheimbewohnerin": 1385
+			"dosen_kumulativ": 7740,
+			"dosen_differenz_zum_vortag": 2874,
+			"impf_inzidenz_erst": 1.9007993917441948,
+			"indikation_alter_dosen": 662,
+			"indikation_beruf_dosen": 6354,
+			"indikation_medizinisch_dosen": 1,
+			"indikation_pflegeheim_dosen": 1385
 		},
 		"ST": {
 			"code": "ST",
 			"title": "Sachsen-Anhalt",
-			"impfungen_kumulativ": 15628,
-			"differenz_zum_vortag": 2262,
-			"impfungen_pro_1000_einwohner": 7.120524954186794,
-			"indikation_nach_alter": 4967,
-			"berufliche_indikation": 7523,
-			"medizinische_indikation": 649,
-			"pflegeheimbewohnerin": 7804
+			"dosen_kumulativ": 15628,
+			"dosen_differenz_zum_vortag": 2262,
+			"impf_inzidenz_erst": 7.120524954186794,
+			"indikation_alter_dosen": 4967,
+			"indikation_beruf_dosen": 7523,
+			"indikation_medizinisch_dosen": 649,
+			"indikation_pflegeheim_dosen": 7804
 		},
 		"SH": {
 			"code": "SH",
 			"title": "Schleswig-Holstein",
-			"impfungen_kumulativ": 12978,
-			"differenz_zum_vortag": 3421,
-			"impfungen_pro_1000_einwohner": 4.469357625406669,
-			"indikation_nach_alter": 3427,
-			"berufliche_indikation": 6611,
-			"medizinische_indikation": 2716,
-			"pflegeheimbewohnerin": 5616
+			"dosen_kumulativ": 12978,
+			"dosen_differenz_zum_vortag": 3421,
+			"impf_inzidenz_erst": 4.469357625406669,
+			"indikation_alter_dosen": 3427,
+			"indikation_beruf_dosen": 6611,
+			"indikation_medizinisch_dosen": 2716,
+			"indikation_pflegeheim_dosen": 5616
 		},
 		"TH": {
 			"code": "TH",
 			"title": "Thüringen",
-			"impfungen_kumulativ": 2715,
-			"differenz_zum_vortag": 493,
-			"impfungen_pro_1000_einwohner": 1.2726296043176597,
-			"indikation_nach_alter": 446,
-			"berufliche_indikation": 1976,
-			"medizinische_indikation": 1,
-			"pflegeheimbewohnerin": 413
+			"dosen_kumulativ": 2715,
+			"dosen_differenz_zum_vortag": 493,
+			"impf_inzidenz_erst": 1.2726296043176597,
+			"indikation_alter_dosen": 446,
+			"indikation_beruf_dosen": 1976,
+			"indikation_medizinisch_dosen": 1,
+			"indikation_pflegeheim_dosen": 413
 		}
 	},
 	"germany": {
 		"code": "DE",
 		"title": "Deutschland",
-		"impfungen_kumulativ": 316962,
-		"differenz_zum_vortag": 44563,
-		"impfungen_pro_1000_einwohner": 3.8111643010627176,
-		"indikation_nach_alter": 73734,
-		"berufliche_indikation": 149727,
-		"medizinische_indikation": 10216,
-		"pflegeheimbewohnerin": 131885
-	}
+		"dosen_kumulativ": 316962,
+		"dosen_differenz_zum_vortag": 44563,
+		"impf_inzidenz_erst": 3.8111643010627176,
+		"indikation_alter_dosen": 73734,
+		"indikation_beruf_dosen": 149727,
+		"indikation_medizinisch_dosen": 10216,
+		"indikation_pflegeheim_dosen": 131885
+	},
+	"filename": "impfquotenmonitoring-2021-01-05-15-40-04.xlsx"
 }
