@@ -161,12 +161,12 @@ function getAllChecks() {
 	generateSum('hersteller','dosis');
 	generateSum('dosis','indikation');
 
-	checks.push({key:'impfquote_dosen',    calc:(obj,pop) =>  100*obj.dosen_kumulativ/pop,         debug:'impfquote_dosen = 100*dosen_kumulativ/pop'});
-	checks.push({key:'impfquote_erst',     calc:(obj,pop) =>  100*obj.personen_erst_kumulativ/pop, debug:'impfquote_erst = 100*personen_erst_kumulativ/pop'});
-	checks.push({key:'impfquote_voll',     calc:(obj,pop) =>  100*obj.personen_voll_kumulativ/pop, debug:'impfquote_voll = 100*personen_voll_kumulativ/pop'});
-	checks.push({key:'impfinzidenz_dosen', calc:(obj,pop) => 1000*obj.dosen_kumulativ/pop,         debug:'impfinzidenz_dosen = 1000*dosen_kumulativ/pop'});
-	checks.push({key:'impfinzidenz_erst',  calc:(obj,pop) => 1000*obj.personen_erst_kumulativ/pop, debug:'impfinzidenz_erst = 1000*personen_erst_kumulativ/pop'});
-	checks.push({key:'impfinzidenz_voll',  calc:(obj,pop) => 1000*obj.personen_voll_kumulativ/pop, debug:'impfinzidenz_voll = 1000*personen_voll_kumulativ/pop'});
+	checks.push({key:'impf_quote_dosen',    calc:(obj,pop) =>  100*obj.dosen_kumulativ        /pop, debug:'impf_quote_dosen = 100*dosen_kumulativ/pop'});
+	checks.push({key:'impf_quote_erst',     calc:(obj,pop) =>  100*obj.personen_erst_kumulativ/pop, debug:'impf_quote_erst = 100*personen_erst_kumulativ/pop'});
+	checks.push({key:'impf_quote_voll',     calc:(obj,pop) =>  100*obj.personen_voll_kumulativ/pop, debug:'impf_quote_voll = 100*personen_voll_kumulativ/pop'});
+	checks.push({key:'impf_inzidenz_dosen', calc:(obj,pop) => 1000*obj.dosen_kumulativ        /pop, debug:'impf_inzidenz_dosen = 1000*dosen_kumulativ/pop'});
+	checks.push({key:'impf_inzidenz_erst',  calc:(obj,pop) => 1000*obj.personen_erst_kumulativ/pop, debug:'impf_inzidenz_erst = 1000*personen_erst_kumulativ/pop'});
+	checks.push({key:'impf_inzidenz_voll',  calc:(obj,pop) => 1000*obj.personen_voll_kumulativ/pop, debug:'impf_inzidenz_voll = 1000*personen_voll_kumulativ/pop'});
 
 	return checks;
 
