@@ -4,7 +4,7 @@
 
 const fs = require('fs');
 const {resolve} = require('path');
-const validator = require('../lib/validator.js');
+const dataDefinition = require('../config/data_definition.js');
 
 
 
@@ -15,7 +15,7 @@ const states = 'BW,BY,BE,BB,HB,HH,HE,MV,NI,NW,RP,SL,SN,ST,SH,TH'.split(',');
 
 
 
-const keys = validator.parameters.map(p => p.slug);
+const keys = dataDefinition.parameters.map(p => p.slug);
 
 let result = new Map();
 fs.readdirSync(dirSrc).sort().forEach(filename => {

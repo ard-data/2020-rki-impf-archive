@@ -4,7 +4,7 @@
 
 const fs = require('fs');
 const {resolve} = require('path');
-const validator = require('../lib/validator.js');
+const dataDefinition = require('../config/data_definition.js');
 
 
 
@@ -32,8 +32,8 @@ const regions = [
 	{code:'DE',pop:83166711},
 ]
 
-const dimLookup = Object.fromEntries(validator.dimensions.map(d => [d.name, d.elements])); Object.freeze(dimLookup);
-const cell0Def = validator.dimensions.map(d => ({key:d.name, value:d.elements[0]}));
+const dimLookup = Object.fromEntries(dataDefinition.dimensions.map(d => [d.name, d.elements])); Object.freeze(dimLookup);
+const cell0Def = dataDefinition.dimensions.map(d => ({key:d.name, value:d.elements[0]}));
 const checks = getAllChecks();
 
 const knownMissingHashes = new Set(fs.readFileSync('../config/known_missing_entries.csv', 'utf8').split('\n').filter(l => l.startsWith('impf')));
@@ -128,7 +128,7 @@ function completeData(data, filename) {
 		})
 
 		// check values
-		validator.parameters.forEach(parameter => {
+		dataDefinition.parameters.forEach(parameter => {
 			if (parameter.cell.kumulativ === 'differenz') return; // check nicht notwendig
 
 			let slug = parameter.slug;
@@ -176,10 +176,10 @@ function getAllChecks() {
 			let cell = {};
 			cell0Def.forEach(e => cell[e.key] = e.value);
 			cell[forKey] = forValue;
-			let slug0 = validator.getSlug(cell);
+			let slug0 = dataDefinition.getSlug(cell);
 			let slugs = dimLookup[sumKey].slice(1).map(sumValue => {
 				cell[sumKey] = sumValue;
-				return validator.getSlug(cell);
+				return dataDefinition.getSlug(cell);
 			})
 			checks.push({key:slug0, calc:obj => slugs.reduce((sum, slug) => sum + obj[slug], 0), debug:slug0+' = '+slugs.join(' + ')});
 		})
