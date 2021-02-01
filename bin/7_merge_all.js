@@ -41,6 +41,10 @@ keys.unshift('region');
 keys.unshift('pubDate');
 keys.unshift('date');
 tables = Array.from(tables.values());
+tables.sort((a,b) => {
+	if (a.pubDate === b.pubDate) return a.region < b.region ? -1 : 1;
+	return a.pubDate < b.pubDate ? -1 : 1
+});
 tables = tables.map(table => keys.map(key => table[key]));
 tables.unshift(keys);
 tables = tables.map(table => JSON.stringify(table));
