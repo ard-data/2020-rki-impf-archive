@@ -26,8 +26,6 @@ signalUpdate=42
 	echo "ERROR happend $error"
 }
 
-sleep 3
-
 git add ../data/
 git commit -m "automatic data update" || exit $signalNoUpdate
 git push
