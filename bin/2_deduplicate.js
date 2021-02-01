@@ -13,7 +13,7 @@ const dirSrc = resolve(__dirname, '../data/0_original/');
 
 
 let files = [];
-fs.readdirSync(dirSrc).forEach(filename => {
+fs.readdirSync(dirSrc).sort().forEach(filename => {
 	if (!/impfquotenmonitoring-202.*\.xlsx/.test(filename)) return;
 
 	filename = resolve(dirSrc, filename);
