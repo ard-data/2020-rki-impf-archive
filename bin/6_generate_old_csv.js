@@ -4,6 +4,7 @@
 
 const fs = require('fs');
 const {resolve} = require('path');
+const dataDefinition = require('../config/data_definition.js');
 
 
 
@@ -20,7 +21,7 @@ const metrics = [
 	{old:'medizinische_indikation', new:'indikation_medizinisch_dosen'},
 	{old:'impfungen_pro_1000_einwohner', new:'impf_inzidenz_dosen'},
 ];
-const states = 'BW,BY,BE,BB,HB,HH,HE,MV,NI,NW,RP,SL,SN,ST,SH,TH'.split(',');
+const states = dataDefinition.regions.map(r => r.code).filter(r => r !== 'DE');
 
 
 

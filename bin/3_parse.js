@@ -8,6 +8,7 @@ const AdmZip = require('adm-zip');
 const { DOMParser } = require('xmldom');
 const xpath = require('xpath');
 const select = xpath.useNamespaces({a:'http://schemas.openxmlformats.org/spreadsheetml/2006/main'});
+const dataDefinition = require('../config/data_definition.js');
 
 
 
@@ -214,25 +215,10 @@ function extractData(excel) {
 	if ((hourDiff <= 0) || (hourDiff > 17)) throw Error(pubDate+', '+date);
 
 	// prepare data object
-	let data = {date, pubDate, history:[], states: {
-		BW:{code:'BW',title:'Baden-Württemberg'},
-		BY:{code:'BY',title:'Bayern'},
-		BE:{code:'BE',title:'Berlin'},
-		BB:{code:'BB',title:'Brandenburg'},
-		HB:{code:'HB',title:'Bremen'},
-		HH:{code:'HH',title:'Hamburg'},
-		HE:{code:'HE',title:'Hessen'},
-		MV:{code:'MV',title:'Mecklenburg-Vorpommern'},
-		NI:{code:'NI',title:'Niedersachsen'},
-		NW:{code:'NW',title:'Nordrhein-Westfalen'},
-		RP:{code:'RP',title:'Rheinland-Pfalz'},
-		SL:{code:'SL',title:'Saarland'},
-		SN:{code:'SN',title:'Sachsen'},
-		ST:{code:'ST',title:'Sachsen-Anhalt'},
-		SH:{code:'SH',title:'Schleswig-Holstein'},
-		TH:{code:'TH',title:'Thüringen'},
-		DE:{code:'DE',title:'Deutschland'},
-	}};
+	let data = {
+		date, pubDate, history:[],
+		states: Object.fromEntries(dataDefinition.regions.map(r => [r.code, {code:r.code,title:r.title}])),
+	}
 
 	// extract indication data
 	extractIndikation(data.states, sheets.indikation, pubDate);

@@ -12,25 +12,7 @@ const dirSrc = resolve(__dirname, '../data/1_parsed/');
 const dirDst = resolve(__dirname, '../data/2_completed/');
 fs.mkdirSync(dirDst, {recursive:true});
 
-const regions = [
-	{code:'BW',pop:11100394},
-	{code:'BY',pop:13124737},
-	{code:'BE',pop: 3669491},
-	{code:'BB',pop: 2521893},
-	{code:'HB',pop:  681202},
-	{code:'HH',pop: 1847253},
-	{code:'HE',pop: 6288080},
-	{code:'MV',pop: 1608138},
-	{code:'NI',pop: 7993608},
-	{code:'NW',pop:17947221},
-	{code:'RP',pop: 4093903},
-	{code:'SL',pop:  986887},
-	{code:'SN',pop: 4071971},
-	{code:'ST',pop: 2194782},
-	{code:'SH',pop: 2903773},
-	{code:'TH',pop: 2133378},
-	{code:'DE',pop:83166711},
-]
+const regions = dataDefinition.regions;
 
 const dimLookup = Object.fromEntries(dataDefinition.dimensions.map(d => [d.name, d.elements])); Object.freeze(dimLookup);
 const cell0Def = dataDefinition.dimensions.map(d => ({key:d.name, value:d.elements[0]}));

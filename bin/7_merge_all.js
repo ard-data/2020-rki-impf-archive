@@ -11,7 +11,7 @@ const dataDefinition = require('../config/data_definition.js');
 const dirSrc = resolve(__dirname, '../data/2_completed/');
 const dirDst = resolve(__dirname, '../web/');
 
-const states = 'BW,BY,BE,BB,HB,HH,HE,MV,NI,NW,RP,SL,SN,ST,SH,TH'.split(',');
+const states = dataDefinition.regions.map(r => r.code).filter(r => r !== 'DE');
 
 
 
