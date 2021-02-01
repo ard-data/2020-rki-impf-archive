@@ -8,6 +8,8 @@ Leider wird diese Excel-Tabelle täglich überschrieben, so dass keine historisc
 
 Deshalb sammeln wir die alte Datei-Versionen und stellen sie in diesem GitHub-Repo zur Verfügung. Per cronjob versuchen wir das Archiv täglich aktuell zu halten. Als Feature bereinigen wir sogar die Daten und bieten sie als CSV an.
 
+Wer auf die Daten täglich angewiesen ist und bei Problemen benachrichtigt werden möchte, kann sich [hier auf der Mailingliste anmelden](https://lists.riseup.net/www/subscribe/ard_rki_data), um bei Änderungen/Problemen direkt eine Mail zu bekommen.
+
 
 
 ## Aufbau
@@ -103,13 +105,15 @@ Zwischen diesen beiden Angaben können bis zu 17 Stunden liegen.
 
 ### Was mache ich, wenn ich Probleme bei den hier veröffentlichten Daten gefunden habe?
 
-Wir versuchen so neutral wie möglich die RKI-Zahlen aus den Excel-Tabellen in JSON und CSV zu übersetzen.
+Wir versuchen so neutral wie möglich die RKI-Zahlen aus den Excel-Tabellen in JSON und CSV zu übersetzen, und nur offensichtliche Fehler zu korrigieren.
 
 Falls der Scraper mit Veränderungen an den Excel-Tabellen nicht zurecht kommen oder auf Datenfehler stoßen sollte, bekommen wir automatisch eine Notification und versuchen das Problem so schnell wie möglich zu beheben.
 
 Probleme und Feature-Wünsche können als [neues GitHub Issue](https://github.com/ard-data/2020-rki-impf-archive/issues/new) eingetragen werden.
 
-In Ausnahmefällen kann der Autor dieses Projektes auch per [Mail](mailto:rki-scraper@michael-kreil.de) erreicht werden.
+Wer bei Änderungen oder Problemen direkt per Mail benachrichtigt werden möchte, kann sich [hier auf der Mailingliste anmelden](https://lists.riseup.net/www/subscribe/ard_rki_data).
+
+In Notfällen kann der Autor dieses Projektes auch per [Mail](mailto:rki-scraper@michael-kreil.de) erreicht werden.
 
 
 

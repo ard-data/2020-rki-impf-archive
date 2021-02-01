@@ -56,6 +56,8 @@ function completeData(data, filename) {
 
 
 		// Setze fehlende Werte
+		// Wenn man einen Wert setzt, der bereits einen anderen Wert hat,
+		// bricht das Script mit einem Fehler ab.
 		if (pubDate <= '2021-01-16') {
 			setValue('personen_voll_kumulativ', 0);
 			setValue('personen_erst_kumulativ', entry.dosen_kumulativ);
