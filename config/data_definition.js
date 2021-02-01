@@ -12,7 +12,7 @@ const dimensions = [
 	{name: 'kumulativ', elements:['kumulativ', 'differenz']},
 	{name: 'quote', elements:['absolut','impf_quote','impf_inzidenz']},
 ]
-const cubes = [
+const slices = [
 	{dimensions:new Set(['dosis','hersteller'])},
 	{dimensions:new Set(['dosis','indikation'])},
 	{dimensions:new Set(['dosis','quote'])},
@@ -45,13 +45,13 @@ function getAllParameters() {
 	})
 
 	parameters = parameters.filter(obj => {
-		obj.cubes = cubes.filter(cube => {
+		obj.slices = slices.filter(slice => {
 			return dimensions.every(dimension => {
-				if (cube.dimensions.has(dimension.name)) return true;
+				if (slice.dimensions.has(dimension.name)) return true;
 				return (obj[dimension.name] === dimension.elements[0]);
 			})
 		})
-		return obj.cubes.length > 0;
+		return obj.slices.length > 0;
 	})
 
 	parameters = parameters.map(cell => {
