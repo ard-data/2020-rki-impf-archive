@@ -140,10 +140,11 @@ function completeData(data, filename) {
 function getAllChecks() {
 	let checks = [];
 
-	generateSum('dosis','hersteller');
-	generateSum('hersteller','dosis');
-	generateSum('dosis','indikation');
+	generateSum('dosis','hersteller'); // Dosen = Erstimpfung + Zweitimpfung … für "alles" und jeden Hersteller
+	generateSum('hersteller','dosis'); // Impfungen = Impfungen BionTech + Impfungen Moderna … für Dosen, Erst- und Zweitimpfung.
+	generateSum('dosis','indikation'); // Dosen = Erstimpfung + Zweitimpfung … für "alles" und jede Indikation
 
+	// Jetzt noch Checks, um Impfquote und Impfinzidenz zu berechnen:
 	checks.push({key:'impf_quote_dosen',    calc:(obj,pop) =>  100*obj.dosen_kumulativ        /pop, debug:'impf_quote_dosen = 100*dosen_kumulativ/pop'});
 	checks.push({key:'impf_quote_erst',     calc:(obj,pop) =>  100*obj.personen_erst_kumulativ/pop, debug:'impf_quote_erst = 100*personen_erst_kumulativ/pop'});
 	checks.push({key:'impf_quote_voll',     calc:(obj,pop) =>  100*obj.personen_voll_kumulativ/pop, debug:'impf_quote_voll = 100*personen_voll_kumulativ/pop'});
