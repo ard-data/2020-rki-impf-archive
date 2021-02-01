@@ -12,7 +12,7 @@ Deshalb sammeln wir die alte Datei-Versionen und stellen sie in diesem GitHub-Re
 
 ## Aufbau
 
-### Verzeichnis `/data/`
+### Verzeichnis `data/`
 
 - Die rohen Excel-Dateien werden unter `data/0_original` gespeichert.
 - Die gesäuberten Daten landen als JSON unter `data/1_parsed`.
@@ -27,7 +27,7 @@ Deshalb sammeln wir die alte Datei-Versionen und stellen sie in diesem GitHub-Re
 
 Per Cronjob werden die Daten stündlich beim RKI angefragt. Wenn sie beim RKI aktualisiert wurden (also sich der Hash der Exceldatei verändert), wird die neue Datei runtergeladen nach `0_original`, geparst nach `1_parsed`, gesäubert nach `2_completed` und die entsprechenden CSV-Dateien aktualisiert.
 
-### Verzeichnis `/bin/`
+### Verzeichnis `bin/`
 
 - `bin/1_download.js` lädt die aktuelle Excel-Tabelle runter.
 - `bin/2_deduplicate.js` löscht doppelte Dateien, also wenn die neueste Datei den gleichen SHA256-Hash hat, wie die Datei zuvor.
@@ -38,7 +38,19 @@ Per Cronjob werden die Daten stündlich beim RKI angefragt. Wenn sie beim RKI ak
 - `bin/7_merge_all.js` generiert ein großes JSON, dass für eine grafische Vorschau verwendet werden soll.
 - `bin/cronjob.sh` ist das stündliche cronjob-Script.
 
+### Verzeichnis `config/`
 
+- `config/data_definition.js` enthält eine abstrakte Beschreibung der Datenstruktur. Sie definiert:
+	- 5 Dimensionen:
+		- Dosen/Erst-/Zweitimpfung
+		- Alle Hersteller/Biontech/Moderna/…
+		- Indikation nach Alter/Beruf/…
+		- Wert ist kumulativ/Differenz zum Vortag
+		- Wert ist absolut/Prozent der Bevölkerung/Promille.
+	- 4 Slices innerhalb des Datenwürfels, deren Werte durch das RKI abgedeckt werden.
+	- Eine Funktion `getSlug()`, die eine Adresse innerhalb des Datenwürfels einem eineindeutigen Feldnamen zuordnet.
+- `config/known_missing_entries.csv` enthält eine Liste von Werten, die in den RKI-Veröffentlichungen nicht angegeben wurden.
+- `config/known_problems.csv` enthält eine Liste von Werten, von denen wir wissen, dass die Summen in den RKI-Veröffentlichungen nicht aufgehen.
 
 ## Datenbeschreibung
 
