@@ -9,6 +9,7 @@ const validator = require('../lib/validator.js');
 
 
 const dirSrc = resolve(__dirname, '../data/2_completed/');
+const dirDst = resolve(__dirname, '../web/');
 
 const states = 'BW,BY,BE,BB,HB,HH,HE,MV,NI,NW,RP,SL,SN,ST,SH,TH'.split(',');
 
@@ -16,7 +17,7 @@ const states = 'BW,BY,BE,BB,HB,HH,HE,MV,NI,NW,RP,SL,SN,ST,SH,TH'.split(',');
 
 const keys = validator.parameters.map(p => p.slug);
 
-let tables = new Map();
+let result = new Map();
 fs.readdirSync(dirSrc).sort().forEach(filename => {
 	if (!/impfquotenmonitoring-202.*\.json/.test(filename)) return;
 
@@ -27,8 +28,8 @@ fs.readdirSync(dirSrc).sort().forEach(filename => {
 
 	function addObj(obj, region) {
 		let key = [data.date, region].join('_');
-		if (!tables.has(key)) tables.set(key, {});
-		let table = tables.get(key);
+		if (!result.has(key)) result.set(key, {});
+		let table = result.get(key);
 
 		keys.forEach(key => table[key] = obj[key]);
 		table.date = data.date;
@@ -40,15 +41,14 @@ fs.readdirSync(dirSrc).sort().forEach(filename => {
 keys.unshift('region');
 keys.unshift('pubDate');
 keys.unshift('date');
-tables = Array.from(tables.values());
-tables.sort((a,b) => {
+result = Array.from(result.values());
+result.sort((a,b) => {
 	if (a.pubDate === b.pubDate) return a.region < b.region ? -1 : 1;
 	return a.pubDate < b.pubDate ? -1 : 1
 });
-tables = tables.map(table => keys.map(key => table[key]));
-tables.unshift(keys);
-tables = tables.map(table => JSON.stringify(table));
-tables = tables.join('\n');
+result = result.map(table => keys.map(key => table[key]));
+result.unshift(keys);
+result = result.map(table => JSON.stringify(table));
+result = '[\n'+result.join(',\n')+'\n]\n';
 
-	console.log(tables.length);
-
+fs.writeFileSync(resolve(dirDst, 'table.json'), result, 'utf8');
