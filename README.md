@@ -8,6 +8,8 @@ Leider wird diese Excel-Tabelle täglich überschrieben, so dass keine historisc
 
 Deshalb sammeln wir die alte Datei-Versionen und stellen sie in diesem GitHub-Repo zur Verfügung. Per cronjob versuchen wir das Archiv täglich aktuell zu halten. Als Feature bereinigen wir sogar die Daten und bieten sie als CSV an.
 
+
+
 ## Aufbau
 
 ### Verzeichnis `/data/`
@@ -25,7 +27,28 @@ Deshalb sammeln wir die alte Datei-Versionen und stellen sie in diesem GitHub-Re
 
 Per Cronjob werden die Daten stündlich beim RKI angefragt. Wenn sie beim RKI aktualisiert wurden (also sich der Hash der Exceldatei verändert), wird die neue Datei runtergeladen nach `0_original`, geparst nach `1_parsed`, gesäubert nach `2_completed` und die entsprechenden CSV-Dateien aktualisiert.
 
-### Datenvervollständigung
+### Verzeichnis `/bin/`
+
+- `bin/1_download.js` lädt die aktuelle Excel-Tabelle runter.
+- `bin/2_deduplicate.js` löscht doppelte Dateien, also wenn die neueste Datei den gleichen SHA256-Hash hat, wie die Datei zuvor.
+- `bin/3_parse.js` parsed die Exceldateien und macht daraus saubere und einheitliche JSONs.
+- `bin/4_complete_data.js` versucht die Daten zu überprüfen und ggf. fehlende Werte zu ergänzen. Siehe auch: [Datenvervollständigung](#datenvervollständigung)
+- `bin/5_generate_csv.js` fügt alle JSONs zusammen und generiert CSV-Dateien.
+- `bin/6_generate_old_csv.js` generiert das veraltete CSV-Format.
+- `bin/7_merge_all.js` generiert ein großes JSON, dass für eine grafische Vorschau verwendet werden soll.
+- `bin/cronjob.sh` ist das stündliche cronjob-Script.
+
+
+
+## Datenbeschreibung
+
+Diese Daten sind natürlich keine offizielle Veröffentlichung des RKI oder der ARD, sondern eine freundliche Unterstützung für Forschung und Recherche. Auch können wir keine Gewähr für Richtigkeit und Vollständigkeit der Daten geben. Offizielle Daten gibt es nur beim RKI!
+
+Die Beschreibung der Datenfelder, sowie weitere Hinweise können den Exceldateien entnommen werden, so wie der Webseite des RKI.
+
+
+
+## Datenvervollständigung
 
 Die "Vervollständigung" durch das Script `bin/4_complete_data.js` besteht aus den folgenden Teilen:
 
@@ -45,22 +68,7 @@ Sobald eine Berechnung zu einer Veränderung eines bereits angegebenen Wertes f�
 
 Hier werden noch einmal alle möglichen Werte überprüft, ob sie angegeben wurden. Sobald ein Wert fehlt, bricht das Script mit einem Fehler ab - es sei denn, das Problem ist bekannt und wurde manuell als Ausnahme eingetragen in `config/known_missing_entries.csv`.
 
-### Datenbeschreibung
 
-Diese Daten sind natürlich keine offizielle Veröffentlichung des RKI oder der ARD, sondern eine freundliche Unterstützung für Forschung und Recherche. Auch können wir keine Gewähr für Richtigkeit und Vollständigkeit der Daten geben. Offizielle Daten gibt es nur beim RKI!
-
-Die Beschreibung der Datenfelder, sowie weitere Hinweise können den Exceldateien entnommen werden, so wie der Webseite des RKI.
-
-### Verzeichnis `/bin/`
-
-- `bin/1_download.js` lädt die aktuelle Excel-Tabelle runter.
-- `bin/2_deduplicate.js` löscht doppelte Dateien, also wenn die neueste Datei den gleichen SHA256-Hash hat, wie die Datei zuvor.
-- `bin/3_parse.js` parsed die Exceldateien und macht daraus saubere und einheitliche JSONs.
-- `bin/4_complete_data.js` versucht die Daten zu überprüfen und ggf. fehlende Werte zu ergänzen. Siehe auch: [Datenvervollständigung](#datenvervollständigung)
-- `bin/5_generate_csv.js` fügt alle JSONs zusammen und generiert CSV-Dateien.
-- `bin/6_generate_old_csv.js` generiert das veraltete CSV-Format.
-- `bin/7_merge_all.js` generiert ein großes JSON, dass für eine grafische Vorschau verwendet werden soll.
-- `bin/cronjob.sh` ist das stündliche cronjob-Script.
 
 ## FAQ
 
@@ -90,6 +98,8 @@ Falls der Scraper mit Veränderungen an den Excel-Tabellen nicht zurecht kommen 
 Probleme und Feature-Wünsche können als [neues GitHub Issue](https://github.com/ard-data/2020-rki-impf-archive/issues/new) eingetragen werden.
 
 In Ausnahmefällen kann der Autor dieses Projektes auch per [Mail](mailto:rki-scraper@michael-kreil.de) erreicht werden.
+
+
 
 ## Weitere Links
 
