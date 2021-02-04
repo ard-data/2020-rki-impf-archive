@@ -291,17 +291,17 @@ function extractData(excel) {
 
 	function extractIndikation(data, sheet, pubDate) {
 		// extract data from sheet "indikation"
-		let range = 'C3:J19';
-		if (pubDate < '2021-01-17') range = 'C2:I18';
-		if (pubDate < '2021-01-07') range = 'B2:H18';
-		if (pubDate < '2021-01-04') range = 'B2:G18';
+		let range = 'B2:G18';
+		if (pubDate >= '2021-01-04') range = 'B2:H18';
+		if (pubDate >= '2021-01-07') range = 'C2:I18';
+		if (pubDate >= '2021-01-17') range = 'C3:J19';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
 	function extractHersteller(data, sheet, pubDate) {
 		// extract data from sheet "hersteller"
-		let range = 'C4:J20';
-		if (pubDate < '2021-01-19') range = 'C4:I20';
+		let range = 'C4:I20';
+		if (pubDate >= '2021-01-19') range = 'C4:J20';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -311,9 +311,10 @@ function extractData(excel) {
 
 			// make sure if we guessed the size of the data range correctly
 			// we can do that by checking, if the area at the top right/bottom left next to the header area is empty or not
-			let value;
-			if (value = mergeColCells(sheet.cells, range.colMax+1, 0, range.rowMin-1).trim()) throw Error(JSON.stringify(value));
-			if (value = mergeRowCells(sheet.cells, range.rowMax+1, 0, range.colMin-1).trim()) throw Error(JSON.stringify(value));
+			let nextColHeader = mergeColCells(sheet.cells, range.colMax+1, 0, range.rowMin-1).trim();
+			let nextRowHeader = mergeRowCells(sheet.cells, range.rowMax+1, 0, range.colMin-1).trim();
+			if (nextColHeader) throw Error(JSON.stringify(nextColHeader));
+			if (nextRowHeader) throw Error(JSON.stringify(nextRowHeader));
 
 			// scan data area
 			for (let row = range.rowMin; row <= range.rowMax; row++) {
@@ -332,6 +333,7 @@ function extractData(excel) {
 
 		} catch (e) {
 			console.log('for date "'+date+'":');
+			console.log('for pubDate "'+pubDate+'":');
 			console.log('in sheet "'+sheet.name+'" ('+sheet.type+'):');
 			throw e;
 		}
