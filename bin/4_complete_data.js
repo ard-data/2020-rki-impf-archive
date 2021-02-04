@@ -72,8 +72,10 @@ function completeData(data, filename) {
 			setValue('indikation_pflegeheim_voll', 0);
 			setValue('indikation_pflegeheim_erst', entry.indikation_pflegeheim_dosen);
 		}
-		setValue('dosen_voll_biontech_kumulativ', entry.personen_voll_kumulativ);
-		setValue('dosen_voll_moderna_kumulativ', 0);
+		if (pubDate < '2021-02-04') {
+			setValue('dosen_voll_biontech_kumulativ', entry.personen_voll_kumulativ);
+			setValue('dosen_voll_moderna_kumulativ', 0);
+		}
 		
 
 
