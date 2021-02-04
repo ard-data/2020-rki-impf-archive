@@ -6,7 +6,7 @@ Das RKI veröffentlicht täglich die [gemeldeten Impfungen als Excel-Tabelle](ht
 
 Leider wird diese Excel-Tabelle täglich überschrieben, so dass keine historischen Verläufe möglich sind. Zwar bietet das [Impfdashboard](https://impfdashboard.de/) historische Verläufe, die sind aber wiederum nicht nach Bundesländern aufgeschlüsselt.
 
-Deshalb sammeln wir die alte Datei-Versionen und stellen sie in diesem GitHub-Repo zur Verfügung. Per cronjob versuchen wir das Archiv täglich aktuell zu halten. Als Feature bereinigen wir sogar die Daten und bieten sie als CSV an.
+Deshalb sammeln wir die alte Datei-Versionen und stellen sie in diesem GitHub-Repo zur Verfügung. Per cronjob versuchen wir das Archiv täglich aktuell zu halten. Als Feature bereinigen wir sogar die Daten und bieten sie [als CSV](https://github.com/ard-data/2020-rki-impf-archive/tree/master/data/9_csv_v2) an.
 
 Wer auf die Daten täglich angewiesen ist und bei Problemen benachrichtigt werden möchte, kann sich [hier auf der Mailingliste anmelden](https://lists.riseup.net/www/subscribe/ard_rki_data), um bei Änderungen/Problemen direkt eine Mail zu bekommen.
 
@@ -14,7 +14,7 @@ Wer auf die Daten täglich angewiesen ist und bei Problemen benachrichtigt werde
 
 ## Aufbau
 
-### Verzeichnis `data/`
+### Verzeichnis `data`
 
 - Die rohen Excel-Dateien werden unter `data/0_original` gespeichert.
 - Die gesäuberten Daten landen als JSON unter `data/1_parsed`.
@@ -29,7 +29,7 @@ Wer auf die Daten täglich angewiesen ist und bei Problemen benachrichtigt werde
 
 Per Cronjob werden die Daten stündlich beim RKI angefragt. Wenn sie beim RKI aktualisiert wurden (also sich der Hash der Exceldatei verändert), wird die neue Datei runtergeladen nach `0_original`, geparst nach `1_parsed`, gesäubert nach `2_completed` und die entsprechenden CSV-Dateien aktualisiert.
 
-### Verzeichnis `bin/`
+### Verzeichnis `bin`
 
 - `bin/1_download.js` lädt die aktuelle Excel-Tabelle runter.
 - `bin/2_deduplicate.js` löscht doppelte Dateien, also wenn die neueste Datei den gleichen SHA256-Hash hat, wie die Datei zuvor.
@@ -40,7 +40,7 @@ Per Cronjob werden die Daten stündlich beim RKI angefragt. Wenn sie beim RKI ak
 - `bin/7_merge_all.js` generiert ein großes JSON, dass für eine grafische Vorschau verwendet werden soll.
 - `bin/cronjob.sh` ist das stündliche cronjob-Script.
 
-### Verzeichnis `config/`
+### Verzeichnis `config`
 
 - `config/data_definition.js` enthält eine abstrakte Beschreibung der Datenstruktur. Sie definiert:
 	- 5 Dimensionen:
@@ -68,7 +68,7 @@ Die "Vervollständigung" durch das Script `bin/4_complete_data.js` besteht aus d
 
 **Schritt 1: Ergänze fehlende Werte** ([`bin/4_complete_data.js` Zeile 76](https://github.com/ard-data/2020-rki-impf-archive/blob/f1e1cf96c3f31409a5a98622e577947f20a36396/bin/4_complete_data.js#L76))
 
-Hier werden die Werte ergänzt, die in den Exceldateien nicht explizit angegeben sind. Z.B. wurden vor dem 17.1.2021 keine Zahlen zu den Zweitimpfungen veröffentlicht, weil noch keine Zweitimpfungen durchgeführt wurden. Inzwischen gibt es zwar Zweitimpfungen, aber nur mit BioNTech, so dass man für "Zweitimpfungen mit Moderna" den Wert 0 annehmen kann.
+Hier werden die Werte ergänzt, die in den Exceldateien nicht explizit angegeben sind. Z.B. wurden vor dem 17.1.2021 keine Zahlen zu den Zweitimpfungen veröffentlicht, weil noch keine Zweitimpfungen durchgeführt wurden. Durch das Script wird daher automatisch der Wert 0 eingetragen. Außerdem wurden bis zum 4.2. nur Zweitimpfungen mit BioNTech durchgeführt, so dass man für "Zweitimpfungen mit Moderna" den Wert 0 annehmen kann. usw.
 
 Sobald eine Annahme zu einer Veränderung eines bereits angegebenen Wertes führt, bricht das Script mit einem Fehler ab.
 
