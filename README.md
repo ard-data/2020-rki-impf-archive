@@ -45,7 +45,7 @@ Per Cronjob werden die Daten stündlich beim RKI angefragt. Wenn sie beim RKI ak
 - `config/data_definition.js` enthält eine abstrakte Beschreibung der Datenstruktur. Sie definiert:
 	- 5 Dimensionen:
 		- Dosen/Erst-/Zweitimpfung
-		- Alle Hersteller/Biontech/Moderna/…
+		- Alle Hersteller/BioNTech/Moderna/…
 		- Indikation nach Alter/Beruf/…
 		- Wert ist kumulativ/Differenz zum Vortag
 		- Wert ist absolut/Prozent der Bevölkerung/Promille.
@@ -68,7 +68,7 @@ Die "Vervollständigung" durch das Script `bin/4_complete_data.js` besteht aus d
 
 **Schritt 1: Ergänze fehlende Werte** ([`bin/4_complete_data.js` Zeile 76](https://github.com/ard-data/2020-rki-impf-archive/blob/f1e1cf96c3f31409a5a98622e577947f20a36396/bin/4_complete_data.js#L76))
 
-Hier werden die Werte ergänzt, die in den Exceldateien nicht explizit angegeben sind. Z.B. wurden vor dem 17.1.2021 keine Zahlen zu den Zweitimpfungen veröffentlicht, weil noch keine Zweitimpfungen durchgeführt wurden. Inzwischen gibt es zwar Zweitimpfungen, aber nur mit Biontech, so dass man für "Zweitimpfungen mit Moderna" den Wert 0 annehmen kann.
+Hier werden die Werte ergänzt, die in den Exceldateien nicht explizit angegeben sind. Z.B. wurden vor dem 17.1.2021 keine Zahlen zu den Zweitimpfungen veröffentlicht, weil noch keine Zweitimpfungen durchgeführt wurden. Inzwischen gibt es zwar Zweitimpfungen, aber nur mit BioNTech, so dass man für "Zweitimpfungen mit Moderna" den Wert 0 annehmen kann.
 
 Sobald eine Annahme zu einer Veränderung eines bereits angegebenen Wertes führt, bricht das Script mit einem Fehler ab.
 
