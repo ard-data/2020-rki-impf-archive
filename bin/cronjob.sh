@@ -6,6 +6,7 @@ set -e
 set -x
 cd "$(dirname "$0")"
 
+git reset --hard
 git pull
 
 signalNoUpdate=0
