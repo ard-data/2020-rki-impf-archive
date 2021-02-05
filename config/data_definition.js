@@ -17,7 +17,7 @@ const slices = [
 	{dimensions:new Set(['dosis','hersteller'])},
 	{dimensions:new Set(['dosis','indikation'])},
 	{dimensions:new Set(['dosis','quote'])},
-	{dimensions:new Set(['kumulativ'])},
+	{dimensions:new Set(['dosis','kumulativ'])},
 ]
 
 const regions = [
