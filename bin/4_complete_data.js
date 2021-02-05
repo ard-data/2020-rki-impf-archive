@@ -113,14 +113,14 @@ function completeData(data, filename) {
 			throw Error('value !== entry[check.key]');
 		})
 
-		// check values
+		// überprüfe, ob alle Werte gesetzt sind
 		dataDefinition.parameters.forEach(parameter => {
 			if (parameter.cell.kumulativ === 'differenz') return; // check nicht notwendig
 
 			let slug = parameter.slug;
 			let value = entry[slug];
 
-			if (Number.isFinite(value))  return;
+			if (Number.isFinite(value)) return;
 
 			let missingHash = [filename, r.code, slug].join(',').trim();
 			if (knownMissingHashes.has(missingHash)) return;
