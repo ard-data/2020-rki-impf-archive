@@ -96,8 +96,8 @@ function getSlug(cell) {
 	if (key === 'voll,alle,alle,kumulativ,absolut') return 'personen_voll_kumulativ';
 
 	if (key === 'dosen,alle,alle,differenz,absolut') return 'dosen_differenz_zum_vortag';
-	if (key === 'erst,alle,alle,differenz,absolut') return 'personen_erst_differenz_zum_vortag';
-	if (key === 'voll,alle,alle,differenz,absolut') return 'personen_voll_differenz_zum_vortag';
+	if (key === 'erst,alle,alle,differenz,absolut') return 'dosen_erst_differenz_zum_vortag';
+	if (key === 'voll,alle,alle,differenz,absolut') return 'dosen_voll_differenz_zum_vortag';
 
 	if (key === 'dosen,alle,alle,kumulativ,impf_quote') return 'impf_quote_dosen';
 	if (key === 'erst,alle,alle,kumulativ,impf_quote') return 'impf_quote_erst';
