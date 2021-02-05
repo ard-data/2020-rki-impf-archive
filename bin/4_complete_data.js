@@ -136,6 +136,8 @@ function completeData(data, filename) {
 		function setValue(key, value) {
 			if (entry[key] === value) return;
 			if (!Number.isFinite(entry[key])) return entry[key] = value;
+			console.log('key', key);
+			console.log('value', value);
 			throw Error();
 		}
 	})
