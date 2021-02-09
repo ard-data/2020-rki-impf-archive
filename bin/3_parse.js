@@ -303,6 +303,7 @@ function extractData(excel) {
 		let range = 'C4:I20';
 		if (pubDate >= '2021-01-19') range = 'C4:J20';
 		if (pubDate >= '2021-02-04') range = 'C4:M20';
+		if (pubDate >= '2021-02-09') range = 'C4:N20';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -446,6 +447,7 @@ function extractData(excel) {
 				case 'hersteller_erstimpfung_impfungen_kumulativ_gesamt': return 'personen_erst_kumulativ';
 				case 'hersteller_erstimpfung_impfungen_kumulativ_biontech': return 'dosen_erst_biontech_kumulativ';
 				case 'hersteller_erstimpfung_impfungen_kumulativ_moderna': return 'dosen_erst_moderna_kumulativ';
+				case 'hersteller_erstimpfung_impfungen_kumulativ_astrazeneca': return 'dosen_erst_astrazeneca_kumulativ';
 				case 'hersteller_erstimpfung_differenz_zum_vortag_differenz_zum_vortag': return 'dosen_erst_differenz_zum_vortag';
 				case 'hersteller_erstimpfung_impf-quote,_%_impf-quote,_%': return 'impf_quote_erst';
 
@@ -453,6 +455,7 @@ function extractData(excel) {
 				case 'hersteller_zweitimpfung_impfungen_kumulativ_gesamt': return 'personen_voll_kumulativ';
 				case 'hersteller_zweitimpfung_impfungen_kumulativ_biontech': return 'dosen_voll_biontech_kumulativ';
 				case 'hersteller_zweitimpfung_impfungen_kumulativ_moderna': return 'dosen_voll_moderna_kumulativ';
+				case 'hersteller_zweitimpfung_impfungen_kumulativ_astrazeneca': return 'dosen_voll_astrazeneca_kumulativ';
 				case 'hersteller_zweitimpfung_differenz_zum_vortag_differenz_zum_vortag': return 'dosen_voll_differenz_zum_vortag';
 				case 'hersteller_zweitimpfung_impf-quote,_%_impf-quote,_%': return 'impf_quote_voll';
 

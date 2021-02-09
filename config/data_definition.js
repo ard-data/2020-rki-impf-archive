@@ -7,7 +7,7 @@ const fs = require('fs');
 
 const dimensions = [
 	{name: 'dosis', elements:['dosen','erst','voll']},
-	{name: 'hersteller', elements:['alle','biontech','moderna']},
+	{name: 'hersteller', elements:['alle','biontech','moderna','astrazeneca']},
 	{name: 'indikation', elements:['alle','alter','beruf','medizinisch','pflegeheim']},
 	{name: 'kumulativ', elements:['kumulativ', 'differenz']},
 	{name: 'quote', elements:['absolut','impf_quote','impf_inzidenz']},
