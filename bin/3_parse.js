@@ -396,7 +396,7 @@ function extractData(excel) {
 	}
 
 	function parseRowHeader(text) {
-		text = text.split('\t').pop().replace(/\*/g,'');
+		text = text.split('\t').pop().replace(/[ \*]/g,'');
 		switch (text) {
 			case 'Baden-Württemberg':      return 'BW';
 			case 'Bayern':                 return 'BY';
