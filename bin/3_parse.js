@@ -258,6 +258,10 @@ function extractData(excel) {
 			return match[3]+'-'+match[2]+'-'+match[1]+' '+match[4];
 		}
 
+		if (match = dateString.match(/^\t*Datenstand: (\d\d)\.(\d\d)\.(\d\d\d\d), (\d:\d\d) Uhr/)) {
+			return match[3]+'-'+match[2]+'-'+match[1]+' 0'+match[4];
+		}
+
 		console.log(JSON.stringify(dateString));
 		throw Error('Can not parse pub date');
 	}
