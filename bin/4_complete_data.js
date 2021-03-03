@@ -18,8 +18,16 @@ const dimLookup = Object.fromEntries(dataDefinition.dimensions.map(d => [d.name,
 const cell0Def = dataDefinition.dimensions.map(d => ({key:d.name, value:d.elements[0]}));
 const checks = getAllChecks();
 
-const knownMissingHashes = new Set(fs.readFileSync('../config/known_missing_entries.csv', 'utf8').split('\n').filter(l => l.startsWith('impf')));
-const knownProblemHashes = new Set(fs.readFileSync('../config/known_problems.csv', 'utf8').split('\n').filter(l => l.startsWith('impf')));
+const knownMissingHashes = new Set(
+	fs.readFileSync('../config/known_missing_entries.csv', 'utf8')
+		.split('\n')
+		.filter(l => l.startsWith('impf'))
+);
+const ignoreProblems = new Set(
+	fs.readFileSync('../config/ignore_problems.csv', 'utf8')
+		.split('\n')
+		.filter(l => l.startsWith('impf'))
+);
 
 
 
@@ -107,7 +115,7 @@ function completeData(data, filename) {
 
 			// Ist das Problem bekannt?
 			let problemHash = [filename, r.code, check.key].join(',').trim();
-			if (knownProblemHashes.has(problemHash)) return;
+			if (ignoreProblems.has(problemHash)) return;
 
 			console.log('entry', entry);
 			console.log('check', check);
