@@ -28,6 +28,12 @@ const ignoreProblems = new Set(
 		.split('\n')
 		.filter(l => l.startsWith('impf'))
 );
+const fixProblems = new Map(
+	fs.readFileSync('../config/fix_problems.csv', 'utf8')
+		.split('\n')
+		.filter(l => l.startsWith('impf'))
+		.map(l => {l = l.split('\t'); return [l[0],JSON.parse(l[1])]})
+);
 
 
 
@@ -61,7 +67,9 @@ function completeData(data, filename) {
 	regions.forEach(r => {
 		let entry = (r.code === 'DE') ? data.germany : data.states[r.code];
 
-
+		// müssen die Daten repariert werden?
+		let hash = filename+','+r.code;
+		if (fixProblems.has(hash)) Object.assign(entry, fixProblems.get(hash));
 
 		// Setze fehlende Werte
 		// Wenn man einen Wert setzt, der bereits einen anderen Wert hat,
