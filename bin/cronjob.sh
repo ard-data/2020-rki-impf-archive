@@ -3,11 +3,11 @@
 source ~/.profile
 
 set -e
-set -x
+#set -x
 cd "$(dirname "$0")"
 
-git reset --hard
-git pull
+git reset -q --hard
+git pull -q
 
 signalNoUpdate=0
 signalUpdate=42
