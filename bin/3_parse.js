@@ -299,6 +299,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-01-04') range = 'B2:H18';
 		if (pubDate >= '2021-01-07') range = 'C2:I18';
 		if (pubDate >= '2021-01-17') range = 'C3:J19';
+		if (pubDate >= '2021-03-04') range = 'C3:J20';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -308,6 +309,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-01-19') range = 'C4:J20';
 		if (pubDate >= '2021-02-04') range = 'C4:M20';
 		if (pubDate >= '2021-02-09') range = 'C4:N20';
+		if (pubDate >= '2021-03-04') range = 'C4:N21';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -327,6 +329,8 @@ function extractData(excel) {
 				for (let col = range.colMin; col <= range.colMax; col++) {
 					// find state
 					let rowId = parseRowHeader(mergeRowCells(sheet.cells, row, 0, range.colMin-1));
+					if (!rowId) continue;
+					
 					// find metric
 					let colId = parseColHeader(mergeColCells(sheet.cells, col, 0, range.rowMin-1), sheet.type, date);
 					if (!colId) throw Error();
@@ -419,6 +423,8 @@ function extractData(excel) {
 			case 'Schleswig-Holstein':     return 'SH';
 			case 'Thüringen':              return 'TH';
 			case 'Gesamt':                 return 'DE';
+
+			case 'Bund(EinsatzkräfteBundeswehr,Bundespolizei)': return false;
 		}
 
 		throw Error('unknown Row Header '+JSON.stringify(text))
