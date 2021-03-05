@@ -424,6 +424,7 @@ function extractData(excel) {
 			case 'Thüringen':              return 'TH';
 			case 'Gesamt':                 return 'DE';
 
+			case 'Bund': 
 			case 'Bund(EinsatzkräfteBundeswehr,Bundespolizei)': return false;
 		}
 
