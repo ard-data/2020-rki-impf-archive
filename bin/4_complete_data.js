@@ -95,7 +95,9 @@ function completeData(data, filename) {
 		if (pubDate < '2021-02-09') {
 			setValue('dosen_erst_astrazeneca_kumulativ', 0);
 		}
-		setValue('dosen_voll_astrazeneca_kumulativ', 0);
+		if (pubDate < '2021-03-12') {
+			setValue('dosen_voll_astrazeneca_kumulativ', 0);
+		}
 		
 
 

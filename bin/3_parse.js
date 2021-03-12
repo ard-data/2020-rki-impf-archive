@@ -310,6 +310,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-02-04') range = 'C4:M20';
 		if (pubDate >= '2021-02-09') range = 'C4:N20';
 		if (pubDate >= '2021-03-04') range = 'C4:N21';
+		if (pubDate >= '2021-03-12') range = 'C4:O21';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
