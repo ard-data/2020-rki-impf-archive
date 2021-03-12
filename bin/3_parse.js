@@ -321,8 +321,8 @@ function extractData(excel) {
 			// we can do that by checking, if the area at the top right/bottom left next to the header area is empty or not
 			let nextColHeader = mergeColCells(sheet.cells, range.colMax+1, 0, range.rowMin-1).trim();
 			let nextRowHeader = mergeRowCells(sheet.cells, range.rowMax+1, 0, range.colMin-1).trim();
-			if (nextColHeader) throw Error(JSON.stringify(nextColHeader));
-			if (nextRowHeader) throw Error(JSON.stringify(nextRowHeader));
+			if (nextColHeader) throw Error('You did not parse every col header. Forgot: '+JSON.stringify(nextColHeader));
+			if (nextRowHeader) throw Error('You did not parse every row header. Forgot: '+JSON.stringify(nextRowHeader));
 
 			// scan data area
 			for (let row = range.rowMin; row <= range.rowMax; row++) {
