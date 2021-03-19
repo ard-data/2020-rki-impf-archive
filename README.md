@@ -88,7 +88,7 @@ Hier werden noch einmal alle möglichen Werte überprüft, ob sie angegeben wurd
 
 ### Wo finde ich weiter Zahlen?
 
-Das offizielle [Impfdashboard](https://impfdashboard.de/) des RKIs und des BMG bietet einen [Datendownload](https://impfdashboard.de/static/data/germany_vaccinations_timeseries_v2.tsv) an. Diese Zahlen sind im Zweifelsfall genauer, da sie auch Nachmeldungen enthalten, also Impfungen, die dem RKI erst mehrere Tage später gemeldet werden. Leider liegen die Zahlen nur für ganz Deutschland vor und sind nicht nach Bundesländern aufgeschlüsselt.
+Das offizielle [Impfdashboard](https://impfdashboard.de/) des RKIs und des BMG bietet einen [Datendownload](https://impfdashboard.de/daten) an. Leider liegen die Zahlen nicht als Zeitreihen und aufgeschlüsselt nach Bundesländern vor.
 
 ### Wie oft werden die Daten aktualisiert?
 
