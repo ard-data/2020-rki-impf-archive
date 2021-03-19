@@ -121,5 +121,5 @@ In Notfällen kann der Autor dieses Projektes auch per [Mail](mailto:rki-scraper
 
 Andere Projekte, die die RKI-Corona-Impf-Daten sammeln:
 
-- https://github.com/friep/vaccc19de_rki_data
+- https://github.com/favstats/vaccc19de_dashboard
 - https://github.com/n0rdlicht/rki-vaccination-scraper
