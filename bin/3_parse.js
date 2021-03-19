@@ -377,10 +377,14 @@ function extractData(excel) {
 		})
 		sheet.cells.slice(1).forEach(row => {
 			switch (row[0]) {
+				// Felder, die ignoriert werden:
 				case undefined:
 				case null:
 				case 'Impfungen gesamt':
 				case 'Gesamt':
+				case 'Gesamt (ohne Bund)':
+				case 'Bund*':
+				case '*Die dem Bund zugeordneten Impfdaten liegen bisher nicht nach Impftag vor.':
 				return;
 			}
 			if (Number.isFinite(row[0])) {
@@ -390,7 +394,7 @@ function extractData(excel) {
 				return;
 			}
 			console.log(row);
-			throw Error();
+			throw Error('historischer Verlauf konnte nicht extrahiert werden');
 		})
 	}
 
