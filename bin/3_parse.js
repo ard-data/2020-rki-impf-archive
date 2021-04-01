@@ -385,6 +385,7 @@ function extractData(excel) {
 				case 'Gesamt (ohne Bund)':
 				case 'Bund*':
 				case '*Die dem Bund zugeordneten Impfdaten liegen bisher nicht nach Impftag vor.':
+				case 'In den Gesamtsummen der Zweitimpfung und der täglichen Gesamztahlen sind n=2.183 Impfungen enthalten, die entsprechend der vorliegenden Meldedaten nicht plausibel einem Impfdatum zugewiesen werden können.':
 				return;
 			}
 			if (Number.isFinite(row[0])) {
