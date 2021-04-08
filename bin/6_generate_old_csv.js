@@ -4,7 +4,7 @@
 
 const fs = require('fs');
 const {resolve} = require('path');
-const dataDefinition = require('../config/data_definition.js');
+const dataDefinition = require('../config/data_definition.js')('2021-04-07');
 
 
 

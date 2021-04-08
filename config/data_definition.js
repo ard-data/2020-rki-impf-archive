@@ -9,20 +9,21 @@ module.exports = date => {
 	const dimensions = [
 		{name: 'dosis', elements:['dosen','erst','voll']},
 		{name: 'hersteller', elements:['alle','biontech','moderna','astrazeneca']},
-		{name: 'indikation', elements:['alle','alter','beruf','medizinisch','pflegeheim'], ignore: date >= '2021-04-08'},
+		{name: 'indikation', elements:['alle','alter','beruf','medizinisch','pflegeheim'], optional: date >= '2021-04-08'},
 		{name: 'kumulativ', elements:['kumulativ', 'differenz'], optional:true},
 		{name: 'quote', elements:['absolut','impf_quote','impf_inzidenz']},
-		{name: 'impfstelle', elements:['alle','zentral','aerzte']},
-		{name: 'alter', elements:['alle','<60','60+'], optional:true},
+		{name: 'impfstelle', elements:['alle','zentral','aerzte'], ignore: date < '2021-04-08'},
+		{name: 'alter', elements:['alle','<60','60+'], optional:true, ignore: date < '2021-04-08'},
 	].filter(d => !d.ignore);
 
 	const dimensionNames = dimensions.map(d => d.name);
 	const dimensionsLookup = new Map(dimensions.map(d => [d.name,d]));
 
 	const slices = [
-		{dimensions:new Set(['dosis','hersteller','impfstelle'])},
-		{dimensions:new Set(['dosis','alter','impfstelle'])},
-		{dimensions:new Set(['dosis','indikation']), ignore: date >= '2021-04-08'},
+		{dimensions:new Set(['dosis','hersteller']), ignore: date >= '2021-04-08'},
+		{dimensions:new Set(['dosis','hersteller','impfstelle']), ignore: date < '2021-04-08'},
+		{dimensions:new Set(['dosis','alter','impfstelle']), ignore: date < '2021-04-08'},
+		{dimensions:new Set(['dosis','indikation']), optional: date >= '2021-04-08'},
 		{dimensions:new Set(['dosis','quote'])},
 		{dimensions:new Set(['dosis','kumulativ'])},
 	].filter(d => !d.ignore);
