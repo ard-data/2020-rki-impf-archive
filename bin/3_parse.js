@@ -209,6 +209,7 @@ function extractData(excel) {
 
 	// extract publication date
 	let pubDate = extractPubDate(sheets.front);
+	let dataDefinition = DataDefinition(pubDate);
 
 	// extract date up to which the vaccinations are counted
 	let date = extractDate(sheets.front, sheets.indikation.name, pubDate);
@@ -220,7 +221,7 @@ function extractData(excel) {
 	// prepare data object
 	let data = {
 		date, pubDate, history:[],
-		states: Object.fromEntries(DataDefinition(pubDate).regions.map(r => [r.code, {code:r.code,title:r.title}])),
+		states: Object.fromEntries(dataDefinition.regions.map(r => [r.code, {code:r.code,title:r.title}])),
 	}
 
 	// extract indication data
@@ -347,7 +348,9 @@ function extractData(excel) {
 
 					// save value
 					if (data[rowId][colId]) throw Error();
-					data[rowId][colId] = sheet.cells[row][col];
+					let value = sheet.cells[row][col];
+					if (typeof value !== 'number') value = null;
+					data[rowId][colId] = value;
 				}
 			}
 
