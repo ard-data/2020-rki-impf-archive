@@ -11,10 +11,15 @@ const dimensions = [
 	{name: 'indikation', elements:['alle','alter','beruf','medizinisch','pflegeheim']},
 	{name: 'kumulativ', elements:['kumulativ', 'differenz']},
 	{name: 'quote', elements:['absolut','impf_quote','impf_inzidenz']},
+	{name: 'impfstelle', elements:['alle','zentral','aerzte']},
+	{name: 'alter', elements:['alle','<60','60+']},
 ]
 
+const dimensionNames = dimensions.map(d => d.name);
+
 const slices = [
-	{dimensions:new Set(['dosis','hersteller'])},
+	{dimensions:new Set(['dosis','hersteller','impfstelle'])},
+	{dimensions:new Set(['dosis','alter','impfstelle'])},
 	{dimensions:new Set(['dosis','indikation'])},
 	{dimensions:new Set(['dosis','quote'])},
 	{dimensions:new Set(['dosis','kumulativ'])},
@@ -40,6 +45,7 @@ const regions = [
 	{code:'DE', pop:83166711, title:'Deutschland'},
 ]
 
+const cellQueryCache = new Map();
 
 
 module.exports = {
@@ -86,32 +92,65 @@ function getAllParameters() {
 
 
 function getSlug(cell) {
-	if (cell.hersteller !== 'alle') return [cell.dosis === 'dosen' ? 'dosen' : 'dosen_'+cell.dosis, cell.hersteller, 'kumulativ'].join('_');
-	if (cell.indikation !== 'alle') return ['indikation', cell.indikation, cell.dosis].join('_');
+	let suffix = '';
+
+	switch (cell.impfstelle) {
+		case 'alle':break;
+		case 'zentral': suffix += '_impfstelle_zentral'; break;
+		case 'aerzte': suffix += '_impfstelle_aerzte'; break;
+		default: throw Error();
+	}
+
+	switch (cell.alter) {
+		case 'alle':break;
+		case '<60': suffix += '_alter_unter60'; break;
+		case '60+': suffix += '_alter_60plus'; break;
+		default: throw Error();
+	}
+
+	if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',hersteller:'!0'})) return [cell.dosis === 'dosen' ? 'dosen' : 'dosen_'+cell.dosis, cell.hersteller, 'kumulativ'].join('_')+suffix;
 	
-	let key = dimensions.map(d => cell[d.name]).join(',');
+	if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',indikation:'!0'})) return ['indikation', cell.indikation, cell.dosis].join('_')+suffix;
+	
+	if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*'})) {
+		if (cell.dosis === 'dosen') return 'dosen_kumulativ'+suffix;
+		if (cell.dosis === 'erst' ) return 'personen_erst_kumulativ'+suffix;
+		if (cell.dosis === 'voll' ) return 'personen_voll_kumulativ'+suffix;
+	}
 
-	if (key === 'dosen,alle,alle,kumulativ,absolut') return 'dosen_kumulativ';
-	if (key === 'erst,alle,alle,kumulativ,absolut') return 'personen_erst_kumulativ';
-	if (key === 'voll,alle,alle,kumulativ,absolut') return 'personen_voll_kumulativ';
+	if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',kumulativ:'differenz'})) {
+		if (cell.dosis === 'dosen') return 'dosen_differenz_zum_vortag'+suffix;
+		if (cell.dosis === 'erst' ) return 'dosen_erst_differenz_zum_vortag'+suffix;
+		if (cell.dosis === 'voll' ) return 'dosen_voll_differenz_zum_vortag'+suffix;
+	}
 
-	if (key === 'dosen,alle,alle,differenz,absolut') return 'dosen_differenz_zum_vortag';
-	if (key === 'erst,alle,alle,differenz,absolut') return 'dosen_erst_differenz_zum_vortag';
-	if (key === 'voll,alle,alle,differenz,absolut') return 'dosen_voll_differenz_zum_vortag';
+	if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',quote:'impf_quote'   })) return 'impf_quote_'+cell.dosis+suffix;
+	if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',quote:'impf_inzidenz'})) return 'impf_inzidenz_'+cell.dosis+suffix;
 
-	if (key === 'dosen,alle,alle,kumulativ,impf_quote') return 'impf_quote_dosen';
-	if (key === 'erst,alle,alle,kumulativ,impf_quote') return 'impf_quote_erst';
-	if (key === 'voll,alle,alle,kumulativ,impf_quote') return 'impf_quote_voll';
-
-	if (key === 'dosen,alle,alle,kumulativ,impf_inzidenz') return 'impf_inzidenz_dosen';
-	if (key === 'erst,alle,alle,kumulativ,impf_inzidenz') return 'impf_inzidenz_erst';
-	if (key === 'voll,alle,alle,kumulativ,impf_inzidenz') return 'impf_inzidenz_voll';
-
-	console.log(cell, key);
+	console.log(cell);
+	console.log(dimensionNames.map(d => cell[d]).join(','));
 	throw Error('unknown slug');
+
+	function cellIsIn(query) {
+		query = fixQuery(query);
+		return dimensionNames.every(d => query[d].has(cell[d]));
+
+		function fixQuery(query) {
+			let key = JSON.stringify(query);
+			if (cellQueryCache.has(key)) return cellQueryCache.get(key);
+
+			let obj = {};
+			dimensions.forEach(d => {
+				if (query[d.name] === undefined) return obj[d.name] = new Set(d.elements.slice(0,1));
+				if (query[d.name] === '*'      ) return obj[d.name] = new Set(d.elements);
+				if (query[d.name] === '!0'     ) return obj[d.name] = new Set(d.elements.slice(1));
+				return obj[d.name] = new Set(query[d.name].split(','));
+			});
+			cellQueryCache.set(key,obj);
+			return obj;
+		}
+	}
 }
-
-
 
 
 
