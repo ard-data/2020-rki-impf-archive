@@ -10,13 +10,14 @@ module.exports = date => {
 		{name: 'dosis', elements:['dosen','erst','voll']},
 		{name: 'hersteller', elements:['alle','biontech','moderna','astrazeneca']},
 		{name: 'indikation', elements:['alle','alter','beruf','medizinisch','pflegeheim'], ignore: date >= '2021-04-08'},
-		{name: 'kumulativ', elements:['kumulativ', 'differenz']},
+		{name: 'kumulativ', elements:['kumulativ', 'differenz'], optional:true},
 		{name: 'quote', elements:['absolut','impf_quote','impf_inzidenz']},
 		{name: 'impfstelle', elements:['alle','zentral','aerzte']},
-		{name: 'alter', elements:['alle','<60','60+']},
+		{name: 'alter', elements:['alle','<60','60+'], optional:true},
 	].filter(d => !d.ignore);
 
 	const dimensionNames = dimensions.map(d => d.name);
+	const dimensionsLookup = new Map(dimensions.map(d => [d.name,d]));
 
 	const slices = [
 		{dimensions:new Set(['dosis','hersteller','impfstelle'])},
@@ -54,14 +55,18 @@ module.exports = date => {
 
 	function getAllParameters() {
 		// finde alle möglichen kombinationen aus elementen der dimensionen
-		let parameters = [{}];
+		let parameters = [{cell:{}}];
 		dimensions.forEach(dimension => {
 			let result = [];
-			dimension.elements.forEach(element => {
+			dimension.elements.forEach((element, index) => {
+				let optional = dimension.optional && (index > 0)
 				parameters.forEach(obj => {
-					obj = Object.assign({}, obj);
-					obj[dimension.name] = element;
-					result.push(obj);
+					let cell = Object.assign({}, obj.cell);
+					cell[dimension.name] = element;
+					result.push({
+						cell,
+						optional: optional || obj.optional || false
+					});
 				})
 			})
 			parameters = result;
@@ -71,15 +76,19 @@ module.exports = date => {
 			obj.slices = slices.filter(slice => {
 				return dimensions.every(dimension => {
 					if (slice.dimensions.has(dimension.name)) return true;
-					return (obj[dimension.name] === dimension.elements[0]);
+					return (obj.cell[dimension.name] === dimension.elements[0]);
 				})
 			})
 			return obj.slices.length > 0;
 		})
 
-		parameters = parameters.map(cell => {
-			let slug = getSlug(cell);
-			return { cell, slug };
+		parameters = parameters.map(obj => {
+			let slug = getSlug(obj.cell);
+			return {
+				cell:obj.cell,
+				slug,
+				optional:obj.optional
+			}
 		})
 
 		return parameters;
@@ -127,6 +136,9 @@ module.exports = date => {
 		throw Error('unknown slug');
 
 		function cellIsIn(query) {
+			let onlyKnownDimensions = Object.keys(query).every(key => dimensionsLookup.has(key));
+			if (!onlyKnownDimensions) return false;
+
 			query = fixQuery(query);
 			return dimensionNames.every(d => query[d].has(cell[d]));
 

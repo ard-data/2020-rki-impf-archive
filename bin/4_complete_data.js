@@ -71,6 +71,10 @@ function completeData(data, filename) {
 	regions.forEach(r => {
 		let entry = (r.code === 'DE') ? data.germany : data.states[r.code];
 
+		Object.keys(entry).forEach(key => {
+			if (entry[key] === null) entry[key] = NaN;
+		});
+
 		// müssen die Daten repariert werden?
 		let hash = filename+','+r.code;
 		if (fixProblems.has(hash)) Object.assign(entry, fixProblems.get(hash));
@@ -111,18 +115,14 @@ function completeData(data, filename) {
 		checks.forEach(check => {
 			let value = check.calc(entry, r.pop);
 
-			// Wert konnte nicht berechnet werden.
-			if (!Number.isFinite(value)) {
-				console.log('entry', entry);
-				console.log('pubDate', pubDate);
-				throw Error('Can not calc: '+check.debug);
-			}
-
 			// Wert gibt es noch nicht, also übernehmen.
 			if (!Number.isFinite(entry[check.key])) {
 				entry[check.key] = value;
 				return;	
 			}
+
+			// Wert konnte nicht berechnet werden.
+			if (!Number.isFinite(value)) return;
 
 			// Wert gibt es schon und ist identisch: Alles in Ordnung
 			if (value.toFixed(6) === entry[check.key].toFixed(6)) return;
@@ -143,7 +143,7 @@ function completeData(data, filename) {
 
 		// überprüfe, ob alle Werte gesetzt sind
 		dataDefinition.parameters.forEach(parameter => {
-			if (parameter.cell.kumulativ === 'differenz') return; // check nicht notwendig
+			if (parameter.optional) return; // check nicht notwendig
 
 			let slug = parameter.slug;
 			let value = entry[slug];
@@ -224,10 +224,6 @@ function completeData(data, filename) {
 				cell = Object.assign(cell, cell0);
 				cell = Object.assign(cell, whereEntry);
 				let slug0 = dataDefinition.getSlug(cell);
-				if (slug0.startsWith('indikation_')) {
-					console.log(slug0);
-					console.log(cell);
-				}
 				let slugs = dimLookup[sumKey].slice(1).map(sumValue => {
 					cell[sumKey] = sumValue;
 					return dataDefinition.getSlug(cell);
