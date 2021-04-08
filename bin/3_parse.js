@@ -8,7 +8,7 @@ const AdmZip = require('adm-zip');
 const { DOMParser } = require('xmldom');
 const xpath = require('xpath');
 const select = xpath.useNamespaces({a:'http://schemas.openxmlformats.org/spreadsheetml/2006/main'});
-const dataDefinition = require('../config/data_definition.js');
+const DataDefinition = require('../config/data_definition.js');
 
 
 
@@ -220,7 +220,7 @@ function extractData(excel) {
 	// prepare data object
 	let data = {
 		date, pubDate, history:[],
-		states: Object.fromEntries(dataDefinition.regions.map(r => [r.code, {code:r.code,title:r.title}])),
+		states: Object.fromEntries(DataDefinition(pubDate).regions.map(r => [r.code, {code:r.code,title:r.title}])),
 	}
 
 	// extract indication data

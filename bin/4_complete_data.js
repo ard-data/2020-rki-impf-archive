@@ -4,19 +4,13 @@
 
 const fs = require('fs');
 const {resolve} = require('path');
-const dataDefinition = require('../config/data_definition.js');
+const DataDefinition = require('../config/data_definition.js');
 
 
 
 const dirSrc = resolve(__dirname, '../data/1_parsed/');
 const dirDst = resolve(__dirname, '../data/2_completed/');
 fs.mkdirSync(dirDst, {recursive:true});
-
-const regions = dataDefinition.regions;
-
-const dimLookup = Object.fromEntries(dataDefinition.dimensions.map(d => [d.name, d.elements])); Object.freeze(dimLookup);
-const cell0Def = dataDefinition.dimensions.map(d => ({key:d.name, value:d.elements[0]}));
-const checks = getAllChecks();
 
 const knownMissingHashes = new Set(
 	fs.readFileSync('../config/known_missing_entries.csv', 'utf8')
@@ -40,12 +34,14 @@ const fixProblems = new Map(
 
 
 fs.readdirSync(dirSrc).sort().forEach(filename => {
+	if (!/^impfquotenmonitoring-202.*\.json$/.test(filename)) return;
+
 	let fullnameSrc = resolve(dirSrc, filename);
 	let fullnameDst = resolve(dirDst, filename);
 
 	if (fs.existsSync(fullnameDst)) return;
 
-	console.log('complete '+filename);
+	console.log('parse '+filename);
 
 	let data = JSON.parse(fs.readFileSync(fullnameSrc));
 
@@ -63,6 +59,14 @@ fs.readdirSync(dirSrc).sort().forEach(filename => {
 
 function completeData(data, filename) {
 	let pubDate = data.pubDate.slice(0,10);
+
+	const dataDefinition = DataDefinition(pubDate);
+	const regions = dataDefinition.regions;
+	const dimLookup = Object.fromEntries(dataDefinition.dimensions.map(d => [d.name, d.elements])); Object.freeze(dimLookup);
+	const cell0 = Object.fromEntries(dataDefinition.dimensions.map(d => [d.name, d.elements[0]]));
+
+
+	const checks = getAllChecks(pubDate);
 
 	regions.forEach(r => {
 		let entry = (r.code === 'DE') ? data.germany : data.states[r.code];
@@ -97,6 +101,8 @@ function completeData(data, filename) {
 		}
 		if (pubDate < '2021-03-12') {
 			setValue('dosen_voll_astrazeneca_kumulativ', 0);
+		}
+		if (pubDate >= '2021-04-08') {
 		}
 		
 
@@ -163,38 +169,79 @@ function completeData(data, filename) {
 			throw Error();
 		}
 	})
-}
 
-function getAllChecks() {
-	let checks = [];
+	function getAllChecks(pubDate) {
+		let checks = [];
 
-	generateSum('dosis','hersteller'); // Dosen = Erstimpfung + Zweitimpfung … für "alles" und jeden Hersteller
-	generateSum('hersteller','dosis'); // Impfungen = Impfungen BionTech + Impfungen Moderna … für Dosen, Erst- und Zweitimpfung.
-	generateSum('dosis','indikation'); // Dosen = Erstimpfung + Zweitimpfung … für "alles" und jede Indikation
+		if (pubDate < '2021-04-08') {
+			generateSum('dosis','hersteller'); // Dosen = Erstimpfung + Zweitimpfung … für "alles" und jeden Hersteller
+			generateSum('hersteller','dosis'); // Impfungen = Impfungen BionTech + Impfungen Moderna … für Dosen, Erst- und Zweitimpfung.
+			generateSum('dosis','indikation'); // Dosen = Erstimpfung + Zweitimpfung … für "alles" und jede Indikation
+		} else {
+			generateSum('hersteller','dosis,impfstelle');
+			generateSum('impfstelle','dosis,hersteller');
+			generateSum('dosis','hersteller,impfstelle');
+			generateSum('dosis','alter,impfstelle');
+			generateSum('alter','dosis,impfstelle');
+			generateSum('impfstelle','dosis,alter');
+		}
 
-	// Jetzt noch Checks, um Impfquote und Impfinzidenz zu berechnen:
-	checks.push({key:'impf_quote_dosen',    calc:(obj,pop) =>  100*obj.dosen_kumulativ        /pop, debug:'impf_quote_dosen = 100*dosen_kumulativ/pop'});
-	checks.push({key:'impf_quote_erst',     calc:(obj,pop) =>  100*obj.personen_erst_kumulativ/pop, debug:'impf_quote_erst = 100*personen_erst_kumulativ/pop'});
-	checks.push({key:'impf_quote_voll',     calc:(obj,pop) =>  100*obj.personen_voll_kumulativ/pop, debug:'impf_quote_voll = 100*personen_voll_kumulativ/pop'});
-	checks.push({key:'impf_inzidenz_dosen', calc:(obj,pop) => 1000*obj.dosen_kumulativ        /pop, debug:'impf_inzidenz_dosen = 1000*dosen_kumulativ/pop'});
-	checks.push({key:'impf_inzidenz_erst',  calc:(obj,pop) => 1000*obj.personen_erst_kumulativ/pop, debug:'impf_inzidenz_erst = 1000*personen_erst_kumulativ/pop'});
-	checks.push({key:'impf_inzidenz_voll',  calc:(obj,pop) => 1000*obj.personen_voll_kumulativ/pop, debug:'impf_inzidenz_voll = 1000*personen_voll_kumulativ/pop'});
+		// Jetzt noch Checks, um Impfquote und Impfinzidenz zu berechnen:
+		checks.push({key:'impf_quote_dosen',    calc:(obj,pop) =>  100*obj.dosen_kumulativ        /pop, debug:'impf_quote_dosen = 100*dosen_kumulativ/pop'});
+		checks.push({key:'impf_quote_erst',     calc:(obj,pop) =>  100*obj.personen_erst_kumulativ/pop, debug:'impf_quote_erst = 100*personen_erst_kumulativ/pop'});
+		checks.push({key:'impf_quote_voll',     calc:(obj,pop) =>  100*obj.personen_voll_kumulativ/pop, debug:'impf_quote_voll = 100*personen_voll_kumulativ/pop'});
+		checks.push({key:'impf_inzidenz_dosen', calc:(obj,pop) => 1000*obj.dosen_kumulativ        /pop, debug:'impf_inzidenz_dosen = 1000*dosen_kumulativ/pop'});
+		checks.push({key:'impf_inzidenz_erst',  calc:(obj,pop) => 1000*obj.personen_erst_kumulativ/pop, debug:'impf_inzidenz_erst = 1000*personen_erst_kumulativ/pop'});
+		checks.push({key:'impf_inzidenz_voll',  calc:(obj,pop) => 1000*obj.personen_voll_kumulativ/pop, debug:'impf_inzidenz_voll = 1000*personen_voll_kumulativ/pop'});
 
-	return checks;
+		checks.forEach((c,i) => c.order = (c.level || 100) * 1e4 + i)
+		checks.sort((a,b) => a.order - b.order);
 
-	function generateSum(sumKey, forKey) {
-		dimLookup[forKey].forEach(forValue => {
-			let cell = {};
-			cell0Def.forEach(e => cell[e.key] = e.value);
-			cell[forKey] = forValue;
-			let slug0 = dataDefinition.getSlug(cell);
-			let slugs = dimLookup[sumKey].slice(1).map(sumValue => {
-				cell[sumKey] = sumValue;
-				return dataDefinition.getSlug(cell);
+		return checks;
+
+		function generateSum(sumKey, whereKeys) {
+			// so my mental model is SQL
+			// sumKey is the field name that should be summed up
+			// whereKey defines the filter
+
+			// generate all combinations of values for every "where" key
+			let whereEntries = [{level:50}];
+			whereKeys.split(',').forEach(whereKey => {
+				let newWhereEntries = [];
+				dimLookup[whereKey].forEach((whereVal,i) => {
+					whereEntries.forEach(e => {
+						e = Object.assign({},e);
+						if (i > 0) e.level--;
+						e[whereKey] = whereVal; 
+						newWhereEntries.push(e);
+					})
+				})
+				whereEntries = newWhereEntries;
 			})
-			checks.push({key:slug0, calc:obj => slugs.reduce((sum, slug) => sum + obj[slug], 0), debug:slug0+' = '+slugs.join(' + ')});
-		})
+
+			whereEntries.forEach(whereEntry => {
+				let cell = {};
+				cell = Object.assign(cell, cell0);
+				cell = Object.assign(cell, whereEntry);
+				let slug0 = dataDefinition.getSlug(cell);
+				if (slug0.startsWith('indikation_')) {
+					console.log(slug0);
+					console.log(cell);
+				}
+				let slugs = dimLookup[sumKey].slice(1).map(sumValue => {
+					cell[sumKey] = sumValue;
+					return dataDefinition.getSlug(cell);
+				})
+				checks.push({
+					key:slug0,
+					calc:obj => slugs.reduce((sum, slug) => sum + obj[slug], 0),
+					debug:slug0+' = '+slugs.join(' + ')+'   '+JSON.stringify(whereEntry),
+					level:whereEntry.level,
+				});
+			})
+		}
 	}
+
 }
 
 function keySorter(obj) {
