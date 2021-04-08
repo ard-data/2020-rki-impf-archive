@@ -17,8 +17,7 @@ signalUpdate=42
 	node 2_deduplicate.js &&
 	node 3_parse.js &&
 	node 4_complete_data.js &&
-	node 5_generate_csv.js &&
-	node 7_merge_all.js
+	node 5_generate_csv.js
 } || {
 	error=$?
 	signalNoUpdate=$error
