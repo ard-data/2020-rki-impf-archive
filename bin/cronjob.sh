@@ -18,7 +18,6 @@ signalUpdate=42
 	node 3_parse.js &&
 	node 4_complete_data.js &&
 	node 5_generate_csv.js &&
-	node 6_generate_old_csv.js &&
 	node 7_merge_all.js
 } || {
 	error=$?
