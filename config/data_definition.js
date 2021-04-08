@@ -99,18 +99,22 @@ module.exports = date => {
 	function getSlug(cell) {
 		let suffix = '';
 
-		switch (cell.impfstelle) {
-			case 'alle':break;
-			case 'zentral': suffix += '_impfstelle_zentral'; break;
-			case 'aerzte': suffix += '_impfstelle_aerzte'; break;
-			default: throw Error();
+		if (dimensionsLookup.has('impfstelle')) {
+			switch (cell.impfstelle) {
+				case 'alle':break;
+				case 'zentral': suffix += '_impfstelle_zentral'; break;
+				case 'aerzte': suffix += '_impfstelle_aerzte'; break;
+				default: throw Error();
+			}
 		}
 
-		switch (cell.alter) {
-			case 'alle':break;
-			case '<60': suffix += '_alter_unter60'; break;
-			case '60+': suffix += '_alter_60plus'; break;
-			default: throw Error();
+		if (dimensionsLookup.has('alter')) {
+			switch (cell.alter) {
+				case 'alle':break;
+				case '<60': suffix += '_alter_unter60'; break;
+				case '60+': suffix += '_alter_60plus'; break;
+				default: throw Error();
+			}
 		}
 
 		if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',hersteller:'!0'})) return [cell.dosis === 'dosen' ? 'dosen' : 'dosen_'+cell.dosis, cell.hersteller, 'kumulativ'].join('_')+suffix;
@@ -137,15 +141,29 @@ module.exports = date => {
 		throw Error('unknown slug');
 
 		function cellIsIn(query) {
-			let onlyKnownDimensions = Object.keys(query).every(key => dimensionsLookup.has(key));
-			if (!onlyKnownDimensions) return false;
-
-			query = fixQuery(query);
+			query = getQuery(query);
+			if (!query) return false;
 			return dimensionNames.every(d => query[d].has(cell[d]));
 
-			function fixQuery(query) {
+			function getQuery(query) {
 				let key = JSON.stringify(query);
 				if (cellQueryCache.has(key)) return cellQueryCache.get(key);
+				let obj = calcQuery(query);
+				cellQueryCache.set(key,obj);
+				return obj;
+			}
+
+			function calcQuery(query) {
+				for (let key of Object.keys(query)) {
+					if (dimensionsLookup.has(key)) continue;
+					switch (query[key]) {
+						case '*': continue;
+						default:
+							console.log(query);
+							console.log(key);
+							throw Error();
+					}
+				}
 
 				let obj = {};
 				dimensions.forEach(d => {
@@ -154,7 +172,6 @@ module.exports = date => {
 					if (query[d.name] === '!0'     ) return obj[d.name] = new Set(d.elements.slice(1));
 					return obj[d.name] = new Set(query[d.name].split(','));
 				});
-				cellQueryCache.set(key,obj);
 				return obj;
 			}
 		}
