@@ -302,18 +302,19 @@ function extractData(excel) {
 	}
 
 	function extractIndikation(data, sheet, pubDate) {
-		// extract data from sheet "indikation"
+		// extract data from sheet "indikation/impfquote"
 		let range = 'B2:G18';
 		if (pubDate >= '2021-01-04') range = 'B2:H18';
 		if (pubDate >= '2021-01-07') range = 'C2:I18';
 		if (pubDate >= '2021-01-17') range = 'C3:J19';
 		if (pubDate >= '2021-03-04') range = 'C3:J20';
 		if (pubDate >= '2021-04-08') range = 'C5:Q22';
+		if (pubDate >= '2021-04-09') range = 'C5:S22';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
 	function extractHersteller(data, sheet, pubDate) {
-		// extract data from sheet "hersteller"
+		// extract data from sheet "hersteller/impfstoff"
 		let range = 'C4:I20';
 		if (pubDate >= '2021-01-19') range = 'C4:J20';
 		if (pubDate >= '2021-02-04') range = 'C4:M20';
@@ -503,7 +504,10 @@ function extractData(excel) {
 			}
 		}
 		if (date >= '2021-04-07') {
+			key = key.replace('_der_niedergelassenen_ärzteschaft_','_bei_niedergelassenen_ärzten_')
 			switch (key) {
+				case 'indikation_insgesamt_über_alle_impfstellen_gesamtzahl_einmalig_geimpft': return 'personen_erst_kumulativ';
+				case 'indikation_insgesamt_über_alle_impfstellen_gesamtzahl_vollständig_geimpft': return 'personen_voll_kumulativ';
 				case 'indikation_insgesamt_über_alle_impfstellen_gesamtzahl_bisher_verabreichter_impfungen': return 'dosen_kumulativ';
 
 				case 'indikation_insgesamt_über_alle_impfstellen_impfquote_mit_einer_impfung_gesamt': return 'impf_quote_erst';
@@ -522,7 +526,7 @@ function extractData(excel) {
 				case 'indikation_impfungen_bei_niedergelassenen_ärzten_eine_impfung_60+_jahre': return 'personen_erst_kumulativ_impfstelle_aerzte_alter_60plus';
 				case 'indikation_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_<60_jahre': return 'personen_voll_kumulativ_impfstelle_aerzte_alter_unter60';
 				case 'indikation_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_60+jahre': return 'personen_voll_kumulativ_impfstelle_aerzte_alter_60plus';
-
+				
 				case 'hersteller_impfungen_in_impfzentren,_mobilen_teams,_krankenhäusern_eine_impfung_impfungen_kumulativ_gesamt': return 'personen_erst_kumulativ_impfstelle_zentral';
 				case 'hersteller_impfungen_in_impfzentren,_mobilen_teams,_krankenhäusern_eine_impfung_impfungen_kumulativ_biontech': return 'dosen_erst_biontech_kumulativ_impfstelle_zentral';
 				case 'hersteller_impfungen_in_impfzentren,_mobilen_teams,_krankenhäusern_eine_impfung_impfungen_kumulativ_moderna': return 'dosen_erst_moderna_kumulativ_impfstelle_zentral';
