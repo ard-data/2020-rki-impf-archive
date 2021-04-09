@@ -182,7 +182,7 @@ function completeData(data, filename) {
 			generateSum('impfstelle','dosis,hersteller');
 			generateSum('dosis','hersteller,impfstelle');
 			generateSum('dosis','alter,impfstelle');
-			generateSum('alter','dosis,impfstelle');
+			//generateSum('alter','dosis,impfstelle');
 			generateSum('impfstelle','dosis,alter');
 		}
 
