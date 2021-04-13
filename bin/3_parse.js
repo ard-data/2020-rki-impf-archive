@@ -365,9 +365,11 @@ function extractData(excel) {
 
 	function extractVerlauf(data, sheet, date) {
 		let fields = [];
-		sheet.cells[0].forEach((v,col) => {
-			switch (v.trim()) {
-				case '': return;
+		sheet.cells[0].forEach((t,col) => {
+			t = (''+t).trim();
+			switch (t) {
+				case '':
+				case 'null': return;
 				case 'Datum':
 				case 'Datum der Impfung':
 					fields.push({col, key:'date', val:v => (new Date((v-25568.5)*86400000)).toISOString().slice(0,10) });
@@ -379,13 +381,15 @@ function extractData(excel) {
 				case 'Gesamtzahl verabreichter Impfstoffdosen':
 					fields.push({col, key:'dosen_kumulativ', val:v => v});
 				return;
+				case 'Einmal geimpft':
 				case 'Erstimpfung':
 					fields.push({col, key:'personen_erst_kumulativ', val:v => v});
 				return;
+				case 'Vollständig geimpft':
 				case 'Zweitimpfung':
 					fields.push({col, key:'personen_voll_kumulativ', val:v => v || 0});
 				return;
-				default: throw Error(JSON.stringify(v));
+				default: throw Error(JSON.stringify({t,col}));
 			}
 		})
 		sheet.cells.slice(1).forEach(row => {
