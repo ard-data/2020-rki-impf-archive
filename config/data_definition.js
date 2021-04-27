@@ -8,7 +8,7 @@ module.exports = date => {
 
 	const dimensions = [
 		{name: 'dosis', elements:['dosen','erst','voll']},
-		{name: 'hersteller', elements:['alle','biontech','moderna','astrazeneca']},
+		{name: 'hersteller', elements:['alle','biontech','moderna','astrazeneca','janssen']},
 		{name: 'indikation', elements:['alle','alter','beruf','medizinisch','pflegeheim'], optional: date >= '2021-04-08'},
 		{name: 'kumulativ', elements:['kumulativ', 'differenz'], optional:true},
 		{name: 'quote', elements:['absolut','impf_quote','impf_inzidenz']},

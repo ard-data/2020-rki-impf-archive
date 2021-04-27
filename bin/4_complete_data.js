@@ -106,7 +106,10 @@ function completeData(data, filename) {
 		if (pubDate < '2021-03-12') {
 			setValue('dosen_voll_astrazeneca_kumulativ', 0);
 		}
-		if (pubDate >= '2021-04-08') {
+		if (pubDate >= '2021-04-27') {
+			setValue('dosen_erst_janssen_kumulativ_impfstelle_aerzte', 0);
+			setValue('dosen_erst_janssen_kumulativ_impfstelle_zentral', 0);
+			setValue('dosen_voll_janssen_kumulativ_impfstelle_aerzte', 0);
 		}
 		
 
@@ -165,8 +168,9 @@ function completeData(data, filename) {
 			if (entry[key] === value) return;
 			if (!Number.isFinite(entry[key])) return entry[key] = value;
 			console.log('key', key);
-			console.log('value', value);
-			throw Error();
+			console.log('old value', entry[key]);
+			console.log('new value', value);
+			throw Error('do not overwrite values');
 		}
 	})
 
