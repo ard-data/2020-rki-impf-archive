@@ -384,6 +384,7 @@ function extractData(excel) {
 				return;
 				case 'Einmal geimpft':
 				case 'Erstimpfung':
+				case 'Begonnene Impfserie':
 					fields.push({col, key:'personen_erst_kumulativ', val:v => v});
 				return;
 				case 'Vollständig geimpft':
@@ -510,6 +511,9 @@ function extractData(excel) {
 		}
 		if (date >= '2021-04-07') {
 			key = key.replace('_der_niedergelassenen_ärzteschaft_','_bei_niedergelassenen_ärzten_')
+			key = key.replace('_begonnene_impfserie_','_eine_impfung_')
+			key = key.replace('_begonnener_impfserie_','_einer_impfung_')
+			key = key.replace('_begonnener_impfserien','_einmalig_geimpft')
 			switch (key) {
 				case 'indikation_insgesamt_über_alle_impfstellen_gesamtzahl_einmalig_geimpft': return 'personen_erst_kumulativ';
 				case 'indikation_insgesamt_über_alle_impfstellen_gesamtzahl_vollständig_geimpft': return 'personen_voll_kumulativ';
