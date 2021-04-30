@@ -323,6 +323,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-03-12') range = 'C4:O21';
 		if (pubDate >= '2021-04-08') range = 'C5:V22';
 		if (pubDate >= '2021-04-27') range = 'C5:W22';
+		if (pubDate >= '2021-04-30') range = 'C5:X22';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -559,6 +560,7 @@ function extractData(excel) {
 				case 'hersteller_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_impfungen_kumulativ_biontech': return 'dosen_voll_biontech_kumulativ_impfstelle_aerzte';
 				case 'hersteller_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_impfungen_kumulativ_moderna': return 'dosen_voll_moderna_kumulativ_impfstelle_aerzte';
 				case 'hersteller_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_impfungen_kumulativ_astrazeneca': return 'dosen_voll_astrazeneca_kumulativ_impfstelle_aerzte';
+				case 'hersteller_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_impfungen_kumulativ_janssen': return 'dosen_voll_janssen_kumulativ_impfstelle_aerzte';
 				case 'hersteller_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_differenz_zum_vortag': return 'dosen_voll_differenz_zum_vortag_impfstelle_aerzte';
 			}
 		}
