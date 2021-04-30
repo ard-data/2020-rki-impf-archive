@@ -82,6 +82,9 @@ function completeData(data, filename) {
 		// Setze fehlende Werte
 		// Wenn man einen Wert setzt, der bereits einen anderen Wert hat,
 		// bricht das Script mit einem Fehler ab.
+		setValue('dosen_erst_janssen_kumulativ', 0);
+		setValue('dosen_erst_janssen_kumulativ_impfstelle_aerzte', 0);
+		setValue('dosen_erst_janssen_kumulativ_impfstelle_zentral', 0);
 		if (pubDate < '2021-01-17') {
 			setValue('personen_voll_kumulativ', 0);
 			setValue('personen_erst_kumulativ', entry.dosen_kumulativ);
@@ -106,10 +109,15 @@ function completeData(data, filename) {
 		if (pubDate < '2021-03-12') {
 			setValue('dosen_voll_astrazeneca_kumulativ', 0);
 		}
-		if (pubDate >= '2021-04-27') {
-			setValue('dosen_erst_janssen_kumulativ_impfstelle_aerzte', 0);
-			setValue('dosen_erst_janssen_kumulativ_impfstelle_zentral', 0);
-		if (pubDate < '2021-04-30') setValue('dosen_voll_janssen_kumulativ_impfstelle_aerzte', 0);
+		if (pubDate < '2021-04-27') {
+			setValue('dosen_janssen_kumulativ', 0);
+			setValue('dosen_janssen_kumulativ_impfstelle_zentral', 0);
+			setValue('dosen_voll_janssen_kumulativ', 0);
+			setValue('dosen_voll_janssen_kumulativ_impfstelle_zentral', 0);
+		}
+		if (pubDate < '2021-04-30') {
+			setValue('dosen_janssen_kumulativ_impfstelle_aerzte', 0);
+			setValue('dosen_voll_janssen_kumulativ_impfstelle_aerzte', 0);
 		}
 		
 
