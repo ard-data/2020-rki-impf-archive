@@ -405,10 +405,10 @@ function extractData(excel) {
 				case 'Gesamt (ohne Bund)':
 				case 'Bund*':
 				case '*Die dem Bund zugeordneten Impfdaten liegen bisher nicht nach Impftag vor.':
-				case 'HINWEIS: Aufgrund technischer Probleme beim Abruf der Daten von der Bdr könnten die berichteten Daten für den 17.05.2021 in einigen Bundesländer unvollständig sein.':
 				return;
 			}
 
+			if ((''+row[0]).startsWith('HINWEIS')) return;
 			if ((''+row[0]).startsWith('In den Gesamtsummen der Zweitimpfung')) return
 			
 			if (Number.isFinite(row[0])) {
