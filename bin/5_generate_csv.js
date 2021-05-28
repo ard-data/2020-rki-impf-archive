@@ -50,42 +50,8 @@ Array.from(tables.values()).forEach(table => {
 })
 
 // Ein Tabellen-Index als HTML erzeugen und speichern.
-let html = [];
-html.push('<html>');
-html.push('<head><style>')
-html.push('body { font-family:sans-serif; }')
-html.push('a { color:#000 !important; }')
-html.push('table { margin:50px auto; border-spacing:0; }')
-html.push('th, td { padding: 1px 5px; }')
-html.push('td { text-align: right }')
-html.push('td:first-child { text-align: left }')
-html.push('tr:hover td { background: #eee }')
-html.push('</style></head>')
-html.push('<body>')
-html.push('<table>')
-html.push('<thead><tr><th>Dateiname</th><th>Spalten</th><th>Zeilen</th><th>Vollständigkeit</th></tr></thead>')
-html.push('<tbody>')
+generateFileIndex(Array.from(tables.values()));
 
-Array.from(tables.values()).sort((a,b) => a.filename < b.filename ? -1 : 1).forEach(f => {
-	let name = f.filename;
-	let cols = f.cols.filter(c => c.isNumber);
-	let rows = f.entries;
-	
-	let completeness = 0;
-	f.entries.forEach(e => {
-		cols.forEach(c => {
-			if (Number.isFinite(e.row[c.index])) completeness++;
-		})
-	});
-	completeness = (100*(completeness/(cols.length*rows.length))).toFixed(1)+'%';
-	
-	html.push(`<tr><td><a href="${name}">${name}</a></td><td>${cols.length}</td><td>${rows.length}</td><td>${completeness}</td></tr>`);
-});
-
-html.push('</tbody></table>');
-html.push('</body></html>');
-
-fs.writeFileSync(resolve(dirDst, 'index.html'), html.join('\n'));
 
 
 
@@ -130,3 +96,43 @@ function addCell(table, key, col, value, isNumber) {
 	let entry = table.entries.get(key);
 	entry.row[col.index] = value;
 }
+
+function generateFileIndex(files) {
+	let html = [];
+	html.push('<html>');
+	html.push('<head><style>')
+	html.push('body { font-family:sans-serif; }')
+	html.push('a { color:#000 !important; }')
+	html.push('table { margin:50px auto; border-spacing:0; }')
+	html.push('th, td { padding: 1px 5px; }')
+	html.push('td { text-align: right }')
+	html.push('td:first-child { text-align: left }')
+	html.push('tr:hover td { background: #eee }')
+	html.push('</style></head>')
+	html.push('<body>')
+	html.push('<table>')
+	html.push('<thead><tr><th>Dateiname</th><th>Spalten</th><th>Zeilen</th><th>Vollständigkeit</th></tr></thead>')
+	html.push('<tbody>')
+
+	files.sort((a,b) => a.filename < b.filename ? -1 : 1).forEach(f => {
+		let name = f.filename;
+		let cols = f.cols.filter(c => c.isNumber);
+		let rows = f.entries;
+		
+		let completeness = 0;
+		f.entries.forEach(e => {
+			cols.forEach(c => {
+				if (Number.isFinite(e.row[c.index])) completeness++;
+			})
+		});
+		completeness = (100*(completeness/(cols.length*rows.length))).toFixed(1)+'%';
+		
+		html.push(`<tr><td><a href="${name}">${name}</a></td><td>${cols.length}</td><td>${rows.length}</td><td>${completeness}</td></tr>`);
+	});
+
+	html.push('</tbody></table>');
+	html.push('</body></html>');
+
+	fs.writeFileSync(resolve(dirDst, 'index.html'), html.join('\n'));
+}
+
