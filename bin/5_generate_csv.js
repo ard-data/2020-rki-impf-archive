@@ -15,6 +15,18 @@ fs.mkdirSync(dirDst, {recursive:true});
 const metrics = dataDefinition.parameters.map(p => p.slug);
 const states = dataDefinition.regions.map(r => r.code).filter(r => r !== 'DE');
 
+const htmlStyle = ['<style>',
+	'body { font-family:sans-serif }',
+	'a { color:#000 !important }',
+	'table { margin:50px auto; border-spacing:0; font-size:14px }',
+	'th, td { padding:1px 10px; border-left:1px solid #aaa }',
+	'td { text-align:right }',
+	'td:first-child { border-left:none; text-align:left }',
+	'th:first-child { border-left:none }',
+	'tr:hover td { background:#eee }',
+	'</style>',
+].join('\n');
+
 
 // Alle JSON-Dateien durchgehen und die Werte hinzufügen.
 const tables = new Map();
@@ -52,6 +64,8 @@ Array.from(tables.values()).forEach(table => {
 // Ein Tabellen-Index als HTML erzeugen und speichern.
 generateFileIndex(Array.from(tables.values()));
 
+// Eine Liste aller Paramter als HTML erzeugen und speichern.
+generateParameterIndex();
 
 
 
@@ -99,16 +113,8 @@ function addCell(table, key, col, value, isNumber) {
 
 function generateFileIndex(files) {
 	let html = [];
-	html.push('<html>');
-	html.push('<head><style>')
-	html.push('body { font-family:sans-serif; }')
-	html.push('a { color:#000 !important; }')
-	html.push('table { margin:50px auto; border-spacing:0; }')
-	html.push('th, td { padding: 1px 5px; }')
-	html.push('td { text-align: right }')
-	html.push('td:first-child { text-align: left }')
-	html.push('tr:hover td { background: #eee }')
-	html.push('</style></head>')
+	html.push('<html>')
+	html.push(`<head>${htmlStyle}</head>`)
 	html.push('<body>')
 	html.push('<table>')
 	html.push('<thead><tr><th>Dateiname</th><th>Spalten</th><th>Zeilen</th><th>Vollständigkeit</th></tr></thead>')
@@ -136,3 +142,34 @@ function generateFileIndex(files) {
 	fs.writeFileSync(resolve(dirDst, 'index.html'), html.join('\n'));
 }
 
+
+function generateParameterIndex() {
+	let parameters = dataDefinition.parameters;
+	parameters.sort((a,b) => a.slug < b.slug ? -1 : 1);
+
+	let dimensions = dataDefinition.dimensions;
+	dimensions.forEach(d => d.title = d.name[0].toUpperCase()+d.name.slice(1));
+
+	let html = [];
+	html.push('<html>')
+	html.push(`<head>${htmlStyle}</head>`)
+	html.push('<body>')
+	html.push('<table>')
+	html.push('<thead>')
+	html.push('<tr><th></th><th colspan="'+dimensions.length+'">Dimensionen</tr>')
+	html.push('<tr><th>Name</th>'+dimensions.map(d => '<th>'+d.title+'</th>').join('')+'</tr>')
+	html.push('</thead>')
+	html.push('<tbody>')
+
+	parameters.forEach(p => {
+		let row = [];
+		row.push(p.slug);
+		dimensions.forEach(d => row.push(p.cell[d.name]));
+		html.push('<tr><td>'+row.join('</td><td>')+'</td></tr>');
+	});
+
+	html.push('</tbody></table>');
+	html.push('</body></html>');
+
+	fs.writeFileSync(resolve(__dirname, '../parameters.html'), html.join('\n'));
+}
