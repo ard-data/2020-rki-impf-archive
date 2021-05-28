@@ -18,6 +18,7 @@ const states = dataDefinition.regions.map(r => r.code).filter(r => r !== 'DE');
 const htmlStyle = ['<style>',
 	'body { font-family:sans-serif }',
 	'a { color:#000 !important }',
+	'p { text-align:center; margin:20px; font-size:14px }',
 	'table { margin:50px auto; border-spacing:0; font-size:14px }',
 	'th, td { padding:1px 10px; border-left:1px solid #aaa }',
 	'td { text-align:right }',
@@ -137,6 +138,7 @@ function generateFileIndex(files) {
 	});
 
 	html.push('</tbody></table>');
+	html.push('<p><a href="https://github.com/ard-data/2020-rki-impf-archive">GitHub.com/ARD-Data/2020-RKI-Impf-Archive</a></p>')
 	html.push('</body></html>');
 
 	fs.writeFileSync(resolve(dirDst, 'index.html'), html.join('\n'));
@@ -169,6 +171,7 @@ function generateParameterIndex() {
 	});
 
 	html.push('</tbody></table>');
+	html.push('<p><a href="https://github.com/ard-data/2020-rki-impf-archive">GitHub.com/ARD-Data/2020-RKI-Impf-Archive</a></p>')
 	html.push('</body></html>');
 
 	fs.writeFileSync(resolve(__dirname, '../parameters.html'), html.join('\n'));
