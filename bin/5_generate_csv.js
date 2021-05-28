@@ -27,8 +27,12 @@ fs.readdirSync(dirSrc).sort().forEach(filename => {
 	addObj(data, data.germany);
 })
 
+let fileIndex = [];
 Array.from(tables.values()).forEach(table => {
-	let fullname = resolve(dirDst, table.filename+'.csv');
+	let fullname = table.filename+'.csv';
+	fileIndex.push(fullname);
+	fullname = resolve(dirDst, fullname);
+
 	table.cols = Array.from(table.cols.values()).sort((a,b) => a.index - b.index);
 	table.entries = Array.from(table.entries.values()).sort((a,b) => a.index - b.index);
 
@@ -46,6 +50,10 @@ Array.from(tables.values()).forEach(table => {
 
 	fs.writeFileSync(fullname, data, 'utf8');
 })
+
+fileIndex = fileIndex.sort().map(url => `<a href="${url}">${url}</a>`).join('<br>');
+fileIndex = `<html><body>${fileIndex}</body></html>`;
+fs.writeFileSync(resolve(dirDst, 'index.html'), fileIndex);
 
 function addObj(data, obj) {
 	let date = data.date;
