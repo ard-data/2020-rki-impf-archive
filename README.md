@@ -63,6 +63,8 @@ Die Daten in diesem Repo sind natürlich keine offizielle Veröffentlichung des 
 
 Die Beschreibung der Datenfelder, sowie weitere Hinweise können den Exceldateien entnommen werden, so wie der Webseite des RKI.
 
+Inzwischen gibt es über 80 verschiedene Felder. Als Hilfestellung erzeugen wir eine [automatisch generierte Übersicht aller Parameter](https://ard-data.github.io/2020-rki-impf-archive/parameters.html).
+
 
 
 ## Datenvervollständigung
