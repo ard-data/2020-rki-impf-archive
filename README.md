@@ -24,6 +24,7 @@ Wer auf die Daten täglich angewiesen ist und bei Problemen benachrichtigt werde
 		- `all.csv` enthält alle Daten. Gut zu Pivotieren.
 		- `region_*` sind Slices nach Region, also Bundesländer/Deutschland.
 		- `metric_*` sind Slices nach den Metriken.
+- Wenn man auf die CSV-Dateien z.B. per Ajax zugreifen möchte, kann man das über github.io tun. Der Einfachheit halber haben wir dafür [hier eine Liste der CSV-Dateien auf github.io](https://ard-data.github.io/2020-rki-impf-archive/data/9_csv_v2/) erstellt.
 
 Per Cronjob werden die Daten alle 20 Minuten beim RKI angefragt. Wenn sie beim RKI aktualisiert wurden (also sich der Hash der Exceldatei verändert), wird die neue Datei runtergeladen nach `0_original`, geparst nach `1_parsed`, gesäubert nach `2_completed` und die entsprechenden CSV-Dateien in `9_csv_v2` aktualisiert.
 
@@ -90,7 +91,7 @@ Hier werden noch einmal alle möglichen Werte überprüft, ob sie angegeben wurd
 
 ### Unter welcher Lizenz stehen die Daten hier?
 
-Wir empfehlen auf jeden Fall das RKI als Quelle anzugeben. Über freundliche Erwähnungen freuen wir uns natürlich auch.
+Wir empfehlen auf jeden Fall das RKI als Quelle anzugeben. Über freundliche Erwähnungen dieses Repos freuen wir uns natürlich auch.
 
 
 ### Der Wert für "Differenz zum Vortag" scheint lückenhaft zu sein. Was tun?

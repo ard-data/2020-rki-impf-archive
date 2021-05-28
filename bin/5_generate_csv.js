@@ -16,7 +16,7 @@ const metrics = dataDefinition.parameters.map(p => p.slug);
 const states = dataDefinition.regions.map(r => r.code).filter(r => r !== 'DE');
 
 
-
+// Alle JSON-Dateien durchgehen und die Werte hinzufügen.
 const tables = new Map();
 fs.readdirSync(dirSrc).sort().forEach(filename => {
 	if (!/impfquotenmonitoring-202.*\.json/.test(filename)) return;
@@ -27,11 +27,9 @@ fs.readdirSync(dirSrc).sort().forEach(filename => {
 	addObj(data, data.germany);
 })
 
-let fileIndex = [];
+// Alle Tabellen speichern
 Array.from(tables.values()).forEach(table => {
-	let fullname = table.filename+'.csv';
-	fileIndex.push(fullname);
-	fullname = resolve(dirDst, fullname);
+	let fullname = resolve(dirDst, table.filename);
 
 	table.cols = Array.from(table.cols.values()).sort((a,b) => a.index - b.index);
 	table.entries = Array.from(table.entries.values()).sort((a,b) => a.index - b.index);
@@ -51,9 +49,45 @@ Array.from(tables.values()).forEach(table => {
 	fs.writeFileSync(fullname, data, 'utf8');
 })
 
-fileIndex = fileIndex.sort().map(url => `<a href="${url}">${url}</a>`).join('<br>');
-fileIndex = `<html><body>${fileIndex}</body></html>`;
-fs.writeFileSync(resolve(dirDst, 'index.html'), fileIndex);
+// Ein Tabellen-Index als HTML erzeugen und speichern.
+let html = [];
+html.push('<html>');
+html.push('<head><style>')
+html.push('body { font-family:sans-serif; }')
+html.push('a { color:#000 !important; }')
+html.push('table { margin:50px auto; border-spacing:0; }')
+html.push('th, td { padding: 1px 5px; }')
+html.push('td { text-align: right }')
+html.push('td:first-child { text-align: left }')
+html.push('tr:hover td { background: #eee }')
+html.push('</style></head>')
+html.push('<body>')
+html.push('<table>')
+html.push('<thead><tr><th>Dateiname</th><th>Spalten</th><th>Zeilen</th><th>Vollständigkeit</th></tr></thead>')
+html.push('<tbody>')
+
+Array.from(tables.values()).sort((a,b) => a.filename < b.filename ? -1 : 1).forEach(f => {
+	let name = f.filename;
+	let cols = f.cols.filter(c => c.isNumber);
+	let rows = f.entries;
+	
+	let completeness = 0;
+	f.entries.forEach(e => {
+		cols.forEach(c => {
+			if (Number.isFinite(e.row[c.index])) completeness++;
+		})
+	});
+	completeness = (100*(completeness/(cols.length*rows.length))).toFixed(1)+'%';
+	
+	html.push(`<tr><td><a href="${name}">${name}</a></td><td>${cols.length}</td><td>${rows.length}</td><td>${completeness}</td></tr>`);
+});
+
+html.push('</tbody></table>');
+html.push('</body></html>');
+
+fs.writeFileSync(resolve(dirDst, 'index.html'), html.join('\n'));
+
+
 
 function addObj(data, obj) {
 	let date = data.date;
@@ -69,24 +103,24 @@ function addObj(data, obj) {
 
 		let value = obj[metric];
 
-		addCell('region_'+region, date, metric, value);
+		addCell('region_'+region, date, metric, value, true);
 
-		addCell('metric_'+metric, date, region, value);
+		addCell('metric_'+metric, date, region, value, true);
 
 		addCell('all', date+'_'+region+'_'+metric, 'date', date);
 		addCell('all', date+'_'+region+'_'+metric, 'publication_date', pubDate);
 		addCell('all', date+'_'+region+'_'+metric, 'region', region);
 		addCell('all', date+'_'+region+'_'+metric, 'metric', metric);
-		addCell('all', date+'_'+region+'_'+metric, 'value', value);
+		addCell('all', date+'_'+region+'_'+metric, 'value', value, true);
 	})
 }
 
-function addCell(table, key, col, value) {
+function addCell(table, key, col, value, isNumber) {
 
-	if (!tables.has(table)) tables.set(table, {filename:table, entries:new Map(), cols:new Map()});
+	if (!tables.has(table)) tables.set(table, {filename:table+'.csv', entries:new Map(), cols:new Map()});
 	table = tables.get(table);
 
-	if (!table.cols.has(col)) table.cols.set(col, {text:col, index:table.cols.size});
+	if (!table.cols.has(col)) table.cols.set(col, {text:col, index:table.cols.size, isNumber});
 	col = table.cols.get(col);
 
 	if (!table.entries.has(key)) table.entries.set(key, {index:table.entries.size, row:[]});
