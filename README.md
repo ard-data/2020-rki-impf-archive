@@ -128,7 +128,7 @@ Falls der Scraper mit Veränderungen an den Excel-Tabellen nicht zurecht kommen 
 
 Probleme und Feature-Wünsche können als [neues GitHub Issue](https://github.com/ard-data/2020-rki-impf-archive/issues/new) eingetragen werden.
 
-Wer bei Änderungen oder Problemen direkt per Mail benachrichtigt werden möchte, kann sich [hier auf der Mailingliste anmelden](https://lists.riseup.net/www/subscribe/ard_rki_data).
+Wer bei Änderungen oder Problemen direkt per Mail benachrichtigt werden möchte, kann sich [hier auf der Mailingliste anmelden](https://lists.riseup.net/www/subscribe/ard_rki_data). Dort findet man auch ein [Mail-Archiv](https://lists.riseup.net/www/arc/ard_rki_data), um sich die bisherigen Mails anzuschauen.
 
 In Notfällen kann der Autor dieses Projektes auch per [Mail](mailto:rki-scraper@michael-kreil.de) erreicht werden.
 
