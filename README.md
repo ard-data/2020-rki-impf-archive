@@ -76,12 +76,12 @@ Seit Einführung von Janssen/Johnson & Johnson, einem Impfstoff, der nur in eine
 	<th>Zweite Dosis Astra/BionTech/Moderna</th>
 </tr>
 <tr>
-	<td align="center"><i>„begonnene Impfserie“</i><br>Feldname: <code>erst</code></td>
-	<td colspan="2" align="center"><i>„vollständig geimpft“</i><br>Feldname: <code>voll</code></td>
+	<td align="center"><i>„begonnene Impfserie“</i><br>Feldname: <code>personen_erst</code></td>
+	<td colspan="2" align="center"><i>„vollständig geimpft“</i><br>Feldname: <code>personen_voll</code></td>
 </tr>
 <tr>
-	<td colspan="2" align="center"><i>„mindestens einmal geimpft“</i><br>Feldname: <code>min1</code></td>
-	<td align="center"><i>„Impfserie beendet“</i><br>Feldname: <code>zweit</code></td>
+	<td colspan="2" align="center"><i>„mindestens einmal geimpft“</i><br>Feldname: <code>personen_min1</code></td>
+	<td align="center"><i>„Impfserie beendet“</i><br>Feldname: <code>personen_zweit</code></td>
 </tr>
 <tr>
 	<td colspan="3" align="center"><i>„verabreichte Impfdosen“</i><br>Feldname: <code>dosen</code></td>
