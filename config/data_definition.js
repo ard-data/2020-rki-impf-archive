@@ -12,7 +12,7 @@ module.exports = date => {
 		{name: 'indikation', elements:['alle','alter','beruf','medizinisch','pflegeheim'], optional: date >= '2021-04-08'},
 		{name: 'kumulativ', elements:['kumulativ', 'differenz'], optional:true},
 		{name: 'quote', elements:['absolut','impf_quote','impf_inzidenz']},
-		{name: 'impfstelle', elements:['alle','zentral','aerzte'], ignore: date < '2021-04-08'},
+		{name: 'impfstelle', elements:['alle','zentral','aerzte'], ignore: (date < '2021-04-08') || (date >= '2021-06-07')},
 		{name: 'alter', elements:['alle','<60','60+'], optional:true, ignore: (date < '2021-04-08') || (date >= '2021-06-07')},
 		{name: 'alter', elements:['alle','<18','18-59','60+'], optional:true, ignore: date < '2021-06-07'},
 	].filter(d => !d.ignore);

@@ -90,9 +90,6 @@ function completeData(data, filename) {
 		// Setze fehlende Werte
 		// Wenn man einen Wert setzt, der bereits einen anderen Wert hat,
 		// bricht das Script mit einem Fehler ab.
-
-
-
 		if (pubDate < '2021-01-17') {
 			setValue('dosen_biontech_kumulativ', entry.dosen_kumulativ);
 			setValue('indikation_alter_voll', 0);
@@ -134,37 +131,22 @@ function completeData(data, filename) {
 			setValue('personen_erst_janssen_kumulativ', 0);
 			setValue('personen_voll_janssen_kumulativ', 0);
 			setValue('personen_voll_janssen_kumulativ_impfstelle_zentral', 0);
-		}
-		if (pubDate < '2021-04-30') {
-			setValue('dosen_janssen_kumulativ_impfstelle_aerzte', 0);
-			setValue('personen_voll_janssen_kumulativ_impfstelle_aerzte', 0);
-			setValue('personen_erst_janssen_kumulativ_impfstelle_zentral', 0);
-
-			setValue('personen_erst_janssen_kumulativ_impfstelle_aerzte', 0);
-			setValue('personen_erst_janssen_kumulativ_impfstelle_zentral', 0);
-			setValue('personen_zweit_janssen_kumulativ_impfstelle_aerzte', 0);
-			setValue('personen_zweit_janssen_kumulativ_impfstelle_zentral', 0);
 
 			setValue('personen_zweit_kumulativ_impfstelle_aerzte', entry.personen_voll_kumulativ_impfstelle_aerzte);
 			setValue('personen_zweit_kumulativ_impfstelle_zentral', entry.personen_voll_kumulativ_impfstelle_zentral);
 		}
+		if (pubDate < '2021-04-30') {
+			setValue('dosen_janssen_kumulativ_impfstelle_aerzte', 0);
+			setValue('personen_voll_janssen_kumulativ_impfstelle_aerzte', 0);
+		}
 
-		//setValue('indikation_alter_zweit', entry.indikation_alter_voll);
-		//setValue('indikation_beruf_zweit', entry.indikation_beruf_voll);
-		//setValue('indikation_medizinisch_zweit', entry.indikation_medizinisch_voll);
-		//setValue('indikation_pflegeheim_zweit', entry.indikation_pflegeheim_voll);
-
-		setValue('personen_zweit_janssen_kumulativ', 0);
-
-		/*
 		setValue('personen_erst_janssen_kumulativ', 0);
 		setValue('personen_erst_janssen_kumulativ_impfstelle_aerzte', 0);
+		setValue('personen_erst_janssen_kumulativ_impfstelle_zentral', 0);
 		setValue('personen_erst_janssen_kumulativ_impfstelle_zentral', 0);
 		setValue('personen_zweit_janssen_kumulativ', 0);
 		setValue('personen_zweit_janssen_kumulativ_impfstelle_aerzte', 0);
 		setValue('personen_zweit_janssen_kumulativ_impfstelle_zentral', 0);
-		*/
-
 
 		// Berechne fehlende Werte
 		let checkChanged;
