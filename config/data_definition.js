@@ -13,7 +13,8 @@ module.exports = date => {
 		{name: 'kumulativ', elements:['kumulativ', 'differenz'], optional:true},
 		{name: 'quote', elements:['absolut','impf_quote','impf_inzidenz']},
 		{name: 'impfstelle', elements:['alle','zentral','aerzte'], ignore: date < '2021-04-08'},
-		{name: 'alter', elements:['alle','<60','60+'], optional:true, ignore: date < '2021-04-08'},
+		{name: 'alter', elements:['alle','<60','60+'], optional:true, ignore: (date < '2021-04-08') || (date >= '2021-06-07')},
+		{name: 'alter', elements:['alle','<18','18-59','60+'], optional:true, ignore: date < '2021-06-07'},
 	].filter(d => !d.ignore);
 
 	const dimensionNames = dimensions.map(d => d.name);
@@ -25,7 +26,9 @@ module.exports = date => {
 		{dimensions:new Set(['dosis','alter','impfstelle']), ignore: (date < '2021-04-08') || (date >= '2021-06-07')},
 		{dimensions:new Set(['dosis','indikation']), optional: date >= '2021-04-08'},
 		{dimensions:new Set(['dosis','quote'])},
+		{dimensions:new Set(['dosis','quote','alter']), ignore: (date < '2021-04-08')},
 		{dimensions:new Set(['dosis','kumulativ'])},
+		{dimensions:new Set(['dosis','kumulativ','impfstelle']), ignore: (date < '2021-04-08')},
 	].filter(d => !d.ignore);
 
 	const regions = [
@@ -112,7 +115,7 @@ module.exports = date => {
 			switch (cell.alter) {
 				case 'alle':break;
 				case '<18': suffix += '_alter_unter18'; break;
-				case '18-59': suffix += '_alter_18-59'; break;
+				case '18-59': suffix += '_alter_18bis59'; break;
 				case '<60': suffix += '_alter_unter60'; break;
 				case '60+': suffix += '_alter_60plus'; break;
 				default: throw Error();
