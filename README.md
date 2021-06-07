@@ -65,7 +65,33 @@ Die Beschreibung der Datenfelder, sowie weitere Hinweise können den Exceldateie
 
 Inzwischen gibt es über 80 verschiedene Felder. Als Hilfestellung erzeugen wir eine [automatisch generierte Übersicht aller Parameter](https://ard-data.github.io/2020-rki-impf-archive/parameters.html).
 
+### Erstimpfung, Zweitimpfung, volle Impfung, ...
 
+Seit Einführung von Janssen/Johnson & Johnson, einem Impfstoff, der nur in einer einzelnen Dosis verabreicht wird, gibt es Verwirrungen um das Wording. Vielleicht hilft die folgende Tabelle dabei, das Wording des RKIs und die Feldnamen in diesem Repo zu verstehen.
+
+<table>
+<tr>
+	<th>Erste Dosis Astra/BionTech/Moderna</th>
+	<th>Einzeldosis Janssen</th>
+	<th>Zweite Dosis Astra/BionTech/Moderna</th>
+</tr>
+<tr>
+	<td align="center"><i>„begonnene Impfserie“</i><br>Feldname: <code>erst</code></td>
+	<td colspan="2" align="center"><i>„vollständig geimpft“</i><br>Feldname: <code>voll</code></td>
+</tr>
+<tr>
+	<td colspan="2" align="center"><i>„mindestens einmal geimpft“</i><br>Feldname: <code>min1</code></td>
+	<td align="center"><i>„Impfserie beendet“</i><br>Feldname: <code>zweit</code></td>
+</tr>
+<tr>
+	<td colspan="3" align="center"><i>„verabreichte Impfdosen“</i><br>Feldname: <code>dosen</code></td>
+</tr>
+</table>
+
+Insbesondere muss darauf geachtet werden, dass die Summe aus *„mindestens einmal geimpft“* und *„vollständig geimpft“* nicht mehr gleich der Summe der *„verabreichten Impfdosen“* entspricht, da bei der Addition die Janssen-Dosen zweimal gezählt werden.
+
+Das RKI erklärt das in der Exceldatei folgendermaßen:
+> Die Gesamtzahl mindestens einmal Geimpfter umfasst alle Personen, die Erstimpfungen mit den Impfstoffen von BioNTech, Moderna oder AstraZeneca oder eine Impfung mit dem Impfstoff Janssen erhalten haben. Als vollständig geimpft gelten alle Personen, die Zweitimpfungen mit BioNTech, Moderna oder AstraZeneca oder eine Impfung mit Janssen erhalten haben. Die Impfungen mit Janssen sind daher sowohl in der Gruppe "mindestens einmal geimpft" als auch in der Gruppe "vollständig geimpft" enthalten. Sie werden für die Gesamtzahl der verabreichten Impfungen jedoch nur einmal gezählt.
 
 ## Datenvervollständigung
 
