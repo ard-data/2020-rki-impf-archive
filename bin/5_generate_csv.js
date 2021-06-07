@@ -9,11 +9,11 @@ const dataDefinition = require('../config/data_definition.js')('2021-04-08');
 
 
 const dirSrc = resolve(__dirname, '../data/2_completed/');
-const dirDst = resolve(__dirname, '../data/9_csv_v2/');
+const dirDst = resolve(__dirname, '../data/9_csv_v3/');
 fs.mkdirSync(dirDst, {recursive:true});
 
 const metrics = dataDefinition.parameters.map(p => p.slug);
-const states = dataDefinition.regions.map(r => r.code).filter(r => r !== 'DE');
+const states  = dataDefinition.regions.map(r => r.code).filter(r => r !== 'DE');
 
 const htmlStyle = ['<style>',
 	'body { font-family:sans-serif }',
