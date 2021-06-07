@@ -350,8 +350,8 @@ function extractData(excel) {
 					if (!colId) throw Error();
 
 					// save value
-					if (data[rowId][colId]) throw Error();
 					let value = sheet.cells[row][col];
+					if (data[rowId][colId] && (data[rowId][colId] !== value)) throw Error();
 					if (typeof value !== 'number') value = null;
 					data[rowId][colId] = value;
 				}
