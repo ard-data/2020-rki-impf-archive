@@ -1,12 +1,16 @@
 # RKI-Corona-Impf-Daten-Archiv
 
+> :warning: Am 7.6.2021 haben sich so viele Details an der Datenstruktur des RKI-Impfmonitors geändert, dass die Struktur der bisherigen CSV-Dateien aufgegeben werden musste. Zum einen können zahlreiche Felder nicht mehr weitergeführt werden, da das RKI sie nicht mehr auszeichent, zum anderen mussten einige Feldnamen geändert werden. Damit die neue CSV-Struktur nicht zu technischen Problemen bei alten Scraper führt, liegen **die neuen CSV-Dateien im neuen Verzeichnis
+[data/9_csv_v3](https://github.com/ard-data/2020-rki-impf-archive/tree/master/data/9_csv_v3)**.  
+Die [Übersicht aller neuen Felder ist ebenfalls aktualisiert](https://ard-data.github.io/2020-rki-impf-archive/parameters.html).
+
 ## Worum geht es?
 
 Das RKI veröffentlicht täglich die [gemeldeten Impfungen als Excel-Tabelle](https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html).
 
 Leider wird diese Excel-Tabelle täglich überschrieben, so dass keine historischen Verläufe möglich sind. Zwar bietet das [Impfdashboard](https://impfdashboard.de/) historische Verläufe, die sind aber wiederum nicht nach Bundesländern etc. aufgeschlüsselt.
 
-Deshalb sammeln wir die alten Datei-Versionen und stellen sie in diesem GitHub-Repo zur Verfügung. Per cronjob versuchen wir das Archiv täglich aktuell zu halten. Als Feature bereinigen wir sogar die Daten und bieten sie [als CSV](https://github.com/ard-data/2020-rki-impf-archive/tree/master/data/9_csv_v2) an.
+Deshalb sammeln wir die alten Datei-Versionen und stellen sie in diesem GitHub-Repo zur Verfügung. Per cronjob versuchen wir das Archiv täglich aktuell zu halten. Als Feature bereinigen wir sogar die Daten und bieten sie [als CSV](https://github.com/ard-data/2020-rki-impf-archive/tree/master/data/9_csv_v3) an.
 
 Wer auf die Daten täglich angewiesen ist und bei Problemen benachrichtigt werden möchte, kann sich [hier auf der Mailingliste anmelden](https://lists.riseup.net/www/subscribe/ard_rki_data), um bei Änderungen/Problemen direkt eine Mail zu bekommen.
 
@@ -19,14 +23,14 @@ Wer auf die Daten täglich angewiesen ist und bei Problemen benachrichtigt werde
 - Die rohen Excel-Dateien werden unter `data/0_original` gespeichert.
 - Die gesäuberten Daten landen als JSON unter `data/1_parsed`.
 - Die Daten werden geprüft, [vervollständigt](#datenvervollständigung) und landen dann unter `data/2_completed`.
-- Daraus werden CSV-Dateien generiert und aufschlüsselt nach Bundesländern, Erst-/Zweitimpfung, Hersteller usw. in `data/9_csv_v2` abgelegt.  
+- Daraus werden CSV-Dateien generiert und aufschlüsselt nach Bundesländern, Erst-/Zweitimpfung, Hersteller usw. in `data/9_csv_v3` abgelegt.  
   Es gibt dabei drei CSV-Typen:
 		- `all.csv` enthält alle Daten. Gut zu Pivotieren.
 		- `region_*` sind Slices nach Region, also Bundesländer/Deutschland.
 		- `metric_*` sind Slices nach den Metriken.
-- Wenn man auf die CSV-Dateien z.B. per Ajax zugreifen möchte, kann man das über github.io tun. Der Einfachheit halber haben wir dafür [hier eine Liste der CSV-Dateien auf github.io](https://ard-data.github.io/2020-rki-impf-archive/data/9_csv_v2/) erstellt.
+- Wenn man auf die CSV-Dateien z.B. per Ajax zugreifen möchte, kann man das über github.io tun. Der Einfachheit halber haben wir dafür [hier eine Liste der CSV-Dateien auf github.io](https://ard-data.github.io/2020-rki-impf-archive/data/9_csv_v3/) erstellt.
 
-Per Cronjob werden die Daten alle 20 Minuten beim RKI angefragt. Wenn sie beim RKI aktualisiert wurden (also sich der Hash der Exceldatei verändert), wird die neue Datei runtergeladen nach `0_original`, geparst nach `1_parsed`, gesäubert nach `2_completed` und die entsprechenden CSV-Dateien in `9_csv_v2` aktualisiert.
+Per Cronjob werden die Daten alle 20 Minuten beim RKI angefragt. Wenn sie beim RKI aktualisiert wurden (also sich der Hash der Exceldatei verändert), wird die neue Datei runtergeladen nach `0_original`, geparst nach `1_parsed`, gesäubert nach `2_completed` und die entsprechenden CSV-Dateien in `9_csv_v3` aktualisiert.
 
 
 ### Verzeichnis `bin`
