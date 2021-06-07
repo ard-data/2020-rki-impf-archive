@@ -130,7 +130,7 @@ module.exports = date => {
 
 		if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',kumulativ:'differenz'})) {
 			if (cell.dosis === 'dosen') return 'dosen_differenz_zum_vortag'+suffix;
-			return 'dosen_'+cell.dosis+'_differenz_zum_vortag'+suffix;
+			return 'personen_'+cell.dosis+'_differenz_zum_vortag'+suffix;
 		}
 
 		if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',quote:'impf_quote'   })) return 'impf_quote_'+cell.dosis+suffix;
