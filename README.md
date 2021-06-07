@@ -1,6 +1,6 @@
 # RKI-Corona-Impf-Daten-Archiv
 
-> :warning: Am 7.6.2021 haben sich so viele Details an der Datenstruktur des RKI-Impfmonitors geändert, dass die Struktur der bisherigen CSV-Dateien aufgegeben werden musste. Zum einen können zahlreiche Felder nicht mehr weitergeführt werden, da das RKI sie nicht mehr auszeichent, zum anderen mussten einige Feldnamen geändert werden. Damit die neue CSV-Struktur nicht zu technischen Problemen bei alten Scraper führt, liegen **die neuen CSV-Dateien im neuen Verzeichnis
+> :warning: Am 7.6.2021 haben sich so viele Details an der Datenstruktur des RKI-Impfmonitors geändert, dass die Struktur der bisherigen CSV-Dateien aufgegeben werden musste. Zum einen können zahlreiche Felder nicht mehr weitergeführt werden, da das RKI sie nicht mehr aktualisiert, zum anderen mussten einige Feldnamen geändert werden. Damit die neue CSV-Struktur nicht zu technischen Problemen bei alten Scraper führt, liegen **die neuen CSV-Dateien im neuen Verzeichnis
 [data/9_csv_v3](https://github.com/ard-data/2020-rki-impf-archive/tree/master/data/9_csv_v3)**.  
 Die [Übersicht aller neuen Felder ist ebenfalls aktualisiert](https://ard-data.github.io/2020-rki-impf-archive/parameters.html).
 
