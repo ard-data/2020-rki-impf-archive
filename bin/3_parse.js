@@ -210,6 +210,11 @@ function extractData(excel) {
 	// extract publication date
 	let pubDate = extractPubDate(sheets.front);
 	let dataDefinition = DataDefinition(pubDate);
+	let slugs = new Set();
+	dataDefinition.parameters.forEach(p => {
+		if (slugs.has(p.slug)) throw Error();
+		slugs.add(p.slug)
+	})
 
 	// extract date up to which the vaccinations are counted
 	let date = extractDate(sheets.front, sheets.indikation.name, pubDate);
@@ -310,6 +315,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-03-04') range = 'C3:J20';
 		if (pubDate >= '2021-04-08') range = 'C5:Q22';
 		if (pubDate >= '2021-04-09') range = 'C5:S22';
+		if (pubDate >= '2021-06-07') range = 'C4:M21';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -324,6 +330,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-04-08') range = 'C5:V22';
 		if (pubDate >= '2021-04-27') range = 'C5:W22';
 		if (pubDate >= '2021-04-30') range = 'C5:X22';
+		if (pubDate >= '2021-06-07') range = 'C4:N21';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -347,7 +354,12 @@ function extractData(excel) {
 					
 					// find metric
 					let colId = parseColHeader(mergeColCells(sheet.cells, col, 0, range.rowMin-1), sheet.type, date);
+					if (colId === false) continue;
 					if (!colId) throw Error();
+					if (!slugs.has(colId)) {
+						console.log(Array.from(slugs.values()).join(', '));
+						throw Error('unknown slug "'+colId+'"');
+					}
 
 					// save value
 					let value = sheet.cells[row][col];
@@ -389,8 +401,12 @@ function extractData(excel) {
 					fields.push({col, key:'personen_erst_kumulativ', val:v => v});
 				return;
 				case 'Vollständig geimpft':
+				case 'vollständig geimpt':
 				case 'Zweitimpfung':
 					fields.push({col, key:'personen_voll_kumulativ', val:v => v || 0});
+				return;
+				case 'mindestens einmal geimpft':
+					fields.push({col, key:'personen_min1_kumulativ', val:v => v || 0});
 				return;
 				default: throw Error(JSON.stringify({t,col}));
 			}
@@ -410,6 +426,7 @@ function extractData(excel) {
 
 			if ((''+row[0]).startsWith('HINWEIS')) return;
 			if ((''+row[0]).startsWith('In den Gesamtsummen der Zweitimpfung')) return
+			if ((''+row[0]).startsWith('Die Gesamtzahl mindestens einmal Geimpfter')) return
 			
 			if (Number.isFinite(row[0])) {
 				let obj = {};
@@ -461,6 +478,7 @@ function extractData(excel) {
 
 			case 'Bund': 
 			case 'Bund(EinsatzkräfteBundeswehr,Bundespolizei)':
+			case 'Bundesressorts':
 			case 'ImpfzentrenBund': 
 			return false;
 		}
@@ -480,8 +498,9 @@ function extractData(excel) {
 				case 'indikation_pflegeheim-bewohnerin': return 'indikation_pflegeheim_dosen';
 				case 'indikation_impfungen_pro_1.000_einwohner': return 'impf_inzidenz_erst';
 			}
+			throw Error('unknown Col Header '+JSON.stringify(key))
 		}
-		if (date > '2021-01-16') {
+		if (date < '2021-04-07') {
 			switch (key) {
 				case 'indikation_erstimpfung_indikation_nach_alter': return 'indikation_alter_erst';
 				case 'indikation_erstimpfung_berufliche_indikation': return 'indikation_beruf_erst';
@@ -510,8 +529,9 @@ function extractData(excel) {
 
 				case 'hersteller_gesamtzahl_bisher_verabreichter_impfstoffdosen_gesamtzahl_bisher_verabreichter_impfstoffdosen_gesamtzahl_bisher_verabreichter_impfstoffdosen': return 'dosen_kumulativ';
 			}
+			throw Error('unknown Col Header '+JSON.stringify(key))
 		}
-		if (date >= '2021-04-07') {
+		if (date < '2021-06-06') {
 			key = key.replace('_der_niedergelassenen_ärzteschaft_','_bei_niedergelassenen_ärzten_')
 			key = key.replace('_begonnene_impfserie_','_eine_impfung_')
 			key = key.replace('_begonnener_impfserie_','_einer_impfung_')
@@ -564,6 +584,82 @@ function extractData(excel) {
 				case 'hersteller_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_impfungen_kumulativ_janssen': return 'dosen_voll_janssen_kumulativ_impfstelle_aerzte';
 				case 'hersteller_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_differenz_zum_vortag': return 'dosen_voll_differenz_zum_vortag_impfstelle_aerzte';
 			}
+			throw Error('unknown Col Header '+JSON.stringify(key))
+		}
+
+		switch (key) {
+			case 'indikation_gesamtzahl_bisher_verabreichter_impfungen': return 'dosen_kumulativ';
+			case 'indikation_gesamtzahl_mindestens_einmal_geimpft_': return 'personen_min1_kumulativ';
+			case 'indikation_gesamtzahl_vollständig_geimpft': return 'personen_voll_kumulativ';
+			case 'indikation_impfquote_vollständig_geimpft_gesamt': return 'impf_quote_voll';
+			case 'indikation_impfquote_mindestens_einmal_geimpft_gesamt': return 'impf_quote_min1';
+			case 'indikation_impfquote_mindestens_einmal_geimpft_<18_jahre': return false;
+			case 'indikation_impfquote_mindestens_einmal_geimpft_18-59_jahre': return false;
+			case 'indikation_impfquote_mindestens_einmal_geimpft_60+_jahre': return false;
+			case 'indikation_impfquote_vollständig_geimpft_<18_jahre': return false;
+			case 'indikation_impfquote_vollständig_geimpft_18-59_jahre': return false;
+			case 'indikation_impfquote_vollständig_geimpft_60+_jahre': return false;
+
+			case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_gesamt': return 'personen_min1_kumulativ';
+			case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_biontech': return 'personen_min1_biontech_kumulativ';
+			case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_moderna': return 'personen_min1_moderna_kumulativ';
+			case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_astrazeneca': return 'personen_min1_astrazeneca_kumulativ';
+			case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_janssen': return 'personen_min1_janssen_kumulativ';
+			case 'hersteller_mindestens_einmal_geimpft_differenz_zum_vortag': return 'personen_min1_differenz_zum_vortag';
+
+			case 'hersteller_vollständig_geimpft_impfungen_kumulativ_gesamt': return 'personen_voll_kumulativ';
+			case 'hersteller_vollständig_geimpft_impfungen_kumulativ_biontech': return 'personen_voll_biontech_kumulativ';
+			case 'hersteller_vollständig_geimpft_impfungen_kumulativ_moderna': return 'personen_voll_moderna_kumulativ';
+			case 'hersteller_vollständig_geimpft_impfungen_kumulativ_astrazeneca': return 'personen_voll_astrazeneca_kumulativ';
+			case 'hersteller_vollständig_geimpft_impfungen_kumulativ_janssen': return 'personen_voll_janssen_kumulativ';
+			case 'hersteller_vollständig_geimpft_differenz_zum_vortag': return 'personen_voll_differenz_zum_vortag';
+			/*
+			case 'indikation_insgesamt_über_alle_impfstellen_gesamtzahl_vollständig_geimpft': return 'personen_voll_kumulativ';
+			case 'indikation_insgesamt_über_alle_impfstellen_gesamtzahl_bisher_verabreichter_impfungen': return 'dosen_kumulativ';
+
+			case 'indikation_insgesamt_über_alle_impfstellen_impfquote_mit_einer_impfung_gesamt': return 'impf_quote_erst';
+			case 'indikation_insgesamt_über_alle_impfstellen_impfquote_mit_einer_impfung_<60_jahre': return 'impf_quote_erst_alter_unter60';
+			case 'indikation_insgesamt_über_alle_impfstellen_impfquote_mit_einer_impfung_60+_jahre': return 'impf_quote_erst_alter_60plus';
+
+			case 'indikation_insgesamt_über_alle_impfstellen_impfquote_vollständig_geimpft_gesamt': return 'impf_quote_voll';
+			case 'indikation_insgesamt_über_alle_impfstellen_impfquote_vollständig_geimpft_<60_jahre': return 'impf_quote_voll_alter_unter60';
+			case 'indikation_insgesamt_über_alle_impfstellen_impfquote_vollständig_geimpft_60+_jahre': return 'impf_quote_voll_alter_60plus';
+
+			case 'indikation_impfungen_in_impfzentren,_mobilen_teams_und_krankenhäusern_eine_impfung_<60_jahre': return 'personen_erst_kumulativ_impfstelle_zentral_alter_unter60';
+			case 'indikation_impfungen_in_impfzentren,_mobilen_teams_und_krankenhäusern_eine_impfung_60+_jahre': return 'personen_erst_kumulativ_impfstelle_zentral_alter_60plus';
+			case 'indikation_impfungen_in_impfzentren,_mobilen_teams_und_krankenhäusern_vollständig_geimpft_<60_jahre': return 'personen_voll_kumulativ_impfstelle_zentral_alter_unter60';
+			case 'indikation_impfungen_in_impfzentren,_mobilen_teams_und_krankenhäusern_vollständig_geimpft_60+jahre': return 'personen_voll_kumulativ_impfstelle_zentral_alter_60plus';
+			case 'indikation_impfungen_bei_niedergelassenen_ärzten_eine_impfung_<60_jahre': return 'personen_erst_kumulativ_impfstelle_aerzte_alter_unter60';
+			case 'indikation_impfungen_bei_niedergelassenen_ärzten_eine_impfung_60+_jahre': return 'personen_erst_kumulativ_impfstelle_aerzte_alter_60plus';
+			case 'indikation_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_<60_jahre': return 'personen_voll_kumulativ_impfstelle_aerzte_alter_unter60';
+			case 'indikation_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_60+jahre': return 'personen_voll_kumulativ_impfstelle_aerzte_alter_60plus';
+			
+			case 'hersteller_impfungen_in_impfzentren,_mobilen_teams,_krankenhäusern_eine_impfung_impfungen_kumulativ_gesamt': return 'personen_erst_kumulativ_impfstelle_zentral';
+			case 'hersteller_impfungen_in_impfzentren,_mobilen_teams,_krankenhäusern_eine_impfung_impfungen_kumulativ_biontech': return 'dosen_erst_biontech_kumulativ_impfstelle_zentral';
+			case 'hersteller_impfungen_in_impfzentren,_mobilen_teams,_krankenhäusern_eine_impfung_impfungen_kumulativ_moderna': return 'dosen_erst_moderna_kumulativ_impfstelle_zentral';
+			case 'hersteller_impfungen_in_impfzentren,_mobilen_teams,_krankenhäusern_eine_impfung_impfungen_kumulativ_astrazeneca': return 'dosen_erst_astrazeneca_kumulativ_impfstelle_zentral';
+			case 'hersteller_impfungen_in_impfzentren,_mobilen_teams,_krankenhäusern_eine_impfung_differenz_zum_vortag': return 'dosen_erst_differenz_zum_vortag_impfstelle_zentral';
+
+			case 'hersteller_impfungen_in_impfzentren,_mobilen_teams,_krankenhäusern_vollständig_geimpft_impfungen_kumulativ_gesamt': return 'personen_voll_kumulativ_impfstelle_zentral';
+			case 'hersteller_impfungen_in_impfzentren,_mobilen_teams,_krankenhäusern_vollständig_geimpft_impfungen_kumulativ_biontech': return 'dosen_voll_biontech_kumulativ_impfstelle_zentral';
+			case 'hersteller_impfungen_in_impfzentren,_mobilen_teams,_krankenhäusern_vollständig_geimpft_impfungen_kumulativ_moderna': return 'dosen_voll_moderna_kumulativ_impfstelle_zentral';
+			case 'hersteller_impfungen_in_impfzentren,_mobilen_teams,_krankenhäusern_vollständig_geimpft_impfungen_kumulativ_astrazeneca': return 'dosen_voll_astrazeneca_kumulativ_impfstelle_zentral';
+			case 'hersteller_impfungen_in_impfzentren,_mobilen_teams,_krankenhäusern_vollständig_geimpft_janssen': return 'dosen_voll_janssen_kumulativ_impfstelle_zentral';
+			case 'hersteller_impfungen_in_impfzentren,_mobilen_teams,_krankenhäusern_vollständig_geimpft_differenz_zum_vortag': return 'dosen_voll_differenz_zum_vortag_impfstelle_zentral';
+
+			case 'hersteller_impfungen_bei_niedergelassenen_ärzten_eine_impfung_impfungen_kumulativ_gesamt': return 'personen_erst_kumulativ_impfstelle_aerzte';
+			case 'hersteller_impfungen_bei_niedergelassenen_ärzten_eine_impfung_impfungen_kumulativ_biontech': return 'dosen_erst_biontech_kumulativ_impfstelle_aerzte';
+			case 'hersteller_impfungen_bei_niedergelassenen_ärzten_eine_impfung_impfungen_kumulativ_moderna': return 'dosen_erst_moderna_kumulativ_impfstelle_aerzte';
+			case 'hersteller_impfungen_bei_niedergelassenen_ärzten_eine_impfung_impfungen_kumulativ_astrazeneca': return 'dosen_erst_astrazeneca_kumulativ_impfstelle_aerzte';
+			case 'hersteller_impfungen_bei_niedergelassenen_ärzten_eine_impfung_differenz_zum_vortag': return 'dosen_erst_differenz_zum_vortag_impfstelle_aerzte';
+
+			case 'hersteller_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_impfungen_kumulativ_gesamt': return 'personen_voll_kumulativ_impfstelle_aerzte';
+			case 'hersteller_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_impfungen_kumulativ_biontech': return 'dosen_voll_biontech_kumulativ_impfstelle_aerzte';
+			case 'hersteller_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_impfungen_kumulativ_moderna': return 'dosen_voll_moderna_kumulativ_impfstelle_aerzte';
+			case 'hersteller_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_impfungen_kumulativ_astrazeneca': return 'dosen_voll_astrazeneca_kumulativ_impfstelle_aerzte';
+			case 'hersteller_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_impfungen_kumulativ_janssen': return 'dosen_voll_janssen_kumulativ_impfstelle_aerzte';
+			case 'hersteller_impfungen_bei_niedergelassenen_ärzten_vollständig_geimpft_differenz_zum_vortag': return 'dosen_voll_differenz_zum_vortag_impfstelle_aerzte';
+			*/
 		}
 
 		throw Error('unknown Col Header '+JSON.stringify(key))

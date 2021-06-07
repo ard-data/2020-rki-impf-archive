@@ -62,7 +62,15 @@ function completeData(data, filename) {
 
 	const dataDefinition = DataDefinition(pubDate);
 	const regions = dataDefinition.regions;
-	const dimLookup = Object.fromEntries(dataDefinition.dimensions.map(d => [d.name, d.elements])); Object.freeze(dimLookup);
+	const dimensionSumsLookup = new Map();
+	const dimensionValuesLookup = new Map();
+	dataDefinition.dimensions.forEach(d => {
+		let list = [];
+		dimensionSumsLookup.set(d.name, list);
+		dimensionValuesLookup.set(d.name, d.elements);
+		if (d.sums) return d.sums.forEach(entry => list.push(entry))
+		list.push(d.elements);
+	});
 	const cell0 = Object.fromEntries(dataDefinition.dimensions.map(d => [d.name, d.elements[0]]));
 
 
@@ -82,9 +90,21 @@ function completeData(data, filename) {
 		// Setze fehlende Werte
 		// Wenn man einen Wert setzt, der bereits einen anderen Wert hat,
 		// bricht das Script mit einem Fehler ab.
-		setValue('dosen_erst_janssen_kumulativ', 0);
-		setValue('dosen_erst_janssen_kumulativ_impfstelle_aerzte', 0);
-		setValue('dosen_erst_janssen_kumulativ_impfstelle_zentral', 0);
+		setValue('personen_erst_janssen_kumulativ', 0);
+		setValue('personen_erst_janssen_kumulativ_impfstelle_aerzte', 0);
+		setValue('personen_erst_janssen_kumulativ_impfstelle_zentral', 0);
+		setValue('personen_zweit_janssen_kumulativ', 0);
+		setValue('personen_zweit_janssen_kumulativ_impfstelle_aerzte', 0);
+		setValue('personen_zweit_janssen_kumulativ_impfstelle_zentral', 0);
+
+		setValue('personen_erst_biontech_kumulativ', entry.personen_min1_biontech_kumulativ);
+		setValue('personen_erst_moderna_kumulativ', entry.personen_min1_moderna_kumulativ);
+		setValue('personen_erst_astrazeneca_kumulativ', entry.personen_min1_astrazeneca_kumulativ);
+
+		setValue('personen_zweit_biontech_kumulativ', entry.personen_voll_biontech_kumulativ);
+		setValue('personen_zweit_moderna_kumulativ', entry.personen_voll_moderna_kumulativ);
+		setValue('personen_zweit_astrazeneca_kumulativ', entry.personen_voll_astrazeneca_kumulativ);
+
 		if (pubDate < '2021-01-17') {
 			setValue('personen_voll_kumulativ', 0);
 			setValue('personen_erst_kumulativ', entry.dosen_kumulativ);
@@ -136,7 +156,7 @@ function completeData(data, filename) {
 			if (!Number.isFinite(value)) return;
 
 			// Wert gibt es schon und ist identisch: Alles in Ordnung
-			if (value.toFixed(6) === entry[check.key].toFixed(6)) return;
+			if (value.toFixed(1) === entry[check.key].toFixed(1)) return;
 
 			// Es gibt eine Differenz zwischen berechnetem und vorhandenem Wert.
 
@@ -189,22 +209,29 @@ function completeData(data, filename) {
 			generateSum('dosis','hersteller'); // Dosen = Erstimpfung + Zweitimpfung … für "alles" und jeden Hersteller
 			generateSum('hersteller','dosis'); // Impfungen = Impfungen BionTech + Impfungen Moderna … für Dosen, Erst- und Zweitimpfung.
 			generateSum('dosis','indikation'); // Dosen = Erstimpfung + Zweitimpfung … für "alles" und jede Indikation
-		} else {
+		} else if (pubDate < '2021-06-07') {
 			generateSum('hersteller','dosis,impfstelle');
 			generateSum('impfstelle','dosis,hersteller');
 			generateSum('dosis','hersteller,impfstelle');
 			generateSum('dosis','alter,impfstelle');
-			//generateSum('alter','dosis,impfstelle');
 			generateSum('impfstelle','dosis,alter');
+		} else {
+			generateSum('hersteller','dosis');
+			generateSum('dosis','hersteller');
+			generateSum('dosis','alter');
 		}
 
 		// Jetzt noch Checks, um Impfquote und Impfinzidenz zu berechnen:
-		checks.push({key:'impf_quote_dosen',    calc:(obj,pop) =>  100*obj.dosen_kumulativ        /pop, debug:'impf_quote_dosen = 100*dosen_kumulativ/pop'});
-		checks.push({key:'impf_quote_erst',     calc:(obj,pop) =>  100*obj.personen_erst_kumulativ/pop, debug:'impf_quote_erst = 100*personen_erst_kumulativ/pop'});
-		checks.push({key:'impf_quote_voll',     calc:(obj,pop) =>  100*obj.personen_voll_kumulativ/pop, debug:'impf_quote_voll = 100*personen_voll_kumulativ/pop'});
-		checks.push({key:'impf_inzidenz_dosen', calc:(obj,pop) => 1000*obj.dosen_kumulativ        /pop, debug:'impf_inzidenz_dosen = 1000*dosen_kumulativ/pop'});
-		checks.push({key:'impf_inzidenz_erst',  calc:(obj,pop) => 1000*obj.personen_erst_kumulativ/pop, debug:'impf_inzidenz_erst = 1000*personen_erst_kumulativ/pop'});
-		checks.push({key:'impf_inzidenz_voll',  calc:(obj,pop) => 1000*obj.personen_voll_kumulativ/pop, debug:'impf_inzidenz_voll = 1000*personen_voll_kumulativ/pop'});
+		checks.push({key:'impf_quote_dosen',    calc:(obj,pop) =>  100*obj.dosen_kumulativ         /pop, debug:'impf_quote_dosen = 100*dosen_kumulativ/pop'});
+		checks.push({key:'impf_quote_erst',     calc:(obj,pop) =>  100*obj.personen_erst_kumulativ /pop, debug:'impf_quote_erst = 100*personen_erst_kumulativ/pop'});
+		checks.push({key:'impf_quote_zweit',    calc:(obj,pop) =>  100*obj.personen_zweit_kumulativ/pop, debug:'impf_quote_zweit = 100*personen_zweit_kumulativ/pop'});
+		checks.push({key:'impf_quote_min1',     calc:(obj,pop) =>  100*obj.personen_min1_kumulativ /pop, debug:'impf_quote_min1 = 100*personen_min1_kumulativ/pop'});
+		checks.push({key:'impf_quote_voll',     calc:(obj,pop) =>  100*obj.personen_voll_kumulativ /pop, debug:'impf_quote_voll = 100*personen_voll_kumulativ/pop'});
+		checks.push({key:'impf_inzidenz_dosen', calc:(obj,pop) => 1000*obj.dosen_kumulativ         /pop, debug:'impf_inzidenz_dosen = 1000*dosen_kumulativ/pop'});
+		checks.push({key:'impf_inzidenz_erst',  calc:(obj,pop) => 1000*obj.personen_erst_kumulativ /pop, debug:'impf_inzidenz_erst = 1000*personen_erst_kumulativ/pop'});
+		checks.push({key:'impf_inzidenz_zweit', calc:(obj,pop) => 1000*obj.personen_zweit_kumulativ/pop, debug:'impf_inzidenz_zweit = 1000*personen_zweit_kumulativ/pop'});
+		checks.push({key:'impf_inzidenz_min1',  calc:(obj,pop) => 1000*obj.personen_min1_kumulativ /pop, debug:'impf_inzidenz_min1 = 1000*personen_min1_kumulativ/pop'});
+		checks.push({key:'impf_inzidenz_voll',  calc:(obj,pop) => 1000*obj.personen_voll_kumulativ /pop, debug:'impf_inzidenz_voll = 1000*personen_voll_kumulativ/pop'});
 
 		checks.forEach((c,i) => c.order = (c.level || 100) * 1e4 + i)
 		checks.sort((a,b) => a.order - b.order);
@@ -220,7 +247,7 @@ function completeData(data, filename) {
 			let whereEntries = [{level:50}];
 			whereKeys.split(',').forEach(whereKey => {
 				let newWhereEntries = [];
-				dimLookup[whereKey].forEach((whereVal,i) => {
+				dimensionValuesLookup.get(whereKey).forEach((whereVal,i) => {
 					whereEntries.forEach(e => {
 						e = Object.assign({},e);
 						if (i > 0) e.level--;
@@ -232,20 +259,27 @@ function completeData(data, filename) {
 			})
 
 			whereEntries.forEach(whereEntry => {
-				let cell = {};
-				cell = Object.assign(cell, cell0);
-				cell = Object.assign(cell, whereEntry);
-				let slug0 = dataDefinition.getSlug(cell);
-				let slugs = dimLookup[sumKey].slice(1).map(sumValue => {
+				dimensionSumsLookup.get(sumKey).forEach(valueList => {
+					let sumValue = valueList[0];
+					let values = valueList.slice(1);
+
+					let cell = {};
+					cell = Object.assign(cell, cell0);
+					cell = Object.assign(cell, whereEntry);
 					cell[sumKey] = sumValue;
-					return dataDefinition.getSlug(cell);
+					let slug0 = dataDefinition.getSlug(cell);
+
+					let slugs = values.map(value => {
+						cell[sumKey] = value;
+						return dataDefinition.getSlug(cell);
+					})
+					checks.push({
+						key:slug0,
+						calc:obj => slugs.reduce((sum, slug) => sum + obj[slug], 0),
+						debug:slug0+' = '+slugs.join(' + ')+'   '+JSON.stringify(whereEntry),
+						level:whereEntry.level,
+					});
 				})
-				checks.push({
-					key:slug0,
-					calc:obj => slugs.reduce((sum, slug) => sum + obj[slug], 0),
-					debug:slug0+' = '+slugs.join(' + ')+'   '+JSON.stringify(whereEntry),
-					level:whereEntry.level,
-				});
 			})
 		}
 	}

@@ -7,7 +7,7 @@ const fs = require('fs');
 module.exports = date => {
 
 	const dimensions = [
-		{name: 'dosis', elements:['dosen','erst','voll']},
+		{name: 'dosis', elements:['dosen','erst','voll','min1','zweit'], sums:[['dosen','erst','voll'],['dosen','min1','zweit']]},
 		{name: 'hersteller', elements:['alle','biontech','moderna','astrazeneca','janssen']},
 		{name: 'indikation', elements:['alle','alter','beruf','medizinisch','pflegeheim'], optional: date >= '2021-04-08'},
 		{name: 'kumulativ', elements:['kumulativ', 'differenz'], optional:true},
@@ -20,9 +20,9 @@ module.exports = date => {
 	const dimensionsLookup = new Map(dimensions.map(d => [d.name,d]));
 
 	const slices = [
-		{dimensions:new Set(['dosis','hersteller']), ignore: date >= '2021-04-08'},
-		{dimensions:new Set(['dosis','hersteller','impfstelle']), ignore: date < '2021-04-08'},
-		{dimensions:new Set(['dosis','alter','impfstelle']), ignore: date < '2021-04-08'},
+		{dimensions:new Set(['dosis','hersteller']), ignore: (date >= '2021-04-08') && (date < '2021-06-07')},
+		{dimensions:new Set(['dosis','hersteller','impfstelle']), ignore: (date < '2021-04-08') || (date >= '2021-06-07')},
+		{dimensions:new Set(['dosis','alter','impfstelle']), ignore: (date < '2021-04-08') || (date >= '2021-06-07')},
 		{dimensions:new Set(['dosis','indikation']), optional: date >= '2021-04-08'},
 		{dimensions:new Set(['dosis','quote'])},
 		{dimensions:new Set(['dosis','kumulativ'])},
@@ -111,26 +111,26 @@ module.exports = date => {
 		if (dimensionsLookup.has('alter')) {
 			switch (cell.alter) {
 				case 'alle':break;
+				case '<18': suffix += '_alter_unter18'; break;
+				case '18-59': suffix += '_alter_18-59'; break;
 				case '<60': suffix += '_alter_unter60'; break;
 				case '60+': suffix += '_alter_60plus'; break;
 				default: throw Error();
 			}
 		}
 
-		if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',hersteller:'!0'})) return [cell.dosis === 'dosen' ? 'dosen' : 'dosen_'+cell.dosis, cell.hersteller, 'kumulativ'].join('_')+suffix;
+		if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',hersteller:'!0'})) return [cell.dosis === 'dosen' ? 'dosen' : 'personen_'+cell.dosis, cell.hersteller, 'kumulativ'].join('_')+suffix;
 		
 		if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',indikation:'!0'})) return ['indikation', cell.indikation, cell.dosis].join('_')+suffix;
 		
 		if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*'})) {
 			if (cell.dosis === 'dosen') return 'dosen_kumulativ'+suffix;
-			if (cell.dosis === 'erst' ) return 'personen_erst_kumulativ'+suffix;
-			if (cell.dosis === 'voll' ) return 'personen_voll_kumulativ'+suffix;
+			return 'personen_'+cell.dosis+'_kumulativ'+suffix;
 		}
 
 		if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',kumulativ:'differenz'})) {
 			if (cell.dosis === 'dosen') return 'dosen_differenz_zum_vortag'+suffix;
-			if (cell.dosis === 'erst' ) return 'dosen_erst_differenz_zum_vortag'+suffix;
-			if (cell.dosis === 'voll' ) return 'dosen_voll_differenz_zum_vortag'+suffix;
+			return 'dosen_'+cell.dosis+'_differenz_zum_vortag'+suffix;
 		}
 
 		if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',quote:'impf_quote'   })) return 'impf_quote_'+cell.dosis+suffix;
