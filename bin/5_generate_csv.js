@@ -116,11 +116,11 @@ function addCell(tableName, key, col, value, isNumber) {
 
 	if (!table.entries.has(key)) table.entries.set(key, {index:table.entries.size, row:[]});
 
-	if (!Number.isFinite(value)) return;
+	if (value === undefined) return;
 
 	let entry = table.entries.get(key);
 
-	if (isNumber && (!Number.isFinite(entry.row[col.index]))) table.valueCount++;
+	if (isNumber && (entry.row[col.index] === undefined)) table.valueCount++;
 
 	entry.row[col.index] = value;
 }
