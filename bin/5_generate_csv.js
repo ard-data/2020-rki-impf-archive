@@ -12,7 +12,9 @@ const dirSrc = resolve(__dirname, '../data/2_completed/');
 const dirDst = resolve(__dirname, '../data/9_csv_v3/');
 fs.mkdirSync(dirDst, {recursive:true});
 
-const metrics = dataDefinition.parameters.map(p => p.slug);
+const parameters = dataDefinition.parameters;
+parameters.forEach(p => p.definedFor = new Set());
+const definedFor = new Set();
 const states  = dataDefinition.regions.map(r => r.code).filter(r => r !== 'DE');
 
 const htmlStyle = ['<style>',
@@ -75,17 +77,22 @@ generateParameterIndex();
 
 function addObj(data, obj) {
 	let date = data.date;
+
 	let pubDate = data.pubDate;
 	let region = obj.code;
 	addCell('region_'+region, date, 'date', date);
 	addCell('region_'+region, date, 'publication_date', pubDate);
 
-	metrics.forEach(metric => {
+	definedFor.add(date+'_'+region);
+
+	parameters.forEach(parameter => {
+		let metric = parameter.slug;
 
 		addCell('metric_'+metric, date, 'date', date);
 		addCell('metric_'+metric, date, 'publication_date', pubDate);
 
 		let value = obj[metric];
+		if (Number.isFinite(value)) parameter.definedFor.add(date+'_'+region);
 
 		addCell('region_'+region, date, metric, value, true);
 
@@ -134,9 +141,9 @@ function generateFileIndex(files) {
 		let rows = f.entries;
 		let completeness = f.valueCount/(cols.length*rows.length);
 		let completenessText = (100*completeness).toFixed(1)+'%';
-		let color = [(1-completeness)*136,0,completeness*68].map(v => Math.max(0,v).toFixed(0)).join(',')
+		let color = completeness2color(completeness);
 		
-		html.push(`<tr style="color:rgb(${color})"><td><a href="${name}">${name}</a></td><td>${cols.length}</td><td>${rows.length}</td><td>${completenessText}</td></tr>`);
+		html.push(`<tr style="color:${color}"><td><a href="${name}">${name}</a></td><td>${cols.length}</td><td>${rows.length}</td><td>${completenessText}</td></tr>`);
 	});
 
 	html.push('</tbody></table>');
@@ -148,7 +155,6 @@ function generateFileIndex(files) {
 
 
 function generateParameterIndex() {
-	let parameters = dataDefinition.parameters;
 	parameters.sort((a,b) => a.slug < b.slug ? -1 : 1);
 
 	let dimensions = dataDefinition.dimensions;
@@ -160,16 +166,23 @@ function generateParameterIndex() {
 	html.push('<body>')
 	html.push('<table>')
 	html.push('<thead>')
-	html.push('<tr><th></th><th colspan="'+dimensions.length+'">Dimensionen</tr>')
-	html.push('<tr><th>Name</th>'+dimensions.map(d => '<th>'+d.title+'</th>').join('')+'</tr>')
+	html.push('<tr><th></th><th colspan="'+dimensions.length+'">Dimensionen</th><th></th></tr>')
+	html.push('<tr><th>Name</th>'+dimensions.map(d => '<th>'+d.title+'</th>').join('')+'<th>Vollständigkeit</th></tr>')
 	html.push('</thead>')
 	html.push('<tbody>')
 
 	parameters.forEach(p => {
+		let completeness = p.definedFor.size/definedFor.size;
+		let color = completeness2color(completeness);
+
+		if (completeness === 0) color = '#CCC';
+		
 		let row = [];
 		row.push(p.slug);
 		dimensions.forEach(d => row.push(p.cell[d.name]));
-		html.push('<tr><td>'+row.join('</td><td>')+'</td></tr>');
+
+		row.push((100*completeness).toFixed(1)+'%');
+		html.push(`<tr style="color:${color}"><td>`+row.join('</td><td>')+'</td></tr>');
 	});
 
 	html.push('</tbody></table>');
@@ -177,4 +190,8 @@ function generateParameterIndex() {
 	html.push('</body></html>');
 
 	fs.writeFileSync(resolve(__dirname, '../parameters.html'), html.join('\n'));
+}
+
+function completeness2color(v) {
+	return 'rgb('+[(256*v-384)*v+128,0,(768*v-640)*v].map(v => Math.max(0,v).toFixed(0)).join(',')+')';
 }
