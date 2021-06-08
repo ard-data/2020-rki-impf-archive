@@ -17,7 +17,7 @@ const states  = dataDefinition.regions.map(r => r.code).filter(r => r !== 'DE');
 
 const htmlStyle = ['<style>',
 	'body { font-family:sans-serif }',
-	'a { color:#000 !important }',
+	'a { color:inherit !important }',
 	'p { text-align:center; margin:20px; font-size:14px }',
 	'table { margin:50px auto; border-spacing:0; font-size:14px }',
 	'th, td { padding:1px 10px; border-left:1px solid #aaa }',
@@ -54,7 +54,7 @@ tables.forEach(table => {
 	data.push(table.cols.map(col => col.text));
 
 	table.entries.forEach(entry => {
-		// ensure correct number of fiels in every row
+		// ensure correct number of fields in every row
 		while (entry.row.length < table.cols.length) entry.row.push('');
 		
 		data.push(entry.row);
@@ -124,7 +124,7 @@ function generateFileIndex(files) {
 	html.push(`<head>${htmlStyle}</head>`)
 	html.push('<body>')
 	html.push('<table>')
-	html.push('<thead><tr><th>Dateiname</th><th>Spalten</th><th>Zeilen</th><th>Vollständigkeit</th></tr></thead>')
+	html.push('<thead><tr><th>Dateiname</th><th>Spalten mit Werten</th><th>Zeilen mit Werten</th><th>Vollständigkeit</th></tr></thead>')
 	html.push('<tbody>')
 
 	files.sort((a,b) => a.filename < b.filename ? -1 : 1);
@@ -132,9 +132,11 @@ function generateFileIndex(files) {
 		let name = f.filename;
 		let cols = f.cols.filter(c => c.isNumber);
 		let rows = f.entries;
-		let completeness = (100*(f.valueCount/(cols.length*rows.length))).toFixed(1)+'%';
+		let completeness = f.valueCount/(cols.length*rows.length);
+		let completenessText = (100*completeness).toFixed(1)+'%';
+		let color = [(1-completeness)*136,0,completeness*68].map(v => Math.max(0,v).toFixed(0)).join(',')
 		
-		html.push(`<tr><td><a href="${name}">${name}</a></td><td>${cols.length}</td><td>${rows.length}</td><td>${completeness}</td></tr>`);
+		html.push(`<tr style="color:rgb(${color})"><td><a href="${name}">${name}</a></td><td>${cols.length}</td><td>${rows.length}</td><td>${completenessText}</td></tr>`);
 	});
 
 	html.push('</tbody></table>');
