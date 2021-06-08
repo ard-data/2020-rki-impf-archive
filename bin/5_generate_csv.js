@@ -30,7 +30,7 @@ const htmlStyle = ['<style>',
 
 
 // Alle JSON-Dateien durchgehen und die Werte hinzufügen.
-const tables = new Map();
+let tables = new Map();
 fs.readdirSync(dirSrc).sort().forEach(filename => {
 	if (!/impfquotenmonitoring-202.*\.json/.test(filename)) return;
 
@@ -41,7 +41,10 @@ fs.readdirSync(dirSrc).sort().forEach(filename => {
 })
 
 // Alle Tabellen speichern
-Array.from(tables.values()).forEach(table => {
+tables = Array.from(tables.values());
+tables = tables.filter(t => t.valueCount > 0);
+
+tables.forEach(table => {
 	let fullname = resolve(dirDst, table.filename);
 
 	table.cols = Array.from(table.cols.values()).sort((a,b) => a.index - b.index);
@@ -63,7 +66,7 @@ Array.from(tables.values()).forEach(table => {
 })
 
 // Ein Tabellen-Index als HTML erzeugen und speichern.
-generateFileIndex(Array.from(tables.values()));
+generateFileIndex(tables);
 
 // Eine Liste aller Paramter als HTML erzeugen und speichern.
 generateParameterIndex();
@@ -96,19 +99,22 @@ function addObj(data, obj) {
 	})
 }
 
-function addCell(table, key, col, value, isNumber) {
+function addCell(tableName, key, col, value, isNumber) {
 
-	if (!tables.has(table)) tables.set(table, {filename:table+'.csv', entries:new Map(), cols:new Map()});
-	table = tables.get(table);
+	if (!tables.has(tableName)) tables.set(tableName, {filename:tableName+'.csv', entries:new Map(), cols:new Map(), valueCount:0});
+	let table = tables.get(tableName);
 
 	if (!table.cols.has(col)) table.cols.set(col, {text:col, index:table.cols.size, isNumber});
 	col = table.cols.get(col);
 
 	if (!table.entries.has(key)) table.entries.set(key, {index:table.entries.size, row:[]});
 
-	if ((value === undefined) || (value === null)) return;
+	if (!Number.isFinite(value)) return;
 
 	let entry = table.entries.get(key);
+
+	if (isNumber && (!Number.isFinite(entry.row[col.index]))) table.valueCount++;
+
 	entry.row[col.index] = value;
 }
 
@@ -121,18 +127,12 @@ function generateFileIndex(files) {
 	html.push('<thead><tr><th>Dateiname</th><th>Spalten</th><th>Zeilen</th><th>Vollständigkeit</th></tr></thead>')
 	html.push('<tbody>')
 
-	files.sort((a,b) => a.filename < b.filename ? -1 : 1).forEach(f => {
+	files.sort((a,b) => a.filename < b.filename ? -1 : 1);
+	files.forEach(f => {
 		let name = f.filename;
 		let cols = f.cols.filter(c => c.isNumber);
 		let rows = f.entries;
-		
-		let completeness = 0;
-		f.entries.forEach(e => {
-			cols.forEach(c => {
-				if (Number.isFinite(e.row[c.index])) completeness++;
-			})
-		});
-		completeness = (100*(completeness/(cols.length*rows.length))).toFixed(1)+'%';
+		let completeness = (100*(f.valueCount/(cols.length*rows.length))).toFixed(1)+'%';
 		
 		html.push(`<tr><td><a href="${name}">${name}</a></td><td>${cols.length}</td><td>${rows.length}</td><td>${completeness}</td></tr>`);
 	});
