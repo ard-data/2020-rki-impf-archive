@@ -44,7 +44,7 @@ fs.readdirSync(dirSrc).sort().forEach(filename => {
 
 // Alle Tabellen speichern
 tables = Array.from(tables.values());
-tables = tables.filter(t => t.valueCount > 0);
+tables = tables.filter(t => t.definedFor.size > 0);
 
 tables.forEach(table => {
 	let fullname = resolve(dirDst, table.filename);
@@ -108,7 +108,7 @@ function addObj(data, obj) {
 
 function addCell(tableName, key, col, value, isNumber) {
 
-	if (!tables.has(tableName)) tables.set(tableName, {filename:tableName+'.csv', entries:new Map(), cols:new Map(), valueCount:0});
+	if (!tables.has(tableName)) tables.set(tableName, {filename:tableName+'.csv', entries:new Map(), cols:new Map(), definedFor:new Set()});
 	let table = tables.get(tableName);
 
 	if (!table.cols.has(col)) table.cols.set(col, {text:col, index:table.cols.size, isNumber});
@@ -120,7 +120,7 @@ function addCell(tableName, key, col, value, isNumber) {
 
 	let entry = table.entries.get(key);
 
-	if (isNumber && (entry.row[col.index] === undefined)) table.valueCount++;
+	if (isNumber) table.definedFor.add(key+'_'+col.index);
 
 	entry.row[col.index] = value;
 }
@@ -139,7 +139,7 @@ function generateFileIndex(files) {
 		let name = f.filename;
 		let cols = f.cols.filter(c => c.isNumber);
 		let rows = f.entries;
-		let completeness = f.valueCount/(cols.length*rows.length);
+		let completeness = f.definedFor.size/(cols.length*rows.length);
 		let completenessText = (100*completeness).toFixed(1)+'%';
 		let color = completeness2color(completeness);
 		
