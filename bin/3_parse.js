@@ -397,12 +397,14 @@ function extractData(excel) {
 				return;
 				case 'Einmal geimpft':
 				case 'Erstimpfung':
+				case 'Erstimpfungen':
 				case 'Begonnene Impfserie':
 					fields.push({col, key:'personen_erst_kumulativ', val:v => v});
 				return;
 				case 'Vollständig geimpft':
 				case 'vollständig geimpt':
 				case 'Zweitimpfung':
+				case 'Zweitimpfungen':
 					fields.push({col, key:'personen_voll_kumulativ', val:v => v || 0});
 				return;
 				case 'mindestens einmal geimpft':
