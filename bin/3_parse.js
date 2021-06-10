@@ -386,7 +386,11 @@ function extractData(excel) {
 				case 'null': return;
 				case 'Datum':
 				case 'Datum der Impfung':
-					fields.push({col, key:'date', val:v => (new Date((v-25568.5)*86400000)).toISOString().slice(0,10) });
+					fields.push({col, key:'date', val:v => {
+						if (Number.isFinite(v)) return (new Date((v-25568.5)*86400000)).toISOString().slice(0,10);
+						if (/^\d\d\.[01]\d\.202\d$/.test(v)) return v.substr(6,4)+'-'+v.substr(3,2)+'-'+v.substr(0,2);
+						throw Error();
+					}});
 				return;
 				case 'Gesamtzahl Impfungen':
 					if (date > '2021-01-16') throw Error();
@@ -417,6 +421,7 @@ function extractData(excel) {
 			switch (row[0]) {
 				// Felder, die ignoriert werden:
 				case undefined:
+				case '':
 				case null:
 				case 'Impfungen gesamt':
 				case 'Gesamt':
@@ -427,10 +432,11 @@ function extractData(excel) {
 			}
 
 			if ((''+row[0]).startsWith('HINWEIS')) return;
+			if ((''+row[0]).startsWith('Meldedaten')) return;
 			if ((''+row[0]).startsWith('In den Gesamtsummen der Zweitimpfung')) return
 			if ((''+row[0]).startsWith('Die Gesamtzahl mindestens einmal Geimpfter')) return
 			
-			if (Number.isFinite(row[0])) {
+			if (Number.isFinite(row[0]) || /^\d\d\.[01]\d\.202\d$/.test(row[0])) {
 				let obj = {};
 				fields.forEach(field => obj[field.key] = field.val(row[field.col]));
 				data.push(obj);
