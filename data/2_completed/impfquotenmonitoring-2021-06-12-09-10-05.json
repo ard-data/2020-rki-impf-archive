@@ -1,0 +1,1878 @@
+{
+	"date": "2021-06-11",
+	"filename": "impfquotenmonitoring-2021-06-12-09-10-05.xlsx",
+	"germany": {
+		"code": "DE",
+		"dosen_astrazeneca_kumulativ": 9930483,
+		"dosen_biontech_kumulativ": 44131106,
+		"dosen_janssen_kumulativ": 1248289,
+		"dosen_kumulativ": 60105411,
+		"dosen_moderna_kumulativ": 4795533,
+		"impf_inzidenz_dosen": 722.7099674532037,
+		"impf_inzidenz_erst": 465.995523136655,
+		"impf_inzidenz_min1": 481.005002109558,
+		"impf_inzidenz_voll": 256.71444431654874,
+		"impf_inzidenz_zweit": 241.70496534364574,
+		"impf_quote_dosen": 72.27099674532037,
+		"impf_quote_erst": 46.5995523136655,
+		"impf_quote_min1": 48.1,
+		"impf_quote_min1_alter_18bis59": null,
+		"impf_quote_min1_alter_60plus": null,
+		"impf_quote_min1_alter_unter18": null,
+		"impf_quote_voll": 25.7,
+		"impf_quote_voll_alter_18bis59": null,
+		"impf_quote_voll_alter_60plus": null,
+		"impf_quote_voll_alter_unter18": null,
+		"impf_quote_zweit": 24.170496534364574,
+		"personen_erst_astrazeneca_kumulativ": 8853398,
+		"personen_erst_biontech_kumulativ": 26699748,
+		"personen_erst_janssen_kumulativ": 0,
+		"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+		"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+		"personen_erst_kumulativ": 38755315,
+		"personen_erst_moderna_kumulativ": 3202169,
+		"personen_min1_astrazeneca_kumulativ": 8853398,
+		"personen_min1_biontech_kumulativ": 26699748,
+		"personen_min1_differenz_zum_vortag": 409540,
+		"personen_min1_janssen_kumulativ": 1248289,
+		"personen_min1_kumulativ": 40003604,
+		"personen_min1_moderna_kumulativ": 3202169,
+		"personen_voll_astrazeneca_kumulativ": 1077085,
+		"personen_voll_biontech_kumulativ": 17431358,
+		"personen_voll_differenz_zum_vortag": 649026,
+		"personen_voll_janssen_kumulativ": 1248289,
+		"personen_voll_kumulativ": 21350096,
+		"personen_voll_moderna_kumulativ": 1593364,
+		"personen_zweit_astrazeneca_kumulativ": 1077085,
+		"personen_zweit_biontech_kumulativ": 17431358,
+		"personen_zweit_janssen_kumulativ": 0,
+		"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+		"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+		"personen_zweit_kumulativ": 20101807,
+		"personen_zweit_moderna_kumulativ": 1593364,
+		"title": "Deutschland"
+	},
+	"history": [
+		{
+			"date": "2020-12-27",
+			"dosen_kumulativ": 23254,
+			"personen_erst_kumulativ": 23254,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2020-12-28",
+			"dosen_kumulativ": 17598,
+			"personen_erst_kumulativ": 17598,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2020-12-29",
+			"dosen_kumulativ": 48716,
+			"personen_erst_kumulativ": 48716,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2020-12-30",
+			"dosen_kumulativ": 61535,
+			"personen_erst_kumulativ": 61535,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2020-12-31",
+			"dosen_kumulativ": 49870,
+			"personen_erst_kumulativ": 49870,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-01",
+			"dosen_kumulativ": 18771,
+			"personen_erst_kumulativ": 18771,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-02",
+			"dosen_kumulativ": 52010,
+			"personen_erst_kumulativ": 52010,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-03",
+			"dosen_kumulativ": 23626,
+			"personen_erst_kumulativ": 23626,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-04",
+			"dosen_kumulativ": 47167,
+			"personen_erst_kumulativ": 47167,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-05",
+			"dosen_kumulativ": 53057,
+			"personen_erst_kumulativ": 53057,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-06",
+			"dosen_kumulativ": 62363,
+			"personen_erst_kumulativ": 62363,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-07",
+			"dosen_kumulativ": 55225,
+			"personen_erst_kumulativ": 55225,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-08",
+			"dosen_kumulativ": 62357,
+			"personen_erst_kumulativ": 62357,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-09",
+			"dosen_kumulativ": 60629,
+			"personen_erst_kumulativ": 60629,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-10",
+			"dosen_kumulativ": 35503,
+			"personen_erst_kumulativ": 35503,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-11",
+			"dosen_kumulativ": 66693,
+			"personen_erst_kumulativ": 66693,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-12",
+			"dosen_kumulativ": 82267,
+			"personen_erst_kumulativ": 82267,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-13",
+			"dosen_kumulativ": 114868,
+			"personen_erst_kumulativ": 114868,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-14",
+			"dosen_kumulativ": 86967,
+			"personen_erst_kumulativ": 86967,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-15",
+			"dosen_kumulativ": 96628,
+			"personen_erst_kumulativ": 95951,
+			"personen_voll_kumulativ": 677
+		},
+		{
+			"date": "2021-01-16",
+			"dosen_kumulativ": 58767,
+			"personen_erst_kumulativ": 57760,
+			"personen_voll_kumulativ": 1007
+		},
+		{
+			"date": "2021-01-17",
+			"dosen_kumulativ": 49621,
+			"personen_erst_kumulativ": 32382,
+			"personen_voll_kumulativ": 17239
+		},
+		{
+			"date": "2021-01-18",
+			"dosen_kumulativ": 84527,
+			"personen_erst_kumulativ": 68969,
+			"personen_voll_kumulativ": 15558
+		},
+		{
+			"date": "2021-01-19",
+			"dosen_kumulativ": 120336,
+			"personen_erst_kumulativ": 84818,
+			"personen_voll_kumulativ": 35518
+		},
+		{
+			"date": "2021-01-20",
+			"dosen_kumulativ": 135378,
+			"personen_erst_kumulativ": 81601,
+			"personen_voll_kumulativ": 53777
+		},
+		{
+			"date": "2021-01-21",
+			"dosen_kumulativ": 111570,
+			"personen_erst_kumulativ": 66997,
+			"personen_voll_kumulativ": 44573
+		},
+		{
+			"date": "2021-01-22",
+			"dosen_kumulativ": 107791,
+			"personen_erst_kumulativ": 69973,
+			"personen_voll_kumulativ": 37818
+		},
+		{
+			"date": "2021-01-23",
+			"dosen_kumulativ": 88153,
+			"personen_erst_kumulativ": 40704,
+			"personen_voll_kumulativ": 47449
+		},
+		{
+			"date": "2021-01-24",
+			"dosen_kumulativ": 50069,
+			"personen_erst_kumulativ": 26354,
+			"personen_voll_kumulativ": 23715
+		},
+		{
+			"date": "2021-01-25",
+			"dosen_kumulativ": 91528,
+			"personen_erst_kumulativ": 52635,
+			"personen_voll_kumulativ": 38893
+		},
+		{
+			"date": "2021-01-26",
+			"dosen_kumulativ": 98542,
+			"personen_erst_kumulativ": 50248,
+			"personen_voll_kumulativ": 48294
+		},
+		{
+			"date": "2021-01-27",
+			"dosen_kumulativ": 110963,
+			"personen_erst_kumulativ": 51404,
+			"personen_voll_kumulativ": 59559
+		},
+		{
+			"date": "2021-01-28",
+			"dosen_kumulativ": 91209,
+			"personen_erst_kumulativ": 45133,
+			"personen_voll_kumulativ": 46076
+		},
+		{
+			"date": "2021-01-29",
+			"dosen_kumulativ": 108616,
+			"personen_erst_kumulativ": 51497,
+			"personen_voll_kumulativ": 57119
+		},
+		{
+			"date": "2021-01-30",
+			"dosen_kumulativ": 88566,
+			"personen_erst_kumulativ": 36374,
+			"personen_voll_kumulativ": 52192
+		},
+		{
+			"date": "2021-01-31",
+			"dosen_kumulativ": 56591,
+			"personen_erst_kumulativ": 26144,
+			"personen_voll_kumulativ": 30447
+		},
+		{
+			"date": "2021-02-01",
+			"dosen_kumulativ": 120024,
+			"personen_erst_kumulativ": 58748,
+			"personen_voll_kumulativ": 61276
+		},
+		{
+			"date": "2021-02-02",
+			"dosen_kumulativ": 131801,
+			"personen_erst_kumulativ": 64132,
+			"personen_voll_kumulativ": 67669
+		},
+		{
+			"date": "2021-02-03",
+			"dosen_kumulativ": 159529,
+			"personen_erst_kumulativ": 64300,
+			"personen_voll_kumulativ": 95229
+		},
+		{
+			"date": "2021-02-04",
+			"dosen_kumulativ": 131623,
+			"personen_erst_kumulativ": 60894,
+			"personen_voll_kumulativ": 70729
+		},
+		{
+			"date": "2021-02-05",
+			"dosen_kumulativ": 144539,
+			"personen_erst_kumulativ": 67383,
+			"personen_voll_kumulativ": 77156
+		},
+		{
+			"date": "2021-02-06",
+			"dosen_kumulativ": 100529,
+			"personen_erst_kumulativ": 47371,
+			"personen_voll_kumulativ": 53158
+		},
+		{
+			"date": "2021-02-07",
+			"dosen_kumulativ": 54258,
+			"personen_erst_kumulativ": 28155,
+			"personen_voll_kumulativ": 26103
+		},
+		{
+			"date": "2021-02-08",
+			"dosen_kumulativ": 109769,
+			"personen_erst_kumulativ": 53008,
+			"personen_voll_kumulativ": 56761
+		},
+		{
+			"date": "2021-02-09",
+			"dosen_kumulativ": 134263,
+			"personen_erst_kumulativ": 59945,
+			"personen_voll_kumulativ": 74318
+		},
+		{
+			"date": "2021-02-10",
+			"dosen_kumulativ": 152492,
+			"personen_erst_kumulativ": 75252,
+			"personen_voll_kumulativ": 77240
+		},
+		{
+			"date": "2021-02-11",
+			"dosen_kumulativ": 141106,
+			"personen_erst_kumulativ": 73744,
+			"personen_voll_kumulativ": 67362
+		},
+		{
+			"date": "2021-02-12",
+			"dosen_kumulativ": 156547,
+			"personen_erst_kumulativ": 80163,
+			"personen_voll_kumulativ": 76384
+		},
+		{
+			"date": "2021-02-13",
+			"dosen_kumulativ": 107735,
+			"personen_erst_kumulativ": 62270,
+			"personen_voll_kumulativ": 45465
+		},
+		{
+			"date": "2021-02-14",
+			"dosen_kumulativ": 65273,
+			"personen_erst_kumulativ": 40006,
+			"personen_voll_kumulativ": 25267
+		},
+		{
+			"date": "2021-02-15",
+			"dosen_kumulativ": 126241,
+			"personen_erst_kumulativ": 70784,
+			"personen_voll_kumulativ": 55457
+		},
+		{
+			"date": "2021-02-16",
+			"dosen_kumulativ": 137276,
+			"personen_erst_kumulativ": 82276,
+			"personen_voll_kumulativ": 55000
+		},
+		{
+			"date": "2021-02-17",
+			"dosen_kumulativ": 149581,
+			"personen_erst_kumulativ": 93482,
+			"personen_voll_kumulativ": 56099
+		},
+		{
+			"date": "2021-02-18",
+			"dosen_kumulativ": 142229,
+			"personen_erst_kumulativ": 90736,
+			"personen_voll_kumulativ": 51493
+		},
+		{
+			"date": "2021-02-19",
+			"dosen_kumulativ": 154837,
+			"personen_erst_kumulativ": 100042,
+			"personen_voll_kumulativ": 54795
+		},
+		{
+			"date": "2021-02-20",
+			"dosen_kumulativ": 113166,
+			"personen_erst_kumulativ": 76040,
+			"personen_voll_kumulativ": 37126
+		},
+		{
+			"date": "2021-02-21",
+			"dosen_kumulativ": 86372,
+			"personen_erst_kumulativ": 57063,
+			"personen_voll_kumulativ": 29309
+		},
+		{
+			"date": "2021-02-22",
+			"dosen_kumulativ": 159253,
+			"personen_erst_kumulativ": 99513,
+			"personen_voll_kumulativ": 59740
+		},
+		{
+			"date": "2021-02-23",
+			"dosen_kumulativ": 167249,
+			"personen_erst_kumulativ": 107672,
+			"personen_voll_kumulativ": 59577
+		},
+		{
+			"date": "2021-02-24",
+			"dosen_kumulativ": 176397,
+			"personen_erst_kumulativ": 116729,
+			"personen_voll_kumulativ": 59668
+		},
+		{
+			"date": "2021-02-25",
+			"dosen_kumulativ": 189530,
+			"personen_erst_kumulativ": 130981,
+			"personen_voll_kumulativ": 58549
+		},
+		{
+			"date": "2021-02-26",
+			"dosen_kumulativ": 209922,
+			"personen_erst_kumulativ": 144229,
+			"personen_voll_kumulativ": 65693
+		},
+		{
+			"date": "2021-02-27",
+			"dosen_kumulativ": 148309,
+			"personen_erst_kumulativ": 108240,
+			"personen_voll_kumulativ": 40069
+		},
+		{
+			"date": "2021-02-28",
+			"dosen_kumulativ": 108306,
+			"personen_erst_kumulativ": 84022,
+			"personen_voll_kumulativ": 24284
+		},
+		{
+			"date": "2021-03-01",
+			"dosen_kumulativ": 197351,
+			"personen_erst_kumulativ": 147414,
+			"personen_voll_kumulativ": 49937
+		},
+		{
+			"date": "2021-03-02",
+			"dosen_kumulativ": 219361,
+			"personen_erst_kumulativ": 165930,
+			"personen_voll_kumulativ": 53431
+		},
+		{
+			"date": "2021-03-03",
+			"dosen_kumulativ": 243935,
+			"personen_erst_kumulativ": 174778,
+			"personen_voll_kumulativ": 69157
+		},
+		{
+			"date": "2021-03-04",
+			"dosen_kumulativ": 243945,
+			"personen_erst_kumulativ": 181262,
+			"personen_voll_kumulativ": 62683
+		},
+		{
+			"date": "2021-03-05",
+			"dosen_kumulativ": 270009,
+			"personen_erst_kumulativ": 202409,
+			"personen_voll_kumulativ": 67600
+		},
+		{
+			"date": "2021-03-06",
+			"dosen_kumulativ": 202744,
+			"personen_erst_kumulativ": 153271,
+			"personen_voll_kumulativ": 49473
+		},
+		{
+			"date": "2021-03-07",
+			"dosen_kumulativ": 150565,
+			"personen_erst_kumulativ": 116052,
+			"personen_voll_kumulativ": 34513
+		},
+		{
+			"date": "2021-03-08",
+			"dosen_kumulativ": 237900,
+			"personen_erst_kumulativ": 185831,
+			"personen_voll_kumulativ": 52069
+		},
+		{
+			"date": "2021-03-09",
+			"dosen_kumulativ": 250486,
+			"personen_erst_kumulativ": 195714,
+			"personen_voll_kumulativ": 54772
+		},
+		{
+			"date": "2021-03-10",
+			"dosen_kumulativ": 284124,
+			"personen_erst_kumulativ": 218410,
+			"personen_voll_kumulativ": 65714
+		},
+		{
+			"date": "2021-03-11",
+			"dosen_kumulativ": 282351,
+			"personen_erst_kumulativ": 221592,
+			"personen_voll_kumulativ": 60759
+		},
+		{
+			"date": "2021-03-12",
+			"dosen_kumulativ": 324423,
+			"personen_erst_kumulativ": 253220,
+			"personen_voll_kumulativ": 71203
+		},
+		{
+			"date": "2021-03-13",
+			"dosen_kumulativ": 248010,
+			"personen_erst_kumulativ": 198401,
+			"personen_voll_kumulativ": 49609
+		},
+		{
+			"date": "2021-03-14",
+			"dosen_kumulativ": 170782,
+			"personen_erst_kumulativ": 134753,
+			"personen_voll_kumulativ": 36029
+		},
+		{
+			"date": "2021-03-15",
+			"dosen_kumulativ": 248402,
+			"personen_erst_kumulativ": 189560,
+			"personen_voll_kumulativ": 58842
+		},
+		{
+			"date": "2021-03-16",
+			"dosen_kumulativ": 178421,
+			"personen_erst_kumulativ": 111578,
+			"personen_voll_kumulativ": 66843
+		},
+		{
+			"date": "2021-03-17",
+			"dosen_kumulativ": 205134,
+			"personen_erst_kumulativ": 125785,
+			"personen_voll_kumulativ": 79349
+		},
+		{
+			"date": "2021-03-18",
+			"dosen_kumulativ": 194453,
+			"personen_erst_kumulativ": 119183,
+			"personen_voll_kumulativ": 75270
+		},
+		{
+			"date": "2021-03-19",
+			"dosen_kumulativ": 243489,
+			"personen_erst_kumulativ": 160517,
+			"personen_voll_kumulativ": 82972
+		},
+		{
+			"date": "2021-03-20",
+			"dosen_kumulativ": 220717,
+			"personen_erst_kumulativ": 166816,
+			"personen_voll_kumulativ": 53901
+		},
+		{
+			"date": "2021-03-21",
+			"dosen_kumulativ": 165224,
+			"personen_erst_kumulativ": 126434,
+			"personen_voll_kumulativ": 38790
+		},
+		{
+			"date": "2021-03-22",
+			"dosen_kumulativ": 267177,
+			"personen_erst_kumulativ": 190909,
+			"personen_voll_kumulativ": 76268
+		},
+		{
+			"date": "2021-03-23",
+			"dosen_kumulativ": 297541,
+			"personen_erst_kumulativ": 214148,
+			"personen_voll_kumulativ": 83393
+		},
+		{
+			"date": "2021-03-24",
+			"dosen_kumulativ": 334592,
+			"personen_erst_kumulativ": 246272,
+			"personen_voll_kumulativ": 88320
+		},
+		{
+			"date": "2021-03-25",
+			"dosen_kumulativ": 337168,
+			"personen_erst_kumulativ": 257020,
+			"personen_voll_kumulativ": 80148
+		},
+		{
+			"date": "2021-03-26",
+			"dosen_kumulativ": 376888,
+			"personen_erst_kumulativ": 287982,
+			"personen_voll_kumulativ": 88906
+		},
+		{
+			"date": "2021-03-27",
+			"dosen_kumulativ": 286602,
+			"personen_erst_kumulativ": 224008,
+			"personen_voll_kumulativ": 62594
+		},
+		{
+			"date": "2021-03-28",
+			"dosen_kumulativ": 196782,
+			"personen_erst_kumulativ": 144055,
+			"personen_voll_kumulativ": 52727
+		},
+		{
+			"date": "2021-03-29",
+			"dosen_kumulativ": 308908,
+			"personen_erst_kumulativ": 219938,
+			"personen_voll_kumulativ": 88970
+		},
+		{
+			"date": "2021-03-30",
+			"dosen_kumulativ": 330134,
+			"personen_erst_kumulativ": 236394,
+			"personen_voll_kumulativ": 93740
+		},
+		{
+			"date": "2021-03-31",
+			"dosen_kumulativ": 338888,
+			"personen_erst_kumulativ": 236114,
+			"personen_voll_kumulativ": 102774
+		},
+		{
+			"date": "2021-04-01",
+			"dosen_kumulativ": 326408,
+			"personen_erst_kumulativ": 233420,
+			"personen_voll_kumulativ": 92988
+		},
+		{
+			"date": "2021-04-02",
+			"dosen_kumulativ": 229468,
+			"personen_erst_kumulativ": 157967,
+			"personen_voll_kumulativ": 71501
+		},
+		{
+			"date": "2021-04-03",
+			"dosen_kumulativ": 232682,
+			"personen_erst_kumulativ": 166235,
+			"personen_voll_kumulativ": 66447
+		},
+		{
+			"date": "2021-04-04",
+			"dosen_kumulativ": 195896,
+			"personen_erst_kumulativ": 142127,
+			"personen_voll_kumulativ": 53769
+		},
+		{
+			"date": "2021-04-05",
+			"dosen_kumulativ": 249342,
+			"personen_erst_kumulativ": 176502,
+			"personen_voll_kumulativ": 72840
+		},
+		{
+			"date": "2021-04-06",
+			"dosen_kumulativ": 379160,
+			"personen_erst_kumulativ": 279757,
+			"personen_voll_kumulativ": 99403
+		},
+		{
+			"date": "2021-04-07",
+			"dosen_kumulativ": 678887,
+			"personen_erst_kumulativ": 581713,
+			"personen_voll_kumulativ": 97174
+		},
+		{
+			"date": "2021-04-08",
+			"dosen_kumulativ": 734452,
+			"personen_erst_kumulativ": 643966,
+			"personen_voll_kumulativ": 90486
+		},
+		{
+			"date": "2021-04-09",
+			"dosen_kumulativ": 625387,
+			"personen_erst_kumulativ": 536504,
+			"personen_voll_kumulativ": 88883
+		},
+		{
+			"date": "2021-04-10",
+			"dosen_kumulativ": 368850,
+			"personen_erst_kumulativ": 303314,
+			"personen_voll_kumulativ": 65536
+		},
+		{
+			"date": "2021-04-11",
+			"dosen_kumulativ": 260811,
+			"personen_erst_kumulativ": 210739,
+			"personen_voll_kumulativ": 50072
+		},
+		{
+			"date": "2021-04-12",
+			"dosen_kumulativ": 416862,
+			"personen_erst_kumulativ": 339481,
+			"personen_voll_kumulativ": 77381
+		},
+		{
+			"date": "2021-04-13",
+			"dosen_kumulativ": 570500,
+			"personen_erst_kumulativ": 497026,
+			"personen_voll_kumulativ": 73474
+		},
+		{
+			"date": "2021-04-14",
+			"dosen_kumulativ": 775591,
+			"personen_erst_kumulativ": 692001,
+			"personen_voll_kumulativ": 83590
+		},
+		{
+			"date": "2021-04-15",
+			"dosen_kumulativ": 680234,
+			"personen_erst_kumulativ": 609188,
+			"personen_voll_kumulativ": 71046
+		},
+		{
+			"date": "2021-04-16",
+			"dosen_kumulativ": 595910,
+			"personen_erst_kumulativ": 520501,
+			"personen_voll_kumulativ": 75409
+		},
+		{
+			"date": "2021-04-17",
+			"dosen_kumulativ": 363092,
+			"personen_erst_kumulativ": 306525,
+			"personen_voll_kumulativ": 56567
+		},
+		{
+			"date": "2021-04-18",
+			"dosen_kumulativ": 266558,
+			"personen_erst_kumulativ": 227595,
+			"personen_voll_kumulativ": 38963
+		},
+		{
+			"date": "2021-04-19",
+			"dosen_kumulativ": 400392,
+			"personen_erst_kumulativ": 339528,
+			"personen_voll_kumulativ": 60864
+		},
+		{
+			"date": "2021-04-20",
+			"dosen_kumulativ": 556549,
+			"personen_erst_kumulativ": 494571,
+			"personen_voll_kumulativ": 61978
+		},
+		{
+			"date": "2021-04-21",
+			"dosen_kumulativ": 716728,
+			"personen_erst_kumulativ": 644184,
+			"personen_voll_kumulativ": 72544
+		},
+		{
+			"date": "2021-04-22",
+			"dosen_kumulativ": 634696,
+			"personen_erst_kumulativ": 567793,
+			"personen_voll_kumulativ": 66903
+		},
+		{
+			"date": "2021-04-23",
+			"dosen_kumulativ": 552430,
+			"personen_erst_kumulativ": 484810,
+			"personen_voll_kumulativ": 67620
+		},
+		{
+			"date": "2021-04-24",
+			"dosen_kumulativ": 369932,
+			"personen_erst_kumulativ": 310838,
+			"personen_voll_kumulativ": 59094
+		},
+		{
+			"date": "2021-04-25",
+			"dosen_kumulativ": 285190,
+			"personen_erst_kumulativ": 237017,
+			"personen_voll_kumulativ": 48173
+		},
+		{
+			"date": "2021-04-26",
+			"dosen_kumulativ": 430569,
+			"personen_erst_kumulativ": 357335,
+			"personen_voll_kumulativ": 73234
+		},
+		{
+			"date": "2021-04-27",
+			"dosen_kumulativ": 786536,
+			"personen_erst_kumulativ": 696409,
+			"personen_voll_kumulativ": 90127
+		},
+		{
+			"date": "2021-04-28",
+			"dosen_kumulativ": 1123683,
+			"personen_erst_kumulativ": 996551,
+			"personen_voll_kumulativ": 127132
+		},
+		{
+			"date": "2021-04-29",
+			"dosen_kumulativ": 945607,
+			"personen_erst_kumulativ": 813098,
+			"personen_voll_kumulativ": 132509
+		},
+		{
+			"date": "2021-04-30",
+			"dosen_kumulativ": 802919,
+			"personen_erst_kumulativ": 665978,
+			"personen_voll_kumulativ": 136941
+		},
+		{
+			"date": "2021-05-01",
+			"dosen_kumulativ": 336939,
+			"personen_erst_kumulativ": 263494,
+			"personen_voll_kumulativ": 73445
+		},
+		{
+			"date": "2021-05-02",
+			"dosen_kumulativ": 263752,
+			"personen_erst_kumulativ": 198749,
+			"personen_voll_kumulativ": 65003
+		},
+		{
+			"date": "2021-05-03",
+			"dosen_kumulativ": 453235,
+			"personen_erst_kumulativ": 336902,
+			"personen_voll_kumulativ": 116333
+		},
+		{
+			"date": "2021-05-04",
+			"dosen_kumulativ": 841176,
+			"personen_erst_kumulativ": 682426,
+			"personen_voll_kumulativ": 158750
+		},
+		{
+			"date": "2021-05-05",
+			"dosen_kumulativ": 1140440,
+			"personen_erst_kumulativ": 914696,
+			"personen_voll_kumulativ": 225744
+		},
+		{
+			"date": "2021-05-06",
+			"dosen_kumulativ": 982220,
+			"personen_erst_kumulativ": 767174,
+			"personen_voll_kumulativ": 215046
+		},
+		{
+			"date": "2021-05-07",
+			"dosen_kumulativ": 881470,
+			"personen_erst_kumulativ": 651208,
+			"personen_voll_kumulativ": 230262
+		},
+		{
+			"date": "2021-05-08",
+			"dosen_kumulativ": 426813,
+			"personen_erst_kumulativ": 273545,
+			"personen_voll_kumulativ": 153268
+		},
+		{
+			"date": "2021-05-09",
+			"dosen_kumulativ": 287228,
+			"personen_erst_kumulativ": 185192,
+			"personen_voll_kumulativ": 102036
+		},
+		{
+			"date": "2021-05-10",
+			"dosen_kumulativ": 588178,
+			"personen_erst_kumulativ": 397550,
+			"personen_voll_kumulativ": 190628
+		},
+		{
+			"date": "2021-05-11",
+			"dosen_kumulativ": 1082209,
+			"personen_erst_kumulativ": 799668,
+			"personen_voll_kumulativ": 282541
+		},
+		{
+			"date": "2021-05-12",
+			"dosen_kumulativ": 1407423,
+			"personen_erst_kumulativ": 1050393,
+			"personen_voll_kumulativ": 357030
+		},
+		{
+			"date": "2021-05-13",
+			"dosen_kumulativ": 428463,
+			"personen_erst_kumulativ": 269824,
+			"personen_voll_kumulativ": 158639
+		},
+		{
+			"date": "2021-05-14",
+			"dosen_kumulativ": 755288,
+			"personen_erst_kumulativ": 532532,
+			"personen_voll_kumulativ": 222756
+		},
+		{
+			"date": "2021-05-15",
+			"dosen_kumulativ": 399385,
+			"personen_erst_kumulativ": 238291,
+			"personen_voll_kumulativ": 161094
+		},
+		{
+			"date": "2021-05-16",
+			"dosen_kumulativ": 282838,
+			"personen_erst_kumulativ": 165213,
+			"personen_voll_kumulativ": 117625
+		},
+		{
+			"date": "2021-05-17",
+			"dosen_kumulativ": 553375,
+			"personen_erst_kumulativ": 357882,
+			"personen_voll_kumulativ": 195493
+		},
+		{
+			"date": "2021-05-18",
+			"dosen_kumulativ": 875399,
+			"personen_erst_kumulativ": 525193,
+			"personen_voll_kumulativ": 350206
+		},
+		{
+			"date": "2021-05-19",
+			"dosen_kumulativ": 1101572,
+			"personen_erst_kumulativ": 577366,
+			"personen_voll_kumulativ": 524206
+		},
+		{
+			"date": "2021-05-20",
+			"dosen_kumulativ": 945377,
+			"personen_erst_kumulativ": 466146,
+			"personen_voll_kumulativ": 479231
+		},
+		{
+			"date": "2021-05-21",
+			"dosen_kumulativ": 846166,
+			"personen_erst_kumulativ": 416262,
+			"personen_voll_kumulativ": 429904
+		},
+		{
+			"date": "2021-05-22",
+			"dosen_kumulativ": 479165,
+			"personen_erst_kumulativ": 233690,
+			"personen_voll_kumulativ": 245475
+		},
+		{
+			"date": "2021-05-23",
+			"dosen_kumulativ": 288219,
+			"personen_erst_kumulativ": 137292,
+			"personen_voll_kumulativ": 150927
+		},
+		{
+			"date": "2021-05-24",
+			"dosen_kumulativ": 326693,
+			"personen_erst_kumulativ": 151210,
+			"personen_voll_kumulativ": 175483
+		},
+		{
+			"date": "2021-05-25",
+			"dosen_kumulativ": 653951,
+			"personen_erst_kumulativ": 298358,
+			"personen_voll_kumulativ": 355593
+		},
+		{
+			"date": "2021-05-26",
+			"dosen_kumulativ": 1171939,
+			"personen_erst_kumulativ": 545364,
+			"personen_voll_kumulativ": 626575
+		},
+		{
+			"date": "2021-05-27",
+			"dosen_kumulativ": 1032068,
+			"personen_erst_kumulativ": 484133,
+			"personen_voll_kumulativ": 547935
+		},
+		{
+			"date": "2021-05-28",
+			"dosen_kumulativ": 890679,
+			"personen_erst_kumulativ": 437177,
+			"personen_voll_kumulativ": 453502
+		},
+		{
+			"date": "2021-05-29",
+			"dosen_kumulativ": 412018,
+			"personen_erst_kumulativ": 184255,
+			"personen_voll_kumulativ": 227763
+		},
+		{
+			"date": "2021-05-30",
+			"dosen_kumulativ": 286592,
+			"personen_erst_kumulativ": 112449,
+			"personen_voll_kumulativ": 174143
+		},
+		{
+			"date": "2021-05-31",
+			"dosen_kumulativ": 539925,
+			"personen_erst_kumulativ": 221238,
+			"personen_voll_kumulativ": 318687
+		},
+		{
+			"date": "2021-06-01",
+			"dosen_kumulativ": 980081,
+			"personen_erst_kumulativ": 485032,
+			"personen_voll_kumulativ": 495049
+		},
+		{
+			"date": "2021-06-02",
+			"dosen_kumulativ": 1235416,
+			"personen_erst_kumulativ": 621499,
+			"personen_voll_kumulativ": 613917
+		},
+		{
+			"date": "2021-06-03",
+			"dosen_kumulativ": 635889,
+			"personen_erst_kumulativ": 284120,
+			"personen_voll_kumulativ": 351769
+		},
+		{
+			"date": "2021-06-04",
+			"dosen_kumulativ": 817684,
+			"personen_erst_kumulativ": 372880,
+			"personen_voll_kumulativ": 444804
+		},
+		{
+			"date": "2021-06-05",
+			"dosen_kumulativ": 407021,
+			"personen_erst_kumulativ": 127715,
+			"personen_voll_kumulativ": 279306
+		},
+		{
+			"date": "2021-06-06",
+			"dosen_kumulativ": 291098,
+			"personen_erst_kumulativ": 77678,
+			"personen_voll_kumulativ": 213420
+		},
+		{
+			"date": "2021-06-07",
+			"dosen_kumulativ": 596145,
+			"personen_erst_kumulativ": 244608,
+			"personen_voll_kumulativ": 351537
+		},
+		{
+			"date": "2021-06-08",
+			"dosen_kumulativ": 1007742,
+			"personen_erst_kumulativ": 375927,
+			"personen_voll_kumulativ": 631815
+		},
+		{
+			"date": "2021-06-09",
+			"dosen_kumulativ": 1328025,
+			"personen_erst_kumulativ": 494805,
+			"personen_voll_kumulativ": 833220
+		},
+		{
+			"date": "2021-06-10",
+			"dosen_kumulativ": 1116981,
+			"personen_erst_kumulativ": 437905,
+			"personen_voll_kumulativ": 679076
+		},
+		{
+			"date": "2021-06-11",
+			"dosen_kumulativ": 965478,
+			"personen_erst_kumulativ": 409540,
+			"personen_voll_kumulativ": 555938
+		}
+	],
+	"pubDate": "2021-06-12 08:00",
+	"states": {
+		"BB": {
+			"code": "BB",
+			"dosen_astrazeneca_kumulativ": 279616,
+			"dosen_biontech_kumulativ": 1269211,
+			"dosen_janssen_kumulativ": 43126,
+			"dosen_kumulativ": 1746320,
+			"dosen_moderna_kumulativ": 154367,
+			"impf_inzidenz_dosen": 692.463954656284,
+			"impf_inzidenz_erst": 446.5629588567001,
+			"impf_inzidenz_min1": 463.6636050776143,
+			"impf_inzidenz_voll": 245.90099579958388,
+			"impf_inzidenz_zweit": 228.80034957866968,
+			"impf_quote_dosen": 69.2463954656284,
+			"impf_quote_erst": 44.65629588567001,
+			"impf_quote_min1": 46.4,
+			"impf_quote_min1_alter_18bis59": 39.9,
+			"impf_quote_min1_alter_60plus": 72.6,
+			"impf_quote_min1_alter_unter18": 1.3,
+			"impf_quote_voll": 24.6,
+			"impf_quote_voll_alter_18bis59": 19.1,
+			"impf_quote_voll_alter_60plus": 44.7,
+			"impf_quote_voll_alter_unter18": 0.3,
+			"impf_quote_zweit": 22.880034957866968,
+			"personen_erst_astrazeneca_kumulativ": 243741,
+			"personen_erst_biontech_kumulativ": 781515,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 1126184,
+			"personen_erst_moderna_kumulativ": 100928,
+			"personen_min1_astrazeneca_kumulativ": 243741,
+			"personen_min1_biontech_kumulativ": 781515,
+			"personen_min1_differenz_zum_vortag": 19245,
+			"personen_min1_janssen_kumulativ": 43126,
+			"personen_min1_kumulativ": 1169310,
+			"personen_min1_moderna_kumulativ": 100928,
+			"personen_voll_astrazeneca_kumulativ": 35875,
+			"personen_voll_biontech_kumulativ": 487696,
+			"personen_voll_differenz_zum_vortag": 13940,
+			"personen_voll_janssen_kumulativ": 43126,
+			"personen_voll_kumulativ": 620136,
+			"personen_voll_moderna_kumulativ": 53439,
+			"personen_zweit_astrazeneca_kumulativ": 35875,
+			"personen_zweit_biontech_kumulativ": 487696,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 577010,
+			"personen_zweit_moderna_kumulativ": 53439,
+			"title": "Brandenburg"
+		},
+		"BE": {
+			"code": "BE",
+			"dosen_astrazeneca_kumulativ": 385664,
+			"dosen_biontech_kumulativ": 1920692,
+			"dosen_janssen_kumulativ": 46435,
+			"dosen_kumulativ": 2621384,
+			"dosen_moderna_kumulativ": 268593,
+			"impf_inzidenz_dosen": 714.3726473235662,
+			"impf_inzidenz_erst": 471.6487927072174,
+			"impf_inzidenz_min1": 484.30313632054146,
+			"impf_inzidenz_voll": 242.7238546163487,
+			"impf_inzidenz_zweit": 230.06951100302467,
+			"impf_quote_dosen": 71.43726473235661,
+			"impf_quote_erst": 47.16487927072174,
+			"impf_quote_min1": 48.4,
+			"impf_quote_min1_alter_18bis59": null,
+			"impf_quote_min1_alter_60plus": null,
+			"impf_quote_min1_alter_unter18": null,
+			"impf_quote_voll": 24.3,
+			"impf_quote_voll_alter_18bis59": null,
+			"impf_quote_voll_alter_60plus": null,
+			"impf_quote_voll_alter_unter18": null,
+			"impf_quote_zweit": 23.006951100302466,
+			"personen_erst_astrazeneca_kumulativ": 349097,
+			"personen_erst_biontech_kumulativ": 1185979,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 1730711,
+			"personen_erst_moderna_kumulativ": 195635,
+			"personen_min1_astrazeneca_kumulativ": 349097,
+			"personen_min1_biontech_kumulativ": 1185979,
+			"personen_min1_differenz_zum_vortag": 28191,
+			"personen_min1_janssen_kumulativ": 46435,
+			"personen_min1_kumulativ": 1777146,
+			"personen_min1_moderna_kumulativ": 195635,
+			"personen_voll_astrazeneca_kumulativ": 36567,
+			"personen_voll_biontech_kumulativ": 734713,
+			"personen_voll_differenz_zum_vortag": 27313,
+			"personen_voll_janssen_kumulativ": 46435,
+			"personen_voll_kumulativ": 890673,
+			"personen_voll_moderna_kumulativ": 72958,
+			"personen_zweit_astrazeneca_kumulativ": 36567,
+			"personen_zweit_biontech_kumulativ": 734713,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 844238,
+			"personen_zweit_moderna_kumulativ": 72958,
+			"title": "Berlin"
+		},
+		"BW": {
+			"code": "BW",
+			"dosen_astrazeneca_kumulativ": 1299900,
+			"dosen_biontech_kumulativ": 5750578,
+			"dosen_janssen_kumulativ": 142863,
+			"dosen_kumulativ": 7859431,
+			"dosen_moderna_kumulativ": 666090,
+			"impf_inzidenz_dosen": 708.0317149102996,
+			"impf_inzidenz_erst": 458.0586058476843,
+			"impf_inzidenz_min1": 470.9286895582265,
+			"impf_inzidenz_voll": 249.97310906261526,
+			"impf_inzidenz_zweit": 237.10302535207308,
+			"impf_quote_dosen": 70.80317149102996,
+			"impf_quote_erst": 45.80586058476843,
+			"impf_quote_min1": 47.1,
+			"impf_quote_min1_alter_18bis59": 43.9,
+			"impf_quote_min1_alter_60plus": 79,
+			"impf_quote_min1_alter_unter18": 1.5,
+			"impf_quote_voll": 25,
+			"impf_quote_voll_alter_18bis59": 21,
+			"impf_quote_voll_alter_60plus": 48.8,
+			"impf_quote_voll_alter_unter18": 0.4,
+			"impf_quote_zweit": 23.71030253520731,
+			"personen_erst_astrazeneca_kumulativ": 1132367,
+			"personen_erst_biontech_kumulativ": 3503304,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 5084631,
+			"personen_erst_moderna_kumulativ": 448960,
+			"personen_min1_astrazeneca_kumulativ": 1132367,
+			"personen_min1_biontech_kumulativ": 3503304,
+			"personen_min1_differenz_zum_vortag": 61772,
+			"personen_min1_janssen_kumulativ": 142863,
+			"personen_min1_kumulativ": 5227494,
+			"personen_min1_moderna_kumulativ": 448960,
+			"personen_voll_astrazeneca_kumulativ": 167533,
+			"personen_voll_biontech_kumulativ": 2247274,
+			"personen_voll_differenz_zum_vortag": 94269,
+			"personen_voll_janssen_kumulativ": 142863,
+			"personen_voll_kumulativ": 2774800,
+			"personen_voll_moderna_kumulativ": 217130,
+			"personen_zweit_astrazeneca_kumulativ": 167533,
+			"personen_zweit_biontech_kumulativ": 2247274,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 2631937,
+			"personen_zweit_moderna_kumulativ": 217130,
+			"title": "Baden-Württemberg"
+		},
+		"BY": {
+			"code": "BY",
+			"dosen_astrazeneca_kumulativ": 1481367,
+			"dosen_biontech_kumulativ": 6975403,
+			"dosen_janssen_kumulativ": 154894,
+			"dosen_kumulativ": 9295355,
+			"dosen_moderna_kumulativ": 683691,
+			"impf_inzidenz_dosen": 708.2317154240881,
+			"impf_inzidenz_erst": 450.6221343711497,
+			"impf_inzidenz_min1": 462.4238184734673,
+			"impf_inzidenz_voll": 257.60958105293844,
+			"impf_inzidenz_zweit": 245.8078969506208,
+			"impf_quote_dosen": 70.82317154240882,
+			"impf_quote_erst": 45.06221343711497,
+			"impf_quote_min1": 46.2,
+			"impf_quote_min1_alter_18bis59": null,
+			"impf_quote_min1_alter_60plus": null,
+			"impf_quote_min1_alter_unter18": null,
+			"impf_quote_voll": 25.8,
+			"impf_quote_voll_alter_18bis59": null,
+			"impf_quote_voll_alter_60plus": null,
+			"impf_quote_voll_alter_unter18": null,
+			"impf_quote_zweit": 24.58078969506208,
+			"personen_erst_astrazeneca_kumulativ": 1292640,
+			"personen_erst_biontech_kumulativ": 4205456,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 5914297,
+			"personen_erst_moderna_kumulativ": 416201,
+			"personen_min1_astrazeneca_kumulativ": 1292640,
+			"personen_min1_biontech_kumulativ": 4205456,
+			"personen_min1_differenz_zum_vortag": 48399,
+			"personen_min1_janssen_kumulativ": 154894,
+			"personen_min1_kumulativ": 6069191,
+			"personen_min1_moderna_kumulativ": 416201,
+			"personen_voll_astrazeneca_kumulativ": 188727,
+			"personen_voll_biontech_kumulativ": 2769947,
+			"personen_voll_differenz_zum_vortag": 101728,
+			"personen_voll_janssen_kumulativ": 154894,
+			"personen_voll_kumulativ": 3381058,
+			"personen_voll_moderna_kumulativ": 267490,
+			"personen_zweit_astrazeneca_kumulativ": 188727,
+			"personen_zweit_biontech_kumulativ": 2769947,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 3226164,
+			"personen_zweit_moderna_kumulativ": 267490,
+			"title": "Bayern"
+		},
+		"HB": {
+			"code": "HB",
+			"dosen_astrazeneca_kumulativ": 103916,
+			"dosen_biontech_kumulativ": 381344,
+			"dosen_janssen_kumulativ": 15269,
+			"dosen_kumulativ": 536082,
+			"dosen_moderna_kumulativ": 35553,
+			"impf_inzidenz_dosen": 786.9648063276385,
+			"impf_inzidenz_erst": 506.10685229931795,
+			"impf_inzidenz_min1": 528.521642625829,
+			"impf_inzidenz_voll": 280.85795402832053,
+			"impf_inzidenz_zweit": 258.44316370180945,
+			"impf_quote_dosen": 78.69648063276385,
+			"impf_quote_erst": 50.610685229931796,
+			"impf_quote_min1": 52.9,
+			"impf_quote_min1_alter_18bis59": 48.6,
+			"impf_quote_min1_alter_60plus": 88.1,
+			"impf_quote_min1_alter_unter18": 0.8,
+			"impf_quote_voll": 28.1,
+			"impf_quote_voll_alter_18bis59": 22.8,
+			"impf_quote_voll_alter_60plus": 55.6,
+			"impf_quote_voll_alter_unter18": 0.2,
+			"impf_quote_zweit": 25.844316370180945,
+			"personen_erst_astrazeneca_kumulativ": 94553,
+			"personen_erst_biontech_kumulativ": 228446,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 344761,
+			"personen_erst_moderna_kumulativ": 21762,
+			"personen_min1_astrazeneca_kumulativ": 94553,
+			"personen_min1_biontech_kumulativ": 228446,
+			"personen_min1_differenz_zum_vortag": 5089,
+			"personen_min1_janssen_kumulativ": 15269,
+			"personen_min1_kumulativ": 360030,
+			"personen_min1_moderna_kumulativ": 21762,
+			"personen_voll_astrazeneca_kumulativ": 9363,
+			"personen_voll_biontech_kumulativ": 152898,
+			"personen_voll_differenz_zum_vortag": 4161,
+			"personen_voll_janssen_kumulativ": 15269,
+			"personen_voll_kumulativ": 191321,
+			"personen_voll_moderna_kumulativ": 13791,
+			"personen_zweit_astrazeneca_kumulativ": 9363,
+			"personen_zweit_biontech_kumulativ": 152898,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 176052,
+			"personen_zweit_moderna_kumulativ": 13791,
+			"title": "Bremen"
+		},
+		"HE": {
+			"code": "HE",
+			"dosen_astrazeneca_kumulativ": 798205,
+			"dosen_biontech_kumulativ": 3175933,
+			"dosen_janssen_kumulativ": 72819,
+			"dosen_kumulativ": 4377517,
+			"dosen_moderna_kumulativ": 330560,
+			"impf_inzidenz_dosen": 696.161149349245,
+			"impf_inzidenz_erst": 465.53526672688645,
+			"impf_inzidenz_min1": 477.1157491634967,
+			"impf_inzidenz_voll": 230.6258826223585,
+			"impf_inzidenz_zweit": 219.04540018574826,
+			"impf_quote_dosen": 69.6161149349245,
+			"impf_quote_erst": 46.55352667268864,
+			"impf_quote_min1": 47.7,
+			"impf_quote_min1_alter_18bis59": 44.2,
+			"impf_quote_min1_alter_60plus": 79.9,
+			"impf_quote_min1_alter_unter18": 1,
+			"impf_quote_voll": 23.1,
+			"impf_quote_voll_alter_18bis59": 20.3,
+			"impf_quote_voll_alter_60plus": 42.7,
+			"impf_quote_voll_alter_unter18": 0.3,
+			"impf_quote_zweit": 21.904540018574828,
+			"personen_erst_astrazeneca_kumulativ": 690421,
+			"personen_erst_biontech_kumulativ": 2004532,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 2927323,
+			"personen_erst_moderna_kumulativ": 232370,
+			"personen_min1_astrazeneca_kumulativ": 690421,
+			"personen_min1_biontech_kumulativ": 2004532,
+			"personen_min1_differenz_zum_vortag": 30189,
+			"personen_min1_janssen_kumulativ": 72819,
+			"personen_min1_kumulativ": 3000142,
+			"personen_min1_moderna_kumulativ": 232370,
+			"personen_voll_astrazeneca_kumulativ": 107784,
+			"personen_voll_biontech_kumulativ": 1171401,
+			"personen_voll_differenz_zum_vortag": 54514,
+			"personen_voll_janssen_kumulativ": 72819,
+			"personen_voll_kumulativ": 1450194,
+			"personen_voll_moderna_kumulativ": 98190,
+			"personen_zweit_astrazeneca_kumulativ": 107784,
+			"personen_zweit_biontech_kumulativ": 1171401,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 1377375,
+			"personen_zweit_moderna_kumulativ": 98190,
+			"title": "Hessen"
+		},
+		"HH": {
+			"code": "HH",
+			"dosen_astrazeneca_kumulativ": 186839,
+			"dosen_biontech_kumulativ": 913902,
+			"dosen_janssen_kumulativ": 28488,
+			"dosen_kumulativ": 1258750,
+			"dosen_moderna_kumulativ": 129521,
+			"impf_inzidenz_dosen": 681.4172178905651,
+			"impf_inzidenz_erst": 436.1876797601628,
+			"impf_inzidenz_min1": 451.60949799513116,
+			"impf_inzidenz_voll": 245.2295381304023,
+			"impf_inzidenz_zweit": 229.80771989543393,
+			"impf_quote_dosen": 68.1417217890565,
+			"impf_quote_erst": 43.61876797601628,
+			"impf_quote_min1": 45.2,
+			"impf_quote_min1_alter_18bis59": 42.2,
+			"impf_quote_min1_alter_60plus": 78.3,
+			"impf_quote_min1_alter_unter18": 1,
+			"impf_quote_voll": 24.5,
+			"impf_quote_voll_alter_18bis59": 22.6,
+			"impf_quote_voll_alter_60plus": 46.8,
+			"impf_quote_voll_alter_unter18": 0.4,
+			"impf_quote_zweit": 22.980771989543392,
+			"personen_erst_astrazeneca_kumulativ": 176589,
+			"personen_erst_biontech_kumulativ": 548207,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 805749,
+			"personen_erst_moderna_kumulativ": 80953,
+			"personen_min1_astrazeneca_kumulativ": 176589,
+			"personen_min1_biontech_kumulativ": 548207,
+			"personen_min1_differenz_zum_vortag": 7387,
+			"personen_min1_janssen_kumulativ": 28488,
+			"personen_min1_kumulativ": 834237,
+			"personen_min1_moderna_kumulativ": 80953,
+			"personen_voll_astrazeneca_kumulativ": 10250,
+			"personen_voll_biontech_kumulativ": 365695,
+			"personen_voll_differenz_zum_vortag": 14809,
+			"personen_voll_janssen_kumulativ": 28488,
+			"personen_voll_kumulativ": 453001,
+			"personen_voll_moderna_kumulativ": 48568,
+			"personen_zweit_astrazeneca_kumulativ": 10250,
+			"personen_zweit_biontech_kumulativ": 365695,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 424513,
+			"personen_zweit_moderna_kumulativ": 48568,
+			"title": "Hamburg"
+		},
+		"MV": {
+			"code": "MV",
+			"dosen_astrazeneca_kumulativ": 160379,
+			"dosen_biontech_kumulativ": 940834,
+			"dosen_janssen_kumulativ": 21391,
+			"dosen_kumulativ": 1217801,
+			"dosen_moderna_kumulativ": 95197,
+			"impf_inzidenz_dosen": 757.2739404205361,
+			"impf_inzidenz_erst": 480.26226604930673,
+			"impf_inzidenz_min1": 493.56398518037633,
+			"impf_inzidenz_voll": 277.01167437122933,
+			"impf_inzidenz_zweit": 263.70995524015973,
+			"impf_quote_dosen": 75.7273940420536,
+			"impf_quote_erst": 48.02622660493067,
+			"impf_quote_min1": 49.4,
+			"impf_quote_min1_alter_18bis59": 42.9,
+			"impf_quote_min1_alter_60plus": 78.4,
+			"impf_quote_min1_alter_unter18": 0.8,
+			"impf_quote_voll": 27.7,
+			"impf_quote_voll_alter_18bis59": 21.6,
+			"impf_quote_voll_alter_60plus": 49.3,
+			"impf_quote_voll_alter_unter18": 0.3,
+			"impf_quote_zweit": 26.370995524015974,
+			"personen_erst_astrazeneca_kumulativ": 142333,
+			"personen_erst_biontech_kumulativ": 564562,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 772328,
+			"personen_erst_moderna_kumulativ": 65433,
+			"personen_min1_astrazeneca_kumulativ": 142333,
+			"personen_min1_biontech_kumulativ": 564562,
+			"personen_min1_differenz_zum_vortag": 8061,
+			"personen_min1_janssen_kumulativ": 21391,
+			"personen_min1_kumulativ": 793719,
+			"personen_min1_moderna_kumulativ": 65433,
+			"personen_voll_astrazeneca_kumulativ": 18046,
+			"personen_voll_biontech_kumulativ": 376272,
+			"personen_voll_differenz_zum_vortag": 15678,
+			"personen_voll_janssen_kumulativ": 21391,
+			"personen_voll_kumulativ": 445473,
+			"personen_voll_moderna_kumulativ": 29764,
+			"personen_zweit_astrazeneca_kumulativ": 18046,
+			"personen_zweit_biontech_kumulativ": 376272,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 424082,
+			"personen_zweit_moderna_kumulativ": 29764,
+			"title": "Mecklenburg-Vorpommern"
+		},
+		"NI": {
+			"code": "NI",
+			"dosen_astrazeneca_kumulativ": 1141036,
+			"dosen_biontech_kumulativ": 3999417,
+			"dosen_janssen_kumulativ": 177180,
+			"dosen_kumulativ": 5718912,
+			"dosen_moderna_kumulativ": 401279,
+			"impf_inzidenz_dosen": 715.4356330708235,
+			"impf_inzidenz_erst": 466.3249686499513,
+			"impf_inzidenz_min1": 488.49017865274357,
+			"impf_inzidenz_voll": 249.11066442087227,
+			"impf_inzidenz_zweit": 226.94545441808003,
+			"impf_quote_dosen": 71.54356330708237,
+			"impf_quote_erst": 46.63249686499513,
+			"impf_quote_min1": 48.8,
+			"impf_quote_min1_alter_18bis59": 41.8,
+			"impf_quote_min1_alter_60plus": 83.6,
+			"impf_quote_min1_alter_unter18": 1.1,
+			"impf_quote_voll": 24.9,
+			"impf_quote_voll_alter_18bis59": 20.7,
+			"impf_quote_voll_alter_60plus": 47,
+			"impf_quote_voll_alter_unter18": 0.4,
+			"impf_quote_zweit": 22.694545441808003,
+			"personen_erst_astrazeneca_kumulativ": 1063553,
+			"personen_erst_biontech_kumulativ": 2425763,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 3727619,
+			"personen_erst_moderna_kumulativ": 238303,
+			"personen_min1_astrazeneca_kumulativ": 1063553,
+			"personen_min1_biontech_kumulativ": 2425763,
+			"personen_min1_differenz_zum_vortag": 37949,
+			"personen_min1_janssen_kumulativ": 177180,
+			"personen_min1_kumulativ": 3904799,
+			"personen_min1_moderna_kumulativ": 238303,
+			"personen_voll_astrazeneca_kumulativ": 77483,
+			"personen_voll_biontech_kumulativ": 1573654,
+			"personen_voll_differenz_zum_vortag": 77281,
+			"personen_voll_janssen_kumulativ": 177180,
+			"personen_voll_kumulativ": 1991293,
+			"personen_voll_moderna_kumulativ": 162976,
+			"personen_zweit_astrazeneca_kumulativ": 77483,
+			"personen_zweit_biontech_kumulativ": 1573654,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 1814113,
+			"personen_zweit_moderna_kumulativ": 162976,
+			"title": "Niedersachsen"
+		},
+		"NW": {
+			"code": "NW",
+			"dosen_astrazeneca_kumulativ": 2350564,
+			"dosen_biontech_kumulativ": 9935080,
+			"dosen_janssen_kumulativ": 317743,
+			"dosen_kumulativ": 13534819,
+			"dosen_moderna_kumulativ": 931432,
+			"impf_inzidenz_dosen": 754.1456696833454,
+			"impf_inzidenz_erst": 487.970644591717,
+			"impf_inzidenz_min1": 505.674945441414,
+			"impf_inzidenz_voll": 266.1750250916284,
+			"impf_inzidenz_zweit": 248.47072424193138,
+			"impf_quote_dosen": 75.41456696833454,
+			"impf_quote_erst": 48.7970644591717,
+			"impf_quote_min1": 50.6,
+			"impf_quote_min1_alter_18bis59": 46.5,
+			"impf_quote_min1_alter_60plus": 83,
+			"impf_quote_min1_alter_unter18": 1.1,
+			"impf_quote_voll": 26.6,
+			"impf_quote_voll_alter_18bis59": 21.7,
+			"impf_quote_voll_alter_60plus": 52,
+			"impf_quote_voll_alter_unter18": 0.4,
+			"impf_quote_zweit": 24.84707242419314,
+			"personen_erst_astrazeneca_kumulativ": 2150781,
+			"personen_erst_biontech_kumulativ": 5955396,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 8757717,
+			"personen_erst_moderna_kumulativ": 651540,
+			"personen_min1_astrazeneca_kumulativ": 2150781,
+			"personen_min1_biontech_kumulativ": 5955396,
+			"personen_min1_differenz_zum_vortag": 76763,
+			"personen_min1_janssen_kumulativ": 317743,
+			"personen_min1_kumulativ": 9075460,
+			"personen_min1_moderna_kumulativ": 651540,
+			"personen_voll_astrazeneca_kumulativ": 199783,
+			"personen_voll_biontech_kumulativ": 3979684,
+			"personen_voll_differenz_zum_vortag": 143442,
+			"personen_voll_janssen_kumulativ": 317743,
+			"personen_voll_kumulativ": 4777102,
+			"personen_voll_moderna_kumulativ": 279892,
+			"personen_zweit_astrazeneca_kumulativ": 199783,
+			"personen_zweit_biontech_kumulativ": 3979684,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 4459359,
+			"personen_zweit_moderna_kumulativ": 279892,
+			"title": "Nordrhein-Westfalen"
+		},
+		"RP": {
+			"code": "RP",
+			"dosen_astrazeneca_kumulativ": 465402,
+			"dosen_biontech_kumulativ": 2178000,
+			"dosen_janssen_kumulativ": 54478,
+			"dosen_kumulativ": 2929561,
+			"dosen_moderna_kumulativ": 231681,
+			"impf_inzidenz_dosen": 715.5912096598283,
+			"impf_inzidenz_erst": 460.6770116439007,
+			"impf_inzidenz_min1": 473.9841173569574,
+			"impf_inzidenz_voll": 254.91419801592758,
+			"impf_inzidenz_zweit": 241.60709230287088,
+			"impf_quote_dosen": 71.55912096598283,
+			"impf_quote_erst": 46.06770116439007,
+			"impf_quote_min1": 47.4,
+			"impf_quote_min1_alter_18bis59": 41.3,
+			"impf_quote_min1_alter_60plus": 80.5,
+			"impf_quote_min1_alter_unter18": 1.1,
+			"impf_quote_voll": 25.5,
+			"impf_quote_voll_alter_18bis59": 20.8,
+			"impf_quote_voll_alter_60plus": 48.2,
+			"impf_quote_voll_alter_unter18": 0.4,
+			"impf_quote_zweit": 24.16070923028709,
+			"personen_erst_astrazeneca_kumulativ": 409998,
+			"personen_erst_biontech_kumulativ": 1301607,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 1885967,
+			"personen_erst_moderna_kumulativ": 174362,
+			"personen_min1_astrazeneca_kumulativ": 409998,
+			"personen_min1_biontech_kumulativ": 1301607,
+			"personen_min1_differenz_zum_vortag": 27451,
+			"personen_min1_janssen_kumulativ": 54478,
+			"personen_min1_kumulativ": 1940445,
+			"personen_min1_moderna_kumulativ": 174362,
+			"personen_voll_astrazeneca_kumulativ": 55404,
+			"personen_voll_biontech_kumulativ": 876393,
+			"personen_voll_differenz_zum_vortag": 25246,
+			"personen_voll_janssen_kumulativ": 54478,
+			"personen_voll_kumulativ": 1043594,
+			"personen_voll_moderna_kumulativ": 57319,
+			"personen_zweit_astrazeneca_kumulativ": 55404,
+			"personen_zweit_biontech_kumulativ": 876393,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 989116,
+			"personen_zweit_moderna_kumulativ": 57319,
+			"title": "Rheinland-Pfalz"
+		},
+		"SH": {
+			"code": "SH",
+			"dosen_astrazeneca_kumulativ": 370976,
+			"dosen_biontech_kumulativ": 1623320,
+			"dosen_janssen_kumulativ": 46466,
+			"dosen_kumulativ": 2202382,
+			"dosen_moderna_kumulativ": 161620,
+			"impf_inzidenz_dosen": 758.4552924763747,
+			"impf_inzidenz_erst": 490.83175578807294,
+			"impf_inzidenz_min1": 506.8336953336228,
+			"impf_inzidenz_voll": 267.6235366883017,
+			"impf_inzidenz_zweit": 251.62159714275185,
+			"impf_quote_dosen": 75.84552924763747,
+			"impf_quote_erst": 49.0831755788073,
+			"impf_quote_min1": 50.7,
+			"impf_quote_min1_alter_18bis59": 45.7,
+			"impf_quote_min1_alter_60plus": 82.7,
+			"impf_quote_min1_alter_unter18": 1.4,
+			"impf_quote_voll": 26.8,
+			"impf_quote_voll_alter_18bis59": 21,
+			"impf_quote_voll_alter_60plus": 51.5,
+			"impf_quote_voll_alter_unter18": 0.5,
+			"impf_quote_zweit": 25.162159714275187,
+			"personen_erst_astrazeneca_kumulativ": 326654,
+			"personen_erst_biontech_kumulativ": 995761,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 1425264,
+			"personen_erst_moderna_kumulativ": 102849,
+			"personen_min1_astrazeneca_kumulativ": 326654,
+			"personen_min1_biontech_kumulativ": 995761,
+			"personen_min1_differenz_zum_vortag": 18048,
+			"personen_min1_janssen_kumulativ": 46466,
+			"personen_min1_kumulativ": 1471730,
+			"personen_min1_moderna_kumulativ": 102849,
+			"personen_voll_astrazeneca_kumulativ": 44322,
+			"personen_voll_biontech_kumulativ": 627559,
+			"personen_voll_differenz_zum_vortag": 19566,
+			"personen_voll_janssen_kumulativ": 46466,
+			"personen_voll_kumulativ": 777118,
+			"personen_voll_moderna_kumulativ": 58771,
+			"personen_zweit_astrazeneca_kumulativ": 44322,
+			"personen_zweit_biontech_kumulativ": 627559,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 730652,
+			"personen_zweit_moderna_kumulativ": 58771,
+			"title": "Schleswig-Holstein"
+		},
+		"SL": {
+			"code": "SL",
+			"dosen_astrazeneca_kumulativ": 90023,
+			"dosen_biontech_kumulativ": 639741,
+			"dosen_janssen_kumulativ": 13008,
+			"dosen_kumulativ": 795550,
+			"dosen_moderna_kumulativ": 52778,
+			"impf_inzidenz_dosen": 806.1206602174311,
+			"impf_inzidenz_erst": 502.3685589130265,
+			"impf_inzidenz_min1": 515.5493992726624,
+			"impf_inzidenz_voll": 303.7521013044047,
+			"impf_inzidenz_zweit": 290.57126094476877,
+			"impf_quote_dosen": 80.61206602174312,
+			"impf_quote_erst": 50.23685589130265,
+			"impf_quote_min1": 51.6,
+			"impf_quote_min1_alter_18bis59": 44.8,
+			"impf_quote_min1_alter_60plus": 82.2,
+			"impf_quote_min1_alter_unter18": 0.9,
+			"impf_quote_voll": 30.4,
+			"impf_quote_voll_alter_18bis59": 22.2,
+			"impf_quote_voll_alter_60plus": 57.8,
+			"impf_quote_voll_alter_unter18": 0.4,
+			"impf_quote_zweit": 29.057126094476875,
+			"personen_erst_astrazeneca_kumulativ": 78986,
+			"personen_erst_biontech_kumulativ": 380618,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 495781,
+			"personen_erst_moderna_kumulativ": 36177,
+			"personen_min1_astrazeneca_kumulativ": 78986,
+			"personen_min1_biontech_kumulativ": 380618,
+			"personen_min1_differenz_zum_vortag": 5589,
+			"personen_min1_janssen_kumulativ": 13008,
+			"personen_min1_kumulativ": 508789,
+			"personen_min1_moderna_kumulativ": 36177,
+			"personen_voll_astrazeneca_kumulativ": 11037,
+			"personen_voll_biontech_kumulativ": 259123,
+			"personen_voll_differenz_zum_vortag": 9960,
+			"personen_voll_janssen_kumulativ": 13008,
+			"personen_voll_kumulativ": 299769,
+			"personen_voll_moderna_kumulativ": 16601,
+			"personen_zweit_astrazeneca_kumulativ": 11037,
+			"personen_zweit_biontech_kumulativ": 259123,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 286761,
+			"personen_zweit_moderna_kumulativ": 16601,
+			"title": "Saarland"
+		},
+		"SN": {
+			"code": "SN",
+			"dosen_astrazeneca_kumulativ": 384518,
+			"dosen_biontech_kumulativ": 2115449,
+			"dosen_janssen_kumulativ": 46296,
+			"dosen_kumulativ": 2792213,
+			"dosen_moderna_kumulativ": 245950,
+			"impf_inzidenz_dosen": 685.7153452222523,
+			"impf_inzidenz_erst": 418.96491895448173,
+			"impf_inzidenz_min1": 430.3343515953331,
+			"impf_inzidenz_voll": 266.7504262677706,
+			"impf_inzidenz_zweit": 255.38099362691923,
+			"impf_quote_dosen": 68.57153452222524,
+			"impf_quote_erst": 41.89649189544817,
+			"impf_quote_min1": 43,
+			"impf_quote_min1_alter_18bis59": null,
+			"impf_quote_min1_alter_60plus": null,
+			"impf_quote_min1_alter_unter18": null,
+			"impf_quote_voll": 26.7,
+			"impf_quote_voll_alter_18bis59": null,
+			"impf_quote_voll_alter_60plus": null,
+			"impf_quote_voll_alter_unter18": null,
+			"impf_quote_zweit": 25.538099362691923,
+			"personen_erst_astrazeneca_kumulativ": 337349,
+			"personen_erst_biontech_kumulativ": 1206476,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 1706013,
+			"personen_erst_moderna_kumulativ": 162188,
+			"personen_min1_astrazeneca_kumulativ": 337349,
+			"personen_min1_biontech_kumulativ": 1206476,
+			"personen_min1_differenz_zum_vortag": 15511,
+			"personen_min1_janssen_kumulativ": 46296,
+			"personen_min1_kumulativ": 1752309,
+			"personen_min1_moderna_kumulativ": 162188,
+			"personen_voll_astrazeneca_kumulativ": 47169,
+			"personen_voll_biontech_kumulativ": 908973,
+			"personen_voll_differenz_zum_vortag": 18649,
+			"personen_voll_janssen_kumulativ": 46296,
+			"personen_voll_kumulativ": 1086200,
+			"personen_voll_moderna_kumulativ": 83762,
+			"personen_zweit_astrazeneca_kumulativ": 47169,
+			"personen_zweit_biontech_kumulativ": 908973,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 1039904,
+			"personen_zweit_moderna_kumulativ": 83762,
+			"title": "Sachsen"
+		},
+		"ST": {
+			"code": "ST",
+			"dosen_astrazeneca_kumulativ": 211683,
+			"dosen_biontech_kumulativ": 1126192,
+			"dosen_janssen_kumulativ": 41615,
+			"dosen_kumulativ": 1514193,
+			"dosen_moderna_kumulativ": 134703,
+			"impf_inzidenz_dosen": 689.9058767567803,
+			"impf_inzidenz_erst": 435.94397985768063,
+			"impf_inzidenz_min1": 454.9048607105398,
+			"impf_inzidenz_voll": 253.96189689909977,
+			"impf_inzidenz_zweit": 235.00101604624058,
+			"impf_quote_dosen": 68.99058767567804,
+			"impf_quote_erst": 43.59439798576806,
+			"impf_quote_min1": 45.5,
+			"impf_quote_min1_alter_18bis59": 36.2,
+			"impf_quote_min1_alter_60plus": 73.3,
+			"impf_quote_min1_alter_unter18": 0.8,
+			"impf_quote_voll": 25.4,
+			"impf_quote_voll_alter_18bis59": 19.1,
+			"impf_quote_voll_alter_60plus": 44.9,
+			"impf_quote_voll_alter_unter18": 0.3,
+			"impf_quote_zweit": 23.50010160462406,
+			"personen_erst_astrazeneca_kumulativ": 184798,
+			"personen_erst_biontech_kumulativ": 685275,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 956802,
+			"personen_erst_moderna_kumulativ": 86729,
+			"personen_min1_astrazeneca_kumulativ": 184798,
+			"personen_min1_biontech_kumulativ": 685275,
+			"personen_min1_differenz_zum_vortag": 11430,
+			"personen_min1_janssen_kumulativ": 41615,
+			"personen_min1_kumulativ": 998417,
+			"personen_min1_moderna_kumulativ": 86729,
+			"personen_voll_astrazeneca_kumulativ": 26885,
+			"personen_voll_biontech_kumulativ": 440917,
+			"personen_voll_differenz_zum_vortag": 15215,
+			"personen_voll_janssen_kumulativ": 41615,
+			"personen_voll_kumulativ": 557391,
+			"personen_voll_moderna_kumulativ": 47974,
+			"personen_zweit_astrazeneca_kumulativ": 26885,
+			"personen_zweit_biontech_kumulativ": 440917,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 515776,
+			"personen_zweit_moderna_kumulativ": 47974,
+			"title": "Sachsen-Anhalt"
+		},
+		"TH": {
+			"code": "TH",
+			"dosen_astrazeneca_kumulativ": 195121,
+			"dosen_biontech_kumulativ": 1142241,
+			"dosen_janssen_kumulativ": 22462,
+			"dosen_kumulativ": 1506947,
+			"dosen_moderna_kumulativ": 147123,
+			"impf_inzidenz_dosen": 706.3666166989628,
+			"impf_inzidenz_erst": 450.0810451781166,
+			"impf_inzidenz_min1": 460.6098872304861,
+			"impf_inzidenz_voll": 256.2855715208463,
+			"impf_inzidenz_zweit": 245.75672946847675,
+			"impf_quote_dosen": 70.63666166989628,
+			"impf_quote_erst": 45.00810451781166,
+			"impf_quote_min1": 46.1,
+			"impf_quote_min1_alter_18bis59": 39.4,
+			"impf_quote_min1_alter_60plus": 73.1,
+			"impf_quote_min1_alter_unter18": 1,
+			"impf_quote_voll": 25.6,
+			"impf_quote_voll_alter_18bis59": 19,
+			"impf_quote_voll_alter_60plus": 46.6,
+			"impf_quote_voll_alter_unter18": 0.3,
+			"impf_quote_zweit": 24.575672946847675,
+			"personen_erst_astrazeneca_kumulativ": 161244,
+			"personen_erst_biontech_kumulativ": 685264,
+			"personen_erst_janssen_kumulativ": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_erst_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_erst_kumulativ": 960193,
+			"personen_erst_moderna_kumulativ": 113685,
+			"personen_min1_astrazeneca_kumulativ": 161244,
+			"personen_min1_biontech_kumulativ": 685264,
+			"personen_min1_differenz_zum_vortag": 7236,
+			"personen_min1_janssen_kumulativ": 22462,
+			"personen_min1_kumulativ": 982655,
+			"personen_min1_moderna_kumulativ": 113685,
+			"personen_voll_astrazeneca_kumulativ": 33877,
+			"personen_voll_biontech_kumulativ": 456977,
+			"personen_voll_differenz_zum_vortag": 11745,
+			"personen_voll_janssen_kumulativ": 22462,
+			"personen_voll_kumulativ": 546754,
+			"personen_voll_moderna_kumulativ": 33438,
+			"personen_zweit_astrazeneca_kumulativ": 33877,
+			"personen_zweit_biontech_kumulativ": 456977,
+			"personen_zweit_janssen_kumulativ": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_aerzte": 0,
+			"personen_zweit_janssen_kumulativ_impfstelle_zentral": 0,
+			"personen_zweit_kumulativ": 524292,
+			"personen_zweit_moderna_kumulativ": 33438,
+			"title": "Thüringen"
+		}
+	}
+}
