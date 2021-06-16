@@ -121,6 +121,7 @@ Hier werden noch einmal alle möglichen Werte überprüft, ob sie angegeben wurd
 
 ## FAQ
 
+
 ### Unter welcher Lizenz stehen die Daten hier?
 
 Wir empfehlen auf jeden Fall das RKI als Quelle anzugeben. Über freundliche Erwähnungen dieses Repos freuen wir uns natürlich auch.
@@ -130,6 +131,13 @@ Wir empfehlen auf jeden Fall das RKI als Quelle anzugeben. Über freundliche Erw
 
 Auch bei den Impfdaten gibt es eine Meldekette von z.B. der Arztpraxis über die Bundesländer bis zum RKI. Das heißt, auch hier gibt es Probleme mit Meldeverzug und Nachmeldungen Tage später etc. Damit ist es völlig unmöglich, einen soliden Wert für "Differenz zum Vortag" anzugeben. Wir empfehlen von der Nutzung abzusehen. Vielleicht gibt es ja eine andere Metrik, die aussagekräftiger ist.  
 Wir geben trotzdem den Wert für "Differenz zum Vortag" 1:1 vom RKI weiter.
+
+
+### Sind die Daten hundertprozentig korrekt?
+
+Wir versuchen die offiziellen Zahlen des RKI 1:1 zu konvertieren und dabei sicherzustellen, dass die Konvertierung die Zahlen nicht verändert.  
+Was die Korrektheit der RKI zahlen angeht: So wie wir es verstehen, werden die Daten durch Bund, Länder und RKI nach bestem Wissen und Gewissen erhoben. Natürlich kann niemand auf die einzelne Personen genau sagen, wieviele Menschen exakt geimpft sind, denn es kann immer zu Fehlern oder Doppelzählungen kommen.  
+Z.B. wurden am 15.6. die Erstimpfungen in Bayern um mehr als 90'000 nach unten korrigiert. Allein die Summe aller bisherigen Moderna-Erstimpfungen sank von einem Tag auf den nächsten um fast 2%. Diagrammdarstellungen werden also hier immer einen Knick haben. Ursache dafür ist laut RKI eine Umstellung im DIM-System (Digitalen Impfquotenmonitoring). Die neueren Zahlen seien zuverlässiger, als die alten.
 
 
 ### Wo finde ich weitere Zahlen?
