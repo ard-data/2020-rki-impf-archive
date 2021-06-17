@@ -263,12 +263,21 @@ function extractData(excel) {
 
 		if (dateString.startsWith('Datenstand: 28.12.2020, 08:00 Uhr\t44200\t12:00 Uhr')) return '2021-01-04 12:00';
 
-		if (match = dateString.match(/^\t*Datenstand: (\d\d)\.(\d\d)\.(\d\d\d\d), (\d\d:\d\d) Uhr/)) {
-			return match[3]+'-'+match[2]+'-'+match[1]+' '+match[4];
-		}
+		if (match = dateString.match(/^\t*Datenstand: (\d\d)\.(\d\d)\.(\d\d(?:\d\d)?), (\d?\d):(\d\d) Uhr/)) {
+			let year = match[3]; if (year.length === 2) year = '20'+year;
+			let month = match[2];
+			let day = match[1];
+			let hour = match[4]; if (hour.length === 1) hour = '0'+hour;
+			let minute = match[5];
+			let date = year+'-'+month+'-'+day+' '+hour+':'+minute;
 
-		if (match = dateString.match(/^\t*Datenstand: (\d\d)\.(\d\d)\.(\d\d\d\d), (\d:\d\d) Uhr/)) {
-			return match[3]+'-'+match[2]+'-'+match[1]+' 0'+match[4];
+			if (!/^202\d-[0-2]\d-[0-3]\d [0-2]\d:\d\d$/.test(date)) {
+				console.log('dateString', JSON.stringify(dateString));
+				console.log('date', JSON.stringify(date));
+				throw Error('Can not parse pub date');
+			}
+
+			return date;
 		}
 
 		console.log(JSON.stringify(dateString));
