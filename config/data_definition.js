@@ -15,7 +15,7 @@ module.exports = date => {
 		{name: 'impfstelle', elements:['alle','zentral','aerzte'], ignore: (date < '2021-04-08') || (date >= '2021-06-07')},
 		{name: 'alter', elements:['alle','<60','60+'], optional:true, ignore: (date < '2021-04-08') || (date >= '2021-06-07')},
 		{name: 'alter', elements:['alle','<18','18-59','60+'], optional:true, ignore: (date < '2021-06-07') || (date >= '2021-07-26') },
-		{name: 'alter', elements:['alle','<12','12-17','18-59','60+'], optional:true, ignore: (date < '2021-07-26')},
+		{name: 'alter', elements:['alle','<12','12-17','<18','18-59','60+'], optional:true, ignore: (date < '2021-07-26')},
 	].filter(d => !d.ignore);
 
 	const dimensionNames = dimensions.map(d => d.name);
