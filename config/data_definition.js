@@ -14,7 +14,8 @@ module.exports = date => {
 		{name: 'quote', elements:['absolut','impf_quote','impf_inzidenz']},
 		{name: 'impfstelle', elements:['alle','zentral','aerzte'], ignore: (date < '2021-04-08') || (date >= '2021-06-07')},
 		{name: 'alter', elements:['alle','<60','60+'], optional:true, ignore: (date < '2021-04-08') || (date >= '2021-06-07')},
-		{name: 'alter', elements:['alle','<18','18-59','60+'], optional:true, ignore: date < '2021-06-07'},
+		{name: 'alter', elements:['alle','<18','18-59','60+'], optional:true, ignore: (date < '2021-06-07') || (date >= '2021-07-26') },
+		{name: 'alter', elements:['alle','<12','12-17','18-59','60+'], optional:true, ignore: (date < '2021-07-26')},
 	].filter(d => !d.ignore);
 
 	const dimensionNames = dimensions.map(d => d.name);
@@ -114,10 +115,12 @@ module.exports = date => {
 		if (dimensionsLookup.has('alter')) {
 			switch (cell.alter) {
 				case 'alle':break;
-				case '<18': suffix += '_alter_unter18'; break;
+				case '<12':   suffix += '_alter_unter12'; break;
+				case '12-17': suffix += '_alter_12bis17'; break;
+				case '<18':   suffix += '_alter_unter18'; break;
 				case '18-59': suffix += '_alter_18bis59'; break;
-				case '<60': suffix += '_alter_unter60'; break;
-				case '60+': suffix += '_alter_60plus'; break;
+				case '<60':   suffix += '_alter_unter60'; break;
+				case '60+':   suffix += '_alter_60plus'; break;
 				default: throw Error();
 			}
 		}

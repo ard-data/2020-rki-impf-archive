@@ -608,11 +608,15 @@ function extractData(excel) {
 			case 'indikation_gesamtzahl_bisher_verabreichter_impfungen': return 'dosen_kumulativ';
 			case 'indikation_gesamtzahl_mindestens_einmal_geimpft_': return 'personen_min1_kumulativ';
 			case 'indikation_gesamtzahl_vollständig_geimpft': return 'personen_voll_kumulativ';
-			case 'indikation_impfquote_vollständig_geimpft_gesamt': return 'impf_quote_voll';
+			
 			case 'indikation_impfquote_mindestens_einmal_geimpft_gesamt': return 'impf_quote_min1';
+			case 'indikation_impfquote_mindestens_einmal_geimpft_12-17_jahre': return 'impf_quote_min1_alter_12bis17';
 			case 'indikation_impfquote_mindestens_einmal_geimpft_<18_jahre': return 'impf_quote_min1_alter_unter18';
 			case 'indikation_impfquote_mindestens_einmal_geimpft_18-59_jahre': return 'impf_quote_min1_alter_18bis59';
 			case 'indikation_impfquote_mindestens_einmal_geimpft_60+_jahre': return 'impf_quote_min1_alter_60plus';
+
+			case 'indikation_impfquote_vollständig_geimpft_gesamt': return 'impf_quote_voll';
+			case 'indikation_impfquote_vollständig_geimpft_12-17_jahre': return 'impf_quote_voll_alter_12bis17';
 			case 'indikation_impfquote_vollständig_geimpft_<18_jahre': return 'impf_quote_voll_alter_unter18';
 			case 'indikation_impfquote_vollständig_geimpft_18-59_jahre': return 'impf_quote_voll_alter_18bis59';
 			case 'indikation_impfquote_vollständig_geimpft_60+_jahre': return 'impf_quote_voll_alter_60plus';
