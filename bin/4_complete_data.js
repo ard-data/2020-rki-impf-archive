@@ -239,7 +239,7 @@ function completeData(data, filename) {
 		}
 
 		generateEqualDosis('zweit', 'voll', 'biontech,astrazeneca,moderna');
-		generateEqualDosis('min1', 'erst', 'biontech,astrazeneca,moderna');
+		generateEqualDosis('erst', 'min1', 'biontech,astrazeneca,moderna');
 		generateEqualDosis('min1', 'voll', 'janssen');
 
 		// Jetzt noch Checks, um Impfquote und Impfinzidenz zu berechnen:
@@ -263,16 +263,19 @@ function completeData(data, filename) {
 			herstellerList.split(',').forEach(hersteller => {
 				dataDefinition.parameters.forEach(p => {
 					if (p.cell.hersteller !== hersteller) return;
-					if (p.cell.dosis === dosis1) return add(dosis2);
-					if (p.cell.dosis === dosis2) return add(dosis1);
-					function add(dosis) {
+					if (p.cell.dosis === dosis1) return add(dosis2,20);
+					if (p.cell.dosis === dosis2) return add(dosis1,21);
+					function add(dosis, level) {
 						let slug0 = p.slug;
 						let slug1 = dataDefinition.getSlug(Object.assign(p.cell, {dosis}));
-						checks.push({
+						let check = {
 							key: slug0,
 							calc: obj => obj[slug1],
 							debug: slug0+' = '+slug1,
-						})
+							level:level,
+						};
+						//console.log(check);
+						checks.push(check);
 					}
 				})
 			})
