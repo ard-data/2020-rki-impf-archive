@@ -166,7 +166,7 @@ function completeData(data, filename) {
 				}
 
 				// Wert gibt es schon und ist identisch: Alles in Ordnung
-				if (value.toFixed(1) === entry[check.key].toFixed(1)) return;
+				if (value === entry[check.key]) return;
 
 				// Es gibt eine Differenz zwischen berechnetem und vorhandenem Wert.
 
@@ -243,16 +243,16 @@ function completeData(data, filename) {
 		generateEqualDosis('min1', 'voll', 'janssen');
 
 		// Jetzt noch Checks, um Impfquote und Impfinzidenz zu berechnen:
-		checks.push({key:'impf_quote_dosen',    calc:(obj,pop) =>  100*obj.dosen_kumulativ         /pop, debug:'impf_quote_dosen = 100*dosen_kumulativ/pop'});
-		checks.push({key:'impf_quote_erst',     calc:(obj,pop) =>  100*obj.personen_erst_kumulativ /pop, debug:'impf_quote_erst = 100*personen_erst_kumulativ/pop'});
-		checks.push({key:'impf_quote_zweit',    calc:(obj,pop) =>  100*obj.personen_zweit_kumulativ/pop, debug:'impf_quote_zweit = 100*personen_zweit_kumulativ/pop'});
-		checks.push({key:'impf_quote_min1',     calc:(obj,pop) =>  100*obj.personen_min1_kumulativ /pop, debug:'impf_quote_min1 = 100*personen_min1_kumulativ/pop'});
-		checks.push({key:'impf_quote_voll',     calc:(obj,pop) =>  100*obj.personen_voll_kumulativ /pop, debug:'impf_quote_voll = 100*personen_voll_kumulativ/pop'});
-		checks.push({key:'impf_inzidenz_dosen', calc:(obj,pop) => 1000*obj.dosen_kumulativ         /pop, debug:'impf_inzidenz_dosen = 1000*dosen_kumulativ/pop'});
-		checks.push({key:'impf_inzidenz_erst',  calc:(obj,pop) => 1000*obj.personen_erst_kumulativ /pop, debug:'impf_inzidenz_erst = 1000*personen_erst_kumulativ/pop'});
-		checks.push({key:'impf_inzidenz_zweit', calc:(obj,pop) => 1000*obj.personen_zweit_kumulativ/pop, debug:'impf_inzidenz_zweit = 1000*personen_zweit_kumulativ/pop'});
-		checks.push({key:'impf_inzidenz_min1',  calc:(obj,pop) => 1000*obj.personen_min1_kumulativ /pop, debug:'impf_inzidenz_min1 = 1000*personen_min1_kumulativ/pop'});
-		checks.push({key:'impf_inzidenz_voll',  calc:(obj,pop) => 1000*obj.personen_voll_kumulativ /pop, debug:'impf_inzidenz_voll = 1000*personen_voll_kumulativ/pop'});
+		checks.push({key:'impf_quote_dosen',    calc:(obj,pop) => Math.round( 1000*obj.dosen_kumulativ         /pop)/10, debug:'impf_quote_dosen = 100*dosen_kumulativ/pop'});
+		checks.push({key:'impf_quote_erst',     calc:(obj,pop) => Math.round( 1000*obj.personen_erst_kumulativ /pop)/10, debug:'impf_quote_erst = 100*personen_erst_kumulativ/pop'});
+		checks.push({key:'impf_quote_zweit',    calc:(obj,pop) => Math.round( 1000*obj.personen_zweit_kumulativ/pop)/10, debug:'impf_quote_zweit = 100*personen_zweit_kumulativ/pop'});
+		checks.push({key:'impf_quote_min1',     calc:(obj,pop) => Math.round( 1000*obj.personen_min1_kumulativ /pop)/10, debug:'impf_quote_min1 = 100*personen_min1_kumulativ/pop'});
+		checks.push({key:'impf_quote_voll',     calc:(obj,pop) => Math.round( 1000*obj.personen_voll_kumulativ /pop)/10, debug:'impf_quote_voll = 100*personen_voll_kumulativ/pop'});
+		checks.push({key:'impf_inzidenz_dosen', calc:(obj,pop) => Math.round(10000*obj.dosen_kumulativ         /pop)/10, debug:'impf_inzidenz_dosen = 1000*dosen_kumulativ/pop'});
+		checks.push({key:'impf_inzidenz_erst',  calc:(obj,pop) => Math.round(10000*obj.personen_erst_kumulativ /pop)/10, debug:'impf_inzidenz_erst = 1000*personen_erst_kumulativ/pop'});
+		checks.push({key:'impf_inzidenz_zweit', calc:(obj,pop) => Math.round(10000*obj.personen_zweit_kumulativ/pop)/10, debug:'impf_inzidenz_zweit = 1000*personen_zweit_kumulativ/pop'});
+		checks.push({key:'impf_inzidenz_min1',  calc:(obj,pop) => Math.round(10000*obj.personen_min1_kumulativ /pop)/10, debug:'impf_inzidenz_min1 = 1000*personen_min1_kumulativ/pop'});
+		checks.push({key:'impf_inzidenz_voll',  calc:(obj,pop) => Math.round(10000*obj.personen_voll_kumulativ /pop)/10, debug:'impf_inzidenz_voll = 1000*personen_voll_kumulativ/pop'});
 
 		checks.forEach((c,i) => c.order = (c.level || 100) * 1e4 + i)
 		checks.sort((a,b) => a.order - b.order);
