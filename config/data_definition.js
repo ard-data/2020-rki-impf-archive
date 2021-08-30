@@ -33,25 +33,25 @@ module.exports = date => {
 	].filter(d => !d.ignore);
 
 	const regions = [
-		{code:'BW', pop:11100394, title:'Baden-Württemberg'},
-		{code:'BY', pop:13124737, title:'Bayern'},
-		{code:'BE', pop: 3669491, title:'Berlin'},
-		{code:'BB', pop: 2521893, title:'Brandenburg'},
-		{code:'HB', pop:  681202, title:'Bremen'},
-		{code:'HH', pop: 1847253, title:'Hamburg'},
-		{code:'HE', pop: 6288080, title:'Hessen'},
-		{code:'MV', pop: 1608138, title:'Mecklenburg-Vorpommern'},
-		{code:'NI', pop: 7993608, title:'Niedersachsen'},
-		{code:'NW', pop:17947221, title:'Nordrhein-Westfalen'},
-		{code:'RP', pop: 4093903, title:'Rheinland-Pfalz'},
-		{code:'SL', pop:  986887, title:'Saarland'},
-		{code:'SN', pop: 4071971, title:'Sachsen'},
-		{code:'ST', pop: 2194782, title:'Sachsen-Anhalt'},
-		{code:'SH', pop: 2903773, title:'Schleswig-Holstein'},
-		{code:'TH', pop: 2133378, title:'Thüringen'},
-		{code:'DE', pop:83166711, title:'Deutschland'},
+		{code:'BW', pop:date<'2021-08-30'?11100394:11103043, title:'Baden-Württemberg'},
+		{code:'BY', pop:date<'2021-08-30'?13124737:13140183, title:'Bayern'},
+		{code:'BE', pop:date<'2021-08-30'? 3669491: 3664088, title:'Berlin'},
+		{code:'BB', pop:date<'2021-08-30'? 2521893: 2531071, title:'Brandenburg'},
+		{code:'HB', pop:date<'2021-08-30'?  681202:  680130, title:'Bremen'},
+		{code:'HH', pop:date<'2021-08-30'? 1847253: 1852478, title:'Hamburg'},
+		{code:'HE', pop:date<'2021-08-30'? 6288080: 6293154, title:'Hessen'},
+		{code:'MV', pop:date<'2021-08-30'? 1608138: 1610774, title:'Mecklenburg-Vorpommern'},
+		{code:'NI', pop:date<'2021-08-30'? 7993608: 8003421, title:'Niedersachsen'},
+		{code:'NW', pop:date<'2021-08-30'?17947221:17925570, title:'Nordrhein-Westfalen'},
+		{code:'RP', pop:date<'2021-08-30'? 4093903: 4098391, title:'Rheinland-Pfalz'},
+		{code:'SL', pop:date<'2021-08-30'?  986887:  983991, title:'Saarland'},
+		{code:'SN', pop:date<'2021-08-30'? 4071971: 4056941, title:'Sachsen'},
+		{code:'ST', pop:date<'2021-08-30'? 2194782: 2180684, title:'Sachsen-Anhalt'},
+		{code:'SH', pop:date<'2021-08-30'? 2903773: 2910875, title:'Schleswig-Holstein'},
+		{code:'TH', pop:date<'2021-08-30'? 2133378: 2120237, title:'Thüringen'},
+		{code:'DE', pop:date<'2021-08-30'?83166711:83155031, title:'Deutschland'},
 	]
-
+	
 	const cellQueryCache = new Map();
 
 
