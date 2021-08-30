@@ -6,7 +6,9 @@ Das RKI veröffentlicht täglich die [gemeldeten Impfungen als Excel-Tabelle](ht
 
 Leider wird diese Excel-Tabelle täglich überschrieben, so dass keine historischen Verläufe möglich sind. Zwar bietet das [Impfdashboard](https://impfdashboard.de/) historische Verläufe, die sind aber wiederum nicht nach Bundesländern etc. aufgeschlüsselt.
 
-Deshalb sammeln wir die alten Datei-Versionen und stellen sie in diesem GitHub-Repo zur Verfügung. Per cronjob versuchen wir das Archiv täglich aktuell zu halten. Als Feature bereinigen wir sogar die Daten und bieten sie [als CSV](https://github.com/ard-data/2020-rki-impf-archive/tree/master/data/9_csv_v3) an. Hier können alle CSV-Daten direkt runtergeladen werden: https://ard-data.github.io/2020-rki-impf-archive/data/9_csv_v3/
+Deshalb sammeln wir die alten Datei-Versionen und stellen sie in diesem GitHub-Repo zur Verfügung. Per cronjob versuchen wir das Archiv täglich aktuell zu halten. Als Feature bereinigen wir sogar die Daten und bieten sie [als CSV](https://github.com/ard-data/2020-rki-impf-archive/tree/master/data/9_csv_v3) an.
+
+**Hier können alle CSV-Dateien direkt runtergeladen werden: https://ard-data.github.io/2020-rki-impf-archive/data/9_csv_v3/**
 
 Wer auf die Daten täglich angewiesen ist und bei Problemen benachrichtigt werden möchte, kann sich [hier auf der Mailingliste anmelden](https://lists.riseup.net/www/subscribe/ard_rki_data), um bei Änderungen/Problemen direkt eine Mail zu bekommen.
 
