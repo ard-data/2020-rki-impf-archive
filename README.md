@@ -1,16 +1,12 @@
 # RKI-Corona-Impf-Daten-Archiv
 
-> :warning: Am 7.6.2021 haben sich so viele Details an der Datenstruktur des RKI-Impfmonitors geändert, dass die Struktur der bisherigen CSV-Dateien aufgegeben werden musste. Zum einen können zahlreiche Felder nicht mehr weitergeführt werden, da das RKI sie nicht mehr aktualisiert, zum anderen mussten einige Felder umbenannt werden. Damit das neue, leicht geänderte CSV-Format nicht zu technischen Problemen bei alten Scraper führt, liegen **die neuen CSV-Dateien im neuen Verzeichnis
-[data/9_csv_v3](https://github.com/ard-data/2020-rki-impf-archive/tree/master/data/9_csv_v3)** ([Direktlink zu github.io](https://ard-data.github.io/2020-rki-impf-archive/data/9_csv_v3/)).  
-Die [Übersicht aller neuen Felder ist ebenfalls aktualisiert](https://ard-data.github.io/2020-rki-impf-archive/parameters.html).
-
 ## Worum geht es?
 
 Das RKI veröffentlicht täglich die [gemeldeten Impfungen als Excel-Tabelle](https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html).
 
 Leider wird diese Excel-Tabelle täglich überschrieben, so dass keine historischen Verläufe möglich sind. Zwar bietet das [Impfdashboard](https://impfdashboard.de/) historische Verläufe, die sind aber wiederum nicht nach Bundesländern etc. aufgeschlüsselt.
 
-Deshalb sammeln wir die alten Datei-Versionen und stellen sie in diesem GitHub-Repo zur Verfügung. Per cronjob versuchen wir das Archiv täglich aktuell zu halten. Als Feature bereinigen wir sogar die Daten und bieten sie [als CSV](https://github.com/ard-data/2020-rki-impf-archive/tree/master/data/9_csv_v3) an.
+Deshalb sammeln wir die alten Datei-Versionen und stellen sie in diesem GitHub-Repo zur Verfügung. Per cronjob versuchen wir das Archiv täglich aktuell zu halten. Als Feature bereinigen wir sogar die Daten und bieten sie [als CSV](https://github.com/ard-data/2020-rki-impf-archive/tree/master/data/9_csv_v3) an. Hier können alle CSV-Daten direkt runtergeladen werden: https://ard-data.github.io/2020-rki-impf-archive/data/9_csv_v3/
 
 Wer auf die Daten täglich angewiesen ist und bei Problemen benachrichtigt werden möchte, kann sich [hier auf der Mailingliste anmelden](https://lists.riseup.net/www/subscribe/ard_rki_data), um bei Änderungen/Problemen direkt eine Mail zu bekommen.
 
@@ -67,7 +63,7 @@ Die Daten in diesem Repo sind natürlich keine offizielle Veröffentlichung des 
 
 Die Beschreibung der Datenfelder, sowie weitere Hinweise können den Exceldateien entnommen werden, so wie der Webseite des RKI.
 
-Inzwischen gibt es über 80 verschiedene Felder. Als Hilfestellung erzeugen wir eine [automatisch generierte Übersicht aller Parameter](https://ard-data.github.io/2020-rki-impf-archive/parameters.html).
+Inzwischen gibt es über 80 verschiedene Felder. Als Hilfestellung wird eine [automatisch generierte Übersicht aller Parameter](https://ard-data.github.io/2020-rki-impf-archive/parameters.html) erzeugt.
 
 ### Erstimpfung, Zweitimpfung, volle Impfung, ...
 
