@@ -419,6 +419,8 @@ function extractData(excel) {
 
 	function extractVerlauf(data, sheet, date) {
 		let fields = [];
+
+		// detect col headers
 		sheet.cells[0].forEach((t,col) => {
 			t = (''+t).trim();
 			switch (t) {
@@ -454,9 +456,16 @@ function extractData(excel) {
 				case 'mindestens einmal geimpft':
 					fields.push({col, key:'personen_min1_kumulativ', val:v => v || 0});
 				return;
-				default: throw Error(JSON.stringify({t,col}));
+				case 'Auffrischungsimpfung':
+					fields.push({col, key:'personen_auffr_kumulativ', val:v => v || 0});
+				return
+				default:
+					console.log('t', t);
+					console.log('col', col);
+					throw new Error('unknown col header in verlauf');
 			}
 		})
+
 		sheet.cells.slice(1).forEach(row => {
 			switch (row[0]) {
 				// Felder, die ignoriert werden:
@@ -475,6 +484,9 @@ function extractData(excel) {
 			if ((''+row[0]).startsWith('Meldedaten')) return;
 			if ((''+row[0]).startsWith('In den Gesamtsummen der Zweitimpfung')) return
 			if ((''+row[0]).startsWith('Die Gesamtzahl mindestens einmal Geimpfter')) return
+			if ((''+row[0]).startsWith('Gesamtzahlen sind ')) return
+			if ((''+row[0]).startsWith('die entsprechend den')) return
+			if ((''+row[0]).startsWith('werden können')) return
 			
 			if (Number.isFinite(row[0]) || /^\d\d\.[01]\d\.202\d$/.test(row[0])) {
 				let obj = {};
@@ -665,6 +677,41 @@ function extractData(excel) {
 			case 'hersteller_vollständig_geimpft_impfungen_kumulativ_astrazeneca': return 'personen_voll_astrazeneca_kumulativ';
 			case 'hersteller_vollständig_geimpft_impfungen_kumulativ_janssen': return 'personen_voll_janssen_kumulativ';
 			case 'hersteller_vollständig_geimpft_differenz_zum_vortag': return 'personen_voll_differenz_zum_vortag';
+		}
+
+		// since 09-09-2021
+		switch (key) {
+			case 'indikation_gesamtzahl_mindestens_einmal_geimpfter': return 'personen_min1_kumulativ';
+			case 'indikation_gesamtzahl_vollständig_geimpfter': return 'personen_voll_kumulativ';
+			case 'indikation_gesamtzahl_personen_mit_auffrischungs-impfung': return 'personen_auffr_kumulativ';
+
+			case 'indikation_impfquote_mindestens_einmal_geimpft_18+_jahre_gesamt': return 'impf_quote_min1_alter_18plus';
+			case 'indikation_impfquote_mindestens_einmal_geimpft_18+_jahre_18-59_jahre': return 'impf_quote_min1_alter_18bis59';
+			case 'indikation_impfquote_mindestens_einmal_geimpft_18+_jahre_60+_jahre': return 'impf_quote_min1_alter_60plus';
+
+			case 'indikation_impfquote_vollständig_geimpft_18+_jahre_gesamt': return 'impf_quote_voll_alter_18plus';
+			case 'indikation_impfquote_vollständig_geimpft_18+_jahre_18-59_jahre': return 'impf_quote_voll_alter_18bis59';
+			case 'indikation_impfquote_vollständig_geimpft_18+_jahre_60+_jahre': return 'impf_quote_voll_alter_60plus';
+
+			case 'hersteller_erstimpfungen_impfungen_kumulativ_gesamt': return 'personen_erst_kumulativ';
+			case 'hersteller_erstimpfungen_impfungen_kumulativ_biontech': return 'personen_erst_biontech_kumulativ';
+			case 'hersteller_erstimpfungen_impfungen_kumulativ_moderna': return 'personen_erst_moderna_kumulativ';
+			case 'hersteller_erstimpfungen_impfungen_kumulativ_astrazeneca': return 'personen_erst_astrazeneca_kumulativ';
+			case 'hersteller_erstimpfungen_impfungen_kumulativ_janssen': return 'personen_erst_janssen_kumulativ';
+			case 'hersteller_erstimpfungen_differenz_zum_vortag': return 'personen_erst_differenz_zum_vortag';
+
+			case 'hersteller_zweitimpfungen_impfungen_kumulativ_gesamt': return 'personen_zweit_kumulativ';
+			case 'hersteller_zweitimpfungen_impfungen_kumulativ_biontech': return 'personen_zweit_biontech_kumulativ';
+			case 'hersteller_zweitimpfungen_impfungen_kumulativ_moderna': return 'personen_zweit_moderna_kumulativ';
+			case 'hersteller_zweitimpfungen_impfungen_kumulativ_astrazeneca': return 'personen_zweit_astrazeneca_kumulativ';
+			case 'hersteller_zweitimpfungen_differenz_zum_vortag': return 'personen_zweit_differenz_zum_vortag';
+
+			case 'hersteller_auffrischungsimpfungen_impfungen_kumulativ_gesamt': return 'personen_auffr_kumulativ';
+			case 'hersteller_auffrischungsimpfungen_impfungen_kumulativ_biontech': return 'personen_auffr_biontech_kumulativ';
+			case 'hersteller_auffrischungsimpfungen_impfungen_kumulativ_moderna': return 'personen_auffr_moderna_kumulativ';
+			case 'hersteller_auffrischungsimpfungen_impfungen_kumulativ_astrazeneca': return 'personen_auffr_astrazeneca_kumulativ';
+			case 'hersteller_auffrischungsimpfungen_impfungen_kumulativ_janssen': return 'personen_auffr_janssen_kumulativ';
+			case 'hersteller_auffrischungsimpfungen_differenz_zum_vortag': return 'personen_auffr_differenz_zum_vortag';
 		}
 
 		throw Error('unknown Col Header '+JSON.stringify(key))
