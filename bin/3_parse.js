@@ -330,6 +330,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-04-08') range = 'C5:Q22';
 		if (pubDate >= '2021-04-09') range = 'C5:S22';
 		if (pubDate >= '2021-06-07') range = 'C4:M21';
+		if (pubDate >= '2021-09-09') range = 'C4:R21';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -345,6 +346,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-04-27') range = 'C5:W22';
 		if (pubDate >= '2021-04-30') range = 'C5:X22';
 		if (pubDate >= '2021-06-07') range = 'C4:N21';
+		if (pubDate >= '2021-09-09') range = 'C4:P21';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
