@@ -291,7 +291,6 @@ function extractData(excel) {
 		// enter the realm where we try to guesstimate with regular expressions where the author has hidden the date
 
 		let rows = sheet.cells.map(r => r.join('\t'));
-		let dateString = rows[4];
 		let match;
 
 		if (match = sheetName.match(/^(\d\d)\.(\d\d)\.(\d\d)$/)) {
@@ -306,13 +305,17 @@ function extractData(excel) {
 			return '20'+match[3]+'-'+match[2]+'-'+match[1];
 		}
 
-		if (match = dateString.match(/^Durchgeführte Impfungen bundesweit und nach Bundesland (sowie nach STIKO-Indikation )?bis einschließlich ?(\d\d)\.(\d\d)\.(\d\d) \(/)) {
+		if (match = rows[4].match(/^Durchgeführte Impfungen bundesweit und nach Bundesland (sowie nach STIKO-Indikation )?bis einschließlich ?(\d\d)\.(\d\d)\.(\d\d) \(/)) {
+			return '20'+match[4]+'-'+match[3]+'-'+match[2];
+		}
+
+		if (match = rows[2].match(/^Datenstand: (\d\d)\.(\d\d)\.(\d\d), \d\d:00 Uhr/)) {
 			return '20'+match[4]+'-'+match[3]+'-'+match[2];
 		}
 
 		if (sheetName === 'Presse' && pubDate === '2020-12-29 08:00') return '2020-12-28';
 
-		console.log('dateString', JSON.stringify(dateString));
+		console.log('rows', JSON.stringify(rows));
 		console.log('sheetName', JSON.stringify(sheetName));
 		throw Error('Can not parse date');
 	}
