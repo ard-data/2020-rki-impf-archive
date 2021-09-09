@@ -693,12 +693,12 @@ function extractData(excel) {
 			case 'indikation_impfquote_vollständig_geimpft_18+_jahre_18-59_jahre': return 'impf_quote_voll_alter_18bis59';
 			case 'indikation_impfquote_vollständig_geimpft_18+_jahre_60+_jahre': return 'impf_quote_voll_alter_60plus';
 
-			case 'hersteller_erstimpfungen_impfungen_kumulativ_gesamt': return 'personen_erst_kumulativ';
-			case 'hersteller_erstimpfungen_impfungen_kumulativ_biontech': return 'personen_erst_biontech_kumulativ';
-			case 'hersteller_erstimpfungen_impfungen_kumulativ_moderna': return 'personen_erst_moderna_kumulativ';
-			case 'hersteller_erstimpfungen_impfungen_kumulativ_astrazeneca': return 'personen_erst_astrazeneca_kumulativ';
-			case 'hersteller_erstimpfungen_impfungen_kumulativ_janssen': return 'personen_erst_janssen_kumulativ';
-			case 'hersteller_erstimpfungen_differenz_zum_vortag': return 'personen_erst_differenz_zum_vortag';
+			case 'hersteller_erstimpfungen_impfungen_kumulativ_gesamt': return 'personen_min1_kumulativ';
+			case 'hersteller_erstimpfungen_impfungen_kumulativ_biontech': return 'personen_min1_biontech_kumulativ';
+			case 'hersteller_erstimpfungen_impfungen_kumulativ_moderna': return 'personen_min1_moderna_kumulativ';
+			case 'hersteller_erstimpfungen_impfungen_kumulativ_astrazeneca': return 'personen_min1_astrazeneca_kumulativ';
+			case 'hersteller_erstimpfungen_impfungen_kumulativ_janssen': return 'personen_min1_janssen_kumulativ';
+			case 'hersteller_erstimpfungen_differenz_zum_vortag': return 'personen_min1_differenz_zum_vortag';
 
 			case 'hersteller_zweitimpfungen_impfungen_kumulativ_gesamt': return 'personen_zweit_kumulativ';
 			case 'hersteller_zweitimpfungen_impfungen_kumulativ_biontech': return 'personen_zweit_biontech_kumulativ';
