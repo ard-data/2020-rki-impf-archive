@@ -371,24 +371,41 @@ function extractData(excel) {
 			// scan data area
 			for (let row = range.rowMin; row <= range.rowMax; row++) {
 				for (let col = range.colMin; col <= range.colMax; col++) {
-					// find state
-					let rowId = parseRowHeader(mergeRowCells(sheet.cells, row, 0, range.colMin-1));
-					if (!rowId) continue;
-					
-					// find metric
-					let metric = parseColHeader(mergeColCells(sheet.cells, col, 0, range.rowMin-1), sheet.type, date);
-					if (metric === false) continue;
+					let rowId, rowHeader, colHeader, metric, value;
+					try {
+						// find state
+						rowHeader = mergeRowCells(sheet.cells, row, 0, range.colMin-1);
+						rowId = parseRowHeader(rowHeader);
+						if (!rowId) continue;
+						
+						// find metric
+						colHeader = mergeColCells(sheet.cells, col, 0, range.rowMin-1);
+						metric = parseColHeader(colHeader, sheet.type, date);
+						if (metric === false) continue;
 
-					if (!slugs.has(metric)) {
-						console.log(Array.from(slugs.values()).join(', '));
-						throw Error('unknown slug "'+metric+'"');
+						if (!slugs.has(metric)) {
+							console.log(Array.from(slugs.values()).join(', '));
+							throw Error('unknown slug "'+metric+'"');
+						}
+
+						// save value
+						value = sheet.cells[row][col];
+						if (data[rowId][metric] && (data[rowId][metric] !== value)) {
+							console.log('data[rowId][metric]', data[rowId][metric]);
+							throw Error('no or conflicting value?');
+						}
+						if (typeof value !== 'number') value = null;
+						data[rowId][metric] = value;
+					} catch (e) {
+						console.log('   row', row);
+						console.log('   col', col);
+						console.log('   rowHeader',rowHeader);
+						console.log('   rowId',rowId);
+						console.log('   colHeader',colHeader);
+						console.log('   metric',metric);
+						console.log('   value',value);
+						throw e;
 					}
-
-					// save value
-					let value = sheet.cells[row][col];
-					if (data[rowId][metric] && (data[rowId][metric] !== value)) throw Error();
-					if (typeof value !== 'number') value = null;
-					data[rowId][metric] = value;
 				}
 			}
 
