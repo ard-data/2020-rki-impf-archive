@@ -309,13 +309,20 @@ function extractData(excel) {
 			return '20'+match[4]+'-'+match[3]+'-'+match[2];
 		}
 
-		if (match = rows[2].match(/^Datenstand: (\d\d)\.(\d\d)\.(\d\d), \d\d:00 Uhr/)) {
-			return '20'+match[4]+'-'+match[3]+'-'+match[2];
-		}
-
 		if (sheetName === 'Presse' && pubDate === '2020-12-29 08:00') return '2020-12-28';
 
-		console.log('rows', JSON.stringify(rows));
+		// scan front page aggressively for every match of "bis einschließlich ??.??.??"
+		let foundDates = new Set();
+		rows.forEach(row => {
+			[...row.matchAll(/bis einschließlich (\d\d)\.(\d\d)\.(\d\d)/g)].forEach(match => {
+				foundDates.add('20'+match[3]+'-'+match[2]+'-'+match[1])
+			})
+		})
+		foundDates = [...foundDates.values()];
+		if (foundDates.length === 1) return foundDates[0];
+		console.log('foundDates', foundDates);
+		
+		console.log('rows', rows);
 		console.log('sheetName', JSON.stringify(sheetName));
 		throw Error('Can not parse date');
 	}
