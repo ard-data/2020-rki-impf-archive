@@ -143,7 +143,6 @@ function completeData(data, filename) {
 		setValue('personen_erst_janssen_kumulativ', 0);
 		setValue('personen_erst_janssen_kumulativ_impfstelle_aerzte', 0);
 		setValue('personen_erst_janssen_kumulativ_impfstelle_zentral', 0);
-		setValue('personen_erst_janssen_kumulativ_impfstelle_zentral', 0);
 		setValue('personen_zweit_janssen_kumulativ', 0);
 		setValue('personen_zweit_janssen_kumulativ_impfstelle_aerzte', 0);
 		setValue('personen_zweit_janssen_kumulativ_impfstelle_zentral', 0);
