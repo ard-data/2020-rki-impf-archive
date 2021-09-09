@@ -140,12 +140,16 @@ function completeData(data, filename) {
 			setValue('personen_voll_janssen_kumulativ_impfstelle_aerzte', 0);
 		}
 
+		// Janssen gibt es nur als min1 und voll
 		setValue('personen_erst_janssen_kumulativ', 0);
 		setValue('personen_erst_janssen_kumulativ_impfstelle_aerzte', 0);
 		setValue('personen_erst_janssen_kumulativ_impfstelle_zentral', 0);
 		setValue('personen_zweit_janssen_kumulativ', 0);
 		setValue('personen_zweit_janssen_kumulativ_impfstelle_aerzte', 0);
 		setValue('personen_zweit_janssen_kumulativ_impfstelle_zentral', 0);
+
+		// RKI möchte vorerst keine Astrazeneca-Auffrischungsimpfungen publizieren
+		setValue('personen_auffr_astrazeneca_kumulativ', entry.personen_auffr_kumulativ - entry.personen_auffr_biontech_kumulativ - entry.personen_auffr_janssen_kumulativ - entry.personen_auffr_moderna_kumulativ);
 
 		// Berechne fehlende Werte
 		let checkChanged;
@@ -247,11 +251,13 @@ function completeData(data, filename) {
 		checks.push({key:'impf_quote_zweit',    calc:(obj,pop) => Math.round( 1000*obj.personen_zweit_kumulativ/pop)/10, debug:'impf_quote_zweit = 100*personen_zweit_kumulativ/pop'});
 		checks.push({key:'impf_quote_min1',     calc:(obj,pop) => Math.round( 1000*obj.personen_min1_kumulativ /pop)/10, debug:'impf_quote_min1 = 100*personen_min1_kumulativ/pop'});
 		checks.push({key:'impf_quote_voll',     calc:(obj,pop) => Math.round( 1000*obj.personen_voll_kumulativ /pop)/10, debug:'impf_quote_voll = 100*personen_voll_kumulativ/pop'});
+		checks.push({key:'impf_quote_auffr',    calc:(obj,pop) => Math.round( 1000*obj.personen_auffr_kumulativ/pop)/10, debug:'impf_quote_auffr = 100*personen_auffr_kumulativ/pop'});
 		checks.push({key:'impf_inzidenz_dosen', calc:(obj,pop) => Math.round(10000*obj.dosen_kumulativ         /pop)/10, debug:'impf_inzidenz_dosen = 1000*dosen_kumulativ/pop'});
 		checks.push({key:'impf_inzidenz_erst',  calc:(obj,pop) => Math.round(10000*obj.personen_erst_kumulativ /pop)/10, debug:'impf_inzidenz_erst = 1000*personen_erst_kumulativ/pop'});
 		checks.push({key:'impf_inzidenz_zweit', calc:(obj,pop) => Math.round(10000*obj.personen_zweit_kumulativ/pop)/10, debug:'impf_inzidenz_zweit = 1000*personen_zweit_kumulativ/pop'});
 		checks.push({key:'impf_inzidenz_min1',  calc:(obj,pop) => Math.round(10000*obj.personen_min1_kumulativ /pop)/10, debug:'impf_inzidenz_min1 = 1000*personen_min1_kumulativ/pop'});
 		checks.push({key:'impf_inzidenz_voll',  calc:(obj,pop) => Math.round(10000*obj.personen_voll_kumulativ /pop)/10, debug:'impf_inzidenz_voll = 1000*personen_voll_kumulativ/pop'});
+		checks.push({key:'impf_inzidenz_auffr', calc:(obj,pop) => Math.round(10000*obj.personen_auffr_kumulativ/pop)/10, debug:'impf_inzidenz_auffr = 1000*personen_auffr_kumulativ/pop'});
 
 		checks.forEach((c,i) => c.order = (c.level || 100) * 1e4 + i)
 		checks.sort((a,b) => a.order - b.order);
