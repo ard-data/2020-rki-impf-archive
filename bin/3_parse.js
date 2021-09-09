@@ -186,10 +186,12 @@ function extractData(excel) {
 		if (sheet.name.match(/^Impfungen_bis_einschl_\d\d\.01\.21$/)) sheet.type.add('indikation');
 		if (sheet.name === 'Presse') sheet.type.add('indikation');
 		if (sheet.name.match(/^Impfquote_bis_einschl_\d\d\.\d\d\.21$/)) sheet.type.add('indikation');
+		if (sheet.name === 'Impfquote_bundesweit_Alter') sheet.type.add('indikation');
 
 		// sheet "nach Hersteller"
 		if (sheet.name.startsWith('Gesamt_bis_einschl_')) sheet.type.add('hersteller');
 		if (sheet.name.match(/^Impfstoff_bis_einschl_\d\d\.\d\d\.21$/)) sheet.type.add('hersteller');
+		if (sheet.name === 'Impfungen_Impfstoff') sheet.type.add('hersteller');
 		
 		// sheet "Impfungen pro Tag"
 		if (sheet.name === 'Impfungen_proTag') sheet.type.add('timeline');
