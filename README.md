@@ -2,9 +2,11 @@
 
 ## Worum geht es?
 
-Das RKI veröffentlicht täglich die [gemeldeten Impfungen als Excel-Tabelle](https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html). Leider wird diese Excel-Tabelle täglich überschrieben, so dass keine historischen Verläufe möglich sind. Zwar bietet das [Impfdashboard](https://impfdashboard.de/) historische Verläufe, die sind aber wiederum nicht nach Bundesländern etc. aufgeschlüsselt.
+Das RKI veröffentlicht täglich die [gemeldeten Impfungen als Excel-Tabelle](https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquoten-Tab.html). Leider wird diese Excel-Tabelle täglich überschrieben, so dass keine historischen Verläufe möglich sind.
 
-Seit Ende Juli 2021 bietet das RKI mit dem [GitHub-Repo "COVID-19-Impfungen_in_Deutschland"](https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland) selbst ein [Archiv mit CSV-Dateien](https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland/tree/master/Archiv) an, das aber leider nur bis zum 21.7.2021 zurück reicht.
+Im [Impfdashboard des RKI](https://impfdashboard.de/) gibt es historische Verläufe, die sind aber wiederum nicht nach Bundesländern etc. aufgeschlüsselt.
+
+Seit Ende Juli 2021 bietet das RKI mit dem [GitHub-Repo "COVID-19-Impfungen_in_Deutschland"](https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland) selbst ein [Archiv mit CSV-Dateien](https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland/tree/master/Archiv) an, das teilweise sogar auf Landkreiseebene und Alter aufgeschlüsselt ist, aber leider nur bis zum 21.7.2021 zurück reicht.
 
 Deshalb sammeln wir die alten Datei-Versionen und stellen sie in diesem GitHub-Repo zur Verfügung. Per cronjob versuchen wir das Archiv täglich aktuell zu halten. Als Feature bereinigen wir sogar die Daten und bieten sie [als CSV](https://github.com/ard-data/2020-rki-impf-archive/tree/master/data/9_csv_v3) an.
 
