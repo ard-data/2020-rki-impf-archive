@@ -338,6 +338,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-04-09') range = 'C5:S22';
 		if (pubDate >= '2021-06-07') range = 'C4:M21';
 		if (pubDate >= '2021-09-09') range = 'C4:P21';
+		if (pubDate >= '2021-11-02') range = 'C4:U21';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -357,16 +358,16 @@ function extractData(excel) {
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
-	function extractDataSheet(data, sheet, range) {
+	function extractDataSheet(data, sheet, rangeText) {
 		try {
-			range = excel.parseRange(range);
+			let range = excel.parseRange(rangeText);
 
 			// make sure if we guessed the size of the data range correctly
 			// we can do that by checking, if the area at the top right/bottom left next to the header area is empty or not
 			let nextColHeader = mergeColCells(sheet.cells, range.colMax+1, 0, range.rowMin-1).trim();
 			let nextRowHeader = mergeRowCells(sheet.cells, range.rowMax+1, 0, range.colMin-1).trim();
-			if (nextColHeader) throw Error('You did not parse every col header. Forgot: '+JSON.stringify(nextColHeader));
-			if (nextRowHeader) throw Error('You did not parse every row header. Forgot: '+JSON.stringify(nextRowHeader));
+			if (nextColHeader) throw Error(`You did not parse every col header. Forgot: ${JSON.stringify(nextColHeader)}`);
+			if (nextRowHeader) throw Error(`You did not parse every row header. Forgot: ${JSON.stringify(nextRowHeader)}`);
 
 			// scan data area
 			for (let row = range.rowMin; row <= range.rowMax; row++) {
@@ -410,9 +411,10 @@ function extractData(excel) {
 			}
 
 		} catch (e) {
-			console.log('for date "'+date+'":');
-			console.log('for pubDate "'+pubDate+'":');
-			console.log('in sheet "'+sheet.name+'" ('+sheet.type+'):');
+			console.log(`for range "${rangeText}:`);
+			console.log(`for date "${date}:`);
+			console.log(`for pubDate "${pubDate}:`);
+			console.log(`in sheet "${sheet.name}" (${sheet.type}):`);
 			throw e;
 		}
 	}
@@ -457,6 +459,7 @@ function extractData(excel) {
 					fields.push({col, key:'personen_min1_kumulativ', val:v => v || 0});
 				return;
 				case 'Auffrischungsimpfung':
+				case 'Auffrischimpfung':
 					fields.push({col, key:'personen_auffr_kumulativ', val:v => v || 0});
 				return
 				default:
@@ -487,6 +490,7 @@ function extractData(excel) {
 			if ((''+row[0]).startsWith('Gesamtzahlen sind ')) return
 			if ((''+row[0]).startsWith('die entsprechend den')) return
 			if ((''+row[0]).startsWith('werden können')) return
+			if ((''+row[0]).startsWith('entsprechend')) return
 			
 			if (Number.isFinite(row[0]) || /^\d\d\.[01]\d\.202\d$/.test(row[0])) {
 				let obj = {};
@@ -547,6 +551,7 @@ function extractData(excel) {
 	}
 	function parseColHeader(text, sheetType, date) {
 		let key = (sheetType+'_'+text).toLowerCase().replace(/\*/g,'').replace(/\s+/g,'_');
+		key = key.replace(/auffrischungs/g, 'auffrisch');
 
 		if (date <= '2021-01-16') {
 			switch (key) {
@@ -683,7 +688,7 @@ function extractData(excel) {
 		switch (key) {
 			case 'indikation_gesamtzahl_mindestens_einmal_geimpfter': return 'personen_min1_kumulativ';
 			case 'indikation_gesamtzahl_vollständig_geimpfter': return 'personen_voll_kumulativ';
-			case 'indikation_gesamtzahl_personen_mit_auffrischungs-impfung': return 'personen_auffr_kumulativ';
+			case 'indikation_gesamtzahl_personen_mit_auffrisch-impfung': return 'personen_auffr_kumulativ';
 
 			case 'indikation_impfquote_mindestens_einmal_geimpft_18+_jahre_gesamt': return 'impf_quote_min1_alter_18plus';
 			case 'indikation_impfquote_mindestens_einmal_geimpft_18+_jahre_18-59_jahre': return 'impf_quote_min1_alter_18bis59';
@@ -706,12 +711,22 @@ function extractData(excel) {
 			case 'hersteller_zweitimpfungen_impfungen_kumulativ_astrazeneca': return 'personen_zweit_astrazeneca_kumulativ';
 			case 'hersteller_zweitimpfungen_differenz_zum_vortag': return 'personen_zweit_differenz_zum_vortag';
 
-			case 'hersteller_auffrischungsimpfungen_impfungen_kumulativ_gesamt': return 'personen_auffr_kumulativ';
-			case 'hersteller_auffrischungsimpfungen_impfungen_kumulativ_biontech': return 'personen_auffr_biontech_kumulativ';
-			case 'hersteller_auffrischungsimpfungen_impfungen_kumulativ_moderna': return 'personen_auffr_moderna_kumulativ';
-			case 'hersteller_auffrischungsimpfungen_impfungen_kumulativ_astrazeneca': return 'personen_auffr_astrazeneca_kumulativ';
-			case 'hersteller_auffrischungsimpfungen_impfungen_kumulativ_janssen': return 'personen_auffr_janssen_kumulativ';
-			case 'hersteller_auffrischungsimpfungen_differenz_zum_vortag': return 'personen_auffr_differenz_zum_vortag';
+			case 'hersteller_auffrischimpfungen_impfungen_kumulativ_gesamt': return 'personen_auffr_kumulativ';
+			case 'hersteller_auffrischimpfungen_impfungen_kumulativ_biontech': return 'personen_auffr_biontech_kumulativ';
+			case 'hersteller_auffrischimpfungen_impfungen_kumulativ_moderna': return 'personen_auffr_moderna_kumulativ';
+			case 'hersteller_auffrischimpfungen_impfungen_kumulativ_astrazeneca': return 'personen_auffr_astrazeneca_kumulativ';
+			case 'hersteller_auffrischimpfungen_impfungen_kumulativ_janssen': return 'personen_auffr_janssen_kumulativ';
+			case 'hersteller_auffrischimpfungen_differenz_zum_vortag': return 'personen_auffr_differenz_zum_vortag';
+		}
+
+		// since 02-11-2021
+		switch (key) {
+			case 'indikation_gesamtzahl_personen_mit_auffrischimpfung': return 'personen_auffr_kumulativ';
+			case 'indikation_impfquote_auffrischimpfung_gesamt': return 'impf_quote_auffr';
+			case 'indikation_impfquote_auffrischimpfung_12-17_jahre': return 'impf_quote_auffr_alter_12bis17';
+			case 'indikation_impfquote_auffrischimpfung_18+_jahre_gesamt': return 'impf_quote_auffr_alter_18plus';
+			case 'indikation_impfquote_auffrischimpfung_18+_jahre_18-59_jahre': return 'impf_quote_auffr_alter_18bis59';
+			case 'indikation_impfquote_auffrischimpfung_18+_jahre_60+_jahre': return 'impf_quote_auffr_alter_60plus';
 		}
 
 		throw Error('unknown Col Header '+JSON.stringify(key))
