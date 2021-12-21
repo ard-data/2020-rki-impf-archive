@@ -16,7 +16,8 @@ module.exports = date => {
 		{name: 'alter', elements:['alle','<60','60+'], optional:true, ignore: (date < '2021-04-08') || (date >= '2021-06-07')},
 		{name: 'alter', elements:['alle','<18','18-59','60+'], optional:true, ignore: (date < '2021-06-07') || (date >= '2021-07-26') },
 		{name: 'alter', elements:['alle','<12','12-17','<18','18-59','60+'], optional:true, ignore: (date < '2021-07-26') || (date >= '2021-09-09') },
-		{name: 'alter', elements:['alle','12-17','18+','18-59','60+'], optional:true, ignore: (date < '2021-09-09')},
+		{name: 'alter', elements:['alle','12-17','18+','18-59','60+'], optional:true, ignore: (date < '2021-09-09') || (date >= '2021-12-21')},
+		{name: 'alter', elements:['alle','5-11','12-17','18+','18-59','60+'], optional:true, ignore: (date < '2021-12-21')},
 	].filter(d => !d.ignore);
 
 	const dimensionNames = dimensions.map(d => d.name);
@@ -116,6 +117,7 @@ module.exports = date => {
 		if (dimensionsLookup.has('alter')) {
 			switch (cell.alter) {
 				case 'alle':break;
+				case '5-11':  suffix += '_alter_5bis11'; break;
 				case '<12':   suffix += '_alter_unter12'; break;
 				case '12-17': suffix += '_alter_12bis17'; break;
 				case '<18':   suffix += '_alter_unter18'; break;

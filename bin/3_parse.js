@@ -341,6 +341,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-06-07') range = 'C4:M21';
 		if (pubDate >= '2021-09-09') range = 'C4:P21';
 		if (pubDate >= '2021-11-02') range = 'C4:U21';
+		if (pubDate >= '2021-12-21') range = 'C4:V21';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -729,6 +730,12 @@ function extractData(excel) {
 			case 'indikation_impfquote_auffrischimpfung_18+_jahre_gesamt': return 'impf_quote_auffr_alter_18plus';
 			case 'indikation_impfquote_auffrischimpfung_18+_jahre_18-59_jahre': return 'impf_quote_auffr_alter_18bis59';
 			case 'indikation_impfquote_auffrischimpfung_18+_jahre_60+_jahre': return 'impf_quote_auffr_alter_60plus';
+		}
+
+		// since 21-12-2021
+		switch (key) {
+			case 'indikation_gesamtzahl_mindestens_einmal_geimpfter_gesamt_': return 'personen_min1_kumulativ';
+			case 'indikation_gesamtzahl_mindestens_einmal_geimpfter_davon_bei_5-11_jahre': return 'personen_min1_kumulativ_alter_5bis11';
 		}
 
 		throw Error('unknown Col Header '+JSON.stringify(key))
