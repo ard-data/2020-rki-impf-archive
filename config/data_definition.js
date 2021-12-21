@@ -144,8 +144,9 @@ module.exports = date => {
 		if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',quote:'impf_quote'   })) return 'impf_quote_'+cell.dosis+suffix;
 		if (cellIsIn({dosis:'*',impfstelle:'*',alter:'*',quote:'impf_inzidenz'})) return 'impf_inzidenz_'+cell.dosis+suffix;
 
-		console.log(cell);
+		console.log('cell:',cell);
 		console.log(dimensionNames.map(d => cell[d]).join(','));
+		console.log('suffix:',suffix);
 		throw Error('unknown slug');
 
 		function cellIsIn(query) {

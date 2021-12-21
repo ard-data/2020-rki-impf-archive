@@ -211,10 +211,12 @@ function extractData(excel) {
 
 	// extract publication date
 	let pubDate = extractPubDate(sheets.front);
+
+	// get slugs
 	let dataDefinition = DataDefinition(pubDate);
 	let slugs = new Set();
 	dataDefinition.parameters.forEach(p => {
-		if (slugs.has(p.slug)) throw Error();
+		if (slugs.has(p.slug)) throw Error('duplicated slugs in dataDefinition.parameters');
 		slugs.add(p.slug)
 	})
 
