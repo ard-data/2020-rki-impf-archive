@@ -78,17 +78,20 @@ Seit Einführung von Janssen/Johnson & Johnson, einem Impfstoff, der nur in eine
 	<th>Erste Dosis Astra/BionTech/Moderna</th>
 	<th>Einzeldosis Janssen</th>
 	<th>Zweite Dosis Astra/BionTech/Moderna</th>
+	<th>Dritte Dosis BionTech/Moderna</td>
 </tr>
 <tr>
-	<td align="center"><i>„begonnene Impfserie“</i><br>Feldname: <code>personen_erst</code></td>
-	<td colspan="2" align="center"><i>„vollständig geimpft“</i><br>Feldname: <code>personen_voll</code></td>
+	<td align="center"><i>„begonnene Impfserie“</i><br>Feldname: <code>impfquote_erst</code></td>
+	<td colspan="2" align="center"><i>„vollständig geimpft“</i><br>Feldname: <code>impfquote_voll</code></td>
+	<td align="center"><i>„Auffrischimpfung (Booster)“</i><br>Feldname: <code>impfquote_auffr</code></td>
 </tr>
 <tr>
-	<td colspan="2" align="center"><i>„mindestens einmal geimpft“</i><br>Feldname: <code>personen_min1</code></td>
-	<td align="center"><i>„Impfserie beendet“</i><br>Feldname: <code>personen_zweit</code></td>
+	<td colspan="2" align="center"><i>„mindestens einmal geimpft“</i><br>Feldname: <code>impfquote_min1</code></td>
+	<td align="center"><i>„Impfserie beendet“</i><br>Feldname: <code>impfquote_zweit</code></td>
+	<td align="center"><i>„Auffrischimpfung (Booster)“</i><br>Feldname: <code>impfquote_auffr</code></td>
 </tr>
 <tr>
-	<td colspan="3" align="center"><i>„verabreichte Impfdosen“</i><br>Feldname: <code>dosen</code></td>
+	<td colspan="4" align="center"><i>„verabreichte Impfdosen“</i><br>Feldname: <code>dosen</code></td>
 </tr>
 </table>
 
