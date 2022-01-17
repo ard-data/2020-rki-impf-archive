@@ -181,7 +181,7 @@ In Notfällen kann der Autor dieses Projektes auch per [Mail](mailto:rki-scraper
 
 Andere Projekte, die die RKI-Corona-Impf-Daten sammeln:
 
-- offizielles RKI-Archiv ab dem 21.7.21: https://github.com/ard-data/2020-rki-impf-archive
+- offizielles RKI-Archiv ab dem 21.7.21: https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland
 
 - https://github.com/favstats/vaccc19de_dashboard
 - https://github.com/n0rdlicht/rki-vaccination-scraper
