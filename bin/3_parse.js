@@ -342,6 +342,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-09-09') range = 'C4:P21';
 		if (pubDate >= '2021-11-02') range = 'C4:U21';
 		if (pubDate >= '2021-12-21') range = 'C4:V21';
+		if (pubDate >= '2022-01-18') range = 'C4:Y21';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -358,6 +359,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-04-30') range = 'C5:X22';
 		if (pubDate >= '2021-06-07') range = 'C4:N21';
 		if (pubDate >= '2021-09-09') range = 'C4:R21';
+		if (pubDate >= '2022-01-18') range = 'C4:T21';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -394,6 +396,7 @@ function extractData(excel) {
 
 						// save value
 						value = sheet.cells[row][col];
+						if (value === '-') value = 0;
 						if (data[rowId][metric] && (data[rowId][metric] !== value)) {
 							console.log('data[rowId][metric]', data[rowId][metric]);
 							throw Error('no or conflicting value?');
@@ -687,7 +690,7 @@ function extractData(excel) {
 			case 'hersteller_vollständig_geimpft_differenz_zum_vortag': return 'personen_voll_differenz_zum_vortag';
 		}
 
-		// since 09-09-2021
+		// since 2021-09-09
 		switch (key) {
 			case 'indikation_gesamtzahl_mindestens_einmal_geimpfter': return 'personen_min1_kumulativ';
 			case 'indikation_gesamtzahl_vollständig_geimpfter': return 'personen_voll_kumulativ';
@@ -722,7 +725,7 @@ function extractData(excel) {
 			case 'hersteller_auffrischimpfungen_differenz_zum_vortag': return 'personen_auffr_differenz_zum_vortag';
 		}
 
-		// since 02-11-2021
+		// since 2021-11-02
 		switch (key) {
 			case 'indikation_gesamtzahl_personen_mit_auffrischimpfung': return 'personen_auffr_kumulativ';
 			case 'indikation_impfquote_auffrischimpfung_gesamt': return 'impf_quote_auffr';
@@ -732,10 +735,33 @@ function extractData(excel) {
 			case 'indikation_impfquote_auffrischimpfung_18+_jahre_60+_jahre': return 'impf_quote_auffr_alter_60plus';
 		}
 
-		// since 21-12-2021
+		// since 2021-12-21
 		switch (key) {
 			case 'indikation_gesamtzahl_mindestens_einmal_geimpfter_gesamt_': return 'personen_min1_kumulativ';
 			case 'indikation_gesamtzahl_mindestens_einmal_geimpfter_davon_bei_5-11_jahre': return 'personen_min1_kumulativ_alter_5bis11';
+		}
+
+		// since 2022-01-18
+		switch (key) {
+			case 'indikation_gesamtzahl_grund-immunisierter': return 'personen_voll_kumulativ';
+
+			case 'indikation_impfquote_mindestens_einmal_geimpft_gesamt-bevölkerung': return 'impf_quote_min1';
+			case 'indikation_impfquote_mindestens_einmal_geimpft_5-17_jahre_gesamt': return 'impf_quote_min1_alter_5bis17';
+			case 'indikation_impfquote_mindestens_einmal_geimpft_5-17_jahre_5-11_jahre': return 'impf_quote_min1_alter_5bis11';
+			case 'indikation_impfquote_mindestens_einmal_geimpft_5-17_jahre_12-17_jahre': return 'impf_quote_min1_alter_12bis17';
+
+			case 'indikation_impfquote_grundimmunisiert_gesamt-bevölkerung': return 'impf_quote_voll';
+			case 'indikation_impfquote_grundimmunisiert_5-17_jahre_gesamt': return 'impf_quote_voll_alter_5bis17';
+			case 'indikation_impfquote_grundimmunisiert_5-17_jahre_5-11_jahre': return 'impf_quote_voll_alter_5bis11';
+			case 'indikation_impfquote_grundimmunisiert_5-17_jahre_12-17_jahre': return 'impf_quote_voll_alter_12bis17';
+			case 'indikation_impfquote_grundimmunisiert_18+_jahre_gesamt': return 'impf_quote_voll_alter_18plus';
+			case 'indikation_impfquote_grundimmunisiert_18+_jahre_18-59_jahre': return 'impf_quote_voll_alter_18bis59';
+			case 'indikation_impfquote_grundimmunisiert_18+_jahre_60+_jahre': return 'impf_quote_voll_alter_60plus';
+
+			case 'indikation_impfquote_auffrischimpfung_gesamt-bevölkerung': return 'impf_quote_auffr';
+
+			case 'hersteller_erstimpfungen_impfungen_kumulativ_novavax': return 'personen_erst_novavax_kumulativ';
+			case 'hersteller_zweitimpfungen_impfungen_kumulativ_novavax': return 'personen_zweit_novavax_kumulativ';
 		}
 
 		throw Error('unknown Col Header '+JSON.stringify(key))

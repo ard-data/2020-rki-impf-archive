@@ -148,8 +148,17 @@ function completeData(data, filename) {
 		setValue('personen_zweit_janssen_kumulativ_impfstelle_aerzte', 0);
 		setValue('personen_zweit_janssen_kumulativ_impfstelle_zentral', 0);
 
+		setValue('personen_auffr_novavax_kumulativ', 0);
+
 		// RKI möchte vorerst keine Astrazeneca-Auffrischungsimpfungen publizieren
-		setValue('personen_auffr_astrazeneca_kumulativ', entry.personen_auffr_kumulativ - entry.personen_auffr_biontech_kumulativ - entry.personen_auffr_janssen_kumulativ - entry.personen_auffr_moderna_kumulativ);
+		setValue(
+			'personen_auffr_astrazeneca_kumulativ',
+			entry.personen_auffr_kumulativ
+				- entry.personen_auffr_biontech_kumulativ
+				- entry.personen_auffr_janssen_kumulativ
+				- entry.personen_auffr_moderna_kumulativ
+				- entry.personen_auffr_novavax_kumulativ
+		);
 
 		// Berechne fehlende Werte
 		let checkChanged;
@@ -241,8 +250,8 @@ function completeData(data, filename) {
 			generateSum('dosis','alter');
 		}
 
-		generateEqualDosis('zweit', 'voll', 'biontech,astrazeneca,moderna');
-		generateEqualDosis('erst', 'min1', 'biontech,astrazeneca,moderna');
+		generateEqualDosis('zweit', 'voll', 'biontech,astrazeneca,moderna,novavax');
+		generateEqualDosis('erst', 'min1', 'biontech,astrazeneca,moderna,novavax');
 		generateEqualDosis('min1', 'voll', 'janssen');
 
 		// Jetzt noch Checks, um Impfquote und Impfinzidenz zu berechnen:
