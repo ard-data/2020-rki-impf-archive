@@ -98,6 +98,8 @@ function addObj(data, obj) {
 
 		addCell('metric_'+metric, date, region, value, true);
 
+		if (value === undefined) return;
+
 		addCell('all', date+'_'+region+'_'+metric, 'date', date);
 		addCell('all', date+'_'+region+'_'+metric, 'publication_date', pubDate);
 		addCell('all', date+'_'+region+'_'+metric, 'region', region);
