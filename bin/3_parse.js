@@ -468,11 +468,14 @@ function extractData(excel) {
 				return;
 				case 'Auffrischungsimpfung':
 				case 'Auffrischimpfung':
-					fields.push({col, key:'personen_auffr_kumulativ', val:v => v || 0});
-				return
+				case 'Erste Auffrischimpfung':
+					fields.push({ col, key: 'personen_auffr_kumulativ', val: v => v || 0 });
+				return;
+				case 'Zweite Auffrischimpfung':
+					fields.push({ col, key: 'personen_auffr2_kumulativ', val: v => v || 0 });
+				return;
 				default:
-					console.log('t', t);
-					console.log('col', col);
+					console.log({t, col});
 					throw new Error('unknown col header in verlauf');
 			}
 		})
