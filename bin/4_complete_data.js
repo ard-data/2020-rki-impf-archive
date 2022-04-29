@@ -140,25 +140,27 @@ function completeData(data, filename) {
 			setValue('personen_voll_janssen_kumulativ_impfstelle_aerzte', 0);
 		}
 
-		// Janssen gibt es nur als min1 und voll
-		setValue('personen_erst_janssen_kumulativ', 0);
-		setValue('personen_erst_janssen_kumulativ_impfstelle_aerzte', 0);
-		setValue('personen_erst_janssen_kumulativ_impfstelle_zentral', 0);
-		setValue('personen_zweit_janssen_kumulativ', 0);
-		setValue('personen_zweit_janssen_kumulativ_impfstelle_aerzte', 0);
-		setValue('personen_zweit_janssen_kumulativ_impfstelle_zentral', 0);
+		if (pubDate < '2021-04-29') {
+			// Janssen gibt es nur als min1 und voll
+			setValue('personen_erst_janssen_kumulativ', 0);
+			setValue('personen_erst_janssen_kumulativ_impfstelle_aerzte', 0);
+			setValue('personen_erst_janssen_kumulativ_impfstelle_zentral', 0);
+			setValue('personen_zweit_janssen_kumulativ', 0);
+			setValue('personen_zweit_janssen_kumulativ_impfstelle_aerzte', 0);
+			setValue('personen_zweit_janssen_kumulativ_impfstelle_zentral', 0);
 
-		setValue('personen_auffr_novavax_kumulativ', 0);
+			setValue('personen_auffr_novavax_kumulativ', 0);
 
-		// RKI möchte vorerst keine Astrazeneca-Auffrischungsimpfungen publizieren
-		setValue(
-			'personen_auffr_astrazeneca_kumulativ',
-			entry.personen_auffr_kumulativ
-				- entry.personen_auffr_biontech_kumulativ
-				- entry.personen_auffr_janssen_kumulativ
-				- entry.personen_auffr_moderna_kumulativ
-				- entry.personen_auffr_novavax_kumulativ
-		);
+			// RKI möchte vorerst keine Astrazeneca-Auffrischungsimpfungen publizieren
+			setValue(
+				'personen_auffr_astrazeneca_kumulativ',
+				entry.personen_auffr_kumulativ
+					- entry.personen_auffr_biontech_kumulativ
+					- entry.personen_auffr_janssen_kumulativ
+					- entry.personen_auffr_moderna_kumulativ
+					- entry.personen_auffr_novavax_kumulativ
+			);
+		}
 
 		// Berechne fehlende Werte
 		let checkChanged;
@@ -207,10 +209,12 @@ function completeData(data, filename) {
 			let missingHash = [filename, r.code, slug].join(',').trim();
 			if (knownMissingHashes.has(missingHash)) return;
 
-			console.dir(checks, {maxArrayLength:1000});
-			console.log('entry', sortObject(entry));
-			console.log('slug', slug);
-			console.log('missingHash: ', missingHash);
+			//console.dir(checks, {maxArrayLength:1000});
+			console.log({
+				parameter,
+				entry:sortObject(entry),
+				slug, missingHash
+			})
 			throw Error('missing value');
 		})
 
@@ -244,15 +248,20 @@ function completeData(data, filename) {
 			generateSum('dosis','hersteller,impfstelle');
 			generateSum('dosis','alter,impfstelle');
 			generateSum('impfstelle','dosis,alter');
-		} else {
+		} else if (pubDate < '2022-04-29') {
 			generateSum('hersteller','dosis');
 			generateSum('dosis','hersteller');
 			generateSum('dosis','alter');
+		} else {
+			generateSum('hersteller','dosis');
+			generateSum('alter','dosis');
 		}
 
-		generateEqualDosis('zweit', 'voll', 'biontech,astrazeneca,moderna,novavax');
-		generateEqualDosis('erst', 'min1', 'biontech,astrazeneca,moderna,novavax');
-		generateEqualDosis('min1', 'voll', 'janssen');
+		if (pubDate < '2022-04-29') {
+			generateEqualDosis('zweit', 'voll', 'biontech,astrazeneca,moderna,novavax');
+			generateEqualDosis('erst', 'min1', 'biontech,astrazeneca,moderna,novavax');
+			generateEqualDosis('min1', 'voll', 'janssen');
+		}
 
 		// Jetzt noch Checks, um Impfquote und Impfinzidenz zu berechnen:
 		checks.push({key:'impf_quote_dosen',    calc:(obj,pop) => Math.round( 1000*obj.dosen_kumulativ         /pop)/10, debug:'impf_quote_dosen = 100*dosen_kumulativ/pop'});
