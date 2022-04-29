@@ -361,7 +361,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-06-07') range = 'C4:N21';
 		if (pubDate >= '2021-09-09') range = 'C4:R21';
 		if (pubDate >= '2022-01-18') range = 'C4:T21';
-		if (pubDate >= '2022-01-18') range = 'C4:I20';
+		if (pubDate >= '2022-04-29') range = 'C3:I20';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -803,6 +803,15 @@ function extractData(excel) {
 				case 'indikation_impfquote_zweite_auffrischimpfung_18+_jahre_gesamt': return 'impf_quote_auffr2_alter_18plus';
 				case 'indikation_impfquote_zweite_auffrischimpfung_18+_jahre_18-59_jahre': return 'impf_quote_auffr2_alter_18bis59';
 				case 'indikation_impfquote_zweite_auffrischimpfung_18+_jahre_60+_jahre': return 'impf_quote_auffr2_alter_60plus';
+				// --------
+				case 'hersteller_impfungen_kumulativ_gesamt': return 'dosen_kumulativ';
+				case 'hersteller_impfungen_kumulativ_biontech': return 'dosen_biontech_kumulativ';
+				case 'hersteller_impfungen_kumulativ_moderna': return 'dosen_moderna_kumulativ';
+				case 'hersteller_impfungen_kumulativ_astrazeneca': return 'dosen_astrazeneca_kumulativ';
+				case 'hersteller_impfungen_kumulativ_janssen': return 'dosen_janssen_kumulativ';
+				case 'hersteller_impfungen_kumulativ_novavax': return 'dosen_novavax_kumulativ';
+
+				case 'hersteller_differenz_zum_vortag': return 'dosen_differenz_zum_vortag';
 			}
 		}
 
