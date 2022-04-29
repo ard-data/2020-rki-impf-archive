@@ -7,7 +7,7 @@ const fs = require('fs');
 module.exports = date => {
 
 	const dimensions = [
-		{name: 'dosis', elements:['dosen','erst','voll','min1','zweit','auffr'], sums:[['dosen','erst','voll','auffr'],['dosen','min1','zweit','auffr']]},
+		{name: 'dosis', elements:['dosen','erst','voll','min1','zweit','auffr','auffr2'], sums:[['dosen','erst','voll','auffr','auffr2'],['dosen','min1','zweit','auffr','auffr2']]},
 		{name: 'hersteller', elements:['alle','biontech','moderna','astrazeneca','janssen','novavax']},
 		{name: 'indikation', elements:['alle','alter','beruf','medizinisch','pflegeheim'], optional: date >= '2021-04-08'},
 		{name: 'kumulativ', elements:['kumulativ', 'differenz'], optional:true},

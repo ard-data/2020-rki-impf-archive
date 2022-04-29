@@ -151,7 +151,7 @@ function parseExcel(filename) {
 		}
 
 		function colToInt(col) {
-			return col.trim().split('').reduce((n, c) => n*26 +letters[c], 0);
+			return col.trim().split('').reduce((n, c) => n*26 + letters[c], 0);
 		}
 	}
 
@@ -343,6 +343,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-11-02') range = 'C4:U21';
 		if (pubDate >= '2021-12-21') range = 'C4:V21';
 		if (pubDate >= '2022-01-18') range = 'C4:Y21';
+		if (pubDate >= '2022-04-29') range = 'C4:AE21';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -360,6 +361,7 @@ function extractData(excel) {
 		if (pubDate >= '2021-06-07') range = 'C4:N21';
 		if (pubDate >= '2021-09-09') range = 'C4:R21';
 		if (pubDate >= '2022-01-18') range = 'C4:T21';
+		if (pubDate >= '2022-01-18') range = 'C4:I20';
 		extractDataSheet(data, sheet, range, pubDate);
 	}
 
@@ -556,7 +558,7 @@ function extractData(excel) {
 		throw Error('unknown Row Header '+JSON.stringify(text))
 	}
 	function parseColHeader(text, sheetType, date) {
-		let key = (sheetType+'_'+text).toLowerCase().replace(/\*/g,'').replace(/\s+/g,'_');
+		let key = (sheetType+'_'+text).toLowerCase().replace(/[\*°]/g,'').replace(/\s+/g,'_');
 		key = key.replace(/auffrischungs/g, 'auffrisch');
 
 		if (date <= '2021-01-16') {
@@ -658,110 +660,150 @@ function extractData(excel) {
 			throw Error('unknown Col Header '+JSON.stringify(key))
 		}
 
-		switch (key) {
-			case 'indikation_gesamtzahl_bisher_verabreichter_impfungen': return 'dosen_kumulativ';
-			case 'indikation_gesamtzahl_mindestens_einmal_geimpft_': return 'personen_min1_kumulativ';
-			case 'indikation_gesamtzahl_vollständig_geimpft': return 'personen_voll_kumulativ';
-			
-			case 'indikation_impfquote_mindestens_einmal_geimpft_gesamt': return 'impf_quote_min1';
-			case 'indikation_impfquote_mindestens_einmal_geimpft_12-17_jahre': return 'impf_quote_min1_alter_12bis17';
-			case 'indikation_impfquote_mindestens_einmal_geimpft_<18_jahre': return 'impf_quote_min1_alter_unter18';
-			case 'indikation_impfquote_mindestens_einmal_geimpft_18-59_jahre': return 'impf_quote_min1_alter_18bis59';
-			case 'indikation_impfquote_mindestens_einmal_geimpft_60+_jahre': return 'impf_quote_min1_alter_60plus';
+		if (date < '2022-04-28') {
+			switch (key) {
+				case 'indikation_gesamtzahl_bisher_verabreichter_impfungen': return 'dosen_kumulativ';
+				case 'indikation_gesamtzahl_mindestens_einmal_geimpft_': return 'personen_min1_kumulativ';
+				case 'indikation_gesamtzahl_vollständig_geimpft': return 'personen_voll_kumulativ';
+				
+				case 'indikation_impfquote_mindestens_einmal_geimpft_gesamt': return 'impf_quote_min1';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_12-17_jahre': return 'impf_quote_min1_alter_12bis17';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_<18_jahre': return 'impf_quote_min1_alter_unter18';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_18-59_jahre': return 'impf_quote_min1_alter_18bis59';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_60+_jahre': return 'impf_quote_min1_alter_60plus';
 
-			case 'indikation_impfquote_vollständig_geimpft_gesamt': return 'impf_quote_voll';
-			case 'indikation_impfquote_vollständig_geimpft_12-17_jahre': return 'impf_quote_voll_alter_12bis17';
-			case 'indikation_impfquote_vollständig_geimpft_<18_jahre': return 'impf_quote_voll_alter_unter18';
-			case 'indikation_impfquote_vollständig_geimpft_18-59_jahre': return 'impf_quote_voll_alter_18bis59';
-			case 'indikation_impfquote_vollständig_geimpft_60+_jahre': return 'impf_quote_voll_alter_60plus';
+				case 'indikation_impfquote_vollständig_geimpft_gesamt': return 'impf_quote_voll';
+				case 'indikation_impfquote_vollständig_geimpft_12-17_jahre': return 'impf_quote_voll_alter_12bis17';
+				case 'indikation_impfquote_vollständig_geimpft_<18_jahre': return 'impf_quote_voll_alter_unter18';
+				case 'indikation_impfquote_vollständig_geimpft_18-59_jahre': return 'impf_quote_voll_alter_18bis59';
+				case 'indikation_impfquote_vollständig_geimpft_60+_jahre': return 'impf_quote_voll_alter_60plus';
 
-			case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_gesamt': return 'personen_min1_kumulativ';
-			case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_biontech': return 'personen_min1_biontech_kumulativ';
-			case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_moderna': return 'personen_min1_moderna_kumulativ';
-			case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_astrazeneca': return 'personen_min1_astrazeneca_kumulativ';
-			case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_janssen': return 'personen_min1_janssen_kumulativ';
-			case 'hersteller_mindestens_einmal_geimpft_differenz_zum_vortag': return 'personen_min1_differenz_zum_vortag';
+				case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_gesamt': return 'personen_min1_kumulativ';
+				case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_biontech': return 'personen_min1_biontech_kumulativ';
+				case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_moderna': return 'personen_min1_moderna_kumulativ';
+				case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_astrazeneca': return 'personen_min1_astrazeneca_kumulativ';
+				case 'hersteller_mindestens_einmal_geimpft_impfungen_kumulativ_janssen': return 'personen_min1_janssen_kumulativ';
+				case 'hersteller_mindestens_einmal_geimpft_differenz_zum_vortag': return 'personen_min1_differenz_zum_vortag';
 
-			case 'hersteller_vollständig_geimpft_impfungen_kumulativ_gesamt': return 'personen_voll_kumulativ';
-			case 'hersteller_vollständig_geimpft_impfungen_kumulativ_biontech': return 'personen_voll_biontech_kumulativ';
-			case 'hersteller_vollständig_geimpft_impfungen_kumulativ_moderna': return 'personen_voll_moderna_kumulativ';
-			case 'hersteller_vollständig_geimpft_impfungen_kumulativ_astrazeneca': return 'personen_voll_astrazeneca_kumulativ';
-			case 'hersteller_vollständig_geimpft_impfungen_kumulativ_janssen': return 'personen_voll_janssen_kumulativ';
-			case 'hersteller_vollständig_geimpft_differenz_zum_vortag': return 'personen_voll_differenz_zum_vortag';
+				case 'hersteller_vollständig_geimpft_impfungen_kumulativ_gesamt': return 'personen_voll_kumulativ';
+				case 'hersteller_vollständig_geimpft_impfungen_kumulativ_biontech': return 'personen_voll_biontech_kumulativ';
+				case 'hersteller_vollständig_geimpft_impfungen_kumulativ_moderna': return 'personen_voll_moderna_kumulativ';
+				case 'hersteller_vollständig_geimpft_impfungen_kumulativ_astrazeneca': return 'personen_voll_astrazeneca_kumulativ';
+				case 'hersteller_vollständig_geimpft_impfungen_kumulativ_janssen': return 'personen_voll_janssen_kumulativ';
+				case 'hersteller_vollständig_geimpft_differenz_zum_vortag': return 'personen_voll_differenz_zum_vortag';
+			}
+
+			// since 2021-09-09
+			switch (key) {
+				case 'indikation_gesamtzahl_mindestens_einmal_geimpfter': return 'personen_min1_kumulativ';
+				case 'indikation_gesamtzahl_vollständig_geimpfter': return 'personen_voll_kumulativ';
+				case 'indikation_gesamtzahl_personen_mit_auffrisch-impfung': return 'personen_auffr_kumulativ';
+
+				case 'indikation_impfquote_mindestens_einmal_geimpft_18+_jahre_gesamt': return 'impf_quote_min1_alter_18plus';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_18+_jahre_18-59_jahre': return 'impf_quote_min1_alter_18bis59';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_18+_jahre_60+_jahre': return 'impf_quote_min1_alter_60plus';
+
+				case 'indikation_impfquote_vollständig_geimpft_18+_jahre_gesamt': return 'impf_quote_voll_alter_18plus';
+				case 'indikation_impfquote_vollständig_geimpft_18+_jahre_18-59_jahre': return 'impf_quote_voll_alter_18bis59';
+				case 'indikation_impfquote_vollständig_geimpft_18+_jahre_60+_jahre': return 'impf_quote_voll_alter_60plus';
+
+				case 'hersteller_erstimpfungen_impfungen_kumulativ_gesamt': return 'personen_min1_kumulativ';
+				case 'hersteller_erstimpfungen_impfungen_kumulativ_biontech': return 'personen_min1_biontech_kumulativ';
+				case 'hersteller_erstimpfungen_impfungen_kumulativ_moderna': return 'personen_min1_moderna_kumulativ';
+				case 'hersteller_erstimpfungen_impfungen_kumulativ_astrazeneca': return 'personen_min1_astrazeneca_kumulativ';
+				case 'hersteller_erstimpfungen_impfungen_kumulativ_janssen': return 'personen_min1_janssen_kumulativ';
+				case 'hersteller_erstimpfungen_differenz_zum_vortag': return 'personen_min1_differenz_zum_vortag';
+
+				case 'hersteller_zweitimpfungen_impfungen_kumulativ_gesamt': return 'personen_zweit_kumulativ';
+				case 'hersteller_zweitimpfungen_impfungen_kumulativ_biontech': return 'personen_zweit_biontech_kumulativ';
+				case 'hersteller_zweitimpfungen_impfungen_kumulativ_moderna': return 'personen_zweit_moderna_kumulativ';
+				case 'hersteller_zweitimpfungen_impfungen_kumulativ_astrazeneca': return 'personen_zweit_astrazeneca_kumulativ';
+				case 'hersteller_zweitimpfungen_differenz_zum_vortag': return 'personen_zweit_differenz_zum_vortag';
+
+				case 'hersteller_auffrischimpfungen_impfungen_kumulativ_gesamt': return 'personen_auffr_kumulativ';
+				case 'hersteller_auffrischimpfungen_impfungen_kumulativ_biontech': return 'personen_auffr_biontech_kumulativ';
+				case 'hersteller_auffrischimpfungen_impfungen_kumulativ_moderna': return 'personen_auffr_moderna_kumulativ';
+				case 'hersteller_auffrischimpfungen_impfungen_kumulativ_astrazeneca': return 'personen_auffr_astrazeneca_kumulativ';
+				case 'hersteller_auffrischimpfungen_impfungen_kumulativ_janssen': return 'personen_auffr_janssen_kumulativ';
+				case 'hersteller_auffrischimpfungen_differenz_zum_vortag': return 'personen_auffr_differenz_zum_vortag';
+			}
+
+			// since 2021-11-02
+			switch (key) {
+				case 'indikation_gesamtzahl_personen_mit_auffrischimpfung': return 'personen_auffr_kumulativ';
+				case 'indikation_impfquote_auffrischimpfung_gesamt': return 'impf_quote_auffr';
+				case 'indikation_impfquote_auffrischimpfung_12-17_jahre': return 'impf_quote_auffr_alter_12bis17';
+				case 'indikation_impfquote_auffrischimpfung_18+_jahre_gesamt': return 'impf_quote_auffr_alter_18plus';
+				case 'indikation_impfquote_auffrischimpfung_18+_jahre_18-59_jahre': return 'impf_quote_auffr_alter_18bis59';
+				case 'indikation_impfquote_auffrischimpfung_18+_jahre_60+_jahre': return 'impf_quote_auffr_alter_60plus';
+			}
+
+			// since 2021-12-21
+			switch (key) {
+				case 'indikation_gesamtzahl_mindestens_einmal_geimpfter_gesamt_': return 'personen_min1_kumulativ';
+				case 'indikation_gesamtzahl_mindestens_einmal_geimpfter_davon_bei_5-11_jahre': return 'personen_min1_kumulativ_alter_5bis11';
+			}
+
+			// since 2022-01-18
+			switch (key) {
+				case 'indikation_gesamtzahl_grund-immunisierter': return 'personen_voll_kumulativ';
+
+				case 'indikation_impfquote_mindestens_einmal_geimpft_gesamt-bevölkerung': return 'impf_quote_min1';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_5-17_jahre_gesamt': return 'impf_quote_min1_alter_5bis17';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_5-17_jahre_5-11_jahre': return 'impf_quote_min1_alter_5bis11';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_5-17_jahre_12-17_jahre': return 'impf_quote_min1_alter_12bis17';
+
+				case 'indikation_impfquote_grundimmunisiert_gesamt-bevölkerung': return 'impf_quote_voll';
+				case 'indikation_impfquote_grundimmunisiert_5-17_jahre_gesamt': return 'impf_quote_voll_alter_5bis17';
+				case 'indikation_impfquote_grundimmunisiert_5-17_jahre_5-11_jahre': return 'impf_quote_voll_alter_5bis11';
+				case 'indikation_impfquote_grundimmunisiert_5-17_jahre_12-17_jahre': return 'impf_quote_voll_alter_12bis17';
+				case 'indikation_impfquote_grundimmunisiert_18+_jahre_gesamt': return 'impf_quote_voll_alter_18plus';
+				case 'indikation_impfquote_grundimmunisiert_18+_jahre_18-59_jahre': return 'impf_quote_voll_alter_18bis59';
+				case 'indikation_impfquote_grundimmunisiert_18+_jahre_60+_jahre': return 'impf_quote_voll_alter_60plus';
+
+				case 'indikation_impfquote_auffrischimpfung_gesamt-bevölkerung': return 'impf_quote_auffr';
+
+				case 'hersteller_erstimpfungen_impfungen_kumulativ_novavax': return 'personen_erst_novavax_kumulativ';
+				case 'hersteller_zweitimpfungen_impfungen_kumulativ_novavax': return 'personen_zweit_novavax_kumulativ';
+			}
 		}
 
-		// since 2021-09-09
-		switch (key) {
-			case 'indikation_gesamtzahl_mindestens_einmal_geimpfter': return 'personen_min1_kumulativ';
-			case 'indikation_gesamtzahl_vollständig_geimpfter': return 'personen_voll_kumulativ';
-			case 'indikation_gesamtzahl_personen_mit_auffrisch-impfung': return 'personen_auffr_kumulativ';
+		if (true) {
+			switch (key) {
+				case 'indikation_gesamtzahl_bisher_verabreichter_impfungen': return 'dosen_kumulativ';
+				case 'indikation_gesamtzahl_mindestens_einmal_geimpfter': return 'personen_min1_kumulativ';
+				case 'indikation_gesamtzahl_grund-immunisierter': return 'personen_voll_kumulativ';
+				case 'indikation_gesamtzahl_personen_mit_erster_auffrischimpfung': return 'personen_auffr_kumulativ';
+				case 'indikation_gesamtzahl_personen_mit_zweiter_auffrischimpfung': return 'personen_auffr2_kumulativ';
 
-			case 'indikation_impfquote_mindestens_einmal_geimpft_18+_jahre_gesamt': return 'impf_quote_min1_alter_18plus';
-			case 'indikation_impfquote_mindestens_einmal_geimpft_18+_jahre_18-59_jahre': return 'impf_quote_min1_alter_18bis59';
-			case 'indikation_impfquote_mindestens_einmal_geimpft_18+_jahre_60+_jahre': return 'impf_quote_min1_alter_60plus';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_gesamt-bevölkerung': return 'impf_quote_min1';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_5-17_jahre_gesamt': return 'impf_quote_min1_alter_5bis17';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_5-17_jahre_5-11_jahre': return 'impf_quote_min1_alter_5bis11';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_5-17_jahre_12-17_jahre': return 'impf_quote_min1_alter_12bis17';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_18+_jahre_gesamt': return 'impf_quote_min1_alter_18plus';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_18+_jahre_18-59_jahre': return 'impf_quote_min1_alter_18bis59';
+				case 'indikation_impfquote_mindestens_einmal_geimpft_18+_jahre_60+_jahre': return 'impf_quote_min1_alter_60plus';
 
-			case 'indikation_impfquote_vollständig_geimpft_18+_jahre_gesamt': return 'impf_quote_voll_alter_18plus';
-			case 'indikation_impfquote_vollständig_geimpft_18+_jahre_18-59_jahre': return 'impf_quote_voll_alter_18bis59';
-			case 'indikation_impfquote_vollständig_geimpft_18+_jahre_60+_jahre': return 'impf_quote_voll_alter_60plus';
+				case 'indikation_impfquote_grundimmunisiert_gesamt-bevölkerung': return 'impf_quote_voll';
+				case 'indikation_impfquote_grundimmunisiert_5-17_jahre_gesamt': return 'impf_quote_voll_alter_5bis17';
+				case 'indikation_impfquote_grundimmunisiert_5-17_jahre_5-11_jahre': return 'impf_quote_voll_alter_5bis11';
+				case 'indikation_impfquote_grundimmunisiert_5-17_jahre_12-17_jahre': return 'impf_quote_voll_alter_12bis17';
+				case 'indikation_impfquote_grundimmunisiert_18+_jahre_gesamt': return 'impf_quote_voll_alter_18plus';
+				case 'indikation_impfquote_grundimmunisiert_18+_jahre_18-59_jahre': return 'impf_quote_voll_alter_18bis59';
+				case 'indikation_impfquote_grundimmunisiert_18+_jahre_60+_jahre': return 'impf_quote_voll_alter_60plus';
 
-			case 'hersteller_erstimpfungen_impfungen_kumulativ_gesamt': return 'personen_min1_kumulativ';
-			case 'hersteller_erstimpfungen_impfungen_kumulativ_biontech': return 'personen_min1_biontech_kumulativ';
-			case 'hersteller_erstimpfungen_impfungen_kumulativ_moderna': return 'personen_min1_moderna_kumulativ';
-			case 'hersteller_erstimpfungen_impfungen_kumulativ_astrazeneca': return 'personen_min1_astrazeneca_kumulativ';
-			case 'hersteller_erstimpfungen_impfungen_kumulativ_janssen': return 'personen_min1_janssen_kumulativ';
-			case 'hersteller_erstimpfungen_differenz_zum_vortag': return 'personen_min1_differenz_zum_vortag';
+				case 'indikation_impfquote_erste_auffrischimpfung_gesamt-bevölkerung': return 'impf_quote_auffr';
+				case 'indikation_impfquote_erste_auffrischimpfung_12-17_jahre': return 'impf_quote_auffr_alter_12bis17';
+				case 'indikation_impfquote_erste_auffrischimpfung_18+_jahre_gesamt': return 'impf_quote_auffr_alter_18plus';
+				case 'indikation_impfquote_erste_auffrischimpfung_18+_jahre_18-59_jahre': return 'impf_quote_auffr_alter_18bis59';
+				case 'indikation_impfquote_erste_auffrischimpfung_18+_jahre_60+_jahre': return 'impf_quote_auffr_alter_60plus';
 
-			case 'hersteller_zweitimpfungen_impfungen_kumulativ_gesamt': return 'personen_zweit_kumulativ';
-			case 'hersteller_zweitimpfungen_impfungen_kumulativ_biontech': return 'personen_zweit_biontech_kumulativ';
-			case 'hersteller_zweitimpfungen_impfungen_kumulativ_moderna': return 'personen_zweit_moderna_kumulativ';
-			case 'hersteller_zweitimpfungen_impfungen_kumulativ_astrazeneca': return 'personen_zweit_astrazeneca_kumulativ';
-			case 'hersteller_zweitimpfungen_differenz_zum_vortag': return 'personen_zweit_differenz_zum_vortag';
-
-			case 'hersteller_auffrischimpfungen_impfungen_kumulativ_gesamt': return 'personen_auffr_kumulativ';
-			case 'hersteller_auffrischimpfungen_impfungen_kumulativ_biontech': return 'personen_auffr_biontech_kumulativ';
-			case 'hersteller_auffrischimpfungen_impfungen_kumulativ_moderna': return 'personen_auffr_moderna_kumulativ';
-			case 'hersteller_auffrischimpfungen_impfungen_kumulativ_astrazeneca': return 'personen_auffr_astrazeneca_kumulativ';
-			case 'hersteller_auffrischimpfungen_impfungen_kumulativ_janssen': return 'personen_auffr_janssen_kumulativ';
-			case 'hersteller_auffrischimpfungen_differenz_zum_vortag': return 'personen_auffr_differenz_zum_vortag';
-		}
-
-		// since 2021-11-02
-		switch (key) {
-			case 'indikation_gesamtzahl_personen_mit_auffrischimpfung': return 'personen_auffr_kumulativ';
-			case 'indikation_impfquote_auffrischimpfung_gesamt': return 'impf_quote_auffr';
-			case 'indikation_impfquote_auffrischimpfung_12-17_jahre': return 'impf_quote_auffr_alter_12bis17';
-			case 'indikation_impfquote_auffrischimpfung_18+_jahre_gesamt': return 'impf_quote_auffr_alter_18plus';
-			case 'indikation_impfquote_auffrischimpfung_18+_jahre_18-59_jahre': return 'impf_quote_auffr_alter_18bis59';
-			case 'indikation_impfquote_auffrischimpfung_18+_jahre_60+_jahre': return 'impf_quote_auffr_alter_60plus';
-		}
-
-		// since 2021-12-21
-		switch (key) {
-			case 'indikation_gesamtzahl_mindestens_einmal_geimpfter_gesamt_': return 'personen_min1_kumulativ';
-			case 'indikation_gesamtzahl_mindestens_einmal_geimpfter_davon_bei_5-11_jahre': return 'personen_min1_kumulativ_alter_5bis11';
-		}
-
-		// since 2022-01-18
-		switch (key) {
-			case 'indikation_gesamtzahl_grund-immunisierter': return 'personen_voll_kumulativ';
-
-			case 'indikation_impfquote_mindestens_einmal_geimpft_gesamt-bevölkerung': return 'impf_quote_min1';
-			case 'indikation_impfquote_mindestens_einmal_geimpft_5-17_jahre_gesamt': return 'impf_quote_min1_alter_5bis17';
-			case 'indikation_impfquote_mindestens_einmal_geimpft_5-17_jahre_5-11_jahre': return 'impf_quote_min1_alter_5bis11';
-			case 'indikation_impfquote_mindestens_einmal_geimpft_5-17_jahre_12-17_jahre': return 'impf_quote_min1_alter_12bis17';
-
-			case 'indikation_impfquote_grundimmunisiert_gesamt-bevölkerung': return 'impf_quote_voll';
-			case 'indikation_impfquote_grundimmunisiert_5-17_jahre_gesamt': return 'impf_quote_voll_alter_5bis17';
-			case 'indikation_impfquote_grundimmunisiert_5-17_jahre_5-11_jahre': return 'impf_quote_voll_alter_5bis11';
-			case 'indikation_impfquote_grundimmunisiert_5-17_jahre_12-17_jahre': return 'impf_quote_voll_alter_12bis17';
-			case 'indikation_impfquote_grundimmunisiert_18+_jahre_gesamt': return 'impf_quote_voll_alter_18plus';
-			case 'indikation_impfquote_grundimmunisiert_18+_jahre_18-59_jahre': return 'impf_quote_voll_alter_18bis59';
-			case 'indikation_impfquote_grundimmunisiert_18+_jahre_60+_jahre': return 'impf_quote_voll_alter_60plus';
-
-			case 'indikation_impfquote_auffrischimpfung_gesamt-bevölkerung': return 'impf_quote_auffr';
-
-			case 'hersteller_erstimpfungen_impfungen_kumulativ_novavax': return 'personen_erst_novavax_kumulativ';
-			case 'hersteller_zweitimpfungen_impfungen_kumulativ_novavax': return 'personen_zweit_novavax_kumulativ';
+				case 'indikation_impfquote_zweite_auffrischimpfung_gesamt-bevölkerung': return 'impf_quote_auffr2';
+				case 'indikation_impfquote_zweite_auffrischimpfung_12-17_jahre': return 'impf_quote_auffr2_alter_12bis17';
+				case 'indikation_impfquote_zweite_auffrischimpfung_18+_jahre_gesamt': return 'impf_quote_auffr2_alter_18plus';
+				case 'indikation_impfquote_zweite_auffrischimpfung_18+_jahre_18-59_jahre': return 'impf_quote_auffr2_alter_18bis59';
+				case 'indikation_impfquote_zweite_auffrischimpfung_18+_jahre_60+_jahre': return 'impf_quote_auffr2_alter_60plus';
+			}
 		}
 
 		throw Error('unknown Col Header '+JSON.stringify(key))
