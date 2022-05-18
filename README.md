@@ -1,4 +1,15 @@
-# RKI-Corona-Impf-Daten-Archiv
+
+# Das RKI-Corona-Impf-Daten-Archiv wird eingestellt!
+
+Da das Robert-Koch-Institut auch auf GitHub Zahlen zu [COVID-19-Impfungen in Deutschland](https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland) veröffentlicht, die genauso detailliert sind, wie die Zahlen in den Exceltabellen des Impfmonitorings, wird das Impf-Daten-Archiv eingestellt.
+
+Wer dieses Repo als Datenquelle genutzt hat, dem kann ich empfehlen, zum RKI-Repo zu migrieren: https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland
+
+Der Scraper wird bis mindestens Ende Mai weiterbetrieben. Danach wird der Scraper weiterhin laufen, aber nicht mehr gepflegt, so dass nicht mehr sichergestellt werden kann, dass langfristig weitere Updates eingepflegt werden. Dieses Repo und die Daten werden aber weiterhin online bleiben.
+
+
+
+<p align="center">Das war's. Bleibt gesund und passt auf euch auf.<br><img src="https://i.giphy.com/media/DAtJCG1t3im1G/giphy.webp"></p>
 
 ## Worum geht es?
 
