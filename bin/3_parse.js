@@ -399,7 +399,7 @@ function extractData(excel) {
 						// save value
 						value = sheet.cells[row][col];
 						if (value === '-') value = 0;
-						if (data[rowId][metric] && (data[rowId][metric] !== value)) {
+						if (data[rowId][metric] && (data[rowId][metric] > value)) {
 							console.log('data[rowId][metric]', data[rowId][metric]);
 							throw Error('no or conflicting value?');
 						}
