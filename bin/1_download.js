@@ -21,7 +21,7 @@ const url = 'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/
 
 
 function fetch(url) {
-	return new Promise(resolve => {
+	return new Promise((resolve, reject) => {
 		https.get(url, {timeout:10*1000}, res => {
 			let buffers = [];
 			res.on('data', chunk => buffers.push(chunk));
