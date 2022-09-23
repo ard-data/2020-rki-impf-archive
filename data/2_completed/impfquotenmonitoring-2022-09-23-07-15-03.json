@@ -1,0 +1,5837 @@
+{
+	"date": "2022-09-22",
+	"filename": "impfquotenmonitoring-2022-09-23-07-15-03.xlsx",
+	"germany": {
+		"code": "DE",
+		"dosen_astrazeneca_kumulativ": 12796912,
+		"dosen_biontech_kumulativ": 137123916,
+		"dosen_differenz_zum_vortag": 57267,
+		"dosen_janssen_kumulativ": 3751394,
+		"dosen_kumulativ": 185339573,
+		"dosen_moderna_kumulativ": 31521974,
+		"dosen_novavax_kumulativ": 145377,
+		"impf_inzidenz_auffr": 621.4,
+		"impf_inzidenz_dosen": 2228.8,
+		"impf_inzidenz_min1": 779,
+		"impf_inzidenz_voll": 763.1,
+		"impf_quote_auffr": 62.1,
+		"impf_quote_auffr2": 9.3,
+		"impf_quote_auffr2_alter_12bis17": 0.6,
+		"impf_quote_auffr2_alter_18bis59": 3.1,
+		"impf_quote_auffr2_alter_18plus": 11.1,
+		"impf_quote_auffr2_alter_60plus": 26.1,
+		"impf_quote_auffr_alter_12bis17": 31,
+		"impf_quote_auffr_alter_18bis59": 65.2,
+		"impf_quote_auffr_alter_18plus": 72.4,
+		"impf_quote_auffr_alter_60plus": 86,
+		"impf_quote_dosen": 222.9,
+		"impf_quote_min1": 77.9,
+		"impf_quote_min1_alter_12bis17": 74.5,
+		"impf_quote_min1_alter_18bis59": 83.9,
+		"impf_quote_min1_alter_18plus": 86.8,
+		"impf_quote_min1_alter_5bis11": 22.7,
+		"impf_quote_min1_alter_5bis17": 46.5,
+		"impf_quote_min1_alter_60plus": 92.1,
+		"impf_quote_voll": 76.3,
+		"impf_quote_voll_alter_12bis17": 69.5,
+		"impf_quote_voll_alter_18bis59": 82.2,
+		"impf_quote_voll_alter_18plus": 85.3,
+		"impf_quote_voll_alter_5bis11": 20.2,
+		"impf_quote_voll_alter_5bis17": 43.2,
+		"impf_quote_voll_alter_60plus": 91.2,
+		"personen_auffr2_kumulativ": 7719967,
+		"personen_auffr_kumulativ": 51676062,
+		"personen_min1_kumulativ": 64779940,
+		"personen_voll_kumulativ": 63457713,
+		"title": "Deutschland"
+	},
+	"history": [
+		{
+			"date": "2020-12-27",
+			"dosen_kumulativ": 24429,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 24429,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2020-12-28",
+			"dosen_kumulativ": 18007,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 18007,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2020-12-29",
+			"dosen_kumulativ": 50065,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 50065,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2020-12-30",
+			"dosen_kumulativ": 64088,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 64088,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2020-12-31",
+			"dosen_kumulativ": 49939,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 49939,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-01",
+			"dosen_kumulativ": 25672,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 25672,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-02",
+			"dosen_kumulativ": 47804,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 47804,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-03",
+			"dosen_kumulativ": 22573,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 22573,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-04",
+			"dosen_kumulativ": 46362,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 46362,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-05",
+			"dosen_kumulativ": 52484,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 52484,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-06",
+			"dosen_kumulativ": 63097,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 63097,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-07",
+			"dosen_kumulativ": 54908,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 54908,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-08",
+			"dosen_kumulativ": 62875,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 62875,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-09",
+			"dosen_kumulativ": 60600,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 60600,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-10",
+			"dosen_kumulativ": 35845,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 35845,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-11",
+			"dosen_kumulativ": 68776,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 68776,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-12",
+			"dosen_kumulativ": 79322,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 79322,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-13",
+			"dosen_kumulativ": 112451,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 112451,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-14",
+			"dosen_kumulativ": 84132,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 84132,
+			"personen_voll_kumulativ": 0
+		},
+		{
+			"date": "2021-01-15",
+			"dosen_kumulativ": 91865,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 90882,
+			"personen_voll_kumulativ": 983
+		},
+		{
+			"date": "2021-01-16",
+			"dosen_kumulativ": 58100,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 56856,
+			"personen_voll_kumulativ": 1244
+		},
+		{
+			"date": "2021-01-17",
+			"dosen_kumulativ": 47842,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 30757,
+			"personen_voll_kumulativ": 17085
+		},
+		{
+			"date": "2021-01-18",
+			"dosen_kumulativ": 83329,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 67569,
+			"personen_voll_kumulativ": 15760
+		},
+		{
+			"date": "2021-01-19",
+			"dosen_kumulativ": 119889,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 83806,
+			"personen_voll_kumulativ": 36083
+		},
+		{
+			"date": "2021-01-20",
+			"dosen_kumulativ": 132971,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 79002,
+			"personen_voll_kumulativ": 53969
+		},
+		{
+			"date": "2021-01-21",
+			"dosen_kumulativ": 105651,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 64534,
+			"personen_voll_kumulativ": 41117
+		},
+		{
+			"date": "2021-01-22",
+			"dosen_kumulativ": 102416,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 68788,
+			"personen_voll_kumulativ": 33628
+		},
+		{
+			"date": "2021-01-23",
+			"dosen_kumulativ": 87092,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 40772,
+			"personen_voll_kumulativ": 46320
+		},
+		{
+			"date": "2021-01-24",
+			"dosen_kumulativ": 47836,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 25706,
+			"personen_voll_kumulativ": 22130
+		},
+		{
+			"date": "2021-01-25",
+			"dosen_kumulativ": 91078,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 52347,
+			"personen_voll_kumulativ": 38731
+		},
+		{
+			"date": "2021-01-26",
+			"dosen_kumulativ": 98705,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 51357,
+			"personen_voll_kumulativ": 47348
+		},
+		{
+			"date": "2021-01-27",
+			"dosen_kumulativ": 109656,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 51184,
+			"personen_voll_kumulativ": 58472
+		},
+		{
+			"date": "2021-01-28",
+			"dosen_kumulativ": 92764,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 47015,
+			"personen_voll_kumulativ": 45749
+		},
+		{
+			"date": "2021-01-29",
+			"dosen_kumulativ": 107829,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 49886,
+			"personen_voll_kumulativ": 57943
+		},
+		{
+			"date": "2021-01-30",
+			"dosen_kumulativ": 88164,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 34670,
+			"personen_voll_kumulativ": 53494
+		},
+		{
+			"date": "2021-01-31",
+			"dosen_kumulativ": 57243,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 25808,
+			"personen_voll_kumulativ": 31435
+		},
+		{
+			"date": "2021-02-01",
+			"dosen_kumulativ": 120501,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 58397,
+			"personen_voll_kumulativ": 62104
+		},
+		{
+			"date": "2021-02-02",
+			"dosen_kumulativ": 132894,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 65533,
+			"personen_voll_kumulativ": 67361
+		},
+		{
+			"date": "2021-02-03",
+			"dosen_kumulativ": 163129,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 64632,
+			"personen_voll_kumulativ": 98497
+		},
+		{
+			"date": "2021-02-04",
+			"dosen_kumulativ": 134693,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 62158,
+			"personen_voll_kumulativ": 72535
+		},
+		{
+			"date": "2021-02-05",
+			"dosen_kumulativ": 147587,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 69419,
+			"personen_voll_kumulativ": 78168
+		},
+		{
+			"date": "2021-02-06",
+			"dosen_kumulativ": 94199,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 45606,
+			"personen_voll_kumulativ": 48593
+		},
+		{
+			"date": "2021-02-07",
+			"dosen_kumulativ": 53580,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 28305,
+			"personen_voll_kumulativ": 25275
+		},
+		{
+			"date": "2021-02-08",
+			"dosen_kumulativ": 109526,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 53034,
+			"personen_voll_kumulativ": 56492
+		},
+		{
+			"date": "2021-02-09",
+			"dosen_kumulativ": 134776,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 60267,
+			"personen_voll_kumulativ": 74509
+		},
+		{
+			"date": "2021-02-10",
+			"dosen_kumulativ": 155578,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 77799,
+			"personen_voll_kumulativ": 77779
+		},
+		{
+			"date": "2021-02-11",
+			"dosen_kumulativ": 144756,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 75689,
+			"personen_voll_kumulativ": 69067
+		},
+		{
+			"date": "2021-02-12",
+			"dosen_kumulativ": 156321,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 80307,
+			"personen_voll_kumulativ": 76014
+		},
+		{
+			"date": "2021-02-13",
+			"dosen_kumulativ": 107893,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 62063,
+			"personen_voll_kumulativ": 45830
+		},
+		{
+			"date": "2021-02-14",
+			"dosen_kumulativ": 65481,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 39643,
+			"personen_voll_kumulativ": 25838
+		},
+		{
+			"date": "2021-02-15",
+			"dosen_kumulativ": 125963,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 70182,
+			"personen_voll_kumulativ": 55781
+		},
+		{
+			"date": "2021-02-16",
+			"dosen_kumulativ": 134985,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 78292,
+			"personen_voll_kumulativ": 56693
+		},
+		{
+			"date": "2021-02-17",
+			"dosen_kumulativ": 151958,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 95449,
+			"personen_voll_kumulativ": 56509
+		},
+		{
+			"date": "2021-02-18",
+			"dosen_kumulativ": 145278,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 91877,
+			"personen_voll_kumulativ": 53401
+		},
+		{
+			"date": "2021-02-19",
+			"dosen_kumulativ": 158987,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 103164,
+			"personen_voll_kumulativ": 55823
+		},
+		{
+			"date": "2021-02-20",
+			"dosen_kumulativ": 112569,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 76202,
+			"personen_voll_kumulativ": 36367
+		},
+		{
+			"date": "2021-02-21",
+			"dosen_kumulativ": 86061,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 57733,
+			"personen_voll_kumulativ": 28328
+		},
+		{
+			"date": "2021-02-22",
+			"dosen_kumulativ": 156709,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 98337,
+			"personen_voll_kumulativ": 58372
+		},
+		{
+			"date": "2021-02-23",
+			"dosen_kumulativ": 170657,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 110051,
+			"personen_voll_kumulativ": 60606
+		},
+		{
+			"date": "2021-02-24",
+			"dosen_kumulativ": 177241,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 117717,
+			"personen_voll_kumulativ": 59524
+		},
+		{
+			"date": "2021-02-25",
+			"dosen_kumulativ": 190477,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 130992,
+			"personen_voll_kumulativ": 59485
+		},
+		{
+			"date": "2021-02-26",
+			"dosen_kumulativ": 214313,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 146601,
+			"personen_voll_kumulativ": 67712
+		},
+		{
+			"date": "2021-02-27",
+			"dosen_kumulativ": 148396,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 108533,
+			"personen_voll_kumulativ": 39863
+		},
+		{
+			"date": "2021-02-28",
+			"dosen_kumulativ": 103640,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 79436,
+			"personen_voll_kumulativ": 24204
+		},
+		{
+			"date": "2021-03-01",
+			"dosen_kumulativ": 199418,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 149457,
+			"personen_voll_kumulativ": 49961
+		},
+		{
+			"date": "2021-03-02",
+			"dosen_kumulativ": 220256,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 167981,
+			"personen_voll_kumulativ": 52275
+		},
+		{
+			"date": "2021-03-03",
+			"dosen_kumulativ": 248686,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 177797,
+			"personen_voll_kumulativ": 70889
+		},
+		{
+			"date": "2021-03-04",
+			"dosen_kumulativ": 245790,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 182593,
+			"personen_voll_kumulativ": 63197
+		},
+		{
+			"date": "2021-03-05",
+			"dosen_kumulativ": 276076,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 208561,
+			"personen_voll_kumulativ": 67515
+		},
+		{
+			"date": "2021-03-06",
+			"dosen_kumulativ": 203019,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 154264,
+			"personen_voll_kumulativ": 48755
+		},
+		{
+			"date": "2021-03-07",
+			"dosen_kumulativ": 147942,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 114389,
+			"personen_voll_kumulativ": 33553
+		},
+		{
+			"date": "2021-03-08",
+			"dosen_kumulativ": 238656,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 186704,
+			"personen_voll_kumulativ": 51952
+		},
+		{
+			"date": "2021-03-09",
+			"dosen_kumulativ": 253282,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 198275,
+			"personen_voll_kumulativ": 55007
+		},
+		{
+			"date": "2021-03-10",
+			"dosen_kumulativ": 289634,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 222131,
+			"personen_voll_kumulativ": 67503
+		},
+		{
+			"date": "2021-03-11",
+			"dosen_kumulativ": 284947,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 223957,
+			"personen_voll_kumulativ": 60990
+		},
+		{
+			"date": "2021-03-12",
+			"dosen_kumulativ": 328726,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 257559,
+			"personen_voll_kumulativ": 71167
+		},
+		{
+			"date": "2021-03-13",
+			"dosen_kumulativ": 241709,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 191302,
+			"personen_voll_kumulativ": 50407
+		},
+		{
+			"date": "2021-03-14",
+			"dosen_kumulativ": 170548,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 134840,
+			"personen_voll_kumulativ": 35708
+		},
+		{
+			"date": "2021-03-15",
+			"dosen_kumulativ": 249661,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 190319,
+			"personen_voll_kumulativ": 59342
+		},
+		{
+			"date": "2021-03-16",
+			"dosen_kumulativ": 179633,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 111224,
+			"personen_voll_kumulativ": 68409
+		},
+		{
+			"date": "2021-03-17",
+			"dosen_kumulativ": 206129,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 124891,
+			"personen_voll_kumulativ": 81238
+		},
+		{
+			"date": "2021-03-18",
+			"dosen_kumulativ": 194372,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 118485,
+			"personen_voll_kumulativ": 75887
+		},
+		{
+			"date": "2021-03-19",
+			"dosen_kumulativ": 246303,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 161605,
+			"personen_voll_kumulativ": 84698
+		},
+		{
+			"date": "2021-03-20",
+			"dosen_kumulativ": 221478,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 168050,
+			"personen_voll_kumulativ": 53428
+		},
+		{
+			"date": "2021-03-21",
+			"dosen_kumulativ": 165066,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 126724,
+			"personen_voll_kumulativ": 38342
+		},
+		{
+			"date": "2021-03-22",
+			"dosen_kumulativ": 270039,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 193277,
+			"personen_voll_kumulativ": 76762
+		},
+		{
+			"date": "2021-03-23",
+			"dosen_kumulativ": 299344,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 214915,
+			"personen_voll_kumulativ": 84429
+		},
+		{
+			"date": "2021-03-24",
+			"dosen_kumulativ": 339687,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 250103,
+			"personen_voll_kumulativ": 89584
+		},
+		{
+			"date": "2021-03-25",
+			"dosen_kumulativ": 332966,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 251625,
+			"personen_voll_kumulativ": 81341
+		},
+		{
+			"date": "2021-03-26",
+			"dosen_kumulativ": 374810,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 285763,
+			"personen_voll_kumulativ": 89047
+		},
+		{
+			"date": "2021-03-27",
+			"dosen_kumulativ": 282563,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 219984,
+			"personen_voll_kumulativ": 62579
+		},
+		{
+			"date": "2021-03-28",
+			"dosen_kumulativ": 196852,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 143500,
+			"personen_voll_kumulativ": 53352
+		},
+		{
+			"date": "2021-03-29",
+			"dosen_kumulativ": 305693,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 216693,
+			"personen_voll_kumulativ": 89000
+		},
+		{
+			"date": "2021-03-30",
+			"dosen_kumulativ": 326269,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 233775,
+			"personen_voll_kumulativ": 92494
+		},
+		{
+			"date": "2021-03-31",
+			"dosen_kumulativ": 334306,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 232666,
+			"personen_voll_kumulativ": 101640
+		},
+		{
+			"date": "2021-04-01",
+			"dosen_kumulativ": 332435,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 241495,
+			"personen_voll_kumulativ": 90940
+		},
+		{
+			"date": "2021-04-02",
+			"dosen_kumulativ": 226469,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 158469,
+			"personen_voll_kumulativ": 68000
+		},
+		{
+			"date": "2021-04-03",
+			"dosen_kumulativ": 232512,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 167811,
+			"personen_voll_kumulativ": 64701
+		},
+		{
+			"date": "2021-04-04",
+			"dosen_kumulativ": 193524,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 142948,
+			"personen_voll_kumulativ": 50576
+		},
+		{
+			"date": "2021-04-05",
+			"dosen_kumulativ": 248537,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 178087,
+			"personen_voll_kumulativ": 70450
+		},
+		{
+			"date": "2021-04-06",
+			"dosen_kumulativ": 392432,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 297774,
+			"personen_voll_kumulativ": 94658
+		},
+		{
+			"date": "2021-04-07",
+			"dosen_kumulativ": 725727,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 629365,
+			"personen_voll_kumulativ": 96362
+		},
+		{
+			"date": "2021-04-08",
+			"dosen_kumulativ": 718305,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 631259,
+			"personen_voll_kumulativ": 87046
+		},
+		{
+			"date": "2021-04-09",
+			"dosen_kumulativ": 621556,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 532563,
+			"personen_voll_kumulativ": 88993
+		},
+		{
+			"date": "2021-04-10",
+			"dosen_kumulativ": 369340,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 304037,
+			"personen_voll_kumulativ": 65303
+		},
+		{
+			"date": "2021-04-11",
+			"dosen_kumulativ": 261039,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 210585,
+			"personen_voll_kumulativ": 50454
+		},
+		{
+			"date": "2021-04-12",
+			"dosen_kumulativ": 412066,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 335256,
+			"personen_voll_kumulativ": 76810
+		},
+		{
+			"date": "2021-04-13",
+			"dosen_kumulativ": 603725,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 529744,
+			"personen_voll_kumulativ": 73981
+		},
+		{
+			"date": "2021-04-14",
+			"dosen_kumulativ": 808179,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 724290,
+			"personen_voll_kumulativ": 83889
+		},
+		{
+			"date": "2021-04-15",
+			"dosen_kumulativ": 682286,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 611555,
+			"personen_voll_kumulativ": 70731
+		},
+		{
+			"date": "2021-04-16",
+			"dosen_kumulativ": 582540,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 507903,
+			"personen_voll_kumulativ": 74637
+		},
+		{
+			"date": "2021-04-17",
+			"dosen_kumulativ": 359061,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 302379,
+			"personen_voll_kumulativ": 56682
+		},
+		{
+			"date": "2021-04-18",
+			"dosen_kumulativ": 267084,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 227943,
+			"personen_voll_kumulativ": 39141
+		},
+		{
+			"date": "2021-04-19",
+			"dosen_kumulativ": 398285,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 336245,
+			"personen_voll_kumulativ": 62040
+		},
+		{
+			"date": "2021-04-20",
+			"dosen_kumulativ": 589034,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 525428,
+			"personen_voll_kumulativ": 63606
+		},
+		{
+			"date": "2021-04-21",
+			"dosen_kumulativ": 749191,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 674969,
+			"personen_voll_kumulativ": 74222
+		},
+		{
+			"date": "2021-04-22",
+			"dosen_kumulativ": 639314,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 571258,
+			"personen_voll_kumulativ": 68056
+		},
+		{
+			"date": "2021-04-23",
+			"dosen_kumulativ": 541432,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 471677,
+			"personen_voll_kumulativ": 69755
+		},
+		{
+			"date": "2021-04-24",
+			"dosen_kumulativ": 362415,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 303173,
+			"personen_voll_kumulativ": 59242
+		},
+		{
+			"date": "2021-04-25",
+			"dosen_kumulativ": 280041,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 230712,
+			"personen_voll_kumulativ": 49329
+		},
+		{
+			"date": "2021-04-26",
+			"dosen_kumulativ": 436305,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 361579,
+			"personen_voll_kumulativ": 74726
+		},
+		{
+			"date": "2021-04-27",
+			"dosen_kumulativ": 859090,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 764472,
+			"personen_voll_kumulativ": 94618
+		},
+		{
+			"date": "2021-04-28",
+			"dosen_kumulativ": 1162379,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 1029442,
+			"personen_voll_kumulativ": 132937
+		},
+		{
+			"date": "2021-04-29",
+			"dosen_kumulativ": 946102,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 809011,
+			"personen_voll_kumulativ": 137091
+		},
+		{
+			"date": "2021-04-30",
+			"dosen_kumulativ": 766442,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 629093,
+			"personen_voll_kumulativ": 137349
+		},
+		{
+			"date": "2021-05-01",
+			"dosen_kumulativ": 323708,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 250507,
+			"personen_voll_kumulativ": 73201
+		},
+		{
+			"date": "2021-05-02",
+			"dosen_kumulativ": 258734,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 193577,
+			"personen_voll_kumulativ": 65157
+		},
+		{
+			"date": "2021-05-03",
+			"dosen_kumulativ": 454303,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 338117,
+			"personen_voll_kumulativ": 116186
+		},
+		{
+			"date": "2021-05-04",
+			"dosen_kumulativ": 897799,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 734104,
+			"personen_voll_kumulativ": 163695
+		},
+		{
+			"date": "2021-05-05",
+			"dosen_kumulativ": 1210617,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 972256,
+			"personen_voll_kumulativ": 238361
+		},
+		{
+			"date": "2021-05-06",
+			"dosen_kumulativ": 1001331,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 777818,
+			"personen_voll_kumulativ": 223513
+		},
+		{
+			"date": "2021-05-07",
+			"dosen_kumulativ": 857658,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 624105,
+			"personen_voll_kumulativ": 233553
+		},
+		{
+			"date": "2021-05-08",
+			"dosen_kumulativ": 412866,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 261100,
+			"personen_voll_kumulativ": 151766
+		},
+		{
+			"date": "2021-05-09",
+			"dosen_kumulativ": 280596,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 179427,
+			"personen_voll_kumulativ": 101169
+		},
+		{
+			"date": "2021-05-10",
+			"dosen_kumulativ": 603632,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 411467,
+			"personen_voll_kumulativ": 192165
+		},
+		{
+			"date": "2021-05-11",
+			"dosen_kumulativ": 1166943,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 867863,
+			"personen_voll_kumulativ": 299080
+		},
+		{
+			"date": "2021-05-12",
+			"dosen_kumulativ": 1469249,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 1,
+			"personen_erst_kumulativ": 1095874,
+			"personen_voll_kumulativ": 373374
+		},
+		{
+			"date": "2021-05-13",
+			"dosen_kumulativ": 414026,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 259261,
+			"personen_voll_kumulativ": 154765
+		},
+		{
+			"date": "2021-05-14",
+			"dosen_kumulativ": 741118,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 518604,
+			"personen_voll_kumulativ": 222514
+		},
+		{
+			"date": "2021-05-15",
+			"dosen_kumulativ": 393687,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 234164,
+			"personen_voll_kumulativ": 159523
+		},
+		{
+			"date": "2021-05-16",
+			"dosen_kumulativ": 273950,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 158476,
+			"personen_voll_kumulativ": 115474
+		},
+		{
+			"date": "2021-05-17",
+			"dosen_kumulativ": 551722,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 352727,
+			"personen_voll_kumulativ": 198995
+		},
+		{
+			"date": "2021-05-18",
+			"dosen_kumulativ": 931875,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 558654,
+			"personen_voll_kumulativ": 373221
+		},
+		{
+			"date": "2021-05-19",
+			"dosen_kumulativ": 1189815,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 621824,
+			"personen_voll_kumulativ": 567991
+		},
+		{
+			"date": "2021-05-20",
+			"dosen_kumulativ": 984710,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 483277,
+			"personen_voll_kumulativ": 501433
+		},
+		{
+			"date": "2021-05-21",
+			"dosen_kumulativ": 843156,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 418927,
+			"personen_voll_kumulativ": 424229
+		},
+		{
+			"date": "2021-05-22",
+			"dosen_kumulativ": 396770,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 185773,
+			"personen_voll_kumulativ": 210997
+		},
+		{
+			"date": "2021-05-23",
+			"dosen_kumulativ": 271905,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 122732,
+			"personen_voll_kumulativ": 149173
+		},
+		{
+			"date": "2021-05-24",
+			"dosen_kumulativ": 315882,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 141864,
+			"personen_voll_kumulativ": 174018
+		},
+		{
+			"date": "2021-05-25",
+			"dosen_kumulativ": 686021,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 311755,
+			"personen_voll_kumulativ": 374266
+		},
+		{
+			"date": "2021-05-26",
+			"dosen_kumulativ": 1276284,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 595248,
+			"personen_voll_kumulativ": 681036
+		},
+		{
+			"date": "2021-05-27",
+			"dosen_kumulativ": 1056526,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 496682,
+			"personen_voll_kumulativ": 559844
+		},
+		{
+			"date": "2021-05-28",
+			"dosen_kumulativ": 887956,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 438936,
+			"personen_voll_kumulativ": 449020
+		},
+		{
+			"date": "2021-05-29",
+			"dosen_kumulativ": 406014,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 181788,
+			"personen_voll_kumulativ": 224226
+		},
+		{
+			"date": "2021-05-30",
+			"dosen_kumulativ": 273374,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 102504,
+			"personen_voll_kumulativ": 170870
+		},
+		{
+			"date": "2021-05-31",
+			"dosen_kumulativ": 581181,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 0,
+			"personen_erst_kumulativ": 249335,
+			"personen_voll_kumulativ": 331846
+		},
+		{
+			"date": "2021-06-01",
+			"dosen_kumulativ": 1027886,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 250,
+			"personen_erst_kumulativ": 500307,
+			"personen_voll_kumulativ": 527329
+		},
+		{
+			"date": "2021-06-02",
+			"dosen_kumulativ": 1317774,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 184,
+			"personen_erst_kumulativ": 665881,
+			"personen_voll_kumulativ": 651709
+		},
+		{
+			"date": "2021-06-03",
+			"dosen_kumulativ": 641505,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 169,
+			"personen_erst_kumulativ": 285705,
+			"personen_voll_kumulativ": 355631
+		},
+		{
+			"date": "2021-06-04",
+			"dosen_kumulativ": 800086,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 426,
+			"personen_erst_kumulativ": 363659,
+			"personen_voll_kumulativ": 436001
+		},
+		{
+			"date": "2021-06-05",
+			"dosen_kumulativ": 412288,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 166,
+			"personen_erst_kumulativ": 130336,
+			"personen_voll_kumulativ": 281786
+		},
+		{
+			"date": "2021-06-06",
+			"dosen_kumulativ": 272622,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 120,
+			"personen_erst_kumulativ": 63269,
+			"personen_voll_kumulativ": 209233
+		},
+		{
+			"date": "2021-06-07",
+			"dosen_kumulativ": 610373,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 117,
+			"personen_erst_kumulativ": 244997,
+			"personen_voll_kumulativ": 365259
+		},
+		{
+			"date": "2021-06-08",
+			"dosen_kumulativ": 1147693,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 159,
+			"personen_erst_kumulativ": 442174,
+			"personen_voll_kumulativ": 705360
+		},
+		{
+			"date": "2021-06-09",
+			"dosen_kumulativ": 1508590,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 242,
+			"personen_erst_kumulativ": 577746,
+			"personen_voll_kumulativ": 930602
+		},
+		{
+			"date": "2021-06-10",
+			"dosen_kumulativ": 1219355,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 283,
+			"personen_erst_kumulativ": 512193,
+			"personen_voll_kumulativ": 706879
+		},
+		{
+			"date": "2021-06-11",
+			"dosen_kumulativ": 1036733,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 393,
+			"personen_erst_kumulativ": 460080,
+			"personen_voll_kumulativ": 576260
+		},
+		{
+			"date": "2021-06-12",
+			"dosen_kumulativ": 433696,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 202,
+			"personen_erst_kumulativ": 166924,
+			"personen_voll_kumulativ": 266570
+		},
+		{
+			"date": "2021-06-13",
+			"dosen_kumulativ": 261926,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 225,
+			"personen_erst_kumulativ": 67557,
+			"personen_voll_kumulativ": 194144
+		},
+		{
+			"date": "2021-06-14",
+			"dosen_kumulativ": 641657,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 385,
+			"personen_erst_kumulativ": 263863,
+			"personen_voll_kumulativ": 377409
+		},
+		{
+			"date": "2021-06-15",
+			"dosen_kumulativ": 1144049,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 271,
+			"personen_erst_kumulativ": 445170,
+			"personen_voll_kumulativ": 698608
+		},
+		{
+			"date": "2021-06-16",
+			"dosen_kumulativ": 1441525,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 177,
+			"personen_erst_kumulativ": 566707,
+			"personen_voll_kumulativ": 874641
+		},
+		{
+			"date": "2021-06-17",
+			"dosen_kumulativ": 1159210,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 778,
+			"personen_erst_kumulativ": 480489,
+			"personen_voll_kumulativ": 677943
+		},
+		{
+			"date": "2021-06-18",
+			"dosen_kumulativ": 965031,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 190,
+			"personen_erst_kumulativ": 410667,
+			"personen_voll_kumulativ": 554174
+		},
+		{
+			"date": "2021-06-19",
+			"dosen_kumulativ": 425095,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 136,
+			"personen_erst_kumulativ": 147966,
+			"personen_voll_kumulativ": 276993
+		},
+		{
+			"date": "2021-06-20",
+			"dosen_kumulativ": 278580,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 84,
+			"personen_erst_kumulativ": 72989,
+			"personen_voll_kumulativ": 205507
+		},
+		{
+			"date": "2021-06-21",
+			"dosen_kumulativ": 621975,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 129,
+			"personen_erst_kumulativ": 238356,
+			"personen_voll_kumulativ": 383490
+		},
+		{
+			"date": "2021-06-22",
+			"dosen_kumulativ": 1161871,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 139,
+			"personen_erst_kumulativ": 437521,
+			"personen_voll_kumulativ": 724211
+		},
+		{
+			"date": "2021-06-23",
+			"dosen_kumulativ": 1425233,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 125,
+			"personen_erst_kumulativ": 562424,
+			"personen_voll_kumulativ": 862684
+		},
+		{
+			"date": "2021-06-24",
+			"dosen_kumulativ": 1036886,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 113,
+			"personen_erst_kumulativ": 549392,
+			"personen_voll_kumulativ": 487381
+		},
+		{
+			"date": "2021-06-25",
+			"dosen_kumulativ": 898202,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 123,
+			"personen_erst_kumulativ": 415096,
+			"personen_voll_kumulativ": 482983
+		},
+		{
+			"date": "2021-06-26",
+			"dosen_kumulativ": 410442,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 121,
+			"personen_erst_kumulativ": 154711,
+			"personen_voll_kumulativ": 255610
+		},
+		{
+			"date": "2021-06-27",
+			"dosen_kumulativ": 278686,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 69,
+			"personen_erst_kumulativ": 88338,
+			"personen_voll_kumulativ": 190279
+		},
+		{
+			"date": "2021-06-28",
+			"dosen_kumulativ": 618126,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 100,
+			"personen_erst_kumulativ": 260310,
+			"personen_voll_kumulativ": 357716
+		},
+		{
+			"date": "2021-06-29",
+			"dosen_kumulativ": 1004525,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 101,
+			"personen_erst_kumulativ": 443411,
+			"personen_voll_kumulativ": 561013
+		},
+		{
+			"date": "2021-06-30",
+			"dosen_kumulativ": 1128362,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 89,
+			"personen_erst_kumulativ": 521500,
+			"personen_voll_kumulativ": 606773
+		},
+		{
+			"date": "2021-07-01",
+			"dosen_kumulativ": 955064,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 92,
+			"personen_erst_kumulativ": 465871,
+			"personen_voll_kumulativ": 489101
+		},
+		{
+			"date": "2021-07-02",
+			"dosen_kumulativ": 825960,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 128,
+			"personen_erst_kumulativ": 391114,
+			"personen_voll_kumulativ": 434718
+		},
+		{
+			"date": "2021-07-03",
+			"dosen_kumulativ": 379547,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 65,
+			"personen_erst_kumulativ": 165650,
+			"personen_voll_kumulativ": 213832
+		},
+		{
+			"date": "2021-07-04",
+			"dosen_kumulativ": 255561,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 64,
+			"personen_erst_kumulativ": 94219,
+			"personen_voll_kumulativ": 161278
+		},
+		{
+			"date": "2021-07-05",
+			"dosen_kumulativ": 529546,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 105,
+			"personen_erst_kumulativ": 206660,
+			"personen_voll_kumulativ": 322781
+		},
+		{
+			"date": "2021-07-06",
+			"dosen_kumulativ": 844988,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 78,
+			"personen_erst_kumulativ": 309172,
+			"personen_voll_kumulativ": 535738
+		},
+		{
+			"date": "2021-07-07",
+			"dosen_kumulativ": 1069247,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 168,
+			"personen_erst_kumulativ": 360945,
+			"personen_voll_kumulativ": 708134
+		},
+		{
+			"date": "2021-07-08",
+			"dosen_kumulativ": 872362,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 98,
+			"personen_erst_kumulativ": 290290,
+			"personen_voll_kumulativ": 581974
+		},
+		{
+			"date": "2021-07-09",
+			"dosen_kumulativ": 728154,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 168,
+			"personen_erst_kumulativ": 224962,
+			"personen_voll_kumulativ": 503024
+		},
+		{
+			"date": "2021-07-10",
+			"dosen_kumulativ": 337447,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 82,
+			"personen_erst_kumulativ": 105350,
+			"personen_voll_kumulativ": 232015
+		},
+		{
+			"date": "2021-07-11",
+			"dosen_kumulativ": 219249,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 96,
+			"personen_erst_kumulativ": 67505,
+			"personen_voll_kumulativ": 151648
+		},
+		{
+			"date": "2021-07-12",
+			"dosen_kumulativ": 466111,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 102,
+			"personen_erst_kumulativ": 161847,
+			"personen_voll_kumulativ": 304162
+		},
+		{
+			"date": "2021-07-13",
+			"dosen_kumulativ": 827583,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 88,
+			"personen_erst_kumulativ": 210014,
+			"personen_voll_kumulativ": 617481
+		},
+		{
+			"date": "2021-07-14",
+			"dosen_kumulativ": 1058981,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 216,
+			"personen_erst_kumulativ": 240618,
+			"personen_voll_kumulativ": 818147
+		},
+		{
+			"date": "2021-07-15",
+			"dosen_kumulativ": 784876,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 212,
+			"personen_erst_kumulativ": 201098,
+			"personen_voll_kumulativ": 583566
+		},
+		{
+			"date": "2021-07-16",
+			"dosen_kumulativ": 641833,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 122,
+			"personen_erst_kumulativ": 170921,
+			"personen_voll_kumulativ": 470790
+		},
+		{
+			"date": "2021-07-17",
+			"dosen_kumulativ": 279514,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 3380,
+			"personen_erst_kumulativ": 89698,
+			"personen_voll_kumulativ": 186436
+		},
+		{
+			"date": "2021-07-18",
+			"dosen_kumulativ": 179008,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 44,
+			"personen_erst_kumulativ": 68499,
+			"personen_voll_kumulativ": 110465
+		},
+		{
+			"date": "2021-07-19",
+			"dosen_kumulativ": 369353,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 92,
+			"personen_erst_kumulativ": 103178,
+			"personen_voll_kumulativ": 266083
+		},
+		{
+			"date": "2021-07-20",
+			"dosen_kumulativ": 659327,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 121,
+			"personen_erst_kumulativ": 149631,
+			"personen_voll_kumulativ": 509575
+		},
+		{
+			"date": "2021-07-21",
+			"dosen_kumulativ": 812152,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 106,
+			"personen_erst_kumulativ": 179423,
+			"personen_voll_kumulativ": 632623
+		},
+		{
+			"date": "2021-07-22",
+			"dosen_kumulativ": 657498,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 105,
+			"personen_erst_kumulativ": 144380,
+			"personen_voll_kumulativ": 513013
+		},
+		{
+			"date": "2021-07-23",
+			"dosen_kumulativ": 538228,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 141,
+			"personen_erst_kumulativ": 123280,
+			"personen_voll_kumulativ": 414807
+		},
+		{
+			"date": "2021-07-24",
+			"dosen_kumulativ": 209763,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 317,
+			"personen_erst_kumulativ": 63259,
+			"personen_voll_kumulativ": 146187
+		},
+		{
+			"date": "2021-07-25",
+			"dosen_kumulativ": 111708,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 43,
+			"personen_erst_kumulativ": 36787,
+			"personen_voll_kumulativ": 74878
+		},
+		{
+			"date": "2021-07-26",
+			"dosen_kumulativ": 333140,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 88,
+			"personen_erst_kumulativ": 82008,
+			"personen_voll_kumulativ": 251044
+		},
+		{
+			"date": "2021-07-27",
+			"dosen_kumulativ": 599806,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 146,
+			"personen_erst_kumulativ": 118239,
+			"personen_voll_kumulativ": 481421
+		},
+		{
+			"date": "2021-07-28",
+			"dosen_kumulativ": 742186,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 267,
+			"personen_erst_kumulativ": 143945,
+			"personen_voll_kumulativ": 597974
+		},
+		{
+			"date": "2021-07-29",
+			"dosen_kumulativ": 591643,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 252,
+			"personen_erst_kumulativ": 122654,
+			"personen_voll_kumulativ": 468737
+		},
+		{
+			"date": "2021-07-30",
+			"dosen_kumulativ": 474475,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 337,
+			"personen_erst_kumulativ": 107406,
+			"personen_voll_kumulativ": 366732
+		},
+		{
+			"date": "2021-07-31",
+			"dosen_kumulativ": 190835,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 225,
+			"personen_erst_kumulativ": 59527,
+			"personen_voll_kumulativ": 131083
+		},
+		{
+			"date": "2021-08-01",
+			"dosen_kumulativ": 105127,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 196,
+			"personen_erst_kumulativ": 34809,
+			"personen_voll_kumulativ": 70122
+		},
+		{
+			"date": "2021-08-02",
+			"dosen_kumulativ": 290435,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 228,
+			"personen_erst_kumulativ": 70497,
+			"personen_voll_kumulativ": 219710
+		},
+		{
+			"date": "2021-08-03",
+			"dosen_kumulativ": 500786,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 403,
+			"personen_erst_kumulativ": 96699,
+			"personen_voll_kumulativ": 403684
+		},
+		{
+			"date": "2021-08-04",
+			"dosen_kumulativ": 614849,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 400,
+			"personen_erst_kumulativ": 119863,
+			"personen_voll_kumulativ": 494586
+		},
+		{
+			"date": "2021-08-05",
+			"dosen_kumulativ": 533889,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 366,
+			"personen_erst_kumulativ": 104843,
+			"personen_voll_kumulativ": 428680
+		},
+		{
+			"date": "2021-08-06",
+			"dosen_kumulativ": 427930,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 405,
+			"personen_erst_kumulativ": 95139,
+			"personen_voll_kumulativ": 332386
+		},
+		{
+			"date": "2021-08-07",
+			"dosen_kumulativ": 181032,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 460,
+			"personen_erst_kumulativ": 53636,
+			"personen_voll_kumulativ": 126936
+		},
+		{
+			"date": "2021-08-08",
+			"dosen_kumulativ": 109129,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 168,
+			"personen_erst_kumulativ": 26674,
+			"personen_voll_kumulativ": 82287
+		},
+		{
+			"date": "2021-08-09",
+			"dosen_kumulativ": 292751,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 361,
+			"personen_erst_kumulativ": 62189,
+			"personen_voll_kumulativ": 230201
+		},
+		{
+			"date": "2021-08-10",
+			"dosen_kumulativ": 468585,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 369,
+			"personen_erst_kumulativ": 93510,
+			"personen_voll_kumulativ": 374706
+		},
+		{
+			"date": "2021-08-11",
+			"dosen_kumulativ": 577934,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 642,
+			"personen_erst_kumulativ": 129121,
+			"personen_voll_kumulativ": 448171
+		},
+		{
+			"date": "2021-08-12",
+			"dosen_kumulativ": 487353,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 614,
+			"personen_erst_kumulativ": 126688,
+			"personen_voll_kumulativ": 360051
+		},
+		{
+			"date": "2021-08-13",
+			"dosen_kumulativ": 403742,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 634,
+			"personen_erst_kumulativ": 112725,
+			"personen_voll_kumulativ": 290383
+		},
+		{
+			"date": "2021-08-14",
+			"dosen_kumulativ": 195293,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 650,
+			"personen_erst_kumulativ": 67900,
+			"personen_voll_kumulativ": 126743
+		},
+		{
+			"date": "2021-08-15",
+			"dosen_kumulativ": 111978,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 238,
+			"personen_erst_kumulativ": 37399,
+			"personen_voll_kumulativ": 74341
+		},
+		{
+			"date": "2021-08-16",
+			"dosen_kumulativ": 264957,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 730,
+			"personen_erst_kumulativ": 85424,
+			"personen_voll_kumulativ": 178803
+		},
+		{
+			"date": "2021-08-17",
+			"dosen_kumulativ": 396800,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 764,
+			"personen_erst_kumulativ": 124492,
+			"personen_voll_kumulativ": 271544
+		},
+		{
+			"date": "2021-08-18",
+			"dosen_kumulativ": 456206,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 968,
+			"personen_erst_kumulativ": 148077,
+			"personen_voll_kumulativ": 307161
+		},
+		{
+			"date": "2021-08-19",
+			"dosen_kumulativ": 377696,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 1132,
+			"personen_erst_kumulativ": 138706,
+			"personen_voll_kumulativ": 237858
+		},
+		{
+			"date": "2021-08-20",
+			"dosen_kumulativ": 309146,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 1197,
+			"personen_erst_kumulativ": 123645,
+			"personen_voll_kumulativ": 184304
+		},
+		{
+			"date": "2021-08-21",
+			"dosen_kumulativ": 153931,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 664,
+			"personen_erst_kumulativ": 72746,
+			"personen_voll_kumulativ": 80521
+		},
+		{
+			"date": "2021-08-22",
+			"dosen_kumulativ": 90712,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 369,
+			"personen_erst_kumulativ": 39084,
+			"personen_voll_kumulativ": 51259
+		},
+		{
+			"date": "2021-08-23",
+			"dosen_kumulativ": 224043,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 851,
+			"personen_erst_kumulativ": 91582,
+			"personen_voll_kumulativ": 131610
+		},
+		{
+			"date": "2021-08-24",
+			"dosen_kumulativ": 320508,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 1316,
+			"personen_erst_kumulativ": 131914,
+			"personen_voll_kumulativ": 187278
+		},
+		{
+			"date": "2021-08-25",
+			"dosen_kumulativ": 363090,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 1983,
+			"personen_erst_kumulativ": 151502,
+			"personen_voll_kumulativ": 209605
+		},
+		{
+			"date": "2021-08-26",
+			"dosen_kumulativ": 311496,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 1989,
+			"personen_erst_kumulativ": 140737,
+			"personen_voll_kumulativ": 168770
+		},
+		{
+			"date": "2021-08-27",
+			"dosen_kumulativ": 263337,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 2140,
+			"personen_erst_kumulativ": 120864,
+			"personen_voll_kumulativ": 140333
+		},
+		{
+			"date": "2021-08-28",
+			"dosen_kumulativ": 138315,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 1171,
+			"personen_erst_kumulativ": 71008,
+			"personen_voll_kumulativ": 66136
+		},
+		{
+			"date": "2021-08-29",
+			"dosen_kumulativ": 80722,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 803,
+			"personen_erst_kumulativ": 36006,
+			"personen_voll_kumulativ": 43913
+		},
+		{
+			"date": "2021-08-30",
+			"dosen_kumulativ": 187781,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 1331,
+			"personen_erst_kumulativ": 85889,
+			"personen_voll_kumulativ": 100561
+		},
+		{
+			"date": "2021-08-31",
+			"dosen_kumulativ": 273819,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 2279,
+			"personen_erst_kumulativ": 127077,
+			"personen_voll_kumulativ": 144463
+		},
+		{
+			"date": "2021-09-01",
+			"dosen_kumulativ": 326159,
+			"personen_auffr2_kumulativ": 10,
+			"personen_auffr_kumulativ": 23541,
+			"personen_erst_kumulativ": 136160,
+			"personen_voll_kumulativ": 166448
+		},
+		{
+			"date": "2021-09-02",
+			"dosen_kumulativ": 277471,
+			"personen_auffr2_kumulativ": 12,
+			"personen_auffr_kumulativ": 18835,
+			"personen_erst_kumulativ": 123126,
+			"personen_voll_kumulativ": 135498
+		},
+		{
+			"date": "2021-09-03",
+			"dosen_kumulativ": 223411,
+			"personen_auffr2_kumulativ": 6,
+			"personen_auffr_kumulativ": 15844,
+			"personen_erst_kumulativ": 97733,
+			"personen_voll_kumulativ": 109828
+		},
+		{
+			"date": "2021-09-04",
+			"dosen_kumulativ": 106424,
+			"personen_auffr2_kumulativ": 5,
+			"personen_auffr_kumulativ": 4704,
+			"personen_erst_kumulativ": 47865,
+			"personen_voll_kumulativ": 53850
+		},
+		{
+			"date": "2021-09-05",
+			"dosen_kumulativ": 59811,
+			"personen_auffr2_kumulativ": 2,
+			"personen_auffr_kumulativ": 3087,
+			"personen_erst_kumulativ": 26431,
+			"personen_voll_kumulativ": 30291
+		},
+		{
+			"date": "2021-09-06",
+			"dosen_kumulativ": 153176,
+			"personen_auffr2_kumulativ": 15,
+			"personen_auffr_kumulativ": 15837,
+			"personen_erst_kumulativ": 64711,
+			"personen_voll_kumulativ": 72613
+		},
+		{
+			"date": "2021-09-07",
+			"dosen_kumulativ": 246848,
+			"personen_auffr2_kumulativ": 7,
+			"personen_auffr_kumulativ": 25647,
+			"personen_erst_kumulativ": 102555,
+			"personen_voll_kumulativ": 118639
+		},
+		{
+			"date": "2021-09-08",
+			"dosen_kumulativ": 284379,
+			"personen_auffr2_kumulativ": 6,
+			"personen_auffr_kumulativ": 31765,
+			"personen_erst_kumulativ": 113882,
+			"personen_voll_kumulativ": 138726
+		},
+		{
+			"date": "2021-09-09",
+			"dosen_kumulativ": 269640,
+			"personen_auffr2_kumulativ": 7,
+			"personen_auffr_kumulativ": 28028,
+			"personen_erst_kumulativ": 111812,
+			"personen_voll_kumulativ": 129793
+		},
+		{
+			"date": "2021-09-10",
+			"dosen_kumulativ": 218976,
+			"personen_auffr2_kumulativ": 6,
+			"personen_auffr_kumulativ": 21935,
+			"personen_erst_kumulativ": 85255,
+			"personen_voll_kumulativ": 111780
+		},
+		{
+			"date": "2021-09-11",
+			"dosen_kumulativ": 108541,
+			"personen_auffr2_kumulativ": 3,
+			"personen_auffr_kumulativ": 6213,
+			"personen_erst_kumulativ": 43269,
+			"personen_voll_kumulativ": 59056
+		},
+		{
+			"date": "2021-09-12",
+			"dosen_kumulativ": 61587,
+			"personen_auffr2_kumulativ": 3,
+			"personen_auffr_kumulativ": 4448,
+			"personen_erst_kumulativ": 22775,
+			"personen_voll_kumulativ": 34361
+		},
+		{
+			"date": "2021-09-13",
+			"dosen_kumulativ": 160643,
+			"personen_auffr2_kumulativ": 6,
+			"personen_auffr_kumulativ": 20437,
+			"personen_erst_kumulativ": 61801,
+			"personen_voll_kumulativ": 78399
+		},
+		{
+			"date": "2021-09-14",
+			"dosen_kumulativ": 265202,
+			"personen_auffr2_kumulativ": 9,
+			"personen_auffr_kumulativ": 37093,
+			"personen_erst_kumulativ": 104190,
+			"personen_voll_kumulativ": 123910
+		},
+		{
+			"date": "2021-09-15",
+			"dosen_kumulativ": 311918,
+			"personen_auffr2_kumulativ": 18,
+			"personen_auffr_kumulativ": 49337,
+			"personen_erst_kumulativ": 113805,
+			"personen_voll_kumulativ": 148758
+		},
+		{
+			"date": "2021-09-16",
+			"dosen_kumulativ": 290782,
+			"personen_auffr2_kumulativ": 17,
+			"personen_auffr_kumulativ": 40275,
+			"personen_erst_kumulativ": 114047,
+			"personen_voll_kumulativ": 136443
+		},
+		{
+			"date": "2021-09-17",
+			"dosen_kumulativ": 236459,
+			"personen_auffr2_kumulativ": 24,
+			"personen_auffr_kumulativ": 30751,
+			"personen_erst_kumulativ": 88498,
+			"personen_voll_kumulativ": 117186
+		},
+		{
+			"date": "2021-09-18",
+			"dosen_kumulativ": 111312,
+			"personen_auffr2_kumulativ": 5,
+			"personen_auffr_kumulativ": 7749,
+			"personen_erst_kumulativ": 41378,
+			"personen_voll_kumulativ": 62180
+		},
+		{
+			"date": "2021-09-19",
+			"dosen_kumulativ": 62992,
+			"personen_auffr2_kumulativ": 6,
+			"personen_auffr_kumulativ": 5033,
+			"personen_erst_kumulativ": 21710,
+			"personen_voll_kumulativ": 36243
+		},
+		{
+			"date": "2021-09-20",
+			"dosen_kumulativ": 158397,
+			"personen_auffr2_kumulativ": 17,
+			"personen_auffr_kumulativ": 25335,
+			"personen_erst_kumulativ": 52667,
+			"personen_voll_kumulativ": 80378
+		},
+		{
+			"date": "2021-09-21",
+			"dosen_kumulativ": 263052,
+			"personen_auffr2_kumulativ": 12,
+			"personen_auffr_kumulativ": 47711,
+			"personen_erst_kumulativ": 89607,
+			"personen_voll_kumulativ": 125722
+		},
+		{
+			"date": "2021-09-22",
+			"dosen_kumulativ": 300989,
+			"personen_auffr2_kumulativ": 36,
+			"personen_auffr_kumulativ": 61651,
+			"personen_erst_kumulativ": 96078,
+			"personen_voll_kumulativ": 143224
+		},
+		{
+			"date": "2021-09-23",
+			"dosen_kumulativ": 284899,
+			"personen_auffr2_kumulativ": 32,
+			"personen_auffr_kumulativ": 50485,
+			"personen_erst_kumulativ": 99333,
+			"personen_voll_kumulativ": 135049
+		},
+		{
+			"date": "2021-09-24",
+			"dosen_kumulativ": 222328,
+			"personen_auffr2_kumulativ": 28,
+			"personen_auffr_kumulativ": 34891,
+			"personen_erst_kumulativ": 73634,
+			"personen_voll_kumulativ": 113775
+		},
+		{
+			"date": "2021-09-25",
+			"dosen_kumulativ": 99626,
+			"personen_auffr2_kumulativ": 21,
+			"personen_auffr_kumulativ": 9744,
+			"personen_erst_kumulativ": 32404,
+			"personen_voll_kumulativ": 57457
+		},
+		{
+			"date": "2021-09-26",
+			"dosen_kumulativ": 53432,
+			"personen_auffr2_kumulativ": 7,
+			"personen_auffr_kumulativ": 5165,
+			"personen_erst_kumulativ": 16865,
+			"personen_voll_kumulativ": 31395
+		},
+		{
+			"date": "2021-09-27",
+			"dosen_kumulativ": 148732,
+			"personen_auffr2_kumulativ": 32,
+			"personen_auffr_kumulativ": 28068,
+			"personen_erst_kumulativ": 47159,
+			"personen_voll_kumulativ": 73473
+		},
+		{
+			"date": "2021-09-28",
+			"dosen_kumulativ": 251693,
+			"personen_auffr2_kumulativ": 19,
+			"personen_auffr_kumulativ": 52285,
+			"personen_erst_kumulativ": 81977,
+			"personen_voll_kumulativ": 117412
+		},
+		{
+			"date": "2021-09-29",
+			"dosen_kumulativ": 268283,
+			"personen_auffr2_kumulativ": 35,
+			"personen_auffr_kumulativ": 60753,
+			"personen_erst_kumulativ": 82427,
+			"personen_voll_kumulativ": 125068
+		},
+		{
+			"date": "2021-09-30",
+			"dosen_kumulativ": 233054,
+			"personen_auffr2_kumulativ": 34,
+			"personen_auffr_kumulativ": 44401,
+			"personen_erst_kumulativ": 75191,
+			"personen_voll_kumulativ": 113428
+		},
+		{
+			"date": "2021-10-01",
+			"dosen_kumulativ": 127009,
+			"personen_auffr2_kumulativ": 4,
+			"personen_auffr_kumulativ": 25972,
+			"personen_erst_kumulativ": 43958,
+			"personen_voll_kumulativ": 57075
+		},
+		{
+			"date": "2021-10-02",
+			"dosen_kumulativ": 29137,
+			"personen_auffr2_kumulativ": 2,
+			"personen_auffr_kumulativ": 3369,
+			"personen_erst_kumulativ": 12197,
+			"personen_voll_kumulativ": 13569
+		},
+		{
+			"date": "2021-10-03",
+			"dosen_kumulativ": 8485,
+			"personen_auffr2_kumulativ": 1,
+			"personen_auffr_kumulativ": 1374,
+			"personen_erst_kumulativ": 3252,
+			"personen_voll_kumulativ": 3858
+		},
+		{
+			"date": "2021-10-04",
+			"dosen_kumulativ": 96411,
+			"personen_auffr2_kumulativ": 82,
+			"personen_auffr_kumulativ": 20675,
+			"personen_erst_kumulativ": 31737,
+			"personen_voll_kumulativ": 43917
+		},
+		{
+			"date": "2021-10-05",
+			"dosen_kumulativ": 220262,
+			"personen_auffr2_kumulativ": 3,
+			"personen_auffr_kumulativ": 53524,
+			"personen_erst_kumulativ": 64843,
+			"personen_voll_kumulativ": 101892
+		},
+		{
+			"date": "2021-10-06",
+			"dosen_kumulativ": 233669,
+			"personen_auffr2_kumulativ": 52,
+			"personen_auffr_kumulativ": 63510,
+			"personen_erst_kumulativ": 65617,
+			"personen_voll_kumulativ": 104490
+		},
+		{
+			"date": "2021-10-07",
+			"dosen_kumulativ": 237455,
+			"personen_auffr2_kumulativ": 6,
+			"personen_auffr_kumulativ": 56038,
+			"personen_erst_kumulativ": 71269,
+			"personen_voll_kumulativ": 110142
+		},
+		{
+			"date": "2021-10-08",
+			"dosen_kumulativ": 158031,
+			"personen_auffr2_kumulativ": 3,
+			"personen_auffr_kumulativ": 39763,
+			"personen_erst_kumulativ": 48476,
+			"personen_voll_kumulativ": 69789
+		},
+		{
+			"date": "2021-10-09",
+			"dosen_kumulativ": 37872,
+			"personen_auffr2_kumulativ": 54,
+			"personen_auffr_kumulativ": 4721,
+			"personen_erst_kumulativ": 15257,
+			"personen_voll_kumulativ": 17840
+		},
+		{
+			"date": "2021-10-10",
+			"dosen_kumulativ": 11847,
+			"personen_auffr2_kumulativ": 0,
+			"personen_auffr_kumulativ": 1331,
+			"personen_erst_kumulativ": 5071,
+			"personen_voll_kumulativ": 5445
+		},
+		{
+			"date": "2021-10-11",
+			"dosen_kumulativ": 98524,
+			"personen_auffr2_kumulativ": 20,
+			"personen_auffr_kumulativ": 25096,
+			"personen_erst_kumulativ": 30849,
+			"personen_voll_kumulativ": 42559
+		},
+		{
+			"date": "2021-10-12",
+			"dosen_kumulativ": 214488,
+			"personen_auffr2_kumulativ": 6,
+			"personen_auffr_kumulativ": 62692,
+			"personen_erst_kumulativ": 58557,
+			"personen_voll_kumulativ": 93233
+		},
+		{
+			"date": "2021-10-13",
+			"dosen_kumulativ": 231890,
+			"personen_auffr2_kumulativ": 26,
+			"personen_auffr_kumulativ": 72956,
+			"personen_erst_kumulativ": 61722,
+			"personen_voll_kumulativ": 97186
+		},
+		{
+			"date": "2021-10-14",
+			"dosen_kumulativ": 230951,
+			"personen_auffr2_kumulativ": 22,
+			"personen_auffr_kumulativ": 66654,
+			"personen_erst_kumulativ": 63490,
+			"personen_voll_kumulativ": 100785
+		},
+		{
+			"date": "2021-10-15",
+			"dosen_kumulativ": 151404,
+			"personen_auffr2_kumulativ": 6,
+			"personen_auffr_kumulativ": 43259,
+			"personen_erst_kumulativ": 43069,
+			"personen_voll_kumulativ": 65070
+		},
+		{
+			"date": "2021-10-16",
+			"dosen_kumulativ": 39352,
+			"personen_auffr2_kumulativ": 6,
+			"personen_auffr_kumulativ": 5848,
+			"personen_erst_kumulativ": 15114,
+			"personen_voll_kumulativ": 18384
+		},
+		{
+			"date": "2021-10-17",
+			"dosen_kumulativ": 11877,
+			"personen_auffr2_kumulativ": 2,
+			"personen_auffr_kumulativ": 2070,
+			"personen_erst_kumulativ": 4442,
+			"personen_voll_kumulativ": 5363
+		},
+		{
+			"date": "2021-10-18",
+			"dosen_kumulativ": 99016,
+			"personen_auffr2_kumulativ": 11,
+			"personen_auffr_kumulativ": 30587,
+			"personen_erst_kumulativ": 28034,
+			"personen_voll_kumulativ": 40384
+		},
+		{
+			"date": "2021-10-19",
+			"dosen_kumulativ": 212494,
+			"personen_auffr2_kumulativ": 6,
+			"personen_auffr_kumulativ": 70835,
+			"personen_erst_kumulativ": 53356,
+			"personen_voll_kumulativ": 88297
+		},
+		{
+			"date": "2021-10-20",
+			"dosen_kumulativ": 229731,
+			"personen_auffr2_kumulativ": 15,
+			"personen_auffr_kumulativ": 85740,
+			"personen_erst_kumulativ": 54358,
+			"personen_voll_kumulativ": 89618
+		},
+		{
+			"date": "2021-10-21",
+			"dosen_kumulativ": 224236,
+			"personen_auffr2_kumulativ": 3,
+			"personen_auffr_kumulativ": 79073,
+			"personen_erst_kumulativ": 55743,
+			"personen_voll_kumulativ": 89417
+		},
+		{
+			"date": "2021-10-22",
+			"dosen_kumulativ": 151244,
+			"personen_auffr2_kumulativ": 8,
+			"personen_auffr_kumulativ": 54361,
+			"personen_erst_kumulativ": 38643,
+			"personen_voll_kumulativ": 58232
+		},
+		{
+			"date": "2021-10-23",
+			"dosen_kumulativ": 39747,
+			"personen_auffr2_kumulativ": 4,
+			"personen_auffr_kumulativ": 10161,
+			"personen_erst_kumulativ": 13940,
+			"personen_voll_kumulativ": 15642
+		},
+		{
+			"date": "2021-10-24",
+			"dosen_kumulativ": 11971,
+			"personen_auffr2_kumulativ": 2,
+			"personen_auffr_kumulativ": 2971,
+			"personen_erst_kumulativ": 4033,
+			"personen_voll_kumulativ": 4965
+		},
+		{
+			"date": "2021-10-25",
+			"dosen_kumulativ": 108760,
+			"personen_auffr2_kumulativ": 11,
+			"personen_auffr_kumulativ": 42952,
+			"personen_erst_kumulativ": 25724,
+			"personen_voll_kumulativ": 40073
+		},
+		{
+			"date": "2021-10-26",
+			"dosen_kumulativ": 252434,
+			"personen_auffr2_kumulativ": 7,
+			"personen_auffr_kumulativ": 108483,
+			"personen_erst_kumulativ": 52135,
+			"personen_voll_kumulativ": 91809
+		},
+		{
+			"date": "2021-10-27",
+			"dosen_kumulativ": 275132,
+			"personen_auffr2_kumulativ": 14,
+			"personen_auffr_kumulativ": 129515,
+			"personen_erst_kumulativ": 54432,
+			"personen_voll_kumulativ": 91171
+		},
+		{
+			"date": "2021-10-28",
+			"dosen_kumulativ": 275348,
+			"personen_auffr2_kumulativ": 12,
+			"personen_auffr_kumulativ": 127123,
+			"personen_erst_kumulativ": 55645,
+			"personen_voll_kumulativ": 92568
+		},
+		{
+			"date": "2021-10-29",
+			"dosen_kumulativ": 186622,
+			"personen_auffr2_kumulativ": 18,
+			"personen_auffr_kumulativ": 88192,
+			"personen_erst_kumulativ": 39861,
+			"personen_voll_kumulativ": 58551
+		},
+		{
+			"date": "2021-10-30",
+			"dosen_kumulativ": 47294,
+			"personen_auffr2_kumulativ": 5,
+			"personen_auffr_kumulativ": 17469,
+			"personen_erst_kumulativ": 14538,
+			"personen_voll_kumulativ": 15282
+		},
+		{
+			"date": "2021-10-31",
+			"dosen_kumulativ": 12916,
+			"personen_auffr2_kumulativ": 3,
+			"personen_auffr_kumulativ": 4886,
+			"personen_erst_kumulativ": 3980,
+			"personen_voll_kumulativ": 4047
+		},
+		{
+			"date": "2021-11-01",
+			"dosen_kumulativ": 61261,
+			"personen_auffr2_kumulativ": 4,
+			"personen_auffr_kumulativ": 32747,
+			"personen_erst_kumulativ": 12046,
+			"personen_voll_kumulativ": 16464
+		},
+		{
+			"date": "2021-11-02",
+			"dosen_kumulativ": 250705,
+			"personen_auffr2_kumulativ": 7,
+			"personen_auffr_kumulativ": 134383,
+			"personen_erst_kumulativ": 43320,
+			"personen_voll_kumulativ": 72995
+		},
+		{
+			"date": "2021-11-03",
+			"dosen_kumulativ": 325224,
+			"personen_auffr2_kumulativ": 9,
+			"personen_auffr_kumulativ": 190507,
+			"personen_erst_kumulativ": 54029,
+			"personen_voll_kumulativ": 80679
+		},
+		{
+			"date": "2021-11-04",
+			"dosen_kumulativ": 331816,
+			"personen_auffr2_kumulativ": 12,
+			"personen_auffr_kumulativ": 188560,
+			"personen_erst_kumulativ": 58424,
+			"personen_voll_kumulativ": 84820
+		},
+		{
+			"date": "2021-11-05",
+			"dosen_kumulativ": 243909,
+			"personen_auffr2_kumulativ": 19,
+			"personen_auffr_kumulativ": 146830,
+			"personen_erst_kumulativ": 43230,
+			"personen_voll_kumulativ": 53830
+		},
+		{
+			"date": "2021-11-06",
+			"dosen_kumulativ": 70425,
+			"personen_auffr2_kumulativ": 6,
+			"personen_auffr_kumulativ": 35380,
+			"personen_erst_kumulativ": 18986,
+			"personen_voll_kumulativ": 16053
+		},
+		{
+			"date": "2021-11-07",
+			"dosen_kumulativ": 23614,
+			"personen_auffr2_kumulativ": 5,
+			"personen_auffr_kumulativ": 12227,
+			"personen_erst_kumulativ": 5986,
+			"personen_voll_kumulativ": 5396
+		},
+		{
+			"date": "2021-11-08",
+			"dosen_kumulativ": 179551,
+			"personen_auffr2_kumulativ": 15,
+			"personen_auffr_kumulativ": 112366,
+			"personen_erst_kumulativ": 31157,
+			"personen_voll_kumulativ": 36013
+		},
+		{
+			"date": "2021-11-09",
+			"dosen_kumulativ": 393981,
+			"personen_auffr2_kumulativ": 15,
+			"personen_auffr_kumulativ": 252605,
+			"personen_erst_kumulativ": 61556,
+			"personen_voll_kumulativ": 79805
+		},
+		{
+			"date": "2021-11-10",
+			"dosen_kumulativ": 450079,
+			"personen_auffr2_kumulativ": 25,
+			"personen_auffr_kumulativ": 305014,
+			"personen_erst_kumulativ": 65747,
+			"personen_voll_kumulativ": 79293
+		},
+		{
+			"date": "2021-11-11",
+			"dosen_kumulativ": 452425,
+			"personen_auffr2_kumulativ": 24,
+			"personen_auffr_kumulativ": 300734,
+			"personen_erst_kumulativ": 70076,
+			"personen_voll_kumulativ": 81591
+		},
+		{
+			"date": "2021-11-12",
+			"dosen_kumulativ": 352915,
+			"personen_auffr2_kumulativ": 24,
+			"personen_auffr_kumulativ": 244928,
+			"personen_erst_kumulativ": 54759,
+			"personen_voll_kumulativ": 53204
+		},
+		{
+			"date": "2021-11-13",
+			"dosen_kumulativ": 105834,
+			"personen_auffr2_kumulativ": 12,
+			"personen_auffr_kumulativ": 62433,
+			"personen_erst_kumulativ": 26091,
+			"personen_voll_kumulativ": 17298
+		},
+		{
+			"date": "2021-11-14",
+			"dosen_kumulativ": 33223,
+			"personen_auffr2_kumulativ": 9,
+			"personen_auffr_kumulativ": 20563,
+			"personen_erst_kumulativ": 7969,
+			"personen_voll_kumulativ": 4682
+		},
+		{
+			"date": "2021-11-15",
+			"dosen_kumulativ": 253012,
+			"personen_auffr2_kumulativ": 23,
+			"personen_auffr_kumulativ": 178093,
+			"personen_erst_kumulativ": 39876,
+			"personen_voll_kumulativ": 35020
+		},
+		{
+			"date": "2021-11-16",
+			"dosen_kumulativ": 535055,
+			"personen_auffr2_kumulativ": 26,
+			"personen_auffr_kumulativ": 389091,
+			"personen_erst_kumulativ": 72600,
+			"personen_voll_kumulativ": 73338
+		},
+		{
+			"date": "2021-11-17",
+			"dosen_kumulativ": 599396,
+			"personen_auffr2_kumulativ": 22,
+			"personen_auffr_kumulativ": 453116,
+			"personen_erst_kumulativ": 75175,
+			"personen_voll_kumulativ": 71083
+		},
+		{
+			"date": "2021-11-18",
+			"dosen_kumulativ": 638301,
+			"personen_auffr2_kumulativ": 30,
+			"personen_auffr_kumulativ": 478118,
+			"personen_erst_kumulativ": 82637,
+			"personen_voll_kumulativ": 77516
+		},
+		{
+			"date": "2021-11-19",
+			"dosen_kumulativ": 535879,
+			"personen_auffr2_kumulativ": 34,
+			"personen_auffr_kumulativ": 408233,
+			"personen_erst_kumulativ": 72715,
+			"personen_voll_kumulativ": 54897
+		},
+		{
+			"date": "2021-11-20",
+			"dosen_kumulativ": 241459,
+			"personen_auffr2_kumulativ": 22,
+			"personen_auffr_kumulativ": 171695,
+			"personen_erst_kumulativ": 48919,
+			"personen_voll_kumulativ": 20823
+		},
+		{
+			"date": "2021-11-21",
+			"dosen_kumulativ": 79785,
+			"personen_auffr2_kumulativ": 11,
+			"personen_auffr_kumulativ": 58750,
+			"personen_erst_kumulativ": 14541,
+			"personen_voll_kumulativ": 6483
+		},
+		{
+			"date": "2021-11-22",
+			"dosen_kumulativ": 427936,
+			"personen_auffr2_kumulativ": 26,
+			"personen_auffr_kumulativ": 324465,
+			"personen_erst_kumulativ": 68297,
+			"personen_voll_kumulativ": 35148
+		},
+		{
+			"date": "2021-11-23",
+			"dosen_kumulativ": 857778,
+			"personen_auffr2_kumulativ": 32,
+			"personen_auffr_kumulativ": 656758,
+			"personen_erst_kumulativ": 125757,
+			"personen_voll_kumulativ": 75231
+		},
+		{
+			"date": "2021-11-24",
+			"dosen_kumulativ": 1019604,
+			"personen_auffr2_kumulativ": 35,
+			"personen_auffr_kumulativ": 792159,
+			"personen_erst_kumulativ": 144209,
+			"personen_voll_kumulativ": 83201
+		},
+		{
+			"date": "2021-11-25",
+			"dosen_kumulativ": 964259,
+			"personen_auffr2_kumulativ": 30,
+			"personen_auffr_kumulativ": 734626,
+			"personen_erst_kumulativ": 145474,
+			"personen_voll_kumulativ": 84129
+		},
+		{
+			"date": "2021-11-26",
+			"dosen_kumulativ": 840385,
+			"personen_auffr2_kumulativ": 50,
+			"personen_auffr_kumulativ": 661067,
+			"personen_erst_kumulativ": 116978,
+			"personen_voll_kumulativ": 62290
+		},
+		{
+			"date": "2021-11-27",
+			"dosen_kumulativ": 704877,
+			"personen_auffr2_kumulativ": 28,
+			"personen_auffr_kumulativ": 557666,
+			"personen_erst_kumulativ": 110235,
+			"personen_voll_kumulativ": 36948
+		},
+		{
+			"date": "2021-11-28",
+			"dosen_kumulativ": 172224,
+			"personen_auffr2_kumulativ": 15,
+			"personen_auffr_kumulativ": 136195,
+			"personen_erst_kumulativ": 26632,
+			"personen_voll_kumulativ": 9382
+		},
+		{
+			"date": "2021-11-29",
+			"dosen_kumulativ": 590401,
+			"personen_auffr2_kumulativ": 32,
+			"personen_auffr_kumulativ": 464817,
+			"personen_erst_kumulativ": 83538,
+			"personen_voll_kumulativ": 42014
+		},
+		{
+			"date": "2021-11-30",
+			"dosen_kumulativ": 1049139,
+			"personen_auffr2_kumulativ": 38,
+			"personen_auffr_kumulativ": 846927,
+			"personen_erst_kumulativ": 122851,
+			"personen_voll_kumulativ": 79323
+		},
+		{
+			"date": "2021-12-01",
+			"dosen_kumulativ": 1275448,
+			"personen_auffr2_kumulativ": 57,
+			"personen_auffr_kumulativ": 1064247,
+			"personen_erst_kumulativ": 125765,
+			"personen_voll_kumulativ": 85379
+		},
+		{
+			"date": "2021-12-02",
+			"dosen_kumulativ": 1189176,
+			"personen_auffr2_kumulativ": 82,
+			"personen_auffr_kumulativ": 983041,
+			"personen_erst_kumulativ": 117137,
+			"personen_voll_kumulativ": 88916
+		},
+		{
+			"date": "2021-12-03",
+			"dosen_kumulativ": 1077273,
+			"personen_auffr2_kumulativ": 60,
+			"personen_auffr_kumulativ": 911739,
+			"personen_erst_kumulativ": 97773,
+			"personen_voll_kumulativ": 67701
+		},
+		{
+			"date": "2021-12-04",
+			"dosen_kumulativ": 1018373,
+			"personen_auffr2_kumulativ": 49,
+			"personen_auffr_kumulativ": 887670,
+			"personen_erst_kumulativ": 87518,
+			"personen_voll_kumulativ": 43136
+		},
+		{
+			"date": "2021-12-05",
+			"dosen_kumulativ": 273542,
+			"personen_auffr2_kumulativ": 11,
+			"personen_auffr_kumulativ": 239820,
+			"personen_erst_kumulativ": 21363,
+			"personen_voll_kumulativ": 12348
+		},
+		{
+			"date": "2021-12-06",
+			"dosen_kumulativ": 752296,
+			"personen_auffr2_kumulativ": 47,
+			"personen_auffr_kumulativ": 636376,
+			"personen_erst_kumulativ": 68198,
+			"personen_voll_kumulativ": 47675
+		},
+		{
+			"date": "2021-12-07",
+			"dosen_kumulativ": 1203881,
+			"personen_auffr2_kumulativ": 51,
+			"personen_auffr_kumulativ": 1025794,
+			"personen_erst_kumulativ": 94570,
+			"personen_voll_kumulativ": 83466
+		},
+		{
+			"date": "2021-12-08",
+			"dosen_kumulativ": 1424738,
+			"personen_auffr2_kumulativ": 56,
+			"personen_auffr_kumulativ": 1232646,
+			"personen_erst_kumulativ": 101440,
+			"personen_voll_kumulativ": 90596
+		},
+		{
+			"date": "2021-12-09",
+			"dosen_kumulativ": 1322907,
+			"personen_auffr2_kumulativ": 74,
+			"personen_auffr_kumulativ": 1134289,
+			"personen_erst_kumulativ": 93914,
+			"personen_voll_kumulativ": 94630
+		},
+		{
+			"date": "2021-12-10",
+			"dosen_kumulativ": 1223576,
+			"personen_auffr2_kumulativ": 73,
+			"personen_auffr_kumulativ": 1064801,
+			"personen_erst_kumulativ": 78730,
+			"personen_voll_kumulativ": 79972
+		},
+		{
+			"date": "2021-12-11",
+			"dosen_kumulativ": 1217571,
+			"personen_auffr2_kumulativ": 49,
+			"personen_auffr_kumulativ": 1088535,
+			"personen_erst_kumulativ": 73121,
+			"personen_voll_kumulativ": 55866
+		},
+		{
+			"date": "2021-12-12",
+			"dosen_kumulativ": 317441,
+			"personen_auffr2_kumulativ": 15,
+			"personen_auffr_kumulativ": 282835,
+			"personen_erst_kumulativ": 17837,
+			"personen_voll_kumulativ": 16754
+		},
+		{
+			"date": "2021-12-13",
+			"dosen_kumulativ": 807499,
+			"personen_auffr2_kumulativ": 30,
+			"personen_auffr_kumulativ": 693323,
+			"personen_erst_kumulativ": 54274,
+			"personen_voll_kumulativ": 59872
+		},
+		{
+			"date": "2021-12-14",
+			"dosen_kumulativ": 1351465,
+			"personen_auffr2_kumulativ": 69,
+			"personen_auffr_kumulativ": 1152659,
+			"personen_erst_kumulativ": 87820,
+			"personen_voll_kumulativ": 110917
+		},
+		{
+			"date": "2021-12-15",
+			"dosen_kumulativ": 1561541,
+			"personen_auffr2_kumulativ": 301,
+			"personen_auffr_kumulativ": 1332513,
+			"personen_erst_kumulativ": 104583,
+			"personen_voll_kumulativ": 124144
+		},
+		{
+			"date": "2021-12-16",
+			"dosen_kumulativ": 1462459,
+			"personen_auffr2_kumulativ": 256,
+			"personen_auffr_kumulativ": 1221365,
+			"personen_erst_kumulativ": 104680,
+			"personen_voll_kumulativ": 136158
+		},
+		{
+			"date": "2021-12-17",
+			"dosen_kumulativ": 1278640,
+			"personen_auffr2_kumulativ": 92,
+			"personen_auffr_kumulativ": 1058871,
+			"personen_erst_kumulativ": 105732,
+			"personen_voll_kumulativ": 113945
+		},
+		{
+			"date": "2021-12-18",
+			"dosen_kumulativ": 1137341,
+			"personen_auffr2_kumulativ": 54,
+			"personen_auffr_kumulativ": 951825,
+			"personen_erst_kumulativ": 107679,
+			"personen_voll_kumulativ": 77783
+		},
+		{
+			"date": "2021-12-19",
+			"dosen_kumulativ": 349462,
+			"personen_auffr2_kumulativ": 33,
+			"personen_auffr_kumulativ": 285098,
+			"personen_erst_kumulativ": 42160,
+			"personen_voll_kumulativ": 22171
+		},
+		{
+			"date": "2021-12-20",
+			"dosen_kumulativ": 894110,
+			"personen_auffr2_kumulativ": 102,
+			"personen_auffr_kumulativ": 729218,
+			"personen_erst_kumulativ": 75283,
+			"personen_voll_kumulativ": 89507
+		},
+		{
+			"date": "2021-12-21",
+			"dosen_kumulativ": 1241380,
+			"personen_auffr2_kumulativ": 83,
+			"personen_auffr_kumulativ": 1005763,
+			"personen_erst_kumulativ": 99757,
+			"personen_voll_kumulativ": 135777
+		},
+		{
+			"date": "2021-12-22",
+			"dosen_kumulativ": 1218737,
+			"personen_auffr2_kumulativ": 123,
+			"personen_auffr_kumulativ": 991993,
+			"personen_erst_kumulativ": 100915,
+			"personen_voll_kumulativ": 125706
+		},
+		{
+			"date": "2021-12-23",
+			"dosen_kumulativ": 671022,
+			"personen_auffr2_kumulativ": 82,
+			"personen_auffr_kumulativ": 538066,
+			"personen_erst_kumulativ": 59405,
+			"personen_voll_kumulativ": 73469
+		},
+		{
+			"date": "2021-12-24",
+			"dosen_kumulativ": 48817,
+			"personen_auffr2_kumulativ": 5,
+			"personen_auffr_kumulativ": 39572,
+			"personen_erst_kumulativ": 4010,
+			"personen_voll_kumulativ": 5230
+		},
+		{
+			"date": "2021-12-25",
+			"dosen_kumulativ": 27978,
+			"personen_auffr2_kumulativ": 2,
+			"personen_auffr_kumulativ": 24365,
+			"personen_erst_kumulativ": 1648,
+			"personen_voll_kumulativ": 1963
+		},
+		{
+			"date": "2021-12-26",
+			"dosen_kumulativ": 62495,
+			"personen_auffr2_kumulativ": 6,
+			"personen_auffr_kumulativ": 52414,
+			"personen_erst_kumulativ": 5299,
+			"personen_voll_kumulativ": 4776
+		},
+		{
+			"date": "2021-12-27",
+			"dosen_kumulativ": 605813,
+			"personen_auffr2_kumulativ": 85,
+			"personen_auffr_kumulativ": 491003,
+			"personen_erst_kumulativ": 50648,
+			"personen_voll_kumulativ": 64077
+		},
+		{
+			"date": "2021-12-28",
+			"dosen_kumulativ": 748297,
+			"personen_auffr2_kumulativ": 104,
+			"personen_auffr_kumulativ": 603408,
+			"personen_erst_kumulativ": 64540,
+			"personen_voll_kumulativ": 80245
+		},
+		{
+			"date": "2021-12-29",
+			"dosen_kumulativ": 699806,
+			"personen_auffr2_kumulativ": 99,
+			"personen_auffr_kumulativ": 562372,
+			"personen_erst_kumulativ": 64781,
+			"personen_voll_kumulativ": 72554
+		},
+		{
+			"date": "2021-12-30",
+			"dosen_kumulativ": 486251,
+			"personen_auffr2_kumulativ": 88,
+			"personen_auffr_kumulativ": 387278,
+			"personen_erst_kumulativ": 46655,
+			"personen_voll_kumulativ": 52230
+		},
+		{
+			"date": "2021-12-31",
+			"dosen_kumulativ": 59490,
+			"personen_auffr2_kumulativ": 12,
+			"personen_auffr_kumulativ": 48659,
+			"personen_erst_kumulativ": 4773,
+			"personen_voll_kumulativ": 6046
+		},
+		{
+			"date": "2022-01-01",
+			"dosen_kumulativ": 28687,
+			"personen_auffr2_kumulativ": 8,
+			"personen_auffr_kumulativ": 23557,
+			"personen_erst_kumulativ": 2217,
+			"personen_voll_kumulativ": 2905
+		},
+		{
+			"date": "2022-01-02",
+			"dosen_kumulativ": 154132,
+			"personen_auffr2_kumulativ": 34,
+			"personen_auffr_kumulativ": 123383,
+			"personen_erst_kumulativ": 16421,
+			"personen_voll_kumulativ": 14294
+		},
+		{
+			"date": "2022-01-03",
+			"dosen_kumulativ": 481625,
+			"personen_auffr2_kumulativ": 102,
+			"personen_auffr_kumulativ": 380132,
+			"personen_erst_kumulativ": 39480,
+			"personen_voll_kumulativ": 61911
+		},
+		{
+			"date": "2022-01-04",
+			"dosen_kumulativ": 701516,
+			"personen_auffr2_kumulativ": 132,
+			"personen_auffr_kumulativ": 548316,
+			"personen_erst_kumulativ": 57448,
+			"personen_voll_kumulativ": 95620
+		},
+		{
+			"date": "2022-01-05",
+			"dosen_kumulativ": 817317,
+			"personen_auffr2_kumulativ": 131,
+			"personen_auffr_kumulativ": 643799,
+			"personen_erst_kumulativ": 60373,
+			"personen_voll_kumulativ": 113014
+		},
+		{
+			"date": "2022-01-06",
+			"dosen_kumulativ": 684255,
+			"personen_auffr2_kumulativ": 114,
+			"personen_auffr_kumulativ": 540334,
+			"personen_erst_kumulativ": 51486,
+			"personen_voll_kumulativ": 92321
+		},
+		{
+			"date": "2022-01-07",
+			"dosen_kumulativ": 766376,
+			"personen_auffr2_kumulativ": 185,
+			"personen_auffr_kumulativ": 592153,
+			"personen_erst_kumulativ": 56748,
+			"personen_voll_kumulativ": 117290
+		},
+		{
+			"date": "2022-01-08",
+			"dosen_kumulativ": 519208,
+			"personen_auffr2_kumulativ": 90,
+			"personen_auffr_kumulativ": 390700,
+			"personen_erst_kumulativ": 45727,
+			"personen_voll_kumulativ": 82691
+		},
+		{
+			"date": "2022-01-09",
+			"dosen_kumulativ": 185154,
+			"personen_auffr2_kumulativ": 45,
+			"personen_auffr_kumulativ": 131660,
+			"personen_erst_kumulativ": 18711,
+			"personen_voll_kumulativ": 34738
+		},
+		{
+			"date": "2022-01-10",
+			"dosen_kumulativ": 559924,
+			"personen_auffr2_kumulativ": 212,
+			"personen_auffr_kumulativ": 437900,
+			"personen_erst_kumulativ": 37369,
+			"personen_voll_kumulativ": 84443
+		},
+		{
+			"date": "2022-01-11",
+			"dosen_kumulativ": 796872,
+			"personen_auffr2_kumulativ": 118,
+			"personen_auffr_kumulativ": 621949,
+			"personen_erst_kumulativ": 54364,
+			"personen_voll_kumulativ": 120441
+		},
+		{
+			"date": "2022-01-12",
+			"dosen_kumulativ": 881296,
+			"personen_auffr2_kumulativ": 236,
+			"personen_auffr_kumulativ": 686793,
+			"personen_erst_kumulativ": 59803,
+			"personen_voll_kumulativ": 134464
+		},
+		{
+			"date": "2022-01-13",
+			"dosen_kumulativ": 837446,
+			"personen_auffr2_kumulativ": 168,
+			"personen_auffr_kumulativ": 652682,
+			"personen_erst_kumulativ": 58313,
+			"personen_voll_kumulativ": 126283
+		},
+		{
+			"date": "2022-01-14",
+			"dosen_kumulativ": 779331,
+			"personen_auffr2_kumulativ": 510,
+			"personen_auffr_kumulativ": 601754,
+			"personen_erst_kumulativ": 62482,
+			"personen_voll_kumulativ": 114585
+		},
+		{
+			"date": "2022-01-15",
+			"dosen_kumulativ": 466645,
+			"personen_auffr2_kumulativ": 128,
+			"personen_auffr_kumulativ": 336351,
+			"personen_erst_kumulativ": 58730,
+			"personen_voll_kumulativ": 71436
+		},
+		{
+			"date": "2022-01-16",
+			"dosen_kumulativ": 154496,
+			"personen_auffr2_kumulativ": 50,
+			"personen_auffr_kumulativ": 112232,
+			"personen_erst_kumulativ": 18906,
+			"personen_voll_kumulativ": 23308
+		},
+		{
+			"date": "2022-01-17",
+			"dosen_kumulativ": 481176,
+			"personen_auffr2_kumulativ": 326,
+			"personen_auffr_kumulativ": 367152,
+			"personen_erst_kumulativ": 39583,
+			"personen_voll_kumulativ": 74115
+		},
+		{
+			"date": "2022-01-18",
+			"dosen_kumulativ": 652674,
+			"personen_auffr2_kumulativ": 209,
+			"personen_auffr_kumulativ": 504167,
+			"personen_erst_kumulativ": 50683,
+			"personen_voll_kumulativ": 97615
+		},
+		{
+			"date": "2022-01-19",
+			"dosen_kumulativ": 681105,
+			"personen_auffr2_kumulativ": 965,
+			"personen_auffr_kumulativ": 515623,
+			"personen_erst_kumulativ": 58595,
+			"personen_voll_kumulativ": 105922
+		},
+		{
+			"date": "2022-01-20",
+			"dosen_kumulativ": 701564,
+			"personen_auffr2_kumulativ": 372,
+			"personen_auffr_kumulativ": 536199,
+			"personen_erst_kumulativ": 57809,
+			"personen_voll_kumulativ": 107184
+		},
+		{
+			"date": "2022-01-21",
+			"dosen_kumulativ": 597871,
+			"personen_auffr2_kumulativ": 284,
+			"personen_auffr_kumulativ": 449390,
+			"personen_erst_kumulativ": 53398,
+			"personen_voll_kumulativ": 94799
+		},
+		{
+			"date": "2022-01-22",
+			"dosen_kumulativ": 296091,
+			"personen_auffr2_kumulativ": 156,
+			"personen_auffr_kumulativ": 199928,
+			"personen_erst_kumulativ": 38318,
+			"personen_voll_kumulativ": 57689
+		},
+		{
+			"date": "2022-01-23",
+			"dosen_kumulativ": 107725,
+			"personen_auffr2_kumulativ": 71,
+			"personen_auffr_kumulativ": 67799,
+			"personen_erst_kumulativ": 13271,
+			"personen_voll_kumulativ": 26584
+		},
+		{
+			"date": "2022-01-24",
+			"dosen_kumulativ": 357123,
+			"personen_auffr2_kumulativ": 236,
+			"personen_auffr_kumulativ": 260735,
+			"personen_erst_kumulativ": 31082,
+			"personen_voll_kumulativ": 65070
+		},
+		{
+			"date": "2022-01-25",
+			"dosen_kumulativ": 500513,
+			"personen_auffr2_kumulativ": 300,
+			"personen_auffr_kumulativ": 372534,
+			"personen_erst_kumulativ": 41511,
+			"personen_voll_kumulativ": 86168
+		},
+		{
+			"date": "2022-01-26",
+			"dosen_kumulativ": 503853,
+			"personen_auffr2_kumulativ": 506,
+			"personen_auffr_kumulativ": 376993,
+			"personen_erst_kumulativ": 41502,
+			"personen_voll_kumulativ": 84852
+		},
+		{
+			"date": "2022-01-27",
+			"dosen_kumulativ": 510062,
+			"personen_auffr2_kumulativ": 468,
+			"personen_auffr_kumulativ": 371780,
+			"personen_erst_kumulativ": 41811,
+			"personen_voll_kumulativ": 96003
+		},
+		{
+			"date": "2022-01-28",
+			"dosen_kumulativ": 437838,
+			"personen_auffr2_kumulativ": 455,
+			"personen_auffr_kumulativ": 316896,
+			"personen_erst_kumulativ": 38551,
+			"personen_voll_kumulativ": 81936
+		},
+		{
+			"date": "2022-01-29",
+			"dosen_kumulativ": 211472,
+			"personen_auffr2_kumulativ": 233,
+			"personen_auffr_kumulativ": 131076,
+			"personen_erst_kumulativ": 26479,
+			"personen_voll_kumulativ": 53684
+		},
+		{
+			"date": "2022-01-30",
+			"dosen_kumulativ": 75558,
+			"personen_auffr2_kumulativ": 81,
+			"personen_auffr_kumulativ": 45599,
+			"personen_erst_kumulativ": 8911,
+			"personen_voll_kumulativ": 20967
+		},
+		{
+			"date": "2022-01-31",
+			"dosen_kumulativ": 232657,
+			"personen_auffr2_kumulativ": 459,
+			"personen_auffr_kumulativ": 162698,
+			"personen_erst_kumulativ": 21554,
+			"personen_voll_kumulativ": 47946
+		},
+		{
+			"date": "2022-02-01",
+			"dosen_kumulativ": 293000,
+			"personen_auffr2_kumulativ": 477,
+			"personen_auffr_kumulativ": 209913,
+			"personen_erst_kumulativ": 25553,
+			"personen_voll_kumulativ": 57057
+		},
+		{
+			"date": "2022-02-02",
+			"dosen_kumulativ": 361515,
+			"personen_auffr2_kumulativ": 470,
+			"personen_auffr_kumulativ": 261025,
+			"personen_erst_kumulativ": 30633,
+			"personen_voll_kumulativ": 69387
+		},
+		{
+			"date": "2022-02-03",
+			"dosen_kumulativ": 342020,
+			"personen_auffr2_kumulativ": 860,
+			"personen_auffr_kumulativ": 245143,
+			"personen_erst_kumulativ": 28732,
+			"personen_voll_kumulativ": 67285
+		},
+		{
+			"date": "2022-02-04",
+			"dosen_kumulativ": 312659,
+			"personen_auffr2_kumulativ": 2635,
+			"personen_auffr_kumulativ": 214685,
+			"personen_erst_kumulativ": 26136,
+			"personen_voll_kumulativ": 69203
+		},
+		{
+			"date": "2022-02-05",
+			"dosen_kumulativ": 147759,
+			"personen_auffr2_kumulativ": 2016,
+			"personen_auffr_kumulativ": 77434,
+			"personen_erst_kumulativ": 16358,
+			"personen_voll_kumulativ": 51951
+		},
+		{
+			"date": "2022-02-06",
+			"dosen_kumulativ": 53017,
+			"personen_auffr2_kumulativ": 730,
+			"personen_auffr_kumulativ": 28323,
+			"personen_erst_kumulativ": 5576,
+			"personen_voll_kumulativ": 18388
+		},
+		{
+			"date": "2022-02-07",
+			"dosen_kumulativ": 167671,
+			"personen_auffr2_kumulativ": 2643,
+			"personen_auffr_kumulativ": 112448,
+			"personen_erst_kumulativ": 12823,
+			"personen_voll_kumulativ": 39757
+		},
+		{
+			"date": "2022-02-08",
+			"dosen_kumulativ": 276689,
+			"personen_auffr2_kumulativ": 3076,
+			"personen_auffr_kumulativ": 192890,
+			"personen_erst_kumulativ": 21552,
+			"personen_voll_kumulativ": 59171
+		},
+		{
+			"date": "2022-02-09",
+			"dosen_kumulativ": 282914,
+			"personen_auffr2_kumulativ": 3425,
+			"personen_auffr_kumulativ": 199441,
+			"personen_erst_kumulativ": 19979,
+			"personen_voll_kumulativ": 60069
+		},
+		{
+			"date": "2022-02-10",
+			"dosen_kumulativ": 277249,
+			"personen_auffr2_kumulativ": 28399,
+			"personen_auffr_kumulativ": 171317,
+			"personen_erst_kumulativ": 18787,
+			"personen_voll_kumulativ": 58746
+		},
+		{
+			"date": "2022-02-11",
+			"dosen_kumulativ": 250773,
+			"personen_auffr2_kumulativ": 24600,
+			"personen_auffr_kumulativ": 150518,
+			"personen_erst_kumulativ": 17514,
+			"personen_voll_kumulativ": 58141
+		},
+		{
+			"date": "2022-02-12",
+			"dosen_kumulativ": 110376,
+			"personen_auffr2_kumulativ": 8010,
+			"personen_auffr_kumulativ": 54453,
+			"personen_erst_kumulativ": 10504,
+			"personen_voll_kumulativ": 37409
+		},
+		{
+			"date": "2022-02-13",
+			"dosen_kumulativ": 34507,
+			"personen_auffr2_kumulativ": 2288,
+			"personen_auffr_kumulativ": 17707,
+			"personen_erst_kumulativ": 3027,
+			"personen_voll_kumulativ": 11485
+		},
+		{
+			"date": "2022-02-14",
+			"dosen_kumulativ": 134037,
+			"personen_auffr2_kumulativ": 16975,
+			"personen_auffr_kumulativ": 77625,
+			"personen_erst_kumulativ": 9549,
+			"personen_voll_kumulativ": 29888
+		},
+		{
+			"date": "2022-02-15",
+			"dosen_kumulativ": 223946,
+			"personen_auffr2_kumulativ": 33911,
+			"personen_auffr_kumulativ": 129103,
+			"personen_erst_kumulativ": 14413,
+			"personen_voll_kumulativ": 46519
+		},
+		{
+			"date": "2022-02-16",
+			"dosen_kumulativ": 224716,
+			"personen_auffr2_kumulativ": 40559,
+			"personen_auffr_kumulativ": 127409,
+			"personen_erst_kumulativ": 13037,
+			"personen_voll_kumulativ": 43711
+		},
+		{
+			"date": "2022-02-17",
+			"dosen_kumulativ": 228505,
+			"personen_auffr2_kumulativ": 45105,
+			"personen_auffr_kumulativ": 124620,
+			"personen_erst_kumulativ": 12832,
+			"personen_voll_kumulativ": 45948
+		},
+		{
+			"date": "2022-02-18",
+			"dosen_kumulativ": 210804,
+			"personen_auffr2_kumulativ": 36355,
+			"personen_auffr_kumulativ": 110270,
+			"personen_erst_kumulativ": 16217,
+			"personen_voll_kumulativ": 47962
+		},
+		{
+			"date": "2022-02-19",
+			"dosen_kumulativ": 81109,
+			"personen_auffr2_kumulativ": 10250,
+			"personen_auffr_kumulativ": 36338,
+			"personen_erst_kumulativ": 6711,
+			"personen_voll_kumulativ": 27810
+		},
+		{
+			"date": "2022-02-20",
+			"dosen_kumulativ": 30948,
+			"personen_auffr2_kumulativ": 3559,
+			"personen_auffr_kumulativ": 15572,
+			"personen_erst_kumulativ": 2385,
+			"personen_voll_kumulativ": 9432
+		},
+		{
+			"date": "2022-02-21",
+			"dosen_kumulativ": 132485,
+			"personen_auffr2_kumulativ": 24789,
+			"personen_auffr_kumulativ": 68997,
+			"personen_erst_kumulativ": 10285,
+			"personen_voll_kumulativ": 28414
+		},
+		{
+			"date": "2022-02-22",
+			"dosen_kumulativ": 203709,
+			"personen_auffr2_kumulativ": 49610,
+			"personen_auffr_kumulativ": 103860,
+			"personen_erst_kumulativ": 11697,
+			"personen_voll_kumulativ": 38542
+		},
+		{
+			"date": "2022-02-23",
+			"dosen_kumulativ": 207640,
+			"personen_auffr2_kumulativ": 56331,
+			"personen_auffr_kumulativ": 104199,
+			"personen_erst_kumulativ": 10774,
+			"personen_voll_kumulativ": 36336
+		},
+		{
+			"date": "2022-02-24",
+			"dosen_kumulativ": 210615,
+			"personen_auffr2_kumulativ": 57115,
+			"personen_auffr_kumulativ": 103856,
+			"personen_erst_kumulativ": 11398,
+			"personen_voll_kumulativ": 38246
+		},
+		{
+			"date": "2022-02-25",
+			"dosen_kumulativ": 175960,
+			"personen_auffr2_kumulativ": 44785,
+			"personen_auffr_kumulativ": 87688,
+			"personen_erst_kumulativ": 9524,
+			"personen_voll_kumulativ": 33963
+		},
+		{
+			"date": "2022-02-26",
+			"dosen_kumulativ": 61906,
+			"personen_auffr2_kumulativ": 10538,
+			"personen_auffr_kumulativ": 27983,
+			"personen_erst_kumulativ": 4986,
+			"personen_voll_kumulativ": 18399
+		},
+		{
+			"date": "2022-02-27",
+			"dosen_kumulativ": 19322,
+			"personen_auffr2_kumulativ": 3155,
+			"personen_auffr_kumulativ": 8803,
+			"personen_erst_kumulativ": 2358,
+			"personen_voll_kumulativ": 5006
+		},
+		{
+			"date": "2022-02-28",
+			"dosen_kumulativ": 103385,
+			"personen_auffr2_kumulativ": 25500,
+			"personen_auffr_kumulativ": 50848,
+			"personen_erst_kumulativ": 8803,
+			"personen_voll_kumulativ": 18234
+		},
+		{
+			"date": "2022-03-01",
+			"dosen_kumulativ": 162634,
+			"personen_auffr2_kumulativ": 55491,
+			"personen_auffr_kumulativ": 72590,
+			"personen_erst_kumulativ": 10111,
+			"personen_voll_kumulativ": 24442
+		},
+		{
+			"date": "2022-03-02",
+			"dosen_kumulativ": 160879,
+			"personen_auffr2_kumulativ": 56197,
+			"personen_auffr_kumulativ": 69673,
+			"personen_erst_kumulativ": 10939,
+			"personen_voll_kumulativ": 24070
+		},
+		{
+			"date": "2022-03-03",
+			"dosen_kumulativ": 216387,
+			"personen_auffr2_kumulativ": 83808,
+			"personen_auffr_kumulativ": 91426,
+			"personen_erst_kumulativ": 11375,
+			"personen_voll_kumulativ": 29778
+		},
+		{
+			"date": "2022-03-04",
+			"dosen_kumulativ": 163118,
+			"personen_auffr2_kumulativ": 57086,
+			"personen_auffr_kumulativ": 69606,
+			"personen_erst_kumulativ": 11367,
+			"personen_voll_kumulativ": 25059
+		},
+		{
+			"date": "2022-03-05",
+			"dosen_kumulativ": 54973,
+			"personen_auffr2_kumulativ": 14687,
+			"personen_auffr_kumulativ": 22286,
+			"personen_erst_kumulativ": 6410,
+			"personen_voll_kumulativ": 11590
+		},
+		{
+			"date": "2022-03-06",
+			"dosen_kumulativ": 22470,
+			"personen_auffr2_kumulativ": 4821,
+			"personen_auffr_kumulativ": 9061,
+			"personen_erst_kumulativ": 4299,
+			"personen_voll_kumulativ": 4289
+		},
+		{
+			"date": "2022-03-07",
+			"dosen_kumulativ": 95291,
+			"personen_auffr2_kumulativ": 34190,
+			"personen_auffr_kumulativ": 39216,
+			"personen_erst_kumulativ": 7995,
+			"personen_voll_kumulativ": 13890
+		},
+		{
+			"date": "2022-03-08",
+			"dosen_kumulativ": 169041,
+			"personen_auffr2_kumulativ": 74158,
+			"personen_auffr_kumulativ": 64761,
+			"personen_erst_kumulativ": 9202,
+			"personen_voll_kumulativ": 20920
+		},
+		{
+			"date": "2022-03-09",
+			"dosen_kumulativ": 178552,
+			"personen_auffr2_kumulativ": 85578,
+			"personen_auffr_kumulativ": 65636,
+			"personen_erst_kumulativ": 8195,
+			"personen_voll_kumulativ": 19143
+		},
+		{
+			"date": "2022-03-10",
+			"dosen_kumulativ": 194923,
+			"personen_auffr2_kumulativ": 94323,
+			"personen_auffr_kumulativ": 71122,
+			"personen_erst_kumulativ": 8569,
+			"personen_voll_kumulativ": 20909
+		},
+		{
+			"date": "2022-03-11",
+			"dosen_kumulativ": 167652,
+			"personen_auffr2_kumulativ": 76061,
+			"personen_auffr_kumulativ": 61558,
+			"personen_erst_kumulativ": 9490,
+			"personen_voll_kumulativ": 20543
+		},
+		{
+			"date": "2022-03-12",
+			"dosen_kumulativ": 52224,
+			"personen_auffr2_kumulativ": 18070,
+			"personen_auffr_kumulativ": 20670,
+			"personen_erst_kumulativ": 4495,
+			"personen_voll_kumulativ": 8989
+		},
+		{
+			"date": "2022-03-13",
+			"dosen_kumulativ": 18501,
+			"personen_auffr2_kumulativ": 5570,
+			"personen_auffr_kumulativ": 8354,
+			"personen_erst_kumulativ": 1646,
+			"personen_voll_kumulativ": 2931
+		},
+		{
+			"date": "2022-03-14",
+			"dosen_kumulativ": 92431,
+			"personen_auffr2_kumulativ": 43328,
+			"personen_auffr_kumulativ": 34864,
+			"personen_erst_kumulativ": 4919,
+			"personen_voll_kumulativ": 9320
+		},
+		{
+			"date": "2022-03-15",
+			"dosen_kumulativ": 174320,
+			"personen_auffr2_kumulativ": 93061,
+			"personen_auffr_kumulativ": 57993,
+			"personen_erst_kumulativ": 7280,
+			"personen_voll_kumulativ": 15986
+		},
+		{
+			"date": "2022-03-16",
+			"dosen_kumulativ": 183417,
+			"personen_auffr2_kumulativ": 105110,
+			"personen_auffr_kumulativ": 57874,
+			"personen_erst_kumulativ": 6543,
+			"personen_voll_kumulativ": 13890
+		},
+		{
+			"date": "2022-03-17",
+			"dosen_kumulativ": 194449,
+			"personen_auffr2_kumulativ": 113292,
+			"personen_auffr_kumulativ": 60095,
+			"personen_erst_kumulativ": 6423,
+			"personen_voll_kumulativ": 14639
+		},
+		{
+			"date": "2022-03-18",
+			"dosen_kumulativ": 149471,
+			"personen_auffr2_kumulativ": 79744,
+			"personen_auffr_kumulativ": 49882,
+			"personen_erst_kumulativ": 6453,
+			"personen_voll_kumulativ": 13392
+		},
+		{
+			"date": "2022-03-19",
+			"dosen_kumulativ": 48023,
+			"personen_auffr2_kumulativ": 20340,
+			"personen_auffr_kumulativ": 17754,
+			"personen_erst_kumulativ": 3462,
+			"personen_voll_kumulativ": 6467
+		},
+		{
+			"date": "2022-03-20",
+			"dosen_kumulativ": 17062,
+			"personen_auffr2_kumulativ": 5923,
+			"personen_auffr_kumulativ": 6237,
+			"personen_erst_kumulativ": 1803,
+			"personen_voll_kumulativ": 3099
+		},
+		{
+			"date": "2022-03-21",
+			"dosen_kumulativ": 94766,
+			"personen_auffr2_kumulativ": 52303,
+			"personen_auffr_kumulativ": 29671,
+			"personen_erst_kumulativ": 4015,
+			"personen_voll_kumulativ": 8777
+		},
+		{
+			"date": "2022-03-22",
+			"dosen_kumulativ": 167964,
+			"personen_auffr2_kumulativ": 98236,
+			"personen_auffr_kumulativ": 48644,
+			"personen_erst_kumulativ": 7011,
+			"personen_voll_kumulativ": 14073
+		},
+		{
+			"date": "2022-03-23",
+			"dosen_kumulativ": 178948,
+			"personen_auffr2_kumulativ": 111829,
+			"personen_auffr_kumulativ": 47861,
+			"personen_erst_kumulativ": 5840,
+			"personen_voll_kumulativ": 13418
+		},
+		{
+			"date": "2022-03-24",
+			"dosen_kumulativ": 183956,
+			"personen_auffr2_kumulativ": 114911,
+			"personen_auffr_kumulativ": 49522,
+			"personen_erst_kumulativ": 6031,
+			"personen_voll_kumulativ": 13492
+		},
+		{
+			"date": "2022-03-25",
+			"dosen_kumulativ": 152277,
+			"personen_auffr2_kumulativ": 90205,
+			"personen_auffr_kumulativ": 43368,
+			"personen_erst_kumulativ": 5343,
+			"personen_voll_kumulativ": 13361
+		},
+		{
+			"date": "2022-03-26",
+			"dosen_kumulativ": 42886,
+			"personen_auffr2_kumulativ": 18424,
+			"personen_auffr_kumulativ": 14749,
+			"personen_erst_kumulativ": 2845,
+			"personen_voll_kumulativ": 6868
+		},
+		{
+			"date": "2022-03-27",
+			"dosen_kumulativ": 16168,
+			"personen_auffr2_kumulativ": 6260,
+			"personen_auffr_kumulativ": 6233,
+			"personen_erst_kumulativ": 928,
+			"personen_voll_kumulativ": 2747
+		},
+		{
+			"date": "2022-03-28",
+			"dosen_kumulativ": 93795,
+			"personen_auffr2_kumulativ": 55804,
+			"personen_auffr_kumulativ": 26175,
+			"personen_erst_kumulativ": 3356,
+			"personen_voll_kumulativ": 8460
+		},
+		{
+			"date": "2022-03-29",
+			"dosen_kumulativ": 166017,
+			"personen_auffr2_kumulativ": 107413,
+			"personen_auffr_kumulativ": 41603,
+			"personen_erst_kumulativ": 5614,
+			"personen_voll_kumulativ": 11387
+		},
+		{
+			"date": "2022-03-30",
+			"dosen_kumulativ": 186954,
+			"personen_auffr2_kumulativ": 128560,
+			"personen_auffr_kumulativ": 42304,
+			"personen_erst_kumulativ": 5093,
+			"personen_voll_kumulativ": 10997
+		},
+		{
+			"date": "2022-03-31",
+			"dosen_kumulativ": 181616,
+			"personen_auffr2_kumulativ": 114447,
+			"personen_auffr_kumulativ": 48781,
+			"personen_erst_kumulativ": 5829,
+			"personen_voll_kumulativ": 12559
+		},
+		{
+			"date": "2022-04-01",
+			"dosen_kumulativ": 119941,
+			"personen_auffr2_kumulativ": 77606,
+			"personen_auffr_kumulativ": 29157,
+			"personen_erst_kumulativ": 4024,
+			"personen_voll_kumulativ": 9154
+		},
+		{
+			"date": "2022-04-02",
+			"dosen_kumulativ": 34906,
+			"personen_auffr2_kumulativ": 17989,
+			"personen_auffr_kumulativ": 10725,
+			"personen_erst_kumulativ": 2034,
+			"personen_voll_kumulativ": 4158
+		},
+		{
+			"date": "2022-04-03",
+			"dosen_kumulativ": 13818,
+			"personen_auffr2_kumulativ": 6383,
+			"personen_auffr_kumulativ": 4964,
+			"personen_erst_kumulativ": 961,
+			"personen_voll_kumulativ": 1510
+		},
+		{
+			"date": "2022-04-04",
+			"dosen_kumulativ": 75035,
+			"personen_auffr2_kumulativ": 48661,
+			"personen_auffr_kumulativ": 19148,
+			"personen_erst_kumulativ": 2271,
+			"personen_voll_kumulativ": 4955
+		},
+		{
+			"date": "2022-04-05",
+			"dosen_kumulativ": 152429,
+			"personen_auffr2_kumulativ": 106600,
+			"personen_auffr_kumulativ": 33002,
+			"personen_erst_kumulativ": 4207,
+			"personen_voll_kumulativ": 8620
+		},
+		{
+			"date": "2022-04-06",
+			"dosen_kumulativ": 183049,
+			"personen_auffr2_kumulativ": 126872,
+			"personen_auffr_kumulativ": 38489,
+			"personen_erst_kumulativ": 5643,
+			"personen_voll_kumulativ": 12045
+		},
+		{
+			"date": "2022-04-07",
+			"dosen_kumulativ": 183188,
+			"personen_auffr2_kumulativ": 132122,
+			"personen_auffr_kumulativ": 38234,
+			"personen_erst_kumulativ": 3899,
+			"personen_voll_kumulativ": 8933
+		},
+		{
+			"date": "2022-04-08",
+			"dosen_kumulativ": 142136,
+			"personen_auffr2_kumulativ": 98762,
+			"personen_auffr_kumulativ": 31390,
+			"personen_erst_kumulativ": 3623,
+			"personen_voll_kumulativ": 8361
+		},
+		{
+			"date": "2022-04-09",
+			"dosen_kumulativ": 33445,
+			"personen_auffr2_kumulativ": 18121,
+			"personen_auffr_kumulativ": 9915,
+			"personen_erst_kumulativ": 1567,
+			"personen_voll_kumulativ": 3842
+		},
+		{
+			"date": "2022-04-10",
+			"dosen_kumulativ": 11204,
+			"personen_auffr2_kumulativ": 5921,
+			"personen_auffr_kumulativ": 3499,
+			"personen_erst_kumulativ": 548,
+			"personen_voll_kumulativ": 1236
+		},
+		{
+			"date": "2022-04-11",
+			"dosen_kumulativ": 63955,
+			"personen_auffr2_kumulativ": 41729,
+			"personen_auffr_kumulativ": 16005,
+			"personen_erst_kumulativ": 1931,
+			"personen_voll_kumulativ": 4290
+		},
+		{
+			"date": "2022-04-12",
+			"dosen_kumulativ": 119356,
+			"personen_auffr2_kumulativ": 86130,
+			"personen_auffr_kumulativ": 25035,
+			"personen_erst_kumulativ": 2548,
+			"personen_voll_kumulativ": 5643
+		},
+		{
+			"date": "2022-04-13",
+			"dosen_kumulativ": 126634,
+			"personen_auffr2_kumulativ": 92876,
+			"personen_auffr_kumulativ": 23801,
+			"personen_erst_kumulativ": 4372,
+			"personen_voll_kumulativ": 5585
+		},
+		{
+			"date": "2022-04-14",
+			"dosen_kumulativ": 105502,
+			"personen_auffr2_kumulativ": 74397,
+			"personen_auffr_kumulativ": 22355,
+			"personen_erst_kumulativ": 2727,
+			"personen_voll_kumulativ": 6023
+		},
+		{
+			"date": "2022-04-15",
+			"dosen_kumulativ": 6337,
+			"personen_auffr2_kumulativ": 3625,
+			"personen_auffr_kumulativ": 1777,
+			"personen_erst_kumulativ": 311,
+			"personen_voll_kumulativ": 624
+		},
+		{
+			"date": "2022-04-16",
+			"dosen_kumulativ": 7139,
+			"personen_auffr2_kumulativ": 3070,
+			"personen_auffr_kumulativ": 2495,
+			"personen_erst_kumulativ": 485,
+			"personen_voll_kumulativ": 1089
+		},
+		{
+			"date": "2022-04-17",
+			"dosen_kumulativ": 1956,
+			"personen_auffr2_kumulativ": 836,
+			"personen_auffr_kumulativ": 612,
+			"personen_erst_kumulativ": 223,
+			"personen_voll_kumulativ": 285
+		},
+		{
+			"date": "2022-04-18",
+			"dosen_kumulativ": 2800,
+			"personen_auffr2_kumulativ": 1379,
+			"personen_auffr_kumulativ": 887,
+			"personen_erst_kumulativ": 173,
+			"personen_voll_kumulativ": 361
+		},
+		{
+			"date": "2022-04-19",
+			"dosen_kumulativ": 75126,
+			"personen_auffr2_kumulativ": 47914,
+			"personen_auffr_kumulativ": 17918,
+			"personen_erst_kumulativ": 4507,
+			"personen_voll_kumulativ": 4787
+		},
+		{
+			"date": "2022-04-20",
+			"dosen_kumulativ": 92297,
+			"personen_auffr2_kumulativ": 66496,
+			"personen_auffr_kumulativ": 18736,
+			"personen_erst_kumulativ": 2112,
+			"personen_voll_kumulativ": 4953
+		},
+		{
+			"date": "2022-04-21",
+			"dosen_kumulativ": 104183,
+			"personen_auffr2_kumulativ": 74953,
+			"personen_auffr_kumulativ": 21517,
+			"personen_erst_kumulativ": 2128,
+			"personen_voll_kumulativ": 5585
+		},
+		{
+			"date": "2022-04-22",
+			"dosen_kumulativ": 85126,
+			"personen_auffr2_kumulativ": 56517,
+			"personen_auffr_kumulativ": 19988,
+			"personen_erst_kumulativ": 2420,
+			"personen_voll_kumulativ": 6201
+		},
+		{
+			"date": "2022-04-23",
+			"dosen_kumulativ": 20356,
+			"personen_auffr2_kumulativ": 10133,
+			"personen_auffr_kumulativ": 6197,
+			"personen_erst_kumulativ": 1159,
+			"personen_voll_kumulativ": 2867
+		},
+		{
+			"date": "2022-04-24",
+			"dosen_kumulativ": 6550,
+			"personen_auffr2_kumulativ": 3561,
+			"personen_auffr_kumulativ": 1819,
+			"personen_erst_kumulativ": 376,
+			"personen_voll_kumulativ": 794
+		},
+		{
+			"date": "2022-04-25",
+			"dosen_kumulativ": 53994,
+			"personen_auffr2_kumulativ": 35474,
+			"personen_auffr_kumulativ": 12392,
+			"personen_erst_kumulativ": 1945,
+			"personen_voll_kumulativ": 4183
+		},
+		{
+			"date": "2022-04-26",
+			"dosen_kumulativ": 116923,
+			"personen_auffr2_kumulativ": 80142,
+			"personen_auffr_kumulativ": 23342,
+			"personen_erst_kumulativ": 4996,
+			"personen_voll_kumulativ": 8443
+		},
+		{
+			"date": "2022-04-27",
+			"dosen_kumulativ": 119742,
+			"personen_auffr2_kumulativ": 88108,
+			"personen_auffr_kumulativ": 23036,
+			"personen_erst_kumulativ": 2560,
+			"personen_voll_kumulativ": 6038
+		},
+		{
+			"date": "2022-04-28",
+			"dosen_kumulativ": 122496,
+			"personen_auffr2_kumulativ": 89516,
+			"personen_auffr_kumulativ": 24184,
+			"personen_erst_kumulativ": 2548,
+			"personen_voll_kumulativ": 6248
+		},
+		{
+			"date": "2022-04-29",
+			"dosen_kumulativ": 103300,
+			"personen_auffr2_kumulativ": 63572,
+			"personen_auffr_kumulativ": 21765,
+			"personen_erst_kumulativ": 7560,
+			"personen_voll_kumulativ": 10403
+		},
+		{
+			"date": "2022-04-30",
+			"dosen_kumulativ": 21186,
+			"personen_auffr2_kumulativ": 10763,
+			"personen_auffr_kumulativ": 6433,
+			"personen_erst_kumulativ": 1167,
+			"personen_voll_kumulativ": 2823
+		},
+		{
+			"date": "2022-05-01",
+			"dosen_kumulativ": 4387,
+			"personen_auffr2_kumulativ": 2708,
+			"personen_auffr_kumulativ": 1075,
+			"personen_erst_kumulativ": 258,
+			"personen_voll_kumulativ": 346
+		},
+		{
+			"date": "2022-05-02",
+			"dosen_kumulativ": 42922,
+			"personen_auffr2_kumulativ": 29737,
+			"personen_auffr_kumulativ": 9171,
+			"personen_erst_kumulativ": 1375,
+			"personen_voll_kumulativ": 2639
+		},
+		{
+			"date": "2022-05-03",
+			"dosen_kumulativ": 91630,
+			"personen_auffr2_kumulativ": 62952,
+			"personen_auffr_kumulativ": 19742,
+			"personen_erst_kumulativ": 2952,
+			"personen_voll_kumulativ": 5984
+		},
+		{
+			"date": "2022-05-04",
+			"dosen_kumulativ": 148101,
+			"personen_auffr2_kumulativ": 112814,
+			"personen_auffr_kumulativ": 26892,
+			"personen_erst_kumulativ": 2563,
+			"personen_voll_kumulativ": 5832
+		},
+		{
+			"date": "2022-05-05",
+			"dosen_kumulativ": 105637,
+			"personen_auffr2_kumulativ": 75424,
+			"personen_auffr_kumulativ": 21100,
+			"personen_erst_kumulativ": 3084,
+			"personen_voll_kumulativ": 6029
+		},
+		{
+			"date": "2022-05-06",
+			"dosen_kumulativ": 76693,
+			"personen_auffr2_kumulativ": 55219,
+			"personen_auffr_kumulativ": 15423,
+			"personen_erst_kumulativ": 1960,
+			"personen_voll_kumulativ": 4091
+		},
+		{
+			"date": "2022-05-07",
+			"dosen_kumulativ": 15336,
+			"personen_auffr2_kumulativ": 7361,
+			"personen_auffr_kumulativ": 5367,
+			"personen_erst_kumulativ": 844,
+			"personen_voll_kumulativ": 1764
+		},
+		{
+			"date": "2022-05-08",
+			"dosen_kumulativ": 4348,
+			"personen_auffr2_kumulativ": 2588,
+			"personen_auffr_kumulativ": 1104,
+			"personen_erst_kumulativ": 204,
+			"personen_voll_kumulativ": 452
+		},
+		{
+			"date": "2022-05-09",
+			"dosen_kumulativ": 35768,
+			"personen_auffr2_kumulativ": 24073,
+			"personen_auffr_kumulativ": 8553,
+			"personen_erst_kumulativ": 1034,
+			"personen_voll_kumulativ": 2108
+		},
+		{
+			"date": "2022-05-10",
+			"dosen_kumulativ": 82644,
+			"personen_auffr2_kumulativ": 58421,
+			"personen_auffr_kumulativ": 17482,
+			"personen_erst_kumulativ": 2371,
+			"personen_voll_kumulativ": 4370
+		},
+		{
+			"date": "2022-05-11",
+			"dosen_kumulativ": 83396,
+			"personen_auffr2_kumulativ": 62774,
+			"personen_auffr_kumulativ": 15381,
+			"personen_erst_kumulativ": 1791,
+			"personen_voll_kumulativ": 3450
+		},
+		{
+			"date": "2022-05-12",
+			"dosen_kumulativ": 86219,
+			"personen_auffr2_kumulativ": 63356,
+			"personen_auffr_kumulativ": 17228,
+			"personen_erst_kumulativ": 1890,
+			"personen_voll_kumulativ": 3745
+		},
+		{
+			"date": "2022-05-13",
+			"dosen_kumulativ": 59621,
+			"personen_auffr2_kumulativ": 42498,
+			"personen_auffr_kumulativ": 12366,
+			"personen_erst_kumulativ": 1456,
+			"personen_voll_kumulativ": 3301
+		},
+		{
+			"date": "2022-05-14",
+			"dosen_kumulativ": 11667,
+			"personen_auffr2_kumulativ": 6123,
+			"personen_auffr_kumulativ": 3466,
+			"personen_erst_kumulativ": 655,
+			"personen_voll_kumulativ": 1423
+		},
+		{
+			"date": "2022-05-15",
+			"dosen_kumulativ": 4142,
+			"personen_auffr2_kumulativ": 2133,
+			"personen_auffr_kumulativ": 1223,
+			"personen_erst_kumulativ": 263,
+			"personen_voll_kumulativ": 523
+		},
+		{
+			"date": "2022-05-16",
+			"dosen_kumulativ": 30984,
+			"personen_auffr2_kumulativ": 20947,
+			"personen_auffr_kumulativ": 7097,
+			"personen_erst_kumulativ": 964,
+			"personen_voll_kumulativ": 1976
+		},
+		{
+			"date": "2022-05-17",
+			"dosen_kumulativ": 69598,
+			"personen_auffr2_kumulativ": 48539,
+			"personen_auffr_kumulativ": 14647,
+			"personen_erst_kumulativ": 2272,
+			"personen_voll_kumulativ": 4140
+		},
+		{
+			"date": "2022-05-18",
+			"dosen_kumulativ": 68413,
+			"personen_auffr2_kumulativ": 50531,
+			"personen_auffr_kumulativ": 13391,
+			"personen_erst_kumulativ": 1344,
+			"personen_voll_kumulativ": 3147
+		},
+		{
+			"date": "2022-05-19",
+			"dosen_kumulativ": 74967,
+			"personen_auffr2_kumulativ": 54912,
+			"personen_auffr_kumulativ": 14577,
+			"personen_erst_kumulativ": 1703,
+			"personen_voll_kumulativ": 3775
+		},
+		{
+			"date": "2022-05-20",
+			"dosen_kumulativ": 55314,
+			"personen_auffr2_kumulativ": 39109,
+			"personen_auffr_kumulativ": 11693,
+			"personen_erst_kumulativ": 1387,
+			"personen_voll_kumulativ": 3125
+		},
+		{
+			"date": "2022-05-21",
+			"dosen_kumulativ": 11745,
+			"personen_auffr2_kumulativ": 5695,
+			"personen_auffr_kumulativ": 3826,
+			"personen_erst_kumulativ": 700,
+			"personen_voll_kumulativ": 1524
+		},
+		{
+			"date": "2022-05-22",
+			"dosen_kumulativ": 3585,
+			"personen_auffr2_kumulativ": 2013,
+			"personen_auffr_kumulativ": 1008,
+			"personen_erst_kumulativ": 171,
+			"personen_voll_kumulativ": 393
+		},
+		{
+			"date": "2022-05-23",
+			"dosen_kumulativ": 28925,
+			"personen_auffr2_kumulativ": 19096,
+			"personen_auffr_kumulativ": 6972,
+			"personen_erst_kumulativ": 895,
+			"personen_voll_kumulativ": 1962
+		},
+		{
+			"date": "2022-05-24",
+			"dosen_kumulativ": 63202,
+			"personen_auffr2_kumulativ": 42663,
+			"personen_auffr_kumulativ": 13881,
+			"personen_erst_kumulativ": 2370,
+			"personen_voll_kumulativ": 4288
+		},
+		{
+			"date": "2022-05-25",
+			"dosen_kumulativ": 61033,
+			"personen_auffr2_kumulativ": 43188,
+			"personen_auffr_kumulativ": 12594,
+			"personen_erst_kumulativ": 1859,
+			"personen_voll_kumulativ": 3392
+		},
+		{
+			"date": "2022-05-26",
+			"dosen_kumulativ": 2493,
+			"personen_auffr2_kumulativ": 1513,
+			"personen_auffr_kumulativ": 571,
+			"personen_erst_kumulativ": 181,
+			"personen_voll_kumulativ": 228
+		},
+		{
+			"date": "2022-05-27",
+			"dosen_kumulativ": 20847,
+			"personen_auffr2_kumulativ": 12252,
+			"personen_auffr_kumulativ": 5802,
+			"personen_erst_kumulativ": 950,
+			"personen_voll_kumulativ": 1843
+		},
+		{
+			"date": "2022-05-28",
+			"dosen_kumulativ": 7771,
+			"personen_auffr2_kumulativ": 3506,
+			"personen_auffr_kumulativ": 2610,
+			"personen_erst_kumulativ": 647,
+			"personen_voll_kumulativ": 1008
+		},
+		{
+			"date": "2022-05-29",
+			"dosen_kumulativ": 2618,
+			"personen_auffr2_kumulativ": 1298,
+			"personen_auffr_kumulativ": 747,
+			"personen_erst_kumulativ": 230,
+			"personen_voll_kumulativ": 343
+		},
+		{
+			"date": "2022-05-30",
+			"dosen_kumulativ": 25023,
+			"personen_auffr2_kumulativ": 15940,
+			"personen_auffr_kumulativ": 6402,
+			"personen_erst_kumulativ": 883,
+			"personen_voll_kumulativ": 1798
+		},
+		{
+			"date": "2022-05-31",
+			"dosen_kumulativ": 48776,
+			"personen_auffr2_kumulativ": 33420,
+			"personen_auffr_kumulativ": 10839,
+			"personen_erst_kumulativ": 1514,
+			"personen_voll_kumulativ": 3003
+		},
+		{
+			"date": "2022-06-01",
+			"dosen_kumulativ": 49813,
+			"personen_auffr2_kumulativ": 35570,
+			"personen_auffr_kumulativ": 10322,
+			"personen_erst_kumulativ": 1307,
+			"personen_voll_kumulativ": 2614
+		},
+		{
+			"date": "2022-06-02",
+			"dosen_kumulativ": 56881,
+			"personen_auffr2_kumulativ": 40126,
+			"personen_auffr_kumulativ": 11968,
+			"personen_erst_kumulativ": 1469,
+			"personen_voll_kumulativ": 3318
+		},
+		{
+			"date": "2022-06-03",
+			"dosen_kumulativ": 42905,
+			"personen_auffr2_kumulativ": 28058,
+			"personen_auffr_kumulativ": 10537,
+			"personen_erst_kumulativ": 1529,
+			"personen_voll_kumulativ": 2781
+		},
+		{
+			"date": "2022-06-04",
+			"dosen_kumulativ": 7755,
+			"personen_auffr2_kumulativ": 4049,
+			"personen_auffr_kumulativ": 2384,
+			"personen_erst_kumulativ": 510,
+			"personen_voll_kumulativ": 812
+		},
+		{
+			"date": "2022-06-05",
+			"dosen_kumulativ": 1612,
+			"personen_auffr2_kumulativ": 877,
+			"personen_auffr_kumulativ": 537,
+			"personen_erst_kumulativ": 57,
+			"personen_voll_kumulativ": 141
+		},
+		{
+			"date": "2022-06-06",
+			"dosen_kumulativ": 1806,
+			"personen_auffr2_kumulativ": 1245,
+			"personen_auffr_kumulativ": 359,
+			"personen_erst_kumulativ": 60,
+			"personen_voll_kumulativ": 142
+		},
+		{
+			"date": "2022-06-07",
+			"dosen_kumulativ": 33537,
+			"personen_auffr2_kumulativ": 21687,
+			"personen_auffr_kumulativ": 8421,
+			"personen_erst_kumulativ": 1160,
+			"personen_voll_kumulativ": 2269
+		},
+		{
+			"date": "2022-06-08",
+			"dosen_kumulativ": 42581,
+			"personen_auffr2_kumulativ": 29806,
+			"personen_auffr_kumulativ": 9296,
+			"personen_erst_kumulativ": 1228,
+			"personen_voll_kumulativ": 2251
+		},
+		{
+			"date": "2022-06-09",
+			"dosen_kumulativ": 52002,
+			"personen_auffr2_kumulativ": 36042,
+			"personen_auffr_kumulativ": 11449,
+			"personen_erst_kumulativ": 1533,
+			"personen_voll_kumulativ": 2978
+		},
+		{
+			"date": "2022-06-10",
+			"dosen_kumulativ": 37828,
+			"personen_auffr2_kumulativ": 25189,
+			"personen_auffr_kumulativ": 8764,
+			"personen_erst_kumulativ": 1320,
+			"personen_voll_kumulativ": 2555
+		},
+		{
+			"date": "2022-06-11",
+			"dosen_kumulativ": 9634,
+			"personen_auffr2_kumulativ": 5291,
+			"personen_auffr_kumulativ": 2610,
+			"personen_erst_kumulativ": 748,
+			"personen_voll_kumulativ": 985
+		},
+		{
+			"date": "2022-06-12",
+			"dosen_kumulativ": 2373,
+			"personen_auffr2_kumulativ": 1164,
+			"personen_auffr_kumulativ": 682,
+			"personen_erst_kumulativ": 208,
+			"personen_voll_kumulativ": 319
+		},
+		{
+			"date": "2022-06-13",
+			"dosen_kumulativ": 23178,
+			"personen_auffr2_kumulativ": 15278,
+			"personen_auffr_kumulativ": 5454,
+			"personen_erst_kumulativ": 851,
+			"personen_voll_kumulativ": 1595
+		},
+		{
+			"date": "2022-06-14",
+			"dosen_kumulativ": 45824,
+			"personen_auffr2_kumulativ": 32291,
+			"personen_auffr_kumulativ": 9671,
+			"personen_erst_kumulativ": 1344,
+			"personen_voll_kumulativ": 2518
+		},
+		{
+			"date": "2022-06-15",
+			"dosen_kumulativ": 48154,
+			"personen_auffr2_kumulativ": 34364,
+			"personen_auffr_kumulativ": 9327,
+			"personen_erst_kumulativ": 1908,
+			"personen_voll_kumulativ": 2555
+		},
+		{
+			"date": "2022-06-16",
+			"dosen_kumulativ": 27164,
+			"personen_auffr2_kumulativ": 18457,
+			"personen_auffr_kumulativ": 5849,
+			"personen_erst_kumulativ": 997,
+			"personen_voll_kumulativ": 1861
+		},
+		{
+			"date": "2022-06-17",
+			"dosen_kumulativ": 33640,
+			"personen_auffr2_kumulativ": 23075,
+			"personen_auffr_kumulativ": 7493,
+			"personen_erst_kumulativ": 1106,
+			"personen_voll_kumulativ": 1966
+		},
+		{
+			"date": "2022-06-18",
+			"dosen_kumulativ": 9815,
+			"personen_auffr2_kumulativ": 6278,
+			"personen_auffr_kumulativ": 2150,
+			"personen_erst_kumulativ": 597,
+			"personen_voll_kumulativ": 790
+		},
+		{
+			"date": "2022-06-19",
+			"dosen_kumulativ": 4438,
+			"personen_auffr2_kumulativ": 2564,
+			"personen_auffr_kumulativ": 1088,
+			"personen_erst_kumulativ": 338,
+			"personen_voll_kumulativ": 448
+		},
+		{
+			"date": "2022-06-20",
+			"dosen_kumulativ": 25699,
+			"personen_auffr2_kumulativ": 18462,
+			"personen_auffr_kumulativ": 4939,
+			"personen_erst_kumulativ": 927,
+			"personen_voll_kumulativ": 1371
+		},
+		{
+			"date": "2022-06-21",
+			"dosen_kumulativ": 49798,
+			"personen_auffr2_kumulativ": 36910,
+			"personen_auffr_kumulativ": 9142,
+			"personen_erst_kumulativ": 1327,
+			"personen_voll_kumulativ": 2419
+		},
+		{
+			"date": "2022-06-22",
+			"dosen_kumulativ": 54853,
+			"personen_auffr2_kumulativ": 42066,
+			"personen_auffr_kumulativ": 9242,
+			"personen_erst_kumulativ": 1306,
+			"personen_voll_kumulativ": 2239
+		},
+		{
+			"date": "2022-06-23",
+			"dosen_kumulativ": 64391,
+			"personen_auffr2_kumulativ": 49812,
+			"personen_auffr_kumulativ": 10512,
+			"personen_erst_kumulativ": 1508,
+			"personen_voll_kumulativ": 2559
+		},
+		{
+			"date": "2022-06-24",
+			"dosen_kumulativ": 48639,
+			"personen_auffr2_kumulativ": 35279,
+			"personen_auffr_kumulativ": 8973,
+			"personen_erst_kumulativ": 1724,
+			"personen_voll_kumulativ": 2663
+		},
+		{
+			"date": "2022-06-25",
+			"dosen_kumulativ": 12215,
+			"personen_auffr2_kumulativ": 7523,
+			"personen_auffr_kumulativ": 3003,
+			"personen_erst_kumulativ": 719,
+			"personen_voll_kumulativ": 970
+		},
+		{
+			"date": "2022-06-26",
+			"dosen_kumulativ": 3260,
+			"personen_auffr2_kumulativ": 1851,
+			"personen_auffr_kumulativ": 789,
+			"personen_erst_kumulativ": 253,
+			"personen_voll_kumulativ": 367
+		},
+		{
+			"date": "2022-06-27",
+			"dosen_kumulativ": 24535,
+			"personen_auffr2_kumulativ": 17430,
+			"personen_auffr_kumulativ": 5033,
+			"personen_erst_kumulativ": 821,
+			"personen_voll_kumulativ": 1251
+		},
+		{
+			"date": "2022-06-28",
+			"dosen_kumulativ": 55781,
+			"personen_auffr2_kumulativ": 39779,
+			"personen_auffr_kumulativ": 10589,
+			"personen_erst_kumulativ": 2421,
+			"personen_voll_kumulativ": 2992
+		},
+		{
+			"date": "2022-06-29",
+			"dosen_kumulativ": 54498,
+			"personen_auffr2_kumulativ": 40963,
+			"personen_auffr_kumulativ": 9907,
+			"personen_erst_kumulativ": 1429,
+			"personen_voll_kumulativ": 2199
+		},
+		{
+			"date": "2022-06-30",
+			"dosen_kumulativ": 61304,
+			"personen_auffr2_kumulativ": 44475,
+			"personen_auffr_kumulativ": 12348,
+			"personen_erst_kumulativ": 1604,
+			"personen_voll_kumulativ": 2877
+		},
+		{
+			"date": "2022-07-01",
+			"dosen_kumulativ": 35698,
+			"personen_auffr2_kumulativ": 25458,
+			"personen_auffr_kumulativ": 6976,
+			"personen_erst_kumulativ": 1325,
+			"personen_voll_kumulativ": 1939
+		},
+		{
+			"date": "2022-07-02",
+			"dosen_kumulativ": 10450,
+			"personen_auffr2_kumulativ": 5965,
+			"personen_auffr_kumulativ": 3080,
+			"personen_erst_kumulativ": 512,
+			"personen_voll_kumulativ": 893
+		},
+		{
+			"date": "2022-07-03",
+			"dosen_kumulativ": 2701,
+			"personen_auffr2_kumulativ": 1695,
+			"personen_auffr_kumulativ": 697,
+			"personen_erst_kumulativ": 104,
+			"personen_voll_kumulativ": 205
+		},
+		{
+			"date": "2022-07-04",
+			"dosen_kumulativ": 21074,
+			"personen_auffr2_kumulativ": 14702,
+			"personen_auffr_kumulativ": 4775,
+			"personen_erst_kumulativ": 620,
+			"personen_voll_kumulativ": 977
+		},
+		{
+			"date": "2022-07-05",
+			"dosen_kumulativ": 47662,
+			"personen_auffr2_kumulativ": 36778,
+			"personen_auffr_kumulativ": 7935,
+			"personen_erst_kumulativ": 1157,
+			"personen_voll_kumulativ": 1792
+		},
+		{
+			"date": "2022-07-06",
+			"dosen_kumulativ": 52416,
+			"personen_auffr2_kumulativ": 40404,
+			"personen_auffr_kumulativ": 8694,
+			"personen_erst_kumulativ": 1289,
+			"personen_voll_kumulativ": 2029
+		},
+		{
+			"date": "2022-07-07",
+			"dosen_kumulativ": 60410,
+			"personen_auffr2_kumulativ": 45316,
+			"personen_auffr_kumulativ": 10591,
+			"personen_erst_kumulativ": 1549,
+			"personen_voll_kumulativ": 2954
+		},
+		{
+			"date": "2022-07-08",
+			"dosen_kumulativ": 42448,
+			"personen_auffr2_kumulativ": 31407,
+			"personen_auffr_kumulativ": 7748,
+			"personen_erst_kumulativ": 1335,
+			"personen_voll_kumulativ": 1958
+		},
+		{
+			"date": "2022-07-09",
+			"dosen_kumulativ": 11558,
+			"personen_auffr2_kumulativ": 7561,
+			"personen_auffr_kumulativ": 2619,
+			"personen_erst_kumulativ": 601,
+			"personen_voll_kumulativ": 777
+		},
+		{
+			"date": "2022-07-10",
+			"dosen_kumulativ": 2704,
+			"personen_auffr2_kumulativ": 1870,
+			"personen_auffr_kumulativ": 593,
+			"personen_erst_kumulativ": 82,
+			"personen_voll_kumulativ": 159
+		},
+		{
+			"date": "2022-07-11",
+			"dosen_kumulativ": 25155,
+			"personen_auffr2_kumulativ": 17201,
+			"personen_auffr_kumulativ": 5380,
+			"personen_erst_kumulativ": 975,
+			"personen_voll_kumulativ": 1599
+		},
+		{
+			"date": "2022-07-12",
+			"dosen_kumulativ": 57304,
+			"personen_auffr2_kumulativ": 45450,
+			"personen_auffr_kumulativ": 8156,
+			"personen_erst_kumulativ": 1467,
+			"personen_voll_kumulativ": 2231
+		},
+		{
+			"date": "2022-07-13",
+			"dosen_kumulativ": 59820,
+			"personen_auffr2_kumulativ": 47815,
+			"personen_auffr_kumulativ": 8863,
+			"personen_erst_kumulativ": 1181,
+			"personen_voll_kumulativ": 1961
+		},
+		{
+			"date": "2022-07-14",
+			"dosen_kumulativ": 65681,
+			"personen_auffr2_kumulativ": 53401,
+			"personen_auffr_kumulativ": 9210,
+			"personen_erst_kumulativ": 1164,
+			"personen_voll_kumulativ": 1906
+		},
+		{
+			"date": "2022-07-15",
+			"dosen_kumulativ": 54529,
+			"personen_auffr2_kumulativ": 43352,
+			"personen_auffr_kumulativ": 7649,
+			"personen_erst_kumulativ": 1385,
+			"personen_voll_kumulativ": 2143
+		},
+		{
+			"date": "2022-07-16",
+			"dosen_kumulativ": 16350,
+			"personen_auffr2_kumulativ": 11923,
+			"personen_auffr_kumulativ": 2960,
+			"personen_erst_kumulativ": 669,
+			"personen_voll_kumulativ": 798
+		},
+		{
+			"date": "2022-07-17",
+			"dosen_kumulativ": 3902,
+			"personen_auffr2_kumulativ": 2753,
+			"personen_auffr_kumulativ": 778,
+			"personen_erst_kumulativ": 158,
+			"personen_voll_kumulativ": 213
+		},
+		{
+			"date": "2022-07-18",
+			"dosen_kumulativ": 26195,
+			"personen_auffr2_kumulativ": 20041,
+			"personen_auffr_kumulativ": 4540,
+			"personen_erst_kumulativ": 678,
+			"personen_voll_kumulativ": 936
+		},
+		{
+			"date": "2022-07-19",
+			"dosen_kumulativ": 52186,
+			"personen_auffr2_kumulativ": 42882,
+			"personen_auffr_kumulativ": 6694,
+			"personen_erst_kumulativ": 1019,
+			"personen_voll_kumulativ": 1591
+		},
+		{
+			"date": "2022-07-20",
+			"dosen_kumulativ": 50779,
+			"personen_auffr2_kumulativ": 41752,
+			"personen_auffr_kumulativ": 6557,
+			"personen_erst_kumulativ": 973,
+			"personen_voll_kumulativ": 1497
+		},
+		{
+			"date": "2022-07-21",
+			"dosen_kumulativ": 63978,
+			"personen_auffr2_kumulativ": 52649,
+			"personen_auffr_kumulativ": 8290,
+			"personen_erst_kumulativ": 1251,
+			"personen_voll_kumulativ": 1788
+		},
+		{
+			"date": "2022-07-22",
+			"dosen_kumulativ": 48951,
+			"personen_auffr2_kumulativ": 38206,
+			"personen_auffr_kumulativ": 6542,
+			"personen_erst_kumulativ": 2043,
+			"personen_voll_kumulativ": 2160
+		},
+		{
+			"date": "2022-07-23",
+			"dosen_kumulativ": 11031,
+			"personen_auffr2_kumulativ": 7696,
+			"personen_auffr_kumulativ": 2110,
+			"personen_erst_kumulativ": 548,
+			"personen_voll_kumulativ": 677
+		},
+		{
+			"date": "2022-07-24",
+			"dosen_kumulativ": 4247,
+			"personen_auffr2_kumulativ": 2179,
+			"personen_auffr_kumulativ": 1182,
+			"personen_erst_kumulativ": 371,
+			"personen_voll_kumulativ": 515
+		},
+		{
+			"date": "2022-07-25",
+			"dosen_kumulativ": 22235,
+			"personen_auffr2_kumulativ": 17007,
+			"personen_auffr_kumulativ": 3759,
+			"personen_erst_kumulativ": 575,
+			"personen_voll_kumulativ": 894
+		},
+		{
+			"date": "2022-07-26",
+			"dosen_kumulativ": 51370,
+			"personen_auffr2_kumulativ": 41708,
+			"personen_auffr_kumulativ": 6852,
+			"personen_erst_kumulativ": 1128,
+			"personen_voll_kumulativ": 1682
+		},
+		{
+			"date": "2022-07-27",
+			"dosen_kumulativ": 52878,
+			"personen_auffr2_kumulativ": 43386,
+			"personen_auffr_kumulativ": 6880,
+			"personen_erst_kumulativ": 1059,
+			"personen_voll_kumulativ": 1553
+		},
+		{
+			"date": "2022-07-28",
+			"dosen_kumulativ": 55228,
+			"personen_auffr2_kumulativ": 45509,
+			"personen_auffr_kumulativ": 7190,
+			"personen_erst_kumulativ": 968,
+			"personen_voll_kumulativ": 1561
+		},
+		{
+			"date": "2022-07-29",
+			"dosen_kumulativ": 41744,
+			"personen_auffr2_kumulativ": 32680,
+			"personen_auffr_kumulativ": 6262,
+			"personen_erst_kumulativ": 1322,
+			"personen_voll_kumulativ": 1480
+		},
+		{
+			"date": "2022-07-30",
+			"dosen_kumulativ": 9532,
+			"personen_auffr2_kumulativ": 6542,
+			"personen_auffr_kumulativ": 1810,
+			"personen_erst_kumulativ": 472,
+			"personen_voll_kumulativ": 708
+		},
+		{
+			"date": "2022-07-31",
+			"dosen_kumulativ": 2804,
+			"personen_auffr2_kumulativ": 1990,
+			"personen_auffr_kumulativ": 544,
+			"personen_erst_kumulativ": 124,
+			"personen_voll_kumulativ": 146
+		},
+		{
+			"date": "2022-08-01",
+			"dosen_kumulativ": 19389,
+			"personen_auffr2_kumulativ": 14157,
+			"personen_auffr_kumulativ": 3432,
+			"personen_erst_kumulativ": 814,
+			"personen_voll_kumulativ": 986
+		},
+		{
+			"date": "2022-08-02",
+			"dosen_kumulativ": 38234,
+			"personen_auffr2_kumulativ": 30842,
+			"personen_auffr_kumulativ": 5434,
+			"personen_erst_kumulativ": 776,
+			"personen_voll_kumulativ": 1182
+		},
+		{
+			"date": "2022-08-03",
+			"dosen_kumulativ": 41552,
+			"personen_auffr2_kumulativ": 33305,
+			"personen_auffr_kumulativ": 5866,
+			"personen_erst_kumulativ": 907,
+			"personen_voll_kumulativ": 1474
+		},
+		{
+			"date": "2022-08-04",
+			"dosen_kumulativ": 42564,
+			"personen_auffr2_kumulativ": 34431,
+			"personen_auffr_kumulativ": 5967,
+			"personen_erst_kumulativ": 879,
+			"personen_voll_kumulativ": 1287
+		},
+		{
+			"date": "2022-08-05",
+			"dosen_kumulativ": 32509,
+			"personen_auffr2_kumulativ": 25245,
+			"personen_auffr_kumulativ": 5044,
+			"personen_erst_kumulativ": 938,
+			"personen_voll_kumulativ": 1282
+		},
+		{
+			"date": "2022-08-06",
+			"dosen_kumulativ": 9210,
+			"personen_auffr2_kumulativ": 6263,
+			"personen_auffr_kumulativ": 1850,
+			"personen_erst_kumulativ": 451,
+			"personen_voll_kumulativ": 646
+		},
+		{
+			"date": "2022-08-07",
+			"dosen_kumulativ": 2091,
+			"personen_auffr2_kumulativ": 1240,
+			"personen_auffr_kumulativ": 614,
+			"personen_erst_kumulativ": 102,
+			"personen_voll_kumulativ": 135
+		},
+		{
+			"date": "2022-08-08",
+			"dosen_kumulativ": 17207,
+			"personen_auffr2_kumulativ": 12960,
+			"personen_auffr_kumulativ": 3004,
+			"personen_erst_kumulativ": 534,
+			"personen_voll_kumulativ": 709
+		},
+		{
+			"date": "2022-08-09",
+			"dosen_kumulativ": 37963,
+			"personen_auffr2_kumulativ": 30329,
+			"personen_auffr_kumulativ": 5537,
+			"personen_erst_kumulativ": 806,
+			"personen_voll_kumulativ": 1291
+		},
+		{
+			"date": "2022-08-10",
+			"dosen_kumulativ": 39242,
+			"personen_auffr2_kumulativ": 31587,
+			"personen_auffr_kumulativ": 5379,
+			"personen_erst_kumulativ": 859,
+			"personen_voll_kumulativ": 1417
+		},
+		{
+			"date": "2022-08-11",
+			"dosen_kumulativ": 40538,
+			"personen_auffr2_kumulativ": 32173,
+			"personen_auffr_kumulativ": 6068,
+			"personen_erst_kumulativ": 881,
+			"personen_voll_kumulativ": 1416
+		},
+		{
+			"date": "2022-08-12",
+			"dosen_kumulativ": 28743,
+			"personen_auffr2_kumulativ": 21592,
+			"personen_auffr_kumulativ": 5059,
+			"personen_erst_kumulativ": 876,
+			"personen_voll_kumulativ": 1216
+		},
+		{
+			"date": "2022-08-13",
+			"dosen_kumulativ": 5909,
+			"personen_auffr2_kumulativ": 3536,
+			"personen_auffr_kumulativ": 1517,
+			"personen_erst_kumulativ": 359,
+			"personen_voll_kumulativ": 497
+		},
+		{
+			"date": "2022-08-14",
+			"dosen_kumulativ": 1955,
+			"personen_auffr2_kumulativ": 1311,
+			"personen_auffr_kumulativ": 384,
+			"personen_erst_kumulativ": 115,
+			"personen_voll_kumulativ": 145
+		},
+		{
+			"date": "2022-08-15",
+			"dosen_kumulativ": 13584,
+			"personen_auffr2_kumulativ": 10105,
+			"personen_auffr_kumulativ": 2300,
+			"personen_erst_kumulativ": 489,
+			"personen_voll_kumulativ": 690
+		},
+		{
+			"date": "2022-08-16",
+			"dosen_kumulativ": 32547,
+			"personen_auffr2_kumulativ": 25197,
+			"personen_auffr_kumulativ": 5237,
+			"personen_erst_kumulativ": 820,
+			"personen_voll_kumulativ": 1293
+		},
+		{
+			"date": "2022-08-17",
+			"dosen_kumulativ": 35347,
+			"personen_auffr2_kumulativ": 27038,
+			"personen_auffr_kumulativ": 5740,
+			"personen_erst_kumulativ": 1087,
+			"personen_voll_kumulativ": 1482
+		},
+		{
+			"date": "2022-08-18",
+			"dosen_kumulativ": 42342,
+			"personen_auffr2_kumulativ": 28798,
+			"personen_auffr_kumulativ": 6058,
+			"personen_erst_kumulativ": 3861,
+			"personen_voll_kumulativ": 3625
+		},
+		{
+			"date": "2022-08-19",
+			"dosen_kumulativ": 29268,
+			"personen_auffr2_kumulativ": 21869,
+			"personen_auffr_kumulativ": 5039,
+			"personen_erst_kumulativ": 948,
+			"personen_voll_kumulativ": 1412
+		},
+		{
+			"date": "2022-08-20",
+			"dosen_kumulativ": 7091,
+			"personen_auffr2_kumulativ": 4765,
+			"personen_auffr_kumulativ": 1520,
+			"personen_erst_kumulativ": 301,
+			"personen_voll_kumulativ": 505
+		},
+		{
+			"date": "2022-08-21",
+			"dosen_kumulativ": 2303,
+			"personen_auffr2_kumulativ": 1697,
+			"personen_auffr_kumulativ": 346,
+			"personen_erst_kumulativ": 97,
+			"personen_voll_kumulativ": 163
+		},
+		{
+			"date": "2022-08-22",
+			"dosen_kumulativ": 16902,
+			"personen_auffr2_kumulativ": 12459,
+			"personen_auffr_kumulativ": 3085,
+			"personen_erst_kumulativ": 569,
+			"personen_voll_kumulativ": 789
+		},
+		{
+			"date": "2022-08-23",
+			"dosen_kumulativ": 34874,
+			"personen_auffr2_kumulativ": 27528,
+			"personen_auffr_kumulativ": 5252,
+			"personen_erst_kumulativ": 843,
+			"personen_voll_kumulativ": 1251
+		},
+		{
+			"date": "2022-08-24",
+			"dosen_kumulativ": 38146,
+			"personen_auffr2_kumulativ": 30275,
+			"personen_auffr_kumulativ": 5633,
+			"personen_erst_kumulativ": 922,
+			"personen_voll_kumulativ": 1316
+		},
+		{
+			"date": "2022-08-25",
+			"dosen_kumulativ": 37937,
+			"personen_auffr2_kumulativ": 30382,
+			"personen_auffr_kumulativ": 5562,
+			"personen_erst_kumulativ": 761,
+			"personen_voll_kumulativ": 1232
+		},
+		{
+			"date": "2022-08-26",
+			"dosen_kumulativ": 28945,
+			"personen_auffr2_kumulativ": 21858,
+			"personen_auffr_kumulativ": 4948,
+			"personen_erst_kumulativ": 806,
+			"personen_voll_kumulativ": 1333
+		},
+		{
+			"date": "2022-08-27",
+			"dosen_kumulativ": 6780,
+			"personen_auffr2_kumulativ": 4451,
+			"personen_auffr_kumulativ": 1515,
+			"personen_erst_kumulativ": 344,
+			"personen_voll_kumulativ": 470
+		},
+		{
+			"date": "2022-08-28",
+			"dosen_kumulativ": 1816,
+			"personen_auffr2_kumulativ": 1215,
+			"personen_auffr_kumulativ": 394,
+			"personen_erst_kumulativ": 101,
+			"personen_voll_kumulativ": 106
+		},
+		{
+			"date": "2022-08-29",
+			"dosen_kumulativ": 16813,
+			"personen_auffr2_kumulativ": 12548,
+			"personen_auffr_kumulativ": 2947,
+			"personen_erst_kumulativ": 550,
+			"personen_voll_kumulativ": 768
+		},
+		{
+			"date": "2022-08-30",
+			"dosen_kumulativ": 33246,
+			"personen_auffr2_kumulativ": 26266,
+			"personen_auffr_kumulativ": 4987,
+			"personen_erst_kumulativ": 770,
+			"personen_voll_kumulativ": 1223
+		},
+		{
+			"date": "2022-08-31",
+			"dosen_kumulativ": 36194,
+			"personen_auffr2_kumulativ": 28189,
+			"personen_auffr_kumulativ": 5740,
+			"personen_erst_kumulativ": 923,
+			"personen_voll_kumulativ": 1342
+		},
+		{
+			"date": "2022-09-01",
+			"dosen_kumulativ": 32005,
+			"personen_auffr2_kumulativ": 25224,
+			"personen_auffr_kumulativ": 4916,
+			"personen_erst_kumulativ": 778,
+			"personen_voll_kumulativ": 1087
+		},
+		{
+			"date": "2022-09-02",
+			"dosen_kumulativ": 27354,
+			"personen_auffr2_kumulativ": 20133,
+			"personen_auffr_kumulativ": 5047,
+			"personen_erst_kumulativ": 950,
+			"personen_voll_kumulativ": 1224
+		},
+		{
+			"date": "2022-09-03",
+			"dosen_kumulativ": 5931,
+			"personen_auffr2_kumulativ": 3601,
+			"personen_auffr_kumulativ": 1412,
+			"personen_erst_kumulativ": 361,
+			"personen_voll_kumulativ": 557
+		},
+		{
+			"date": "2022-09-04",
+			"dosen_kumulativ": 1762,
+			"personen_auffr2_kumulativ": 1263,
+			"personen_auffr_kumulativ": 319,
+			"personen_erst_kumulativ": 80,
+			"personen_voll_kumulativ": 100
+		},
+		{
+			"date": "2022-09-05",
+			"dosen_kumulativ": 13804,
+			"personen_auffr2_kumulativ": 9526,
+			"personen_auffr_kumulativ": 2978,
+			"personen_erst_kumulativ": 604,
+			"personen_voll_kumulativ": 696
+		},
+		{
+			"date": "2022-09-06",
+			"dosen_kumulativ": 27931,
+			"personen_auffr2_kumulativ": 20936,
+			"personen_auffr_kumulativ": 4957,
+			"personen_erst_kumulativ": 846,
+			"personen_voll_kumulativ": 1192
+		},
+		{
+			"date": "2022-09-07",
+			"dosen_kumulativ": 28933,
+			"personen_auffr2_kumulativ": 22163,
+			"personen_auffr_kumulativ": 4858,
+			"personen_erst_kumulativ": 765,
+			"personen_voll_kumulativ": 1147
+		},
+		{
+			"date": "2022-09-08",
+			"dosen_kumulativ": 28908,
+			"personen_auffr2_kumulativ": 21540,
+			"personen_auffr_kumulativ": 5381,
+			"personen_erst_kumulativ": 824,
+			"personen_voll_kumulativ": 1163
+		},
+		{
+			"date": "2022-09-09",
+			"dosen_kumulativ": 20716,
+			"personen_auffr2_kumulativ": 14462,
+			"personen_auffr_kumulativ": 4283,
+			"personen_erst_kumulativ": 858,
+			"personen_voll_kumulativ": 1113
+		},
+		{
+			"date": "2022-09-10",
+			"dosen_kumulativ": 6293,
+			"personen_auffr2_kumulativ": 3818,
+			"personen_auffr_kumulativ": 1600,
+			"personen_erst_kumulativ": 366,
+			"personen_voll_kumulativ": 509
+		},
+		{
+			"date": "2022-09-11",
+			"dosen_kumulativ": 1718,
+			"personen_auffr2_kumulativ": 1047,
+			"personen_auffr_kumulativ": 407,
+			"personen_erst_kumulativ": 106,
+			"personen_voll_kumulativ": 158
+		},
+		{
+			"date": "2022-09-12",
+			"dosen_kumulativ": 13938,
+			"personen_auffr2_kumulativ": 10201,
+			"personen_auffr_kumulativ": 2531,
+			"personen_erst_kumulativ": 533,
+			"personen_voll_kumulativ": 673
+		},
+		{
+			"date": "2022-09-13",
+			"dosen_kumulativ": 42164,
+			"personen_auffr2_kumulativ": 33402,
+			"personen_auffr_kumulativ": 6742,
+			"personen_erst_kumulativ": 821,
+			"personen_voll_kumulativ": 1199
+		},
+		{
+			"date": "2022-09-14",
+			"dosen_kumulativ": 47336,
+			"personen_auffr2_kumulativ": 39495,
+			"personen_auffr_kumulativ": 5738,
+			"personen_erst_kumulativ": 869,
+			"personen_voll_kumulativ": 1234
+		},
+		{
+			"date": "2022-09-15",
+			"dosen_kumulativ": 51687,
+			"personen_auffr2_kumulativ": 42968,
+			"personen_auffr_kumulativ": 6589,
+			"personen_erst_kumulativ": 845,
+			"personen_voll_kumulativ": 1285
+		},
+		{
+			"date": "2022-09-16",
+			"dosen_kumulativ": 39692,
+			"personen_auffr2_kumulativ": 32470,
+			"personen_auffr_kumulativ": 5357,
+			"personen_erst_kumulativ": 738,
+			"personen_voll_kumulativ": 1127
+		},
+		{
+			"date": "2022-09-17",
+			"dosen_kumulativ": 10217,
+			"personen_auffr2_kumulativ": 7466,
+			"personen_auffr_kumulativ": 2012,
+			"personen_erst_kumulativ": 290,
+			"personen_voll_kumulativ": 449
+		},
+		{
+			"date": "2022-09-18",
+			"dosen_kumulativ": 3150,
+			"personen_auffr2_kumulativ": 2207,
+			"personen_auffr_kumulativ": 690,
+			"personen_erst_kumulativ": 90,
+			"personen_voll_kumulativ": 163
+		},
+		{
+			"date": "2022-09-19",
+			"dosen_kumulativ": 20792,
+			"personen_auffr2_kumulativ": 16798,
+			"personen_auffr_kumulativ": 2837,
+			"personen_erst_kumulativ": 550,
+			"personen_voll_kumulativ": 607
+		},
+		{
+			"date": "2022-09-20",
+			"dosen_kumulativ": 47761,
+			"personen_auffr2_kumulativ": 40913,
+			"personen_auffr_kumulativ": 5260,
+			"personen_erst_kumulativ": 590,
+			"personen_voll_kumulativ": 998
+		},
+		{
+			"date": "2022-09-21",
+			"dosen_kumulativ": 50440,
+			"personen_auffr2_kumulativ": 42824,
+			"personen_auffr_kumulativ": 5964,
+			"personen_erst_kumulativ": 715,
+			"personen_voll_kumulativ": 937
+		},
+		{
+			"date": "2022-09-22",
+			"dosen_kumulativ": 57267,
+			"personen_auffr2_kumulativ": 49105,
+			"personen_auffr_kumulativ": 6329,
+			"personen_erst_kumulativ": 703,
+			"personen_voll_kumulativ": 1130
+		}
+	],
+	"pubDate": "2022-09-23 08:00",
+	"states": {
+		"BB": {
+			"code": "BB",
+			"dosen_astrazeneca_kumulativ": 301939,
+			"dosen_biontech_kumulativ": 3670602,
+			"dosen_differenz_zum_vortag": 2212,
+			"dosen_janssen_kumulativ": 117569,
+			"dosen_kumulativ": 4919797,
+			"dosen_moderna_kumulativ": 825961,
+			"dosen_novavax_kumulativ": 3726,
+			"impf_inzidenz_auffr": 555.2,
+			"impf_inzidenz_dosen": 1943.8,
+			"impf_inzidenz_min1": 680.4,
+			"impf_inzidenz_voll": 682.1,
+			"impf_quote_auffr": 55.5,
+			"impf_quote_auffr2": 6.4,
+			"impf_quote_auffr2_alter_12bis17": 0.4,
+			"impf_quote_auffr2_alter_18bis59": 2.2,
+			"impf_quote_auffr2_alter_18plus": 7.5,
+			"impf_quote_auffr2_alter_60plus": 15.6,
+			"impf_quote_auffr_alter_12bis17": 20.4,
+			"impf_quote_auffr_alter_18bis59": 54.1,
+			"impf_quote_auffr_alter_18plus": 64.8,
+			"impf_quote_auffr_alter_60plus": 80.9,
+			"impf_quote_dosen": 194.4,
+			"impf_quote_min1": 68,
+			"impf_quote_min1_alter_12bis17": 60.3,
+			"impf_quote_min1_alter_18bis59": 72.4,
+			"impf_quote_min1_alter_18plus": 76.3,
+			"impf_quote_min1_alter_5bis11": 11.2,
+			"impf_quote_min1_alter_5bis17": 33.5,
+			"impf_quote_min1_alter_60plus": 82.1,
+			"impf_quote_voll": 68.2,
+			"impf_quote_voll_alter_12bis17": 55.3,
+			"impf_quote_voll_alter_18bis59": 72,
+			"impf_quote_voll_alter_18plus": 76.9,
+			"impf_quote_voll_alter_5bis11": 9.5,
+			"impf_quote_voll_alter_5bis17": 30.3,
+			"impf_quote_voll_alter_60plus": 84.5,
+			"personen_auffr2_kumulativ": 161104,
+			"personen_auffr_kumulativ": 1405168,
+			"personen_min1_kumulativ": 1722085,
+			"personen_voll_kumulativ": 1726406,
+			"title": "Brandenburg"
+		},
+		"BE": {
+			"code": "BE",
+			"dosen_astrazeneca_kumulativ": 476935,
+			"dosen_biontech_kumulativ": 6130317,
+			"dosen_differenz_zum_vortag": 3661,
+			"dosen_janssen_kumulativ": 135475,
+			"dosen_kumulativ": 8307177,
+			"dosen_moderna_kumulativ": 1557737,
+			"dosen_novavax_kumulativ": 6713,
+			"impf_inzidenz_auffr": 634,
+			"impf_inzidenz_dosen": 2267.2,
+			"impf_inzidenz_min1": 790.4,
+			"impf_inzidenz_voll": 781.9,
+			"impf_quote_auffr": 63.4,
+			"impf_quote_auffr2": 8.9,
+			"impf_quote_auffr2_alter_12bis17": 0.6,
+			"impf_quote_auffr2_alter_18bis59": 3.1,
+			"impf_quote_auffr2_alter_18plus": 10.7,
+			"impf_quote_auffr2_alter_60plus": 28.4,
+			"impf_quote_auffr_alter_12bis17": 30.9,
+			"impf_quote_auffr_alter_18bis59": 67,
+			"impf_quote_auffr_alter_18plus": 74.2,
+			"impf_quote_auffr_alter_60plus": 90.9,
+			"impf_quote_dosen": 226.7,
+			"impf_quote_min1": 79,
+			"impf_quote_min1_alter_12bis17": 72.7,
+			"impf_quote_min1_alter_18bis59": 84.3,
+			"impf_quote_min1_alter_18plus": 88.5,
+			"impf_quote_min1_alter_5bis11": 26.4,
+			"impf_quote_min1_alter_5bis17": 46.3,
+			"impf_quote_min1_alter_60plus": 98.1,
+			"impf_quote_voll": 78.2,
+			"impf_quote_voll_alter_12bis17": 68.2,
+			"impf_quote_voll_alter_18bis59": 83.4,
+			"impf_quote_voll_alter_18plus": 87.9,
+			"impf_quote_voll_alter_5bis11": 24.4,
+			"impf_quote_voll_alter_5bis17": 43.4,
+			"impf_quote_voll_alter_60plus": 98.2,
+			"personen_auffr2_kumulativ": 327155,
+			"personen_auffr_kumulativ": 2322855,
+			"personen_min1_kumulativ": 2896201,
+			"personen_voll_kumulativ": 2864917,
+			"title": "Berlin"
+		},
+		"BW": {
+			"code": "BW",
+			"dosen_astrazeneca_kumulativ": 1596673,
+			"dosen_biontech_kumulativ": 17670699,
+			"dosen_differenz_zum_vortag": 6373,
+			"dosen_janssen_kumulativ": 501812,
+			"dosen_kumulativ": 23900018,
+			"dosen_moderna_kumulativ": 4106073,
+			"dosen_novavax_kumulativ": 24761,
+			"impf_inzidenz_auffr": 609.9,
+			"impf_inzidenz_dosen": 2152.6,
+			"impf_inzidenz_min1": 757.3,
+			"impf_inzidenz_voll": 745.4,
+			"impf_quote_auffr": 61,
+			"impf_quote_auffr2": 6.4,
+			"impf_quote_auffr2_alter_12bis17": 0.5,
+			"impf_quote_auffr2_alter_18bis59": 2,
+			"impf_quote_auffr2_alter_18plus": 7.7,
+			"impf_quote_auffr2_alter_60plus": 19.2,
+			"impf_quote_auffr_alter_12bis17": 30.4,
+			"impf_quote_auffr_alter_18bis59": 64.6,
+			"impf_quote_auffr_alter_18plus": 71.4,
+			"impf_quote_auffr_alter_60plus": 85.1,
+			"impf_quote_dosen": 215.3,
+			"impf_quote_min1": 75.7,
+			"impf_quote_min1_alter_12bis17": 71,
+			"impf_quote_min1_alter_18bis59": 81.8,
+			"impf_quote_min1_alter_18plus": 84.8,
+			"impf_quote_min1_alter_5bis11": 19.8,
+			"impf_quote_min1_alter_5bis17": 44.2,
+			"impf_quote_min1_alter_60plus": 90.9,
+			"impf_quote_voll": 74.5,
+			"impf_quote_voll_alter_12bis17": 66.6,
+			"impf_quote_voll_alter_18bis59": 80.7,
+			"impf_quote_voll_alter_18plus": 83.9,
+			"impf_quote_voll_alter_5bis11": 17.5,
+			"impf_quote_voll_alter_5bis17": 40.8,
+			"impf_quote_voll_alter_60plus": 90.4,
+			"personen_auffr2_kumulativ": 712827,
+			"personen_auffr_kumulativ": 6771204,
+			"personen_min1_kumulativ": 8407786,
+			"personen_voll_kumulativ": 8276388,
+			"title": "Baden-Württemberg"
+		},
+		"BY": {
+			"code": "BY",
+			"dosen_astrazeneca_kumulativ": 1918060,
+			"dosen_biontech_kumulativ": 21154545,
+			"dosen_differenz_zum_vortag": 8172,
+			"dosen_janssen_kumulativ": 520240,
+			"dosen_kumulativ": 28116635,
+			"dosen_moderna_kumulativ": 4504081,
+			"dosen_novavax_kumulativ": 19709,
+			"impf_inzidenz_auffr": 589.6,
+			"impf_inzidenz_dosen": 2139.7,
+			"impf_inzidenz_min1": 753.5,
+			"impf_inzidenz_voll": 752.6,
+			"impf_quote_auffr": 59,
+			"impf_quote_auffr2": 6.6,
+			"impf_quote_auffr2_alter_12bis17": 0.4,
+			"impf_quote_auffr2_alter_18bis59": 2.1,
+			"impf_quote_auffr2_alter_18plus": 7.9,
+			"impf_quote_auffr2_alter_60plus": 19.6,
+			"impf_quote_auffr_alter_12bis17": 27.3,
+			"impf_quote_auffr_alter_18bis59": 61.4,
+			"impf_quote_auffr_alter_18plus": 68.9,
+			"impf_quote_auffr_alter_60plus": 84,
+			"impf_quote_dosen": 214,
+			"impf_quote_min1": 75.4,
+			"impf_quote_min1_alter_12bis17": 74.5,
+			"impf_quote_min1_alter_18bis59": 81.1,
+			"impf_quote_min1_alter_18plus": 83.9,
+			"impf_quote_min1_alter_5bis11": 21.6,
+			"impf_quote_min1_alter_5bis17": 46.2,
+			"impf_quote_min1_alter_60plus": 89.5,
+			"impf_quote_voll": 75.3,
+			"impf_quote_voll_alter_12bis17": 70.3,
+			"impf_quote_voll_alter_18bis59": 81.4,
+			"impf_quote_voll_alter_18plus": 84.1,
+			"impf_quote_voll_alter_5bis11": 19.8,
+			"impf_quote_voll_alter_5bis17": 43.4,
+			"impf_quote_voll_alter_60plus": 89.6,
+			"personen_auffr2_kumulativ": 868693,
+			"personen_auffr_kumulativ": 7747952,
+			"personen_min1_kumulativ": 9901613,
+			"personen_voll_kumulativ": 9889118,
+			"title": "Bayern"
+		},
+		"HB": {
+			"code": "HB",
+			"dosen_astrazeneca_kumulativ": 123395,
+			"dosen_biontech_kumulativ": 1259774,
+			"dosen_differenz_zum_vortag": 819,
+			"dosen_janssen_kumulativ": 48434,
+			"dosen_kumulativ": 1752672,
+			"dosen_moderna_kumulativ": 319996,
+			"dosen_novavax_kumulativ": 1073,
+			"impf_inzidenz_auffr": 665.3,
+			"impf_inzidenz_dosen": 2577,
+			"impf_inzidenz_min1": 912.3,
+			"impf_inzidenz_voll": 876.8,
+			"impf_quote_auffr": 66.5,
+			"impf_quote_auffr2": 14.5,
+			"impf_quote_auffr2_alter_12bis17": 0.6,
+			"impf_quote_auffr2_alter_18bis59": 5.7,
+			"impf_quote_auffr2_alter_18plus": 17.3,
+			"impf_quote_auffr2_alter_60plus": 41,
+			"impf_quote_auffr_alter_12bis17": 28.4,
+			"impf_quote_auffr_alter_18bis59": 71.2,
+			"impf_quote_auffr_alter_18plus": 77.8,
+			"impf_quote_auffr_alter_60plus": 91.3,
+			"impf_quote_dosen": 257.7,
+			"impf_quote_min1": 91.2,
+			"impf_quote_min1_alter_12bis17": 79,
+			"impf_quote_min1_alter_18bis59": 104.3,
+			"impf_quote_min1_alter_18plus": 102.5,
+			"impf_quote_min1_alter_5bis11": 23.3,
+			"impf_quote_min1_alter_5bis17": 49.1,
+			"impf_quote_min1_alter_60plus": 98.9,
+			"impf_quote_voll": 87.7,
+			"impf_quote_voll_alter_12bis17": 73,
+			"impf_quote_voll_alter_18bis59": 99.2,
+			"impf_quote_voll_alter_18plus": 98.9,
+			"impf_quote_voll_alter_5bis11": 19.9,
+			"impf_quote_voll_alter_5bis17": 44.4,
+			"impf_quote_voll_alter_60plus": 98.3,
+			"personen_auffr2_kumulativ": 98720,
+			"personen_auffr_kumulativ": 452482,
+			"personen_min1_kumulativ": 620510,
+			"personen_voll_kumulativ": 596353,
+			"title": "Bremen"
+		},
+		"HE": {
+			"code": "HE",
+			"dosen_astrazeneca_kumulativ": 1020411,
+			"dosen_biontech_kumulativ": 10218983,
+			"dosen_differenz_zum_vortag": 3306,
+			"dosen_janssen_kumulativ": 267830,
+			"dosen_kumulativ": 13885287,
+			"dosen_moderna_kumulativ": 2368647,
+			"dosen_novavax_kumulativ": 9416,
+			"impf_inzidenz_auffr": 606,
+			"impf_inzidenz_dosen": 2206.4,
+			"impf_inzidenz_min1": 784.6,
+			"impf_inzidenz_voll": 753.8,
+			"impf_quote_auffr": 60.6,
+			"impf_quote_auffr2": 8.8,
+			"impf_quote_auffr2_alter_12bis17": 0.6,
+			"impf_quote_auffr2_alter_18bis59": 3.2,
+			"impf_quote_auffr2_alter_18plus": 10.5,
+			"impf_quote_auffr2_alter_60plus": 25.2,
+			"impf_quote_auffr_alter_12bis17": 30.9,
+			"impf_quote_auffr_alter_18bis59": 63.9,
+			"impf_quote_auffr_alter_18plus": 70.8,
+			"impf_quote_auffr_alter_60plus": 84.6,
+			"impf_quote_dosen": 220.6,
+			"impf_quote_min1": 78.5,
+			"impf_quote_min1_alter_12bis17": 75.9,
+			"impf_quote_min1_alter_18bis59": 85,
+			"impf_quote_min1_alter_18plus": 87.3,
+			"impf_quote_min1_alter_5bis11": 24.3,
+			"impf_quote_min1_alter_5bis17": 48.7,
+			"impf_quote_min1_alter_60plus": 92,
+			"impf_quote_voll": 75.4,
+			"impf_quote_voll_alter_12bis17": 68.5,
+			"impf_quote_voll_alter_18bis59": 81.6,
+			"impf_quote_voll_alter_18plus": 84.4,
+			"impf_quote_voll_alter_5bis11": 21.1,
+			"impf_quote_voll_alter_5bis17": 43.4,
+			"impf_quote_voll_alter_60plus": 89.8,
+			"personen_auffr2_kumulativ": 553373,
+			"personen_auffr_kumulativ": 3813607,
+			"personen_min1_kumulativ": 4937449,
+			"personen_voll_kumulativ": 4743641,
+			"title": "Hessen"
+		},
+		"HH": {
+			"code": "HH",
+			"dosen_astrazeneca_kumulativ": 243329,
+			"dosen_biontech_kumulativ": 3325513,
+			"dosen_differenz_zum_vortag": 1182,
+			"dosen_janssen_kumulativ": 116419,
+			"dosen_kumulativ": 4527077,
+			"dosen_moderna_kumulativ": 838858,
+			"dosen_novavax_kumulativ": 2958,
+			"impf_inzidenz_auffr": 662,
+			"impf_inzidenz_dosen": 2443.8,
+			"impf_inzidenz_min1": 866.6,
+			"impf_inzidenz_voll": 843.6,
+			"impf_quote_auffr": 66.2,
+			"impf_quote_auffr2": 10.5,
+			"impf_quote_auffr2_alter_12bis17": 0.9,
+			"impf_quote_auffr2_alter_18bis59": 4.2,
+			"impf_quote_auffr2_alter_18plus": 12.6,
+			"impf_quote_auffr2_alter_60plus": 33.9,
+			"impf_quote_auffr_alter_12bis17": 29.1,
+			"impf_quote_auffr_alter_18bis59": 72.1,
+			"impf_quote_auffr_alter_18plus": 77.8,
+			"impf_quote_auffr_alter_60plus": 92.2,
+			"impf_quote_dosen": 244.4,
+			"impf_quote_min1": 86.7,
+			"impf_quote_min1_alter_12bis17": 80.7,
+			"impf_quote_min1_alter_18bis59": 96.2,
+			"impf_quote_min1_alter_18plus": 96.9,
+			"impf_quote_min1_alter_5bis11": 30.1,
+			"impf_quote_min1_alter_5bis17": 53,
+			"impf_quote_min1_alter_60plus": 98.7,
+			"impf_quote_voll": 84.4,
+			"impf_quote_voll_alter_12bis17": 75.9,
+			"impf_quote_voll_alter_18bis59": 93.6,
+			"impf_quote_voll_alter_18plus": 94.9,
+			"impf_quote_voll_alter_5bis11": 24.6,
+			"impf_quote_voll_alter_5bis17": 47.5,
+			"impf_quote_voll_alter_60plus": 98.4,
+			"personen_auffr2_kumulativ": 195367,
+			"personen_auffr_kumulativ": 1226344,
+			"personen_min1_kumulativ": 1605347,
+			"personen_voll_kumulativ": 1562685,
+			"title": "Hamburg"
+		},
+		"MV": {
+			"code": "MV",
+			"dosen_astrazeneca_kumulativ": 217222,
+			"dosen_biontech_kumulativ": 2617270,
+			"dosen_differenz_zum_vortag": 1408,
+			"dosen_janssen_kumulativ": 67922,
+			"dosen_kumulativ": 3479534,
+			"dosen_moderna_kumulativ": 573233,
+			"dosen_novavax_kumulativ": 3887,
+			"impf_inzidenz_auffr": 597.9,
+			"impf_inzidenz_dosen": 2160.2,
+			"impf_inzidenz_min1": 756.2,
+			"impf_inzidenz_voll": 746.9,
+			"impf_quote_auffr": 59.8,
+			"impf_quote_auffr2": 8.5,
+			"impf_quote_auffr2_alter_12bis17": 0.7,
+			"impf_quote_auffr2_alter_18bis59": 2.1,
+			"impf_quote_auffr2_alter_18plus": 10,
+			"impf_quote_auffr2_alter_60plus": 21.4,
+			"impf_quote_auffr_alter_12bis17": 22,
+			"impf_quote_auffr_alter_18bis59": 58.5,
+			"impf_quote_auffr_alter_18plus": 69.3,
+			"impf_quote_auffr_alter_60plus": 85,
+			"impf_quote_dosen": 216,
+			"impf_quote_min1": 75.6,
+			"impf_quote_min1_alter_12bis17": 63.4,
+			"impf_quote_min1_alter_18bis59": 79.8,
+			"impf_quote_min1_alter_18plus": 84.7,
+			"impf_quote_min1_alter_5bis11": 10.8,
+			"impf_quote_min1_alter_5bis17": 34.5,
+			"impf_quote_min1_alter_60plus": 91.8,
+			"impf_quote_voll": 74.7,
+			"impf_quote_voll_alter_12bis17": 58.3,
+			"impf_quote_voll_alter_18bis59": 78.6,
+			"impf_quote_voll_alter_18plus": 84,
+			"impf_quote_voll_alter_5bis11": 8.8,
+			"impf_quote_voll_alter_5bis17": 31.2,
+			"impf_quote_voll_alter_60plus": 92,
+			"personen_auffr2_kumulativ": 136837,
+			"personen_auffr_kumulativ": 963003,
+			"personen_min1_kumulativ": 1218046,
+			"personen_voll_kumulativ": 1203099,
+			"title": "Mecklenburg-Vorpommern"
+		},
+		"NI": {
+			"code": "NI",
+			"dosen_astrazeneca_kumulativ": 1487310,
+			"dosen_biontech_kumulativ": 13238454,
+			"dosen_differenz_zum_vortag": 4951,
+			"dosen_janssen_kumulativ": 446379,
+			"dosen_kumulativ": 18692258,
+			"dosen_moderna_kumulativ": 3504938,
+			"dosen_novavax_kumulativ": 15177,
+			"impf_inzidenz_auffr": 668.3,
+			"impf_inzidenz_dosen": 2335.5,
+			"impf_inzidenz_min1": 799.5,
+			"impf_inzidenz_voll": 777.6,
+			"impf_quote_auffr": 66.8,
+			"impf_quote_auffr2": 12.5,
+			"impf_quote_auffr2_alter_12bis17": 0.8,
+			"impf_quote_auffr2_alter_18bis59": 4,
+			"impf_quote_auffr2_alter_18plus": 15,
+			"impf_quote_auffr2_alter_60plus": 35.1,
+			"impf_quote_auffr_alter_12bis17": 39.1,
+			"impf_quote_auffr_alter_18bis59": 71,
+			"impf_quote_auffr_alter_18plus": 77.5,
+			"impf_quote_auffr_alter_60plus": 89.4,
+			"impf_quote_dosen": 233.6,
+			"impf_quote_min1": 80,
+			"impf_quote_min1_alter_12bis17": 81.3,
+			"impf_quote_min1_alter_18bis59": 84.9,
+			"impf_quote_min1_alter_18plus": 88.4,
+			"impf_quote_min1_alter_5bis11": 27.4,
+			"impf_quote_min1_alter_5bis17": 53.1,
+			"impf_quote_min1_alter_60plus": 94.7,
+			"impf_quote_voll": 77.8,
+			"impf_quote_voll_alter_12bis17": 75.7,
+			"impf_quote_voll_alter_18bis59": 82.9,
+			"impf_quote_voll_alter_18plus": 86.3,
+			"impf_quote_voll_alter_5bis11": 24.6,
+			"impf_quote_voll_alter_5bis17": 48.9,
+			"impf_quote_voll_alter_60plus": 92.7,
+			"personen_auffr2_kumulativ": 1000385,
+			"personen_auffr_kumulativ": 5348371,
+			"personen_min1_kumulativ": 6399124,
+			"personen_voll_kumulativ": 6223602,
+			"title": "Niedersachsen"
+		},
+		"NW": {
+			"code": "NW",
+			"dosen_astrazeneca_kumulativ": 3086182,
+			"dosen_biontech_kumulativ": 31672360,
+			"dosen_differenz_zum_vortag": 13435,
+			"dosen_janssen_kumulativ": 847729,
+			"dosen_kumulativ": 42342415,
+			"dosen_moderna_kumulativ": 6714904,
+			"dosen_novavax_kumulativ": 21240,
+			"impf_inzidenz_auffr": 655.2,
+			"impf_inzidenz_dosen": 2362.1,
+			"impf_inzidenz_min1": 817.1,
+			"impf_inzidenz_voll": 794.1,
+			"impf_quote_auffr": 65.5,
+			"impf_quote_auffr2": 12.7,
+			"impf_quote_auffr2_alter_12bis17": 0.8,
+			"impf_quote_auffr2_alter_18bis59": 4.5,
+			"impf_quote_auffr2_alter_18plus": 15.2,
+			"impf_quote_auffr2_alter_60plus": 35.9,
+			"impf_quote_auffr_alter_12bis17": 35.4,
+			"impf_quote_auffr_alter_18bis59": 69.8,
+			"impf_quote_auffr_alter_18plus": 76.4,
+			"impf_quote_auffr_alter_60plus": 89.1,
+			"impf_quote_dosen": 236.2,
+			"impf_quote_min1": 81.7,
+			"impf_quote_min1_alter_12bis17": 80.7,
+			"impf_quote_min1_alter_18bis59": 89,
+			"impf_quote_min1_alter_18plus": 90.8,
+			"impf_quote_min1_alter_5bis11": 28.4,
+			"impf_quote_min1_alter_5bis17": 51.5,
+			"impf_quote_min1_alter_60plus": 94.4,
+			"impf_quote_voll": 79.4,
+			"impf_quote_voll_alter_12bis17": 75.3,
+			"impf_quote_voll_alter_18bis59": 86.1,
+			"impf_quote_voll_alter_18plus": 88.5,
+			"impf_quote_voll_alter_5bis11": 24.8,
+			"impf_quote_voll_alter_5bis17": 48.5,
+			"impf_quote_voll_alter_60plus": 93.2,
+			"personen_auffr2_kumulativ": 2274146,
+			"personen_auffr_kumulativ": 11744603,
+			"personen_min1_kumulativ": 14647711,
+			"personen_voll_kumulativ": 14234599,
+			"title": "Nordrhein-Westfalen"
+		},
+		"RP": {
+			"code": "RP",
+			"dosen_astrazeneca_kumulativ": 626872,
+			"dosen_biontech_kumulativ": 6860330,
+			"dosen_differenz_zum_vortag": 2590,
+			"dosen_janssen_kumulativ": 174216,
+			"dosen_kumulativ": 9219804,
+			"dosen_moderna_kumulativ": 1547648,
+			"dosen_novavax_kumulativ": 10738,
+			"impf_inzidenz_auffr": 633.4,
+			"impf_inzidenz_dosen": 2249.6,
+			"impf_inzidenz_min1": 790.4,
+			"impf_inzidenz_voll": 756.7,
+			"impf_quote_auffr": 63.3,
+			"impf_quote_auffr2": 9.8,
+			"impf_quote_auffr2_alter_12bis17": 0.7,
+			"impf_quote_auffr2_alter_18bis59": 3,
+			"impf_quote_auffr2_alter_18plus": 11.7,
+			"impf_quote_auffr2_alter_60plus": 27.3,
+			"impf_quote_auffr_alter_12bis17": 33.3,
+			"impf_quote_auffr_alter_18bis59": 66.4,
+			"impf_quote_auffr_alter_18plus": 73.5,
+			"impf_quote_auffr_alter_60plus": 86.5,
+			"impf_quote_dosen": 225,
+			"impf_quote_min1": 79,
+			"impf_quote_min1_alter_12bis17": 76.3,
+			"impf_quote_min1_alter_18bis59": 83.8,
+			"impf_quote_min1_alter_18plus": 87.7,
+			"impf_quote_min1_alter_5bis11": 24.1,
+			"impf_quote_min1_alter_5bis17": 48.7,
+			"impf_quote_min1_alter_60plus": 94.8,
+			"impf_quote_voll": 75.7,
+			"impf_quote_voll_alter_12bis17": 70.3,
+			"impf_quote_voll_alter_18bis59": 80.4,
+			"impf_quote_voll_alter_18plus": 84.3,
+			"impf_quote_voll_alter_5bis11": 21.9,
+			"impf_quote_voll_alter_5bis17": 44.6,
+			"impf_quote_voll_alter_60plus": 91.3,
+			"personen_auffr2_kumulativ": 401751,
+			"personen_auffr_kumulativ": 2595909,
+			"personen_min1_kumulativ": 3239305,
+			"personen_voll_kumulativ": 3101366,
+			"title": "Rheinland-Pfalz"
+		},
+		"SH": {
+			"code": "SH",
+			"dosen_astrazeneca_kumulativ": 518453,
+			"dosen_biontech_kumulativ": 5047943,
+			"dosen_differenz_zum_vortag": 2551,
+			"dosen_janssen_kumulativ": 136382,
+			"dosen_kumulativ": 7151568,
+			"dosen_moderna_kumulativ": 1443846,
+			"dosen_novavax_kumulativ": 4944,
+			"impf_inzidenz_auffr": 701.3,
+			"impf_inzidenz_dosen": 2456.8,
+			"impf_inzidenz_min1": 809.1,
+			"impf_inzidenz_voll": 798.7,
+			"impf_quote_auffr": 70.1,
+			"impf_quote_auffr2": 17.3,
+			"impf_quote_auffr2_alter_12bis17": 0.8,
+			"impf_quote_auffr2_alter_18bis59": 5.2,
+			"impf_quote_auffr2_alter_18plus": 20.6,
+			"impf_quote_auffr2_alter_60plus": 47.7,
+			"impf_quote_auffr_alter_12bis17": 47.4,
+			"impf_quote_auffr_alter_18bis59": 73.8,
+			"impf_quote_auffr_alter_18plus": 80.4,
+			"impf_quote_auffr_alter_60plus": 92.2,
+			"impf_quote_dosen": 245.7,
+			"impf_quote_min1": 80.9,
+			"impf_quote_min1_alter_12bis17": 93.8,
+			"impf_quote_min1_alter_18bis59": 84.7,
+			"impf_quote_min1_alter_18plus": 88,
+			"impf_quote_min1_alter_5bis11": 31.2,
+			"impf_quote_min1_alter_5bis17": 60.9,
+			"impf_quote_min1_alter_60plus": 93.9,
+			"impf_quote_voll": 79.9,
+			"impf_quote_voll_alter_12bis17": 88.1,
+			"impf_quote_voll_alter_18bis59": 83.9,
+			"impf_quote_voll_alter_18plus": 87.2,
+			"impf_quote_voll_alter_5bis11": 30.4,
+			"impf_quote_voll_alter_5bis17": 58,
+			"impf_quote_voll_alter_60plus": 92.9,
+			"personen_auffr2_kumulativ": 502810,
+			"personen_auffr_kumulativ": 2041305,
+			"personen_min1_kumulativ": 2355135,
+			"personen_voll_kumulativ": 2324815,
+			"title": "Schleswig-Holstein"
+		},
+		"SL": {
+			"code": "SL",
+			"dosen_astrazeneca_kumulativ": 112303,
+			"dosen_biontech_kumulativ": 1786395,
+			"dosen_differenz_zum_vortag": 785,
+			"dosen_janssen_kumulativ": 50672,
+			"dosen_kumulativ": 2377778,
+			"dosen_moderna_kumulativ": 426540,
+			"dosen_novavax_kumulativ": 1868,
+			"impf_inzidenz_auffr": 690.5,
+			"impf_inzidenz_dosen": 2416.5,
+			"impf_inzidenz_min1": 835.9,
+			"impf_inzidenz_voll": 821.8,
+			"impf_quote_auffr": 69.1,
+			"impf_quote_auffr2": 10.2,
+			"impf_quote_auffr2_alter_12bis17": 0.7,
+			"impf_quote_auffr2_alter_18bis59": 3.3,
+			"impf_quote_auffr2_alter_18plus": 12,
+			"impf_quote_auffr2_alter_60plus": 26,
+			"impf_quote_auffr_alter_12bis17": 34,
+			"impf_quote_auffr_alter_18bis59": 72.1,
+			"impf_quote_auffr_alter_18plus": 79.1,
+			"impf_quote_auffr_alter_60plus": 90.2,
+			"impf_quote_dosen": 241.6,
+			"impf_quote_min1": 83.6,
+			"impf_quote_min1_alter_12bis17": 78.7,
+			"impf_quote_min1_alter_18bis59": 90.4,
+			"impf_quote_min1_alter_18plus": 92.3,
+			"impf_quote_min1_alter_5bis11": 19.1,
+			"impf_quote_min1_alter_5bis17": 47.2,
+			"impf_quote_min1_alter_60plus": 95.2,
+			"impf_quote_voll": 82.2,
+			"impf_quote_voll_alter_12bis17": 73.8,
+			"impf_quote_voll_alter_18bis59": 88.6,
+			"impf_quote_voll_alter_18plus": 91,
+			"impf_quote_voll_alter_5bis11": 17.2,
+			"impf_quote_voll_alter_5bis17": 44,
+			"impf_quote_voll_alter_60plus": 95,
+			"personen_auffr2_kumulativ": 100814,
+			"personen_auffr_kumulativ": 679477,
+			"personen_min1_kumulativ": 822516,
+			"personen_voll_kumulativ": 808601,
+			"title": "Saarland"
+		},
+		"SN": {
+			"code": "SN",
+			"dosen_astrazeneca_kumulativ": 493133,
+			"dosen_biontech_kumulativ": 5693307,
+			"dosen_differenz_zum_vortag": 2486,
+			"dosen_janssen_kumulativ": 104494,
+			"dosen_kumulativ": 7413964,
+			"dosen_moderna_kumulativ": 1113037,
+			"dosen_novavax_kumulativ": 9993,
+			"impf_inzidenz_auffr": 500.1,
+			"impf_inzidenz_dosen": 1827.5,
+			"impf_inzidenz_min1": 660.2,
+			"impf_inzidenz_voll": 647.5,
+			"impf_quote_auffr": 50,
+			"impf_quote_auffr2": 3.8,
+			"impf_quote_auffr2_alter_12bis17": 0.3,
+			"impf_quote_auffr2_alter_18bis59": 0.9,
+			"impf_quote_auffr2_alter_18plus": 4.4,
+			"impf_quote_auffr2_alter_60plus": 9.6,
+			"impf_quote_auffr_alter_12bis17": 15,
+			"impf_quote_auffr_alter_18bis59": 47.8,
+			"impf_quote_auffr_alter_18plus": 58.6,
+			"impf_quote_auffr_alter_60plus": 74.6,
+			"impf_quote_dosen": 182.7,
+			"impf_quote_min1": 66,
+			"impf_quote_min1_alter_12bis17": 47.7,
+			"impf_quote_min1_alter_18bis59": 68,
+			"impf_quote_min1_alter_18plus": 75.1,
+			"impf_quote_min1_alter_5bis11": 7.8,
+			"impf_quote_min1_alter_5bis17": 25.5,
+			"impf_quote_min1_alter_60plus": 85.5,
+			"impf_quote_voll": 64.8,
+			"impf_quote_voll_alter_12bis17": 45,
+			"impf_quote_voll_alter_18bis59": 66.7,
+			"impf_quote_voll_alter_18plus": 73.8,
+			"impf_quote_voll_alter_5bis11": 7,
+			"impf_quote_voll_alter_5bis17": 23.9,
+			"impf_quote_voll_alter_60plus": 84.3,
+			"personen_auffr2_kumulativ": 152210,
+			"personen_auffr_kumulativ": 2028953,
+			"personen_min1_kumulativ": 2678439,
+			"personen_voll_kumulativ": 2627030,
+			"title": "Sachsen"
+		},
+		"ST": {
+			"code": "ST",
+			"dosen_astrazeneca_kumulativ": 294711,
+			"dosen_biontech_kumulativ": 3335320,
+			"dosen_differenz_zum_vortag": 2118,
+			"dosen_janssen_kumulativ": 111151,
+			"dosen_kumulativ": 4546069,
+			"dosen_moderna_kumulativ": 801178,
+			"dosen_novavax_kumulativ": 3709,
+			"impf_inzidenz_auffr": 575.9,
+			"impf_inzidenz_dosen": 2084.7,
+			"impf_inzidenz_min1": 742.4,
+			"impf_inzidenz_voll": 736.1,
+			"impf_quote_auffr": 57.6,
+			"impf_quote_auffr2": 6.2,
+			"impf_quote_auffr2_alter_12bis17": 0.6,
+			"impf_quote_auffr2_alter_18bis59": 1.6,
+			"impf_quote_auffr2_alter_18plus": 7.3,
+			"impf_quote_auffr2_alter_60plus": 15.2,
+			"impf_quote_auffr_alter_12bis17": 18.2,
+			"impf_quote_auffr_alter_18bis59": 54.7,
+			"impf_quote_auffr_alter_18plus": 66.6,
+			"impf_quote_auffr_alter_60plus": 83.2,
+			"impf_quote_dosen": 208.5,
+			"impf_quote_min1": 74.2,
+			"impf_quote_min1_alter_12bis17": 58.4,
+			"impf_quote_min1_alter_18bis59": 77.4,
+			"impf_quote_min1_alter_18plus": 83.2,
+			"impf_quote_min1_alter_5bis11": 8.8,
+			"impf_quote_min1_alter_5bis17": 31.4,
+			"impf_quote_min1_alter_60plus": 91.2,
+			"impf_quote_voll": 73.6,
+			"impf_quote_voll_alter_12bis17": 54,
+			"impf_quote_voll_alter_18bis59": 76.7,
+			"impf_quote_voll_alter_18plus": 82.8,
+			"impf_quote_voll_alter_5bis11": 7.8,
+			"impf_quote_voll_alter_5bis17": 28.9,
+			"impf_quote_voll_alter_60plus": 91.3,
+			"personen_auffr2_kumulativ": 135936,
+			"personen_auffr_kumulativ": 1255842,
+			"personen_min1_kumulativ": 1618884,
+			"personen_voll_kumulativ": 1605293,
+			"title": "Sachsen-Anhalt"
+		},
+		"TH": {
+			"code": "TH",
+			"dosen_astrazeneca_kumulativ": 249671,
+			"dosen_biontech_kumulativ": 3146275,
+			"dosen_differenz_zum_vortag": 1186,
+			"dosen_janssen_kumulativ": 96521,
+			"dosen_kumulativ": 4170321,
+			"dosen_moderna_kumulativ": 672430,
+			"dosen_novavax_kumulativ": 5424,
+			"impf_inzidenz_auffr": 535.4,
+			"impf_inzidenz_dosen": 1966.9,
+			"impf_inzidenz_min1": 711.1,
+			"impf_inzidenz_voll": 698.1,
+			"impf_quote_auffr": 53.5,
+			"impf_quote_auffr2": 4.5,
+			"impf_quote_auffr2_alter_12bis17": 0.3,
+			"impf_quote_auffr2_alter_18bis59": 1.6,
+			"impf_quote_auffr2_alter_18plus": 5.3,
+			"impf_quote_auffr2_alter_60plus": 10.7,
+			"impf_quote_auffr_alter_12bis17": 19.5,
+			"impf_quote_auffr_alter_18bis59": 50.9,
+			"impf_quote_auffr_alter_18plus": 62.1,
+			"impf_quote_auffr_alter_60plus": 78.1,
+			"impf_quote_dosen": 196.7,
+			"impf_quote_min1": 71.1,
+			"impf_quote_min1_alter_12bis17": 54.8,
+			"impf_quote_min1_alter_18bis59": 73.9,
+			"impf_quote_min1_alter_18plus": 79.9,
+			"impf_quote_min1_alter_5bis11": 11.6,
+			"impf_quote_min1_alter_5bis17": 30.9,
+			"impf_quote_min1_alter_60plus": 88.3,
+			"impf_quote_voll": 69.8,
+			"impf_quote_voll_alter_12bis17": 52.8,
+			"impf_quote_voll_alter_18bis59": 71.6,
+			"impf_quote_voll_alter_18plus": 78.5,
+			"impf_quote_voll_alter_5bis11": 10.9,
+			"impf_quote_voll_alter_5bis17": 29.6,
+			"impf_quote_voll_alter_60plus": 88.3,
+			"personen_auffr2_kumulativ": 96178,
+			"personen_auffr_kumulativ": 1135252,
+			"personen_min1_kumulativ": 1507720,
+			"personen_voll_kumulativ": 1480066,
+			"title": "Thüringen"
+		}
+	}
+}
