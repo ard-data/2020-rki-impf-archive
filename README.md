@@ -1,13 +1,11 @@
 
-# Das RKI-Corona-Impf-Daten-Archiv wird eingestellt!
+# Das RKI-Corona-Impf-Daten-Archiv wird nicht mehr aktualisiert!
 
-Da das Robert-Koch-Institut auch auf GitHub Zahlen zu [COVID-19-Impfungen in Deutschland](https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland) veröffentlicht, die genauso detailliert sind, wie die Zahlen in den Exceltabellen des Impfmonitorings, wird das Impf-Daten-Archiv eingestellt.
+Da das Robert-Koch-Institut auch auf GitHub Zahlen zu [COVID-19-Impfungen in Deutschland](https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland) veröffentlicht, die genauso detailliert sind, wie die Zahlen in den Exceltabellen des Impfmonitorings, ist das Impf-Daten-Archiv eingestellt.
 
-Wer dieses Repo als Datenquelle genutzt hat, dem kann ich empfehlen, zum RKI-Repo zu migrieren: https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland
+Zwar werden weiterhin die Excel-Tabellen des RKIs runtergeladen und im Verzeichnis [/data/0_original/](https://github.com/ard-data/2020-rki-impf-archive/tree/master/data/0_original) archiviert, jedoch werden sie nicht mehr geparst.
 
-Der Scraper wird bis mindestens Ende Mai weiterbetrieben. Danach wird der Scraper weiterhin laufen, aber nicht mehr gepflegt, so dass nicht mehr sichergestellt werden kann, dass langfristig weitere Updates eingepflegt werden. Dieses Repo und die Daten werden aber weiterhin online bleiben.
-
-
+**Somit werden auch die TSV-Dateien nicht mehr aktualisiert!**
 
 <p align="center">Das war's. Bleibt gesund und passt auf euch auf.<br><img src="https://i.giphy.com/media/DAtJCG1t3im1G/giphy.webp"></p>
 
